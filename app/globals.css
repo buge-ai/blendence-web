@@ -122,7 +122,7 @@
   position: absolute;
   top: 35%;
   right: -5%;
-  transform: translateY(0) rotateZ(-10deg) rotateX(25deg) rotateY(-15deg);
+  transform: translateY(0) rotateZ(-2deg) rotateX(25deg) rotateY(-15deg);
   transform-style: preserve-3d;
   display: grid;
   grid-template-columns: repeat(20, 140px);
@@ -132,10 +132,10 @@
 
 @keyframes netflixSlideLeftDown {
   0% {
-    transform: translateY(0) translateX(0) rotateZ(-10deg) rotateX(25deg) rotateY(-15deg);
+    transform: translateY(0) translateX(0) rotateZ(-2deg) rotateX(25deg) rotateY(-15deg);
   }
   100% {
-    transform: translateY(0) translateX(-100px) rotateZ(-10deg) rotateX(25deg) rotateY(-15deg);
+    transform: translateY(0) translateX(-100px) rotateZ(-2deg) rotateX(25deg) rotateY(-15deg);
   }
 }
 
