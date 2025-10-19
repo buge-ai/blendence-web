@@ -108,8 +108,8 @@ export default function Home() {
       <section id="about" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: 'var(--dark-blue)' }}>Innovating Natural Nutrition</h2>
-            <p className="text-lg text-[var(--dark-gray-alt)] font-light">BUGE GIDA A.Ş. - Leading the freeze-dried revolution</p>
+            <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>Innovating Natural Nutrition</h2>
+            <p className="text-xl text-[var(--dark-gray-alt)] font-light max-w-2xl mx-auto">BUGE GIDA A.Ş. - Leading the freeze-dried revolution</p>
           </div>
 
           {/* 2x2 Grid with Images */}
@@ -178,25 +178,24 @@ export default function Home() {
       </section>
 
       {/* Advantages Section - Why BLENDENCE? */}
-      <section className="py-24 bg-[var(--light-gray)]">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: 'var(--dark-blue)' }}>Why BLENDENCE?</h2>
-            <p className="text-lg text-[var(--dark-gray-alt)] font-light">Our competitive edge in the market</p>
+            <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>Why BLENDENCE?</h2>
+            <p className="text-xl text-[var(--dark-gray-alt)] font-light max-w-2xl mx-auto">Our competitive edge in the market</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { num: '01', title: 'Market Leader', desc: "Turkey's only brand in the 100% freeze-dried mix segment" },
-              { num: '02', title: 'Advanced Technology', desc: 'State-of-the-art freeze drying infrastructure with R&D capabilities' },
-              { num: '03', title: 'Industrial Scale', desc: '2,000+ sachets daily production capacity for B2C and B2B markets' },
-              { num: '04', title: 'Quality Assurance', desc: 'International certifications and dedicated quality laboratory' },
-              { num: '05', title: 'Natural & Safe', desc: '100% natural, functional products with no additives or preservatives' },
-              { num: '06', title: 'Sustainability Focus', desc: 'Innovation-driven approach with environmental responsibility' }
+              { title: 'Market Leader', desc: "Turkey's only brand in the 100% freeze-dried mix segment" },
+              { title: 'Advanced Technology', desc: 'State-of-the-art freeze drying infrastructure with R&D capabilities' },
+              { title: 'Industrial Scale', desc: '2,000+ sachets daily production capacity for B2C and B2B markets' },
+              { title: 'Quality Assurance', desc: 'International certifications and dedicated quality laboratory' },
+              { title: 'Natural & Safe', desc: '100% natural, functional products with no additives or preservatives' },
+              { title: 'Sustainability Focus', desc: 'Innovation-driven approach with environmental responsibility' }
             ].map((adv) => (
-              <div key={adv.num} className="bg-gradient-to-br from-white to-[var(--light-gray)] p-8 rounded-2xl border-l-4 transition-all duration-300 hover:translate-x-3 hover:shadow-xl" style={{ borderColor: 'var(--turquoise)' }}>
-                <div className="text-4xl font-bold mb-4 opacity-30" style={{ color: 'var(--turquoise)' }}>{adv.num}</div>
-                <h4 className="text-xl font-semibold mb-3" style={{ color: 'var(--dark-blue)' }}>{adv.title}</h4>
-                <p className="text-sm text-[var(--dark-gray-alt)]">{adv.desc}</p>
+              <div key={adv.title} className="bg-white rounded-lg p-8 border border-gray-100 hover:shadow-md transition-shadow duration-300">
+                <h4 className="text-lg font-medium mb-3" style={{ color: 'var(--dark-blue)' }}>{adv.title}</h4>
+                <p className="text-sm text-[var(--dark-gray-alt)] font-light leading-relaxed">{adv.desc}</p>
               </div>
             ))}
           </div>
@@ -476,7 +475,7 @@ export default function Home() {
       </section>
 
       {/* Technology Section - Freeze Drying Technology */}
-      <section id="technology" className="py-32 bg-[var(--light-gray)]">
+      <section id="technology" className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>Freeze Drying Technology</h2>
@@ -541,7 +540,7 @@ export default function Home() {
       <section id="quality" className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-light mb-4" style={{ color: 'var(--dark-blue)' }}>Quality & Certifications</h2>
+            <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>Quality & Certifications</h2>
           </div>
 
           {/* Current Certifications */}
@@ -580,8 +579,8 @@ export default function Home() {
       <section id="contact" className="py-24 bg-gradient-to-br from-[var(--dark-blue)] to-[var(--turquoise)] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Get in Touch</h2>
-            <p className="text-lg font-light opacity-95">Let's discuss partnership and investment opportunities</p>
+            <h2 className="text-5xl md:text-6xl font-light mb-6 text-white">Get in Touch</h2>
+            <p className="text-xl font-light opacity-95 max-w-2xl mx-auto">Let's discuss partnership and investment opportunities</p>
           </div>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-8">
