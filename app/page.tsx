@@ -114,15 +114,15 @@ export default function Home() {
 
           {/* 2x2 Grid with Images */}
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Top Left - Text on right side with fade from right to left */}
+            {/* Top Left - Text on right side with fade from right to left on desktop, left to right on mobile */}
             <div className="relative h-80 rounded-2xl overflow-hidden group">
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                 style={{ backgroundImage: "url('/innovate/founded.png')" }}
               ></div>
-              <div className="absolute inset-0 bg-gradient-to-l from-black/90 via-black/70 to-transparent"></div>
-              <div className="absolute inset-0 flex items-center justify-end p-8 md:p-12">
-                <div className="text-right md:text-right max-w-md">
+              <div className="absolute inset-0 bg-gradient-to-r md:bg-gradient-to-l from-black/90 via-black/70 to-transparent"></div>
+              <div className="absolute inset-0 flex items-center md:justify-end justify-start p-8 md:p-12">
+                <div className="text-left md:text-right max-w-md">
                   <h3 className="text-3xl md:text-4xl font-bold mb-4 drop-shadow-lg text-white">Founded 2024</h3>
                   <p className="text-base md:text-lg opacity-95 drop-shadow-md text-white">Located in Trakya Teknopark, Edirne, with state-of-the-art production facilities</p>
                 </div>
@@ -144,15 +144,15 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Bottom Left - Text on right side with fade from right to left */}
+            {/* Bottom Left - Text on right side with fade from right to left on desktop, left to right on mobile */}
             <div className="relative h-80 rounded-2xl overflow-hidden group">
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                 style={{ backgroundImage: "url('/innovate/production-capacity.png')" }}
               ></div>
-              <div className="absolute inset-0 bg-gradient-to-l from-black/90 via-black/70 to-transparent"></div>
-              <div className="absolute inset-0 flex items-center justify-end p-8 md:p-12">
-                <div className="text-right md:text-right max-w-md">
+              <div className="absolute inset-0 bg-gradient-to-r md:bg-gradient-to-l from-black/90 via-black/70 to-transparent"></div>
+              <div className="absolute inset-0 flex items-center md:justify-end justify-start p-8 md:p-12">
+                <div className="text-left md:text-right max-w-md">
                   <h3 className="text-3xl md:text-4xl font-bold mb-4 drop-shadow-lg text-white">Production Capacity</h3>
                   <p className="text-base md:text-lg opacity-95 drop-shadow-md text-white">2,000-2,200 sachets daily with advanced freeze-drying technology</p>
                 </div>
@@ -207,13 +207,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>Our Product Range</h2>
-            <p className="text-xl text-[var(--dark-gray-alt)] font-light max-w-2xl mx-auto">Scientifically formulated for optimal health benefits</p>
+            <p className="text-xl text-[var(--dark-gray-alt)] font-light max-w-3xl mx-auto">Our product series includes Green Mix, Red Mix, and Kids Mix, providing natural, functional, and safe options tailored for all age groups and dietary needs.</p>
           </div>
 
-          {/* Adult Products */}
+          {/* Green Mix */}
           <div className="mb-24">
-            <h3 className="text-4xl md:text-5xl font-light mb-20 text-center" style={{ color: 'var(--dark-blue)' }}>Adult Mix Series</h3>
-
             {/* Green Mix */}
             <div className="product-box relative mb-20 overflow-hidden">
               {/* Green gradient background - darker, more visible */}
