@@ -93,19 +93,68 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: 'var(--dark-blue)' }}>Innovating Natural Nutrition</h2>
             <p className="text-lg text-[var(--dark-gray-alt)] font-light">BUGE GIDA A.Ş. - Leading the freeze-dried revolution</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { icon: '🏢', title: 'Founded 2024', desc: 'Located in Trakya Teknopark, Edirne, with state-of-the-art production facilities' },
-              { icon: '👨‍🔬', title: 'Expert Team', desc: 'Founded by 2 food engineers (1 Assoc. Prof., 1 PhD) and 1 control automation engineer' },
-              { icon: '🌍', title: 'Global Vision', desc: 'Expanding to 3 new EU markets with EUREKA Innowwide feasibility project' },
-              { icon: '🏭', title: 'Production Capacity', desc: '2,000-2,200 sachets daily with advanced freeze-drying technology' }
-            ].map((card) => (
-              <div key={card.title} className="bg-white p-8 rounded-2xl text-center transition-all duration-300 hover:-translate-y-3 hover:shadow-xl">
-                <div className="text-5xl mb-4">{card.icon}</div>
-                <h3 className="text-xl font-semibold mb-3" style={{ color: 'var(--dark-blue)' }}>{card.title}</h3>
-                <p className="text-sm text-[var(--dark-gray-alt)]">{card.desc}</p>
+
+          {/* 2x2 Grid with Images */}
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Top Left - Text on right side with fade from right to left */}
+            <div className="relative h-80 rounded-2xl overflow-hidden group">
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                style={{ backgroundImage: "url('/innovate/founded.png')" }}
+              ></div>
+              <div className="absolute inset-0 bg-gradient-to-l from-black/90 via-black/70 to-transparent"></div>
+              <div className="absolute inset-0 flex items-center justify-end p-8 md:p-12">
+                <div className="text-right md:text-right text-white max-w-md">
+                  <h3 className="text-2xl font-bold mb-3 drop-shadow-lg">Founded 2024</h3>
+                  <p className="text-sm opacity-95 drop-shadow-md">Located in Trakya Teknopark, Edirne, with state-of-the-art production facilities</p>
+                </div>
               </div>
-            ))}
+            </div>
+
+            {/* Top Right - Text on left side with fade from left to right */}
+            <div className="relative h-80 rounded-2xl overflow-hidden group">
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                style={{ backgroundImage: "url('/innovate/expert-team.jpg')" }}
+              ></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent"></div>
+              <div className="absolute inset-0 flex items-center justify-start p-8 md:p-12">
+                <div className="text-left text-white max-w-md">
+                  <h3 className="text-2xl font-bold mb-3 drop-shadow-lg">Expert Team</h3>
+                  <p className="text-sm opacity-95 drop-shadow-md">Founded by 2 food engineers (1 Assoc. Prof., 1 PhD) and 1 control automation engineer</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Left - Text on right side with fade from right to left */}
+            <div className="relative h-80 rounded-2xl overflow-hidden group">
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                style={{ backgroundImage: "url('/innovate/global-vision.jpg')" }}
+              ></div>
+              <div className="absolute inset-0 bg-gradient-to-l from-black/90 via-black/70 to-transparent"></div>
+              <div className="absolute inset-0 flex items-center justify-end p-8 md:p-12">
+                <div className="text-right md:text-right text-white max-w-md">
+                  <h3 className="text-2xl font-bold mb-3 drop-shadow-lg">Global Vision</h3>
+                  <p className="text-sm opacity-95 drop-shadow-md">Expanding to 3 new EU markets with EUREKA Innowwide feasibility project</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Right - Text on left side with fade from left to right */}
+            <div className="relative h-80 rounded-2xl overflow-hidden group">
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                style={{ backgroundImage: "url('/innovate/global-vision.jpg')" }}
+              ></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent"></div>
+              <div className="absolute inset-0 flex items-center justify-start p-8 md:p-12">
+                <div className="text-left text-white max-w-md">
+                  <h3 className="text-2xl font-bold mb-3 drop-shadow-lg">Production Capacity</h3>
+                  <p className="text-sm opacity-95 drop-shadow-md">2,000-2,200 sachets daily with advanced freeze-drying technology</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
