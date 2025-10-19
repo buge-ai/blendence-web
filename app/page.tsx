@@ -576,41 +576,52 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-gradient-to-br from-[var(--dark-blue)] to-[var(--turquoise)] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+      <section id="contact" className="py-32 bg-gradient-to-br from-[var(--dark-blue)] to-[var(--turquoise)] text-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-light mb-6 text-white">Get in Touch</h2>
-            <p className="text-xl font-light opacity-95 max-w-2xl mx-auto">Let's discuss partnership and investment opportunities</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-8">
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="text-center">
+              <div className="mb-4">
+                <h4 className="text-sm font-medium uppercase tracking-wider mb-4" style={{ color: 'var(--yellow)' }}>HEADQUARTERS</h4>
+                <p className="text-base font-light leading-relaxed text-white/90">Trakya Teknopark<br />Trakya University Technology Development Zone<br />Edirne, Turkey</p>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <div className="mb-4">
+                <h4 className="text-sm font-medium uppercase tracking-wider mb-4" style={{ color: 'var(--yellow)' }}>PRODUCTION FACILITY</h4>
+                <p className="text-base font-light leading-relaxed text-white/90">Hasan Pehlivan Cd. No:1/D<br />Havsa / Edirne</p>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <div className="mb-4">
+                <h4 className="text-sm font-medium uppercase tracking-wider mb-4" style={{ color: 'var(--yellow)' }}>CONTACT</h4>
+                <p className="text-base font-light leading-relaxed text-white/90">contact@bugefoods.com<br />+90 540 022 3922<br />www.bugefoods.com</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-white/20 pt-16">
+            <div className="text-center mb-8">
+              <h3 className="text-sm font-medium uppercase tracking-wider mb-4" style={{ color: 'var(--yellow)' }}>Investment Opportunities</h3>
+              <p className="text-lg font-light text-white/90 max-w-3xl mx-auto mb-12">We're expanding into European markets and seeking strategic partners and investors to accelerate our growth.</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { title: 'Headquarters', content: 'Trakya Teknopark\nTrakya University Technology Development Zone\nEdirne, Turkey' },
-                { title: 'Production Facility', content: 'Hasan Pehlivan Cd. No:1/D\nHavsa / Edirne' },
-                { title: 'Contact', content: 'Email: contact@bugefoods.com\nPhone: +90 540 022 3922\nWeb: www.bugefoods.com' }
+                'Proven technology and production capabilities',
+                'First-mover advantage in freeze-dried mix segment',
+                'Strong B2C and B2B revenue streams',
+                'International expansion ready'
               ].map((item) => (
-                <div key={item.title} className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl">
-                  <h4 className="text-xl font-semibold mb-3" style={{ color: 'var(--yellow)' }}>{item.title}</h4>
-                  <p className="whitespace-pre-line leading-relaxed">{item.content}</p>
+                <div key={item} className="text-center p-6 bg-white/5 rounded-lg border border-white/10">
+                  <p className="text-sm font-light leading-relaxed">{item}</p>
                 </div>
               ))}
-            </div>
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 p-10 rounded-2xl">
-              <h3 className="text-2xl font-semibold mb-6" style={{ color: 'var(--yellow)' }}>Investment Opportunities</h3>
-              <p className="mb-6 leading-relaxed">We're expanding into European markets and seeking strategic partners and investors to accelerate our growth.</p>
-              <ul className="space-y-3">
-                {[
-                  'Proven technology and production capabilities',
-                  'First-mover advantage in freeze-dried mix segment',
-                  'Strong B2C and B2B revenue streams',
-                  'International expansion ready'
-                ].map((item) => (
-                  <li key={item} className="flex gap-3 items-start">
-                    <span className="font-bold flex-shrink-0" style={{ color: 'var(--yellow)' }}>→</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
