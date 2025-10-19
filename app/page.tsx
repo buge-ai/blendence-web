@@ -58,10 +58,10 @@ export default function Home() {
           <div className="w-full px-8 sm:px-12 lg:px-16">
             {/* Content - Left side, using full left area */}
             <div className="text-white animate-[fadeInUp_1s_ease]">
-              <p className="text-xl md:text-2xl lg:text-3xl mb-4 opacity-95 font-light max-w-3xl">
+              <p className="text-base md:text-lg lg:text-xl mb-4 opacity-60 font-light max-w-3xl">
                 Turkey's First 100% Freeze-Dried Nutritional Mix Brand
               </p>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6" style={{ color: 'white' }}>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal mb-6" style={{ color: 'white' }}>
                 Naturally Powerful,<br />Perfectly Balanced
               </h1>
               <div className="flex flex-wrap gap-4 mb-12">
