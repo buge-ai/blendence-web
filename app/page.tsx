@@ -40,7 +40,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      <section id="home" className="relative min-h-screen flex items-center pt-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--dark-blue)] via-[var(--dark-blue-alt)] to-[var(--turquoise)]"></div>
 
         {/* Image Carousel - Full Background */}
