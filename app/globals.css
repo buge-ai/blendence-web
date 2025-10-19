@@ -75,3 +75,77 @@
     transform: scale(1.05);
   }
 }
+
+/* 3D Perspective for carousel */
+.perspective-1000 {
+  perspective: 1000px;
+  perspective-origin: center;
+}
+
+/* Ensure transform-style is preserved for 3D transforms */
+[style*="translateZ"] {
+  transform-style: preserve-3d;
+}
+
+/* Netflix-style Single Layer from Right */
+.netflix-container-single {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.netflix-container-perspective-single {
+  position: absolute;
+  top: 0;
+  right: -10%;
+  width: 70%;
+  height: 100%;
+  perspective: 1200px;
+  perspective-origin: 0% 50%;
+}
+
+.netflix-container-background-single {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%) rotateY(-35deg) rotateX(5deg);
+  transform-style: preserve-3d;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 800px;
+  animation: netflixRotateSingle 25s ease-in-out infinite;
+}
+
+@keyframes netflixRotateSingle {
+  0% {
+    transform: translateY(-50%) rotateY(-35deg) rotateX(5deg);
+  }
+  50% {
+    transform: translateY(-50%) rotateY(-32deg) rotateX(3deg);
+  }
+  100% {
+    transform: translateY(-50%) rotateY(-35deg) rotateX(5deg);
+  }
+}
+
+.netflix-thumbnail {
+  width: 140px;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+  opacity: 0.85;
+  pointer-events: auto;
+}
+
+.netflix-thumbnail:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+  opacity: 1;
+}

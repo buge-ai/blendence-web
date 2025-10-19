@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -42,32 +42,44 @@ export default function Home() {
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--dark-blue)] via-[var(--dark-blue-alt)] to-[var(--turquoise)]"></div>
-        <div className="absolute bottom-0 left-0 w-full h-32 md:h-48 lg:h-64">
+
+        {/* Image Carousel - Full Background */}
+        <div className="absolute inset-0 hidden lg:block">
+          <ImageCarousel />
+        </div>
+
+        <div className="absolute bottom-0 left-0 w-full h-32 md:h-48 lg:h-64 z-20">
           <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
             <path fill="#ffffff" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,112C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
           </svg>
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-[fadeInUp_1s_ease]" style={{ color: 'white' }}>
-            Naturally Powerful,<br />Perfectly Balanced
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-95 font-light animate-[fadeInUp_1s_ease_0.2s_both]">
-            Turkey's First 100% Freeze-Dried Nutritional Mix Brand
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 mb-12 animate-[fadeInUp_1s_ease_0.4s_both]">
-            {['100% Natural', '100% Vegan', 'No Added Sugar'].map((badge) => (
-              <span key={badge} className="px-6 py-2 bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-sm font-medium">
-                {badge}
-              </span>
-            ))}
+
+        <div className="relative z-10 w-full h-full flex items-center">
+          <div className="w-full px-8 sm:px-12 lg:px-16">
+            {/* Content - Left side, using full left area */}
+            <div className="text-white animate-[fadeInUp_1s_ease]">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6" style={{ color: 'white' }}>
+                Naturally Powerful,<br />Perfectly Balanced
+              </h1>
+              <p className="text-xl md:text-2xl lg:text-3xl mb-8 opacity-95 font-light max-w-3xl">
+                Turkey's First 100% Freeze-Dried Nutritional Mix Brand
+              </p>
+              <div className="flex flex-wrap gap-4 mb-12">
+                {['100% Natural', '100% Vegan', 'No Added Sugar'].map((badge) => (
+                  <span key={badge} className="px-6 py-2 bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-sm font-medium">
+                    {badge}
+                  </span>
+                ))}
+              </div>
+              <a
+                href="#products"
+                className="inline-block px-12 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                style={{ backgroundColor: 'var(--yellow)', color: 'var(--dark-blue)' }}
+              >
+                Discover Our Products
+              </a>
+            </div>
           </div>
-          <a
-            href="#products"
-            className="inline-block px-12 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-[fadeInUp_1s_ease_0.6s_both]"
-            style={{ backgroundColor: 'var(--yellow)', color: 'var(--dark-blue)' }}
-          >
-            Discover Our Products
-          </a>
         </div>
       </section>
 
@@ -436,6 +448,47 @@ function KidProductCard({ icon, title, tagline, description, ingredients, benefi
           </li>
         ))}
       </ul>
+    </div>
+  );
+}
+
+// Image Carousel Component - Single Layer from Right
+function ImageCarousel() {
+  const backgroundImages = [
+    '/background/banana.jpg',
+    '/background/strawberry.jpg',
+    '/background/kiwi.jpg',
+    '/background/orange.jpg',
+    '/background/peach.jpg',
+    '/background/spinach.jpg',
+    '/background/flaxseeds.jpg',
+    '/background/fig.jpg',
+  ];
+
+  const thumbnails = useMemo(() => {
+    const thumbnailCount = 20;
+
+    return Array.from({ length: thumbnailCount }, (_, thumbnailIndex) => {
+      const imageIndex = thumbnailIndex % backgroundImages.length;
+      return (
+        <div
+          key={thumbnailIndex}
+          className="netflix-thumbnail"
+          style={{
+            backgroundImage: `url(${backgroundImages[imageIndex]})`
+          }}
+        />
+      );
+    });
+  }, []);
+
+  return (
+    <div className="netflix-container-single">
+      <div className="netflix-container-perspective-single">
+        <div className="netflix-container-background-single">
+          {thumbnails}
+        </div>
+      </div>
     </div>
   );
 }
