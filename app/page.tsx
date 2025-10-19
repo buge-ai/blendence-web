@@ -44,7 +44,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--dark-blue)] via-[var(--dark-blue-alt)] to-[var(--turquoise)]"></div>
 
         {/* Image Carousel - Full Background */}
-        <div className="absolute inset-0 hidden lg:block">
+        <div className="absolute inset-0">
           <ImageCarousel />
         </div>
 
@@ -64,13 +64,16 @@ export default function Home() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal mb-6" style={{ color: 'white' }}>
                 Naturally Powerful,<br />Perfectly Balanced
               </h1>
-              <div className="flex flex-wrap gap-4 mb-12">
+              <div className="flex gap-2 md:gap-3 mb-8">
                 {['100% Natural', '100% Vegan', 'No Added Sugar'].map((badge) => (
-                  <span key={badge} className="px-6 py-2 bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-sm font-medium">
+                  <span key={badge} className="px-3 py-2 md:px-6 bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-xs md:text-sm font-medium whitespace-nowrap">
                     {badge}
                   </span>
                 ))}
               </div>
+              <p className="text-base md:text-lg mb-8 opacity-80 font-light max-w-2xl leading-relaxed">
+                Dedicated to providing natural, functional, and safe products for consumers of all ages. Our mission is to deliver wholesome nutrition, ensuring that everyone can enjoy the health benefits of high-quality ingredients without any additives or preservatives.
+              </p>
               <a
                 href="#products"
                 className="inline-block px-12 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"

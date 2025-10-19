@@ -118,6 +118,12 @@
   perspective-origin: 50% 50%;
 }
 
+@media (max-width: 1024px) {
+  .netflix-container-perspective-single {
+    left: 50%;
+  }
+}
+
 .netflix-container-background-single {
   position: absolute;
   top: 35%;
