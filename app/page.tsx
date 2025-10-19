@@ -1,9 +1,11 @@
 'use client';
 
 import { useEffect, useState, useMemo } from 'react';
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,19 +48,52 @@ export default function Home() {
             <div className="flex-shrink-0">
               <img src="/logo.png" alt="BLENDENCE" className="h-12 w-auto" />
             </div>
-            <ul className="hidden md:flex gap-8">
-              {['Home', 'About', 'Products', 'Technology', 'Quality', 'Contact'].map((item) => (
-                <li key={item}>
-                  <a
-                    href={`#${item.toLowerCase()}`}
-                    className="text-[var(--dark-gray)] font-medium hover:text-[var(--turquoise)] transition-colors duration-300 relative group"
-                  >
-                    {item}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--turquoise)] group-hover:w-full transition-all duration-300"></span>
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <div className="flex items-center gap-6">
+              <ul className="hidden md:flex gap-8">
+                {[
+                  { key: 'home', label: t.nav.home },
+                  { key: 'about', label: t.nav.about },
+                  { key: 'products', label: t.nav.products },
+                  { key: 'technology', label: t.nav.technology },
+                  { key: 'quality', label: t.nav.quality },
+                  { key: 'contact', label: t.nav.contact }
+                ].map((item) => (
+                  <li key={item.key}>
+                    <a
+                      href={`#${item.key}`}
+                      className="text-[var(--dark-gray)] font-medium hover:text-[var(--turquoise)] transition-colors duration-300 relative group"
+                    >
+                      {item.label}
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--turquoise)] group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Language Toggle */}
+              <div className="flex gap-2 border border-gray-300 rounded-full p-1">
+                <button
+                  onClick={() => setLanguage('en')}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    language === 'en'
+                      ? 'bg-[var(--turquoise)] text-white'
+                      : 'text-[var(--dark-gray)] hover:bg-gray-100'
+                  }`}
+                >
+                  EN
+                </button>
+                <button
+                  onClick={() => setLanguage('tr')}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    language === 'tr'
+                      ? 'bg-[var(--turquoise)] text-white'
+                      : 'text-[var(--dark-gray)] hover:bg-gray-100'
+                  }`}
+                >
+                  TR
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
@@ -77,27 +112,27 @@ export default function Home() {
             {/* Content - Left side, using full left area */}
             <div className="text-white animate-[fadeInUp_1s_ease]">
               <p className="text-base md:text-lg lg:text-xl mb-4 opacity-60 font-light max-w-3xl">
-                Turkey's First 100% Freeze-Dried Nutritional Mix Brand
+                {t.hero.subtitle}
               </p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal mb-6" style={{ color: 'white' }}>
-                Naturally Powerful, Perfectly Balanced
+                {t.hero.title}
               </h1>
               <div className="flex gap-2 md:gap-3 mb-8">
-                {['100% Natural', '100% Vegan', 'No Added Sugar'].map((badge) => (
+                {[t.hero.natural, t.hero.vegan, t.hero.noSugar].map((badge) => (
                   <span key={badge} className="px-3 py-2 md:px-6 bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-xs md:text-sm font-medium whitespace-nowrap">
                     {badge}
                   </span>
                 ))}
               </div>
               <p className="text-base md:text-lg mb-8 opacity-80 font-light max-w-2xl leading-relaxed">
-                Dedicated to providing natural, functional, and safe products for consumers of all ages. Our mission is to deliver wholesome nutrition, ensuring that everyone can enjoy the health benefits of high-quality ingredients without any additives or preservatives.
+                {t.hero.description}
               </p>
               <a
                 href="#products"
                 className="inline-block px-12 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
                 style={{ backgroundColor: 'var(--yellow)', color: 'var(--dark-blue)' }}
               >
-                Discover Our Products
+                {t.hero.cta}
               </a>
             </div>
           </div>
@@ -108,8 +143,8 @@ export default function Home() {
       <section id="about" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>Innovating Natural Nutrition</h2>
-            <p className="text-xl text-[var(--dark-gray-alt)] font-light max-w-2xl mx-auto">BUGE GIDA A.Ş. - Leading the freeze-dried revolution</p>
+            <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>{t.about.title}</h2>
+            <p className="text-xl text-[var(--dark-gray-alt)] font-light max-w-2xl mx-auto">{t.about.subtitle}</p>
           </div>
 
           {/* 2x2 Grid with Images */}
@@ -123,8 +158,8 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r md:bg-gradient-to-l from-black/90 via-black/70 to-transparent"></div>
               <div className="absolute inset-0 flex items-center md:justify-end justify-start p-8 md:p-12">
                 <div className="text-left md:text-right max-w-md">
-                  <h3 className="text-3xl md:text-4xl font-bold mb-4 drop-shadow-lg text-white">Founded 2024</h3>
-                  <p className="text-base md:text-lg opacity-95 drop-shadow-md text-white">Located in Trakya Teknopark, Edirne, with state-of-the-art production facilities</p>
+                  <h3 className="text-3xl md:text-4xl font-bold mb-4 drop-shadow-lg text-white">{t.about.founded}</h3>
+                  <p className="text-base md:text-lg opacity-95 drop-shadow-md text-white">{t.about.foundedDesc}</p>
                 </div>
               </div>
             </div>
@@ -138,8 +173,8 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent"></div>
               <div className="absolute inset-0 flex items-center justify-start p-8 md:p-12">
                 <div className="text-left max-w-md">
-                  <h3 className="text-3xl md:text-4xl font-bold mb-4 drop-shadow-lg text-white">Expert Team</h3>
-                  <p className="text-base md:text-lg opacity-95 drop-shadow-md text-white">Founded by 2 food engineers (1 Assoc. Prof., 1 PhD) and 1 control automation engineer</p>
+                  <h3 className="text-3xl md:text-4xl font-bold mb-4 drop-shadow-lg text-white">{t.about.team}</h3>
+                  <p className="text-base md:text-lg opacity-95 drop-shadow-md text-white">{t.about.teamDesc}</p>
                 </div>
               </div>
             </div>
@@ -153,8 +188,8 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r md:bg-gradient-to-l from-black/90 via-black/70 to-transparent"></div>
               <div className="absolute inset-0 flex items-center md:justify-end justify-start p-8 md:p-12">
                 <div className="text-left md:text-right max-w-md">
-                  <h3 className="text-3xl md:text-4xl font-bold mb-4 drop-shadow-lg text-white">Production Capacity</h3>
-                  <p className="text-base md:text-lg opacity-95 drop-shadow-md text-white">2,000-2,200 sachets daily with advanced freeze-drying technology</p>
+                  <h3 className="text-3xl md:text-4xl font-bold mb-4 drop-shadow-lg text-white">{t.about.capacity}</h3>
+                  <p className="text-base md:text-lg opacity-95 drop-shadow-md text-white">{t.about.capacityDesc}</p>
                 </div>
               </div>
             </div>
@@ -168,8 +203,8 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent"></div>
               <div className="absolute inset-0 flex items-center justify-start p-8 md:p-12">
                 <div className="text-left max-w-md">
-                  <h3 className="text-3xl md:text-4xl font-bold mb-4 drop-shadow-lg text-white">Global Vision</h3>
-                  <p className="text-base md:text-lg opacity-95 drop-shadow-md text-white">Expanding to 3 new EU markets with EUREKA Innowwide feasibility project</p>
+                  <h3 className="text-3xl md:text-4xl font-bold mb-4 drop-shadow-lg text-white">{t.about.vision}</h3>
+                  <p className="text-base md:text-lg opacity-95 drop-shadow-md text-white">{t.about.visionDesc}</p>
                 </div>
               </div>
             </div>
@@ -181,17 +216,17 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>Why BLENDENCE?</h2>
-            <p className="text-xl text-[var(--dark-gray-alt)] font-light max-w-2xl mx-auto">Our competitive edge in the market</p>
+            <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>{t.why.title}</h2>
+            <p className="text-xl text-[var(--dark-gray-alt)] font-light max-w-2xl mx-auto">{t.why.subtitle}</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: 'Market Leader', desc: "Turkey's only brand in the 100% freeze-dried mix segment" },
-              { title: 'Advanced Technology', desc: 'State-of-the-art freeze drying infrastructure with R&D capabilities' },
-              { title: 'Industrial Scale', desc: '2,000+ sachets daily production capacity for B2C and B2B markets' },
-              { title: 'Quality Assurance', desc: 'International certifications and dedicated quality laboratory' },
-              { title: 'Natural & Safe', desc: '100% natural, functional products with no additives or preservatives' },
-              { title: 'Sustainability Focus', desc: 'Innovation-driven approach with environmental responsibility' }
+              { title: t.why.marketLeader, desc: t.why.marketLeaderDesc },
+              { title: t.why.advancedTech, desc: t.why.advancedTechDesc },
+              { title: t.why.industrialScale, desc: t.why.industrialScaleDesc },
+              { title: t.why.qualityAssurance, desc: t.why.qualityAssuranceDesc },
+              { title: t.why.naturalSafe, desc: t.why.naturalSafeDesc },
+              { title: t.why.sustainability, desc: t.why.sustainabilityDesc }
             ].map((adv) => (
               <div key={adv.title} className="bg-white rounded-lg p-8 border border-gray-100 hover:shadow-md transition-shadow duration-300">
                 <h4 className="text-lg font-medium mb-3" style={{ color: 'var(--dark-blue)' }}>{adv.title}</h4>
@@ -206,8 +241,8 @@ export default function Home() {
       <section id="products" className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>Our Product Range</h2>
-            <p className="text-xl text-[var(--dark-gray-alt)] font-light max-w-3xl mx-auto">Our product series includes Green Mix, Red Mix, and Kids Mix, providing natural, functional, and safe options tailored for all age groups and dietary needs.</p>
+            <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>{t.products.title}</h2>
+            <p className="text-xl text-[var(--dark-gray-alt)] font-light max-w-3xl mx-auto">{t.products.subtitle}</p>
           </div>
 
           {/* Green Mix */}
@@ -220,22 +255,22 @@ export default function Home() {
               <div className="relative grid md:grid-cols-4 gap-0 p-12 items-start">
                 {/* Title */}
                 <div className="md:col-span-1 pr-8">
-                  <h4 className="text-5xl font-light mb-4" style={{ color: 'var(--dark-blue)' }}>Green Mix</h4>
-                  <p className="text-lg text-[var(--dark-gray-alt)] font-light mb-4">Natural Detox Boost</p>
+                  <h4 className="text-5xl font-light mb-4" style={{ color: 'var(--dark-blue)' }}>{t.products.greenMix.title}</h4>
+                  <p className="text-lg text-[var(--dark-gray-alt)] font-light mb-4">{t.products.greenMix.tagline}</p>
                   <p className="text-sm text-[var(--dark-gray)] font-light leading-relaxed">
-                    Natural immunity support with no sugar and no additives. Powerful detox effect with natural vitamin C.
+                    {t.products.greenMix.description}
                   </p>
                 </div>
 
                 {/* Benefits */}
                 <div className="p-8 border-l border-gray-200">
-                  <h5 className="text-sm font-medium mb-4 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>Benefits</h5>
+                  <h5 className="text-sm font-medium mb-4 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.benefits}</h5>
                   <div className="space-y-2">
                     {[
-                      'Detox effect with edema reduction',
-                      'Natural vitamin C for immunity',
-                      'Fiber for digestive support',
-                      'Low calorie, antioxidant-rich'
+                      t.products.greenMix.benefit1,
+                      t.products.greenMix.benefit2,
+                      t.products.greenMix.benefit3,
+                      t.products.greenMix.benefit4
                     ].map((benefit) => (
                       <div key={benefit} className="flex gap-2 text-xs text-[var(--dark-gray-alt)]">
                         <span className="flex-shrink-0 mt-1 w-1 h-1 rounded-full" style={{ backgroundColor: 'var(--dark-blue)' }}></span>
@@ -247,17 +282,17 @@ export default function Home() {
 
                 {/* Ingredients */}
                 <div className="p-8 border-l border-gray-200">
-                  <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>Ingredients</h5>
+                  <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.ingredients}</h5>
                   <p className="text-sm text-[var(--dark-gray)] font-light leading-relaxed">
-                    Green Apple • Spinach • Lemon • Ginger • Cucumber • Parsley • Natural Plant Fiber
+                    {t.products.greenMix.ingredients}
                   </p>
                 </div>
 
                 {/* Usage */}
                 <div className="p-8 border-l border-gray-200">
-                  <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>Usage</h5>
+                  <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.usage}</h5>
                   <p className="text-sm text-[var(--dark-gray)] font-light leading-relaxed">
-                    Mix 15g sachet with 250ml hot or cold water
+                    {t.products.greenMix.usage}
                   </p>
                 </div>
               </div>
@@ -271,22 +306,22 @@ export default function Home() {
               <div className="relative grid md:grid-cols-4 gap-0 p-12 items-start">
                 {/* Title */}
                 <div className="md:col-span-1 pr-8">
-                  <h4 className="text-5xl font-light mb-4" style={{ color: 'var(--dark-blue)' }}>Red Mix</h4>
-                  <p className="text-lg text-[var(--dark-gray-alt)] font-light mb-4">Immunity Powerhouse</p>
+                  <h4 className="text-5xl font-light mb-4" style={{ color: 'var(--dark-blue)' }}>{t.products.redMix.title}</h4>
+                  <p className="text-lg text-[var(--dark-gray-alt)] font-light mb-4">{t.products.redMix.tagline}</p>
                   <p className="text-sm text-[var(--dark-gray)] font-light leading-relaxed">
-                    Powerful antioxidant blend to strengthen the immune system with naturally freeze-dried ingredients.
+                    {t.products.redMix.description}
                   </p>
                 </div>
 
                 {/* Benefits */}
                 <div className="p-8 border-l border-gray-200">
-                  <h5 className="text-sm font-medium mb-4 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>Benefits</h5>
+                  <h5 className="text-sm font-medium mb-4 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.benefits}</h5>
                   <div className="space-y-2">
                     {[
-                      'Rich in antioxidants',
-                      'Strengthens immune system',
-                      'Natural vitamin and mineral source',
-                      'Supports cardiovascular health'
+                      t.products.redMix.benefit1,
+                      t.products.redMix.benefit2,
+                      t.products.redMix.benefit3,
+                      t.products.redMix.benefit4
                     ].map((benefit) => (
                       <div key={benefit} className="flex gap-2 text-xs text-[var(--dark-gray-alt)]">
                         <span className="flex-shrink-0 mt-1 w-1 h-1 rounded-full" style={{ backgroundColor: 'var(--dark-blue)' }}></span>
@@ -298,17 +333,17 @@ export default function Home() {
 
                 {/* Ingredients */}
                 <div className="p-8 border-l border-gray-200">
-                  <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>Ingredients</h5>
+                  <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.ingredients}</h5>
                   <p className="text-sm text-[var(--dark-gray)] font-light leading-relaxed">
-                    Beet • Carrot • Apple • Pomegranate
+                    {t.products.redMix.ingredients}
                   </p>
                 </div>
 
                 {/* Usage */}
                 <div className="p-8 border-l border-gray-200">
-                  <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>Usage</h5>
+                  <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.usage}</h5>
                   <p className="text-sm text-[var(--dark-gray)] font-light leading-relaxed">
-                    Weekly box (7 sachets)
+                    {t.products.redMix.usage}
                   </p>
                 </div>
               </div>
@@ -317,30 +352,30 @@ export default function Home() {
 
           {/* Children's Products */}
           <div className="mb-20">
-            <h3 className="text-4xl md:text-5xl font-light mb-6 text-center" style={{ color: 'var(--dark-blue)' }}>Age-Specific Children's Mix Series</h3>
+            <h3 className="text-4xl md:text-5xl font-light mb-6 text-center" style={{ color: 'var(--dark-blue)' }}>{t.products.kidsTitle}</h3>
             <p className="text-center text-[var(--dark-gray-alt)] font-light max-w-3xl mx-auto mb-16">
-              Designed based on nutritional needs of each age group and which plants contain these nutrients. While we target specific age groups, everyone can use all products.
+              {t.products.kidsSubtitle}
             </p>
             {/* Children's Mix (Ages 4-7) */}
             <div className="product-box relative mb-16 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-yellow-200 via-amber-100 to-orange-100"></div>
               <div className="relative grid md:grid-cols-4 gap-0 p-12 items-start">
                 <div className="md:col-span-1 pr-8">
-                  <h4 className="text-5xl font-light mb-4" style={{ color: 'var(--dark-blue)' }}>Children's Mix</h4>
-                  <p className="text-lg text-[var(--dark-gray-alt)] font-light mb-2">Ages 4-7</p>
-                  <p className="text-base text-[var(--dark-gray-alt)] font-light mb-4">Growth & Immunity Focus</p>
+                  <h4 className="text-5xl font-light mb-4" style={{ color: 'var(--dark-blue)' }}>{t.products.childrenMix.title}</h4>
+                  <p className="text-lg text-[var(--dark-gray-alt)] font-light mb-2">{t.products.childrenMix.ages}</p>
+                  <p className="text-base text-[var(--dark-gray-alt)] font-light mb-4">{t.products.childrenMix.tagline}</p>
                   <p className="text-sm text-[var(--dark-gray)] font-light leading-relaxed">
-                    Appeals to young children's preference for sweet flavors. Fruits like grape, orange, peach, and banana offer both delicious taste and energy-providing carbohydrates.
+                    {t.products.childrenMix.description}
                   </p>
                 </div>
                 <div className="p-8 border-l border-gray-200">
-                  <h5 className="text-sm font-medium mb-4 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>Benefits</h5>
+                  <h5 className="text-sm font-medium mb-4 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.benefits}</h5>
                   <div className="space-y-2">
                     {[
-                      'Essential vitamins (C, A) and minerals (potassium)',
-                      'Digestive support with fiber',
-                      'Energy support for preschool activities',
-                      'Sweet profile increases acceptance'
+                      t.products.childrenMix.benefit1,
+                      t.products.childrenMix.benefit2,
+                      t.products.childrenMix.benefit3,
+                      t.products.childrenMix.benefit4
                     ].map((benefit) => (
                       <div key={benefit} className="flex gap-2 text-xs text-[var(--dark-gray-alt)]">
                         <span className="flex-shrink-0 mt-1 w-1 h-1 rounded-full" style={{ backgroundColor: 'var(--dark-blue)' }}></span>
@@ -350,15 +385,15 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="p-8 border-l border-gray-200">
-                  <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>Ingredients</h5>
+                  <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.ingredients}</h5>
                   <p className="text-sm text-[var(--dark-gray)] font-light leading-relaxed">
-                    Grape • Orange • Peach • Banana • Orange Peel
+                    {t.products.childrenMix.ingredients}
                   </p>
                 </div>
                 <div className="p-8 border-l border-gray-200">
-                  <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>Usage</h5>
+                  <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.usage}</h5>
                   <p className="text-sm text-[var(--dark-gray)] font-light leading-relaxed">
-                    Mix sachet with water or add to yogurt
+                    {t.products.childrenMix.usage}
                   </p>
                 </div>
               </div>
@@ -369,21 +404,21 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-200 via-teal-100 to-blue-100"></div>
               <div className="relative grid md:grid-cols-4 gap-0 p-12 items-start">
                 <div className="md:col-span-1 pr-8">
-                  <h4 className="text-5xl font-light mb-4" style={{ color: 'var(--dark-blue)' }}>Junior Mix</h4>
-                  <p className="text-lg text-[var(--dark-gray-alt)] font-light mb-2">Ages 8-12</p>
-                  <p className="text-base text-[var(--dark-gray-alt)] font-light mb-4">Mental Development & School Performance</p>
+                  <h4 className="text-5xl font-light mb-4" style={{ color: 'var(--dark-blue)' }}>{t.products.juniorMix.title}</h4>
+                  <p className="text-lg text-[var(--dark-gray-alt)] font-light mb-2">{t.products.juniorMix.ages}</p>
+                  <p className="text-base text-[var(--dark-gray-alt)] font-light mb-4">{t.products.juniorMix.tagline}</p>
                   <p className="text-sm text-[var(--dark-gray)] font-light leading-relaxed">
-                    Targets the transition from early childhood to pre-teen. Apple and banana maintain sweetness, while carrot and lemon strengthen immunity.
+                    {t.products.juniorMix.description}
                   </p>
                 </div>
                 <div className="p-8 border-l border-gray-200">
-                  <h5 className="text-sm font-medium mb-4 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>Benefits</h5>
+                  <h5 className="text-sm font-medium mb-4 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.benefits}</h5>
                   <div className="space-y-2">
                     {[
-                      'Energy for rapid growth (carbohydrates)',
-                      'Vitamins (C, A) supporting school performance',
-                      'Develops palate with slightly acidic tastes',
-                      'More complex profile for dietary diversity'
+                      t.products.juniorMix.benefit1,
+                      t.products.juniorMix.benefit2,
+                      t.products.juniorMix.benefit3,
+                      t.products.juniorMix.benefit4
                     ].map((benefit) => (
                       <div key={benefit} className="flex gap-2 text-xs text-[var(--dark-gray-alt)]">
                         <span className="flex-shrink-0 mt-1 w-1 h-1 rounded-full" style={{ backgroundColor: 'var(--dark-blue)' }}></span>
@@ -393,15 +428,15 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="p-8 border-l border-gray-200">
-                  <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>Ingredients</h5>
+                  <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.ingredients}</h5>
                   <p className="text-sm text-[var(--dark-gray)] font-light leading-relaxed">
-                    Apple • Banana • Carrot • Lemon • Orange Peel
+                    {t.products.juniorMix.ingredients}
                   </p>
                 </div>
                 <div className="p-8 border-l border-gray-200">
-                  <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>Usage</h5>
+                  <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.usage}</h5>
                   <p className="text-sm text-[var(--dark-gray)] font-light leading-relaxed">
-                    Mix sachet with water or add to smoothies
+                    {t.products.juniorMix.usage}
                   </p>
                 </div>
               </div>
@@ -412,21 +447,21 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-200 via-purple-100 to-violet-100"></div>
               <div className="relative grid md:grid-cols-4 gap-0 p-12 items-start">
                 <div className="md:col-span-1 pr-8">
-                  <h4 className="text-5xl font-light mb-4" style={{ color: 'var(--dark-blue)' }}>Youth Mix</h4>
-                  <p className="text-lg text-[var(--dark-gray-alt)] font-light mb-2">Ages 13-18</p>
-                  <p className="text-base text-[var(--dark-gray-alt)] font-light mb-4">Energy, Concentration & Active Life Support</p>
+                  <h4 className="text-5xl font-light mb-4" style={{ color: 'var(--dark-blue)' }}>{t.products.youthMix.title}</h4>
+                  <p className="text-lg text-[var(--dark-gray-alt)] font-light mb-2">{t.products.youthMix.ages}</p>
+                  <p className="text-base text-[var(--dark-gray-alt)] font-light mb-4">{t.products.youthMix.tagline}</p>
                   <p className="text-sm text-[var(--dark-gray)] font-light leading-relaxed">
-                    Intensive nutritional profile suitable for adolescence. Strawberry and grape support memory with antioxidants.
+                    {t.products.youthMix.description}
                   </p>
                 </div>
                 <div className="p-8 border-l border-gray-200">
-                  <h5 className="text-sm font-medium mb-4 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>Benefits</h5>
+                  <h5 className="text-sm font-medium mb-4 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.benefits}</h5>
                   <div className="space-y-2">
                     {[
-                      'Focus-enhancing antioxidants (flavonoids)',
-                      'Cognitive support with omega-3',
-                      'Long-lasting energy',
-                      'Balanced mix for independent nutrition habits'
+                      t.products.youthMix.benefit1,
+                      t.products.youthMix.benefit2,
+                      t.products.youthMix.benefit3,
+                      t.products.youthMix.benefit4
                     ].map((benefit) => (
                       <div key={benefit} className="flex gap-2 text-xs text-[var(--dark-gray-alt)]">
                         <span className="flex-shrink-0 mt-1 w-1 h-1 rounded-full" style={{ backgroundColor: 'var(--dark-blue)' }}></span>
@@ -436,15 +471,15 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="p-8 border-l border-gray-200">
-                  <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>Ingredients</h5>
+                  <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.ingredients}</h5>
                   <p className="text-sm text-[var(--dark-gray)] font-light leading-relaxed">
-                    Strawberry • Grape • Kiwi • Lemon • Banana • Flaxseed
+                    {t.products.youthMix.ingredients}
                   </p>
                 </div>
                 <div className="p-8 border-l border-gray-200">
-                  <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>Usage</h5>
+                  <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.usage}</h5>
                   <p className="text-sm text-[var(--dark-gray)] font-light leading-relaxed">
-                    Mix sachet with water or sports drinks
+                    {t.products.youthMix.usage}
                   </p>
                 </div>
               </div>
@@ -453,18 +488,18 @@ export default function Home() {
 
           {/* Additional Products */}
           <div>
-            <h3 className="text-4xl md:text-5xl font-light mb-16 text-center" style={{ color: 'var(--dark-blue)' }}>Additional Product Lines</h3>
+            <h3 className="text-4xl md:text-5xl font-light mb-16 text-center" style={{ color: 'var(--dark-blue)' }}>{t.products.additionalTitle}</h3>
             <div className="grid md:grid-cols-2 gap-12">
               <div className="bg-[var(--light-gray)] rounded-lg p-10 border border-gray-100 transition-all duration-300 hover:shadow-lg">
-                <h4 className="text-2xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>Freeze-Dried Fruit Slices</h4>
+                <h4 className="text-2xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>{t.products.fruitSlices.title}</h4>
                 <p className="text-base text-[var(--dark-gray)] font-light leading-relaxed">
-                  Healthy snack alternatives in convenient sachets. Classic freeze-dried fruit slices offering a nutritious and practical snacking option.
+                  {t.products.fruitSlices.description}
                 </p>
               </div>
               <div className="bg-[var(--light-gray)] rounded-lg p-10 border border-gray-100 transition-all duration-300 hover:shadow-lg">
-                <h4 className="text-2xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>Natural Fruit Powders for Food Industry</h4>
+                <h4 className="text-2xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>{t.products.fruitPowders.title}</h4>
                 <p className="text-base text-[var(--dark-gray)] font-light leading-relaxed">
-                  Premium ingredients for the food industry. A natural, healthy alternative instead of chemical or synthetic flavors and colorings.
+                  {t.products.fruitPowders.description}
                 </p>
               </div>
             </div>
@@ -628,11 +663,11 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-16 bg-[var(--dark-blue)] text-white text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-3xl font-bold mb-2">BLENDENCE</h3>
-          <p className="mb-1 opacity-90">Naturally Powerful, Perfectly Balanced</p>
-          <p className="text-sm opacity-70 mb-6">BUGE GIDA A.Ş.</p>
-          <p className="opacity-80 mb-2">100% Natural • 100% Vegan • No Added Sugar</p>
-          <p className="text-sm opacity-60">&copy; 2024 BUGE GIDA A.Ş. All rights reserved.</p>
+          <h3 className="text-3xl font-bold mb-2">{t.footer.brand}</h3>
+          <p className="mb-1 opacity-90">{t.footer.tagline}</p>
+          <p className="text-sm opacity-70 mb-6">{t.footer.company}</p>
+          <p className="opacity-80 mb-2">{t.footer.badges}</p>
+          <p className="text-sm opacity-60">{t.footer.copyright}</p>
         </div>
       </footer>
 

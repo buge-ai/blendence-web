@@ -1,0 +1,266 @@
+{
+  "en": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "products": "Products",
+      "technology": "Technology",
+      "quality": "Quality",
+      "contact": "Contact"
+    },
+    "hero": {
+      "subtitle": "Turkey's First 100% Freeze-Dried Nutritional Mix Brand",
+      "title": "Naturally Powerful, Perfectly Balanced",
+      "natural": "100% Natural",
+      "vegan": "100% Vegan",
+      "noSugar": "No Added Sugar",
+      "description": "Dedicated to providing natural, functional, and safe products for consumers of all ages. Our mission is to deliver wholesome nutrition, ensuring that everyone can enjoy the health benefits of high-quality ingredients without any additives or preservatives.",
+      "cta": "Discover Our Products"
+    },
+    "about": {
+      "title": "Innovating Natural Nutrition",
+      "subtitle": "BUGE GIDA A.Ş. - Leading the freeze-dried revolution",
+      "founded": "Founded 2024",
+      "foundedDesc": "Located in Trakya Teknopark, Edirne, with state-of-the-art production facilities",
+      "team": "Expert Team",
+      "teamDesc": "Founded by 2 food engineers (1 Assoc. Prof., 1 PhD) and 1 control automation engineer",
+      "capacity": "Production Capacity",
+      "capacityDesc": "2,000-2,200 sachets daily with advanced freeze-drying technology",
+      "vision": "Global Vision",
+      "visionDesc": "Expanding to 3 new EU markets with EUREKA Innowwide feasibility project"
+    },
+    "why": {
+      "title": "Why BLENDENCE?",
+      "subtitle": "Our competitive edge in the market",
+      "marketLeader": "Market Leader",
+      "marketLeaderDesc": "Turkey's only brand in the 100% freeze-dried mix segment",
+      "advancedTech": "Advanced Technology",
+      "advancedTechDesc": "State-of-the-art freeze drying infrastructure with R&D capabilities",
+      "industrialScale": "Industrial Scale",
+      "industrialScaleDesc": "2,000+ sachets daily production capacity for B2C and B2B markets",
+      "qualityAssurance": "Quality Assurance",
+      "qualityAssuranceDesc": "International certifications and dedicated quality laboratory",
+      "naturalSafe": "Natural & Safe",
+      "naturalSafeDesc": "100% natural, functional products with no additives or preservatives",
+      "sustainability": "Sustainability Focus",
+      "sustainabilityDesc": "Innovation-driven approach with environmental responsibility"
+    },
+    "products": {
+      "title": "Our Product Range",
+      "subtitle": "Our product series includes Green Mix, Red Mix, and Kids Mix, providing natural, functional, and safe options tailored for all age groups and dietary needs.",
+      "greenMix": {
+        "title": "Green Mix",
+        "tagline": "Natural Detox Boost",
+        "description": "Natural immunity support with no sugar and no additives. Powerful detox effect with natural vitamin C.",
+        "benefit1": "Detox effect with edema reduction",
+        "benefit2": "Natural vitamin C for immunity",
+        "benefit3": "Fiber for digestive support",
+        "benefit4": "Low calorie, antioxidant-rich",
+        "ingredients": "Green Apple • Spinach • Lemon • Ginger • Cucumber • Parsley • Natural Plant Fiber",
+        "usage": "Mix 15g sachet with 250ml hot or cold water"
+      },
+      "redMix": {
+        "title": "Red Mix",
+        "tagline": "Immunity Powerhouse",
+        "description": "Powerful antioxidant blend to strengthen the immune system with naturally freeze-dried ingredients.",
+        "benefit1": "Rich in antioxidants",
+        "benefit2": "Strengthens immune system",
+        "benefit3": "Natural vitamin and mineral source",
+        "benefit4": "Supports cardiovascular health",
+        "ingredients": "Beet • Carrot • Apple • Pomegranate",
+        "usage": "Weekly box (7 sachets)"
+      },
+      "kidsTitle": "Age-Specific Children's Mix Series",
+      "kidsSubtitle": "Designed based on nutritional needs of each age group and which plants contain these nutrients. While we target specific age groups, everyone can use all products.",
+      "childrenMix": {
+        "title": "Children's Mix",
+        "ages": "Ages 4-7",
+        "tagline": "Growth & Immunity Focus",
+        "description": "Appeals to young children's preference for sweet flavors. Fruits like grape, orange, peach, and banana offer both delicious taste and energy-providing carbohydrates.",
+        "benefit1": "Essential vitamins (C, A) and minerals (potassium)",
+        "benefit2": "Digestive support with fiber",
+        "benefit3": "Energy support for preschool activities",
+        "benefit4": "Sweet profile increases acceptance",
+        "ingredients": "Grape • Orange • Peach • Banana • Orange Peel",
+        "usage": "Mix sachet with water or add to yogurt"
+      },
+      "juniorMix": {
+        "title": "Junior Mix",
+        "ages": "Ages 8-12",
+        "tagline": "Mental Development & School Performance",
+        "description": "Targets the transition from early childhood to pre-teen. Apple and banana maintain sweetness, while carrot and lemon strengthen immunity.",
+        "benefit1": "Energy for rapid growth (carbohydrates)",
+        "benefit2": "Vitamins (C, A) supporting school performance",
+        "benefit3": "Develops palate with slightly acidic tastes",
+        "benefit4": "More complex profile for dietary diversity",
+        "ingredients": "Apple • Banana • Carrot • Lemon • Orange Peel",
+        "usage": "Mix sachet with water or add to smoothies"
+      },
+      "youthMix": {
+        "title": "Youth Mix",
+        "ages": "Ages 13-18",
+        "tagline": "Energy, Concentration & Active Life Support",
+        "description": "Intensive nutritional profile suitable for adolescence. Strawberry and grape support memory with antioxidants.",
+        "benefit1": "Focus-enhancing antioxidants (flavonoids)",
+        "benefit2": "Cognitive support with omega-3",
+        "benefit3": "Long-lasting energy",
+        "benefit4": "Balanced mix for independent nutrition habits",
+        "ingredients": "Strawberry • Grape • Kiwi • Lemon • Banana • Flaxseed",
+        "usage": "Mix sachet with water or sports drinks"
+      },
+      "additionalTitle": "Additional Product Lines",
+      "fruitSlices": {
+        "title": "Freeze-Dried Fruit Slices",
+        "description": "Healthy snack alternatives in convenient sachets. Classic freeze-dried fruit slices offering a nutritious and practical snacking option."
+      },
+      "fruitPowders": {
+        "title": "Natural Fruit Powders for Food Industry",
+        "description": "Premium ingredients for the food industry. A natural, healthy alternative instead of chemical or synthetic flavors and colorings."
+      },
+      "labels": {
+        "benefits": "Benefits",
+        "ingredients": "Ingredients",
+        "usage": "Usage"
+      }
+    },
+    "footer": {
+      "brand": "BLENDENCE",
+      "tagline": "Naturally Powerful, Perfectly Balanced",
+      "company": "BUGE GIDA A.Ş.",
+      "badges": "100% Natural • 100% Vegan • No Added Sugar",
+      "copyright": "© 2024 BUGE GIDA A.Ş. All rights reserved."
+    }
+  },
+  "tr": {
+    "nav": {
+      "home": "Ana Sayfa",
+      "about": "Hakkımızda",
+      "products": "Ürünler",
+      "technology": "Teknoloji",
+      "quality": "Kalite",
+      "contact": "İletişim"
+    },
+    "hero": {
+      "subtitle": "Türkiye'nin İlk %100 Dondurarak Kurutulmuş Beslenme Karışımı Markası",
+      "title": "Doğal Gücü, Mükemmel Dengede",
+      "natural": "%100 Doğal",
+      "vegan": "%100 Vegan",
+      "noSugar": "Şeker Katkısız",
+      "description": "Her yaştan tüketici için doğal, fonksiyonel ve güvenli ürünler sunmaya kendini adamış. Misyonumuz, herkesin katkı maddesi ve koruyucu içermeyen yüksek kaliteli içeriklerin sağlık faydalarından yararlanabilmesini sağlamaktır.",
+      "cta": "Ürünlerimizi Keşfedin"
+    },
+    "about": {
+      "title": "Doğal Beslenmede İnovasyon",
+      "subtitle": "BUGE GIDA A.Ş. - Dondurarak kurutma devriminin öncüsü",
+      "founded": "2024 Yılında Kuruldu",
+      "foundedDesc": "Son teknoloji üretim tesisleriyle Edirne, Trakya Teknopark'ta yer alıyor",
+      "team": "Uzman Kadro",
+      "teamDesc": "2 gıda mühendisi (1 Doç. Dr., 1 Dr.) ve 1 kontrol otomasyon mühendisi tarafından kuruldu",
+      "capacity": "Üretim Kapasitesi",
+      "capacityDesc": "İleri dondurarak kurutma teknolojisi ile günlük 2.000-2.200 saşe",
+      "vision": "Küresel Vizyon",
+      "visionDesc": "EUREKA Innowwide fizibilite projesi ile 3 yeni AB pazarına açılıyor"
+    },
+    "why": {
+      "title": "Neden BLENDENCE?",
+      "subtitle": "Pazardaki rekabet avantajımız",
+      "marketLeader": "Pazar Lideri",
+      "marketLeaderDesc": "Türkiye'nin %100 dondurarak kurutulmuş karışım segmentindeki tek markası",
+      "advancedTech": "İleri Teknoloji",
+      "advancedTechDesc": "Ar-Ge yetenekleriyle son teknoloji dondurarak kurutma altyapısı",
+      "industrialScale": "Endüstriyel Ölçek",
+      "industrialScaleDesc": "B2C ve B2B pazarları için günlük 2.000+ saşe üretim kapasitesi",
+      "qualityAssurance": "Kalite Güvencesi",
+      "qualityAssuranceDesc": "Uluslararası sertifikalar ve özel kalite laboratuvarı",
+      "naturalSafe": "Doğal ve Güvenli",
+      "naturalSafeDesc": "Katkı maddesi ve koruyucu içermeyen %100 doğal, fonksiyonel ürünler",
+      "sustainability": "Sürdürülebilirlik Odağı",
+      "sustainabilityDesc": "Çevresel sorumlulukla inovasyon odaklı yaklaşım"
+    },
+    "products": {
+      "title": "Ürün Yelpazemiz",
+      "subtitle": "Ürün serimiz Green Mix, Red Mix ve Kids Mix'i içermekte olup, tüm yaş grupları ve beslenme ihtiyaçları için doğal, fonksiyonel ve güvenli seçenekler sunmaktadır.",
+      "greenMix": {
+        "title": "Green Mix",
+        "tagline": "Doğal Detoks Desteği",
+        "description": "Şeker ve katkı maddesi içermeyen doğal bağışıklık desteği. Doğal C vitamini ile güçlü detoks etkisi.",
+        "benefit1": "Ödem azaltıcı detoks etkisi",
+        "benefit2": "Bağışıklık için doğal C vitamini",
+        "benefit3": "Sindirim desteği için lif",
+        "benefit4": "Düşük kalorili, antioksidan açısından zengin",
+        "ingredients": "Yeşil Elma • Ispanak • Limon • Zencefil • Salatalık • Maydanoz • Doğal Bitki Lifi",
+        "usage": "15g saşeyi 250ml sıcak veya soğuk su ile karıştırın"
+      },
+      "redMix": {
+        "title": "Red Mix",
+        "tagline": "Bağışıklık Gücü",
+        "description": "Doğal olarak dondurarak kurutulmuş içeriklerle bağışıklık sistemini güçlendiren antioksidan karışımı.",
+        "benefit1": "Antioksidan açısından zengin",
+        "benefit2": "Bağışıklık sistemini güçlendirir",
+        "benefit3": "Doğal vitamin ve mineral kaynağı",
+        "benefit4": "Kardiyovasküler sağlığı destekler",
+        "ingredients": "Pancar • Havuç • Elma • Nar",
+        "usage": "Haftalık kutu (7 saşe)"
+      },
+      "kidsTitle": "Yaşa Özel Çocuk Karışım Serisi",
+      "kidsSubtitle": "Her yaş grubunun beslenme ihtiyaçlarına ve bu besinleri içeren bitkilere göre tasarlanmıştır. Belirli yaş gruplarını hedeflese de herkes tüm ürünleri kullanabilir.",
+      "childrenMix": {
+        "title": "Çocuk Karışımı",
+        "ages": "4-7 Yaş",
+        "tagline": "Büyüme ve Bağışıklık Odağı",
+        "description": "Küçük çocukların tatlı lezzetlere olan tercihine hitap eder. Üzüm, portakal, şeftali ve muz gibi meyveler hem lezzetli tat hem de enerji sağlayan karbonhidratlar sunar.",
+        "benefit1": "Temel vitaminler (C, A) ve mineraller (potasyum)",
+        "benefit2": "Lif ile sindirim desteği",
+        "benefit3": "Okul öncesi aktiviteler için enerji desteği",
+        "benefit4": "Tatlı profil kabul edilebilirliği artırır",
+        "ingredients": "Üzüm • Portakal • Şeftali • Muz • Portakal Kabuğu",
+        "usage": "Saşeyi su ile karıştırın veya yoğurda ekleyin"
+      },
+      "juniorMix": {
+        "title": "Junior Mix",
+        "ages": "8-12 Yaş",
+        "tagline": "Zihinsel Gelişim ve Okul Performansı",
+        "description": "Erken çocukluktan ergenlik öncesine geçişi hedefler. Elma ve muz tatlılığı korurken, havuç ve limon bağışıklığı güçlendirir.",
+        "benefit1": "Hızlı büyüme için enerji (karbonhidratlar)",
+        "benefit2": "Okul performansını destekleyen vitaminler (C, A)",
+        "benefit3": "Hafif asidik tatlarla damak gelişimi",
+        "benefit4": "Beslenme çeşitliliği için daha karmaşık profil",
+        "ingredients": "Elma • Muz • Havuç • Limon • Portakal Kabuğu",
+        "usage": "Saşeyi su ile karıştırın veya smoothie'ye ekleyin"
+      },
+      "youthMix": {
+        "title": "Youth Mix",
+        "ages": "13-18 Yaş",
+        "tagline": "Enerji, Konsantrasyon ve Aktif Yaşam Desteği",
+        "description": "Ergenlik dönemine uygun yoğun beslenme profili. Çilek ve üzüm antioksidanlarla hafızayı destekler.",
+        "benefit1": "Odaklanmayı artıran antioksidanlar (flavonoidler)",
+        "benefit2": "Omega-3 ile bilişsel destek",
+        "benefit3": "Uzun süreli enerji",
+        "benefit4": "Bağımsız beslenme alışkanlıkları için dengeli karışım",
+        "ingredients": "Çilek • Üzüm • Kivi • Limon • Muz • Keten Tohumu",
+        "usage": "Saşeyi su veya spor içecekleri ile karıştırın"
+      },
+      "additionalTitle": "Ek Ürün Serileri",
+      "fruitSlices": {
+        "title": "Dondurarak Kurutulmuş Meyve Dilimleri",
+        "description": "Pratik saşelerde sağlıklı atıştırmalık alternatifleri. Besleyici ve pratik bir atıştırmalık seçeneği sunan klasik dondurarak kurutulmuş meyve dilimleri."
+      },
+      "fruitPowders": {
+        "title": "Gıda Endüstrisi için Doğal Meyve Tozları",
+        "description": "Gıda endüstrisi için premium içerikler. Kimyasal veya sentetik aroma ve renklendirici yerine doğal, sağlıklı bir alternatif."
+      },
+      "labels": {
+        "benefits": "Faydaları",
+        "ingredients": "İçerikler",
+        "usage": "Kullanım"
+      }
+    },
+    "footer": {
+      "brand": "BLENDENCE",
+      "tagline": "Doğal Gücü, Mükemmel Dengede",
+      "company": "BUGE GIDA A.Ş.",
+      "badges": "%100 Doğal • %100 Vegan • Şeker Katkısız",
+      "copyright": "© 2024 BUGE GIDA A.Ş. Tüm hakları saklıdır."
+    }
+  }
+}
