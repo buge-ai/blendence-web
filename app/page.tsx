@@ -17,10 +17,10 @@ export default function Home() {
     <>
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/98 shadow-lg' : 'bg-white/95 shadow-md'}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <div className="text-2xl font-bold tracking-wide" style={{ color: 'var(--dark-blue)' }}>
-              BLENDENCE
+            <div className="flex-shrink-0">
+              <img src="/logo.png" alt="BLENDENCE" className="h-12 w-auto" />
             </div>
             <ul className="hidden md:flex gap-8">
               {['Home', 'About', 'Technology', 'Products', 'Quality', 'Contact'].map((item) => (
@@ -48,12 +48,6 @@ export default function Home() {
           <ImageCarousel />
         </div>
 
-        <div className="absolute bottom-0 left-0 w-full h-32 md:h-48 lg:h-64 z-20 hidden md:block">
-          <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
-            <path fill="#ffffff" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,112C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-          </svg>
-        </div>
-
         <div className="relative z-10 w-full h-full">
           <div className="w-full px-8 sm:px-12 lg:px-16">
             {/* Content - Left side, using full left area */}
@@ -62,7 +56,7 @@ export default function Home() {
                 Turkey's First 100% Freeze-Dried Nutritional Mix Brand
               </p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal mb-6" style={{ color: 'white' }}>
-                Naturally Powerful,<br />Perfectly Balanced
+                Naturally Powerful, Perfectly Balanced
               </h1>
               <div className="flex gap-2 md:gap-3 mb-8">
                 {['100% Natural', '100% Vegan', 'No Added Sugar'].map((badge) => (
@@ -87,7 +81,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 bg-[var(--light-gray)]">
+      <section id="about" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: 'var(--dark-blue)' }}>Innovating Natural Nutrition</h2>
@@ -104,9 +98,9 @@ export default function Home() {
               ></div>
               <div className="absolute inset-0 bg-gradient-to-l from-black/90 via-black/70 to-transparent"></div>
               <div className="absolute inset-0 flex items-center justify-end p-8 md:p-12">
-                <div className="text-right md:text-right text-white max-w-md">
-                  <h3 className="text-2xl font-bold mb-3 drop-shadow-lg">Founded 2024</h3>
-                  <p className="text-sm opacity-95 drop-shadow-md">Located in Trakya Teknopark, Edirne, with state-of-the-art production facilities</p>
+                <div className="text-right md:text-right max-w-md">
+                  <h3 className="text-3xl md:text-4xl font-bold mb-4 drop-shadow-lg text-white">Founded 2024</h3>
+                  <p className="text-base md:text-lg opacity-95 drop-shadow-md text-white">Located in Trakya Teknopark, Edirne, with state-of-the-art production facilities</p>
                 </div>
               </div>
             </div>
@@ -119,9 +113,9 @@ export default function Home() {
               ></div>
               <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent"></div>
               <div className="absolute inset-0 flex items-center justify-start p-8 md:p-12">
-                <div className="text-left text-white max-w-md">
-                  <h3 className="text-2xl font-bold mb-3 drop-shadow-lg">Expert Team</h3>
-                  <p className="text-sm opacity-95 drop-shadow-md">Founded by 2 food engineers (1 Assoc. Prof., 1 PhD) and 1 control automation engineer</p>
+                <div className="text-left max-w-md">
+                  <h3 className="text-3xl md:text-4xl font-bold mb-4 drop-shadow-lg text-white">Expert Team</h3>
+                  <p className="text-base md:text-lg opacity-95 drop-shadow-md text-white">Founded by 2 food engineers (1 Assoc. Prof., 1 PhD) and 1 control automation engineer</p>
                 </div>
               </div>
             </div>
@@ -134,9 +128,9 @@ export default function Home() {
               ></div>
               <div className="absolute inset-0 bg-gradient-to-l from-black/90 via-black/70 to-transparent"></div>
               <div className="absolute inset-0 flex items-center justify-end p-8 md:p-12">
-                <div className="text-right md:text-right text-white max-w-md">
-                  <h3 className="text-2xl font-bold mb-3 drop-shadow-lg">Global Vision</h3>
-                  <p className="text-sm opacity-95 drop-shadow-md">Expanding to 3 new EU markets with EUREKA Innowwide feasibility project</p>
+                <div className="text-right md:text-right max-w-md">
+                  <h3 className="text-3xl md:text-4xl font-bold mb-4 drop-shadow-lg text-white">Global Vision</h3>
+                  <p className="text-base md:text-lg opacity-95 drop-shadow-md text-white">Expanding to 3 new EU markets with EUREKA Innowwide feasibility project</p>
                 </div>
               </div>
             </div>
@@ -149,9 +143,9 @@ export default function Home() {
               ></div>
               <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent"></div>
               <div className="absolute inset-0 flex items-center justify-start p-8 md:p-12">
-                <div className="text-left text-white max-w-md">
-                  <h3 className="text-2xl font-bold mb-3 drop-shadow-lg">Production Capacity</h3>
-                  <p className="text-sm opacity-95 drop-shadow-md">2,000-2,200 sachets daily with advanced freeze-drying technology</p>
+                <div className="text-left max-w-md">
+                  <h3 className="text-3xl md:text-4xl font-bold mb-4 drop-shadow-lg text-white">Production Capacity</h3>
+                  <p className="text-base md:text-lg opacity-95 drop-shadow-md text-white">2,000-2,200 sachets daily with advanced freeze-drying technology</p>
                 </div>
               </div>
             </div>
@@ -507,14 +501,23 @@ function KidProductCard({ icon, title, tagline, description, ingredients, benefi
 // Image Carousel Component - Single Layer from Right
 function ImageCarousel() {
   const backgroundImages = [
+    '/background/apple.jpg',
     '/background/banana.jpg',
-    '/background/strawberry.jpg',
-    '/background/kiwi.jpg',
-    '/background/orange.jpg',
-    '/background/peach.jpg',
-    '/background/spinach.jpg',
-    '/background/flaxseeds.jpg',
+    '/background/beet.jpg',
+    '/background/carrot.jpg',
+    '/background/cucumber.jpg',
     '/background/fig.jpg',
+    '/background/flaxseeds.jpg',
+    '/background/ginger.jpg',
+    '/background/greenapple.jpg',
+    '/background/kiwi.jpg',
+    '/background/lemon.jpg',
+    '/background/orange.jpg',
+    '/background/parsley.jpg',
+    '/background/peach.jpg',
+    '/background/pomogranete.jpg',
+    '/background/spinach.jpg',
+    '/background/strawberry.jpg',
   ];
 
   const thumbnails = useMemo(() => {
