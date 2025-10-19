@@ -19,7 +19,7 @@
     },
     "about": {
       "title": "Innovating Natural Nutrition",
-      "subtitle": "BUGE GIDA A.Ş. - Leading the freeze-dried revolution",
+      "subtitle": "Our brand philosophy revolves around the concept of natural balance. By combining advanced freeze-drying technology with nature's best ingredients, we create products that not only taste great but also empower healthier lifestyles.\nBlendence is committed to sustainability, quality, and innovation, positioning us at the forefront of the food tech industry.",
       "founded": "Founded 2024",
       "foundedDesc": "Located in Trakya Teknopark, Edirne, with state-of-the-art production facilities",
       "team": "Expert Team",
@@ -28,6 +28,10 @@
       "capacityDesc": "2,000-2,200 sachets daily with advanced freeze-drying technology",
       "vision": "Global Vision",
       "visionDesc": "Expanding to 3 new EU markets with EUREKA Innowwide feasibility project"
+    },
+    "quality": {
+      "title": "Quality & Certifications",
+      "subtitle": "These certifications reflect our commitment to safety and excellence in the food industry."
     },
     "why": {
       "title": "Why BLENDENCE?",
@@ -151,7 +155,7 @@
     },
     "about": {
       "title": "Doğal Beslenmede İnovasyon",
-      "subtitle": "BUGE GIDA A.Ş. - Dondurarak kurutma devriminin öncüsü",
+      "subtitle": "Marka felsefemiz doğal denge kavramı etrafında şekillenir. İleri dondurarak kurutma teknolojisini doğanın en iyi malzemeleriyle birleştirerek, sadece harika bir tada sahip olmakla kalmayıp aynı zamanda daha sağlıklı yaşam tarzlarını destekleyen ürünler yaratıyoruz.\nBlendence, sürdürülebilirlik, kalite ve inovasyona bağlı kalarak kendini gıda teknolojisi endüstrisinin ön saflarında konumlandırmaktadır.",
       "founded": "2024 Yılında Kuruldu",
       "foundedDesc": "Son teknoloji üretim tesisleriyle Edirne, Trakya Teknopark'ta yer alıyor",
       "team": "Uzman Kadro",
@@ -160,6 +164,10 @@
       "capacityDesc": "İleri dondurarak kurutma teknolojisi ile günlük 2.000-2.200 saşe",
       "vision": "Küresel Vizyon",
       "visionDesc": "EUREKA Innowwide fizibilite projesi ile 3 yeni AB pazarına açılıyor"
+    },
+    "quality": {
+      "title": "Kalite ve Sertifikalar",
+      "subtitle": "Bu sertifikalar, gıda endüstrisinde güvenlik ve mükemmeliyete olan bağlılığımızı yansıtmaktadır."
     },
     "why": {
       "title": "Neden BLENDENCE?",

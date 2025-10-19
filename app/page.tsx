@@ -144,7 +144,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>{t.about.title}</h2>
-            <p className="text-xl text-[var(--dark-gray-alt)] font-light max-w-2xl mx-auto">{t.about.subtitle}</p>
+            <p className="text-lg text-[var(--dark-gray-alt)] font-light max-w-6xl mx-auto whitespace-pre-line">{t.about.subtitle}</p>
           </div>
 
           {/* 2x2 Grid with Images */}
@@ -573,7 +573,8 @@ export default function Home() {
       <section id="quality" className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>Quality & Certifications</h2>
+            <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>{t.quality.title}</h2>
+            <p className="text-xl text-[var(--dark-gray-alt)] font-light max-w-2xl mx-auto">{t.quality.subtitle}</p>
           </div>
 
           {/* Current Certifications */}
