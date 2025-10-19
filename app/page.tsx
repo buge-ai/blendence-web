@@ -40,7 +40,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center pt-32 overflow-hidden">
+      <section id="home" className="relative min-h-screen flex items-start pt-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--dark-blue)] via-[var(--dark-blue-alt)] to-[var(--turquoise)]"></div>
 
         {/* Image Carousel - Full Background */}
@@ -54,16 +54,16 @@ export default function Home() {
           </svg>
         </div>
 
-        <div className="relative z-10 w-full h-full flex items-center">
+        <div className="relative z-10 w-full h-full">
           <div className="w-full px-8 sm:px-12 lg:px-16">
             {/* Content - Left side, using full left area */}
             <div className="text-white animate-[fadeInUp_1s_ease]">
+              <p className="text-xl md:text-2xl lg:text-3xl mb-4 opacity-95 font-light max-w-3xl">
+                Turkey's First 100% Freeze-Dried Nutritional Mix Brand
+              </p>
               <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6" style={{ color: 'white' }}>
                 Naturally Powerful,<br />Perfectly Balanced
               </h1>
-              <p className="text-xl md:text-2xl lg:text-3xl mb-8 opacity-95 font-light max-w-3xl">
-                Turkey's First 100% Freeze-Dried Nutritional Mix Brand
-              </p>
               <div className="flex flex-wrap gap-4 mb-12">
                 {['100% Natural', '100% Vegan', 'No Added Sugar'].map((badge) => (
                   <span key={badge} className="px-6 py-2 bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-sm font-medium">
@@ -466,7 +466,7 @@ function ImageCarousel() {
   ];
 
   const thumbnails = useMemo(() => {
-    const thumbnailCount = 20;
+    const thumbnailCount = 80; // 20 columns x 4 rows = 80 images
 
     return Array.from({ length: thumbnailCount }, (_, thumbnailIndex) => {
       const imageIndex = thumbnailIndex % backgroundImages.length;
