@@ -9,7 +9,7 @@
       "contact": "Contact"
     },
     "hero": {
-      "subtitle": "Turkey's First 100% Freeze-Dried Nutritional Mix Brand",
+      "subtitle": "100% Freeze-Dried Nutritional Mix Brand",
       "title": "Naturally Powerful, Perfectly Balanced",
       "natural": "100% Natural",
       "vegan": "100% Vegan",
@@ -55,6 +55,7 @@
       "greenMix": {
         "title": "Green Mix",
         "tagline": "Natural Detox Boost",
+        "intro": "A 100% natural, delicious, and health-packed alternative to artificial fruit juices and detox drinks.",
         "description": "Natural immunity support with no sugar and no additives. Powerful detox effect with natural vitamin C.",
         "benefit1": "Detox effect with edema reduction",
         "benefit2": "Natural vitamin C for immunity",
@@ -66,6 +67,7 @@
       "redMix": {
         "title": "Red Mix",
         "tagline": "Immunity Powerhouse",
+        "intro": "A 100% natural, delicious, and health-packed alternative to sugary fruit drinks and artificial wellness beverages.",
         "description": "Powerful antioxidant blend to strengthen the immune system with naturally freeze-dried ingredients.",
         "benefit1": "Rich in antioxidants",
         "benefit2": "Strengthens immune system",
@@ -80,6 +82,7 @@
         "title": "Children's Mix",
         "ages": "Ages 4-7",
         "tagline": "Growth & Immunity Focus",
+        "intro": "Give your child the real benefits of fruits and vegetables in their 100% natural form. A delicious daily drink that brings nature's goodness to their routine, not as a supplement, but as genuine, wholesome nutrition.",
         "description": "Appeals to young children's preference for sweet flavors. Fruits like grape, orange, peach, and banana offer both delicious taste and energy-providing carbohydrates.",
         "benefit1": "Essential vitamins (C, A) and minerals (potassium)",
         "benefit2": "Digestive support with fiber",
@@ -92,6 +95,7 @@
         "title": "Junior Mix",
         "ages": "Ages 8-12",
         "tagline": "Mental Development & School Performance",
+        "intro": "Real fruits and vegetables in their purest form, tailored for growing bodies. Let your child enjoy 100% natural nutrition as part of their healthy daily routine, supporting their active lifestyle with nature's true benefits.",
         "description": "Targets the transition from early childhood to pre-teen. Apple and banana maintain sweetness, while carrot and lemon strengthen immunity.",
         "benefit1": "Energy for rapid growth (carbohydrates)",
         "benefit2": "Vitamins (C, A) supporting school performance",
@@ -104,6 +108,7 @@
         "title": "Youth Mix",
         "ages": "Ages 13-18",
         "tagline": "Energy, Concentration & Active Life Support",
+        "intro": "A 100% natural alternative to energy drinks and artificial juices. Authentic fruits and vegetables providing real nutrition for active teens—not a supplement, but genuine plant-based fuel for body and mind.",
         "description": "Intensive nutritional profile suitable for adolescence. Strawberry and grape support memory with antioxidants.",
         "benefit1": "Focus-enhancing antioxidants (flavonoids)",
         "benefit2": "Cognitive support with omega-3",
@@ -132,7 +137,97 @@
       "tagline": "Naturally Powerful, Perfectly Balanced",
       "company": "BUGE GIDA A.Ş.",
       "badges": "100% Natural • 100% Vegan • No Added Sugar",
-      "copyright": "© 2024 BUGE GIDA A.Ş. All rights reserved."
+      "copyright": "© 2024 BUGE GIDA A.Ş. All rights reserved.",
+      "privacy": "Privacy Policy",
+      "terms": "Terms & Conditions"
+    },
+    "privacy": {
+      "title": "Privacy Policy & KVKK Disclosure",
+      "intro": "This privacy policy and personal data protection disclosure text contains the principles regarding the processing, protection, and user rights of personal data obtained by BUGE GIDA ARGE DANIŞMANLIK SANAYİ TİCARET A.Ş. (\\\"BUGE Gıda\\\" / \\\"Company\\\") through the www.bugefoods.com website.",
+      "companyInfo": {
+        "title": "Company Information",
+        "trade": "Trade Name: BUGE GIDA ARGE DANIŞMANLIK SANAYİ TİCARET A.Ş.",
+        "mersis": "MERSIS No: 0188128667200001",
+        "registry": "Trade Registry No: 10851",
+        "business": "Business Registration No: TR-22-K-014193",
+        "headquarters": "Headquarters Address: Trakya Teknopark, Trakya University Technology Development Zone, 22000 Edirne / Turkey",
+        "facility": "Production Facility: Hasan Pehlivan Cd. 1/D, 22500 Havsa / Edirne / Turkey",
+        "email": "Email: contact@bugefoods.com",
+        "web": "Web: www.bugefoods.com"
+      },
+      "collected": {
+        "title": "Collected Personal Data",
+        "intro": "Through our website:",
+        "items": ["Name, surname", "Email address", "Phone number", "IP information, cookie data", "Information shared through contact form or email"],
+        "outro": "may be processed."
+      },
+      "purposes": {
+        "title": "Personal Data Processing Purposes",
+        "intro": "Collected data is processed for:",
+        "items": ["Responding to requests, complaints, and suggestions", "Communication with users regarding products, content, and services", "Fulfilling legal obligations (KVKK, Turkish Commercial Code, etc.)", "Analyzing website usage data and improving service quality"],
+        "outro": "for these purposes."
+      },
+      "transfer": {
+        "title": "Transfer of Personal Data",
+        "intro": "User data may be transferred to:",
+        "items": ["Official institutions in case of legal obligation", "Domestic/international technology companies providing services such as web hosting, email, security", "Marketing service providers if permission is granted"],
+        "outro": "Apart from these, data is not sold, rented, or marketed to third parties."
+      },
+      "rights": {
+        "title": "Your Rights Under KVKK (Article 11)",
+        "intro": "By contacting us, you can:",
+        "items": ["Learn whether your data is being processed", "Request information if it has been processed", "Request correction, deletion, or anonymization of data", "Object to automated data processing", "Request compensation for damages if processed in violation of KVKK"],
+        "contact": "Application email address: contact@bugefoods.com"
+      },
+      "cookies": {
+        "title": "Cookie Usage",
+        "text": "Technical and analytical cookies are used on our website to improve user experience. You can change or delete your cookie preferences through your browser. Detailed information is available on our \\\"Cookie Policy\\\" page."
+      },
+      "retention": {
+        "title": "Data Retention Period",
+        "intro": "Personal data:",
+        "items": ["Communication requests: maximum 3 years", "Commercial records / invoices: 10 years (as required by Turkish Commercial Code)", "Cookie data: 6 months – 2 years"],
+        "outro": "is stored and then deleted or anonymized."
+      },
+      "security": {
+        "title": "Security",
+        "text": "Personal data is protected by technical measures such as SSL certificates, encryption, access restrictions, and firewalls."
+      },
+      "updates": {
+        "title": "Updates",
+        "text": "This text may be updated as needed. The most current version is published at www.bugefoods.com."
+      }
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "definitions": {
+        "title": "Definitions",
+        "text": "On this site, \\\"company\\\" refers to BUGE GIDA ARGE DANIŞMANLIK SANAYİ TİCARET A.Ş.; \\\"user\\\" refers to the person visiting or using the site."
+      },
+      "acceptance": {
+        "title": "Acceptance of Terms of Use",
+        "text": "Every user accessing www.bugefoods.com is deemed to have accepted the following terms. If you do not accept these terms, please do not use the site."
+      },
+      "ip": {
+        "title": "Intellectual and Industrial Property Rights",
+        "text": "All logos, trademarks, visuals, texts, and designs on the site belong to or are licensed to BUGE Gıda.\n\nThey may not be copied, reproduced, or used for commercial purposes without permission."
+      },
+      "responsibility": {
+        "title": "Usage Responsibility",
+        "text": "The user agrees to use the site only in accordance with the law. They are solely responsible for the content they share."
+      },
+      "accuracy": {
+        "title": "Information Accuracy and Disclaimer",
+        "text": "The information on the site is continuously updated, but errors or omissions may occur.\n\nThe company cannot be held responsible for direct or indirect damages."
+      },
+      "thirdParty": {
+        "title": "Third Party Links",
+        "text": "The site may link to other sites. The company is not responsible for the content of these sites."
+      },
+      "enforcement": {
+        "title": "Enforcement and Amendments",
+        "text": "This text enters into force upon publication. The company reserves the right to amend it at any time."
+      }
     }
   },
   "tr": {
@@ -145,7 +240,7 @@
       "contact": "İletişim"
     },
     "hero": {
-      "subtitle": "Türkiye'nin İlk %100 Dondurarak Kurutulmuş Beslenme Karışımı Markası",
+      "subtitle": "%100 Dondurarak Kurutulmuş Beslenme Karışımı Markası",
       "title": "Doğal Gücü, Mükemmel Dengede",
       "natural": "%100 Doğal",
       "vegan": "%100 Vegan",
@@ -191,6 +286,7 @@
       "greenMix": {
         "title": "Green Mix",
         "tagline": "Doğal Detoks Desteği",
+        "intro": "Yapay meyve sularına ve detoks içeceklerine %100 doğal, lezzetli ve sağlık dolu bir alternatif.",
         "description": "Şeker ve katkı maddesi içermeyen doğal bağışıklık desteği. Doğal C vitamini ile güçlü detoks etkisi.",
         "benefit1": "Ödem azaltıcı detoks etkisi",
         "benefit2": "Bağışıklık için doğal C vitamini",
@@ -202,6 +298,7 @@
       "redMix": {
         "title": "Red Mix",
         "tagline": "Bağışıklık Gücü",
+        "intro": "Şekerli meyve içeceklerine ve yapay wellness ürünlerine %100 doğal, lezzetli ve sağlık dolu bir alternatif.",
         "description": "Doğal olarak dondurarak kurutulmuş içeriklerle bağışıklık sistemini güçlendiren antioksidan karışımı.",
         "benefit1": "Antioksidan açısından zengin",
         "benefit2": "Bağışıklık sistemini güçlendirir",
@@ -216,6 +313,7 @@
         "title": "Çocuk Karışımı",
         "ages": "4-7 Yaş",
         "tagline": "Büyüme ve Bağışıklık Odağı",
+        "intro": "Çocuğunuz doğada var olan faydaları gerçek ve tam anlamıyla %100 doğal şekilde tüketebilsin. Takviye edici gıda değil, günlük rutinlerinde sağlıklı ve gerçek meyve-sebze besinleri içeren lezzetli bir içecek.",
         "description": "Küçük çocukların tatlı lezzetlere olan tercihine hitap eder. Üzüm, portakal, şeftali ve muz gibi meyveler hem lezzetli tat hem de enerji sağlayan karbonhidratlar sunar.",
         "benefit1": "Temel vitaminler (C, A) ve mineraller (potasyum)",
         "benefit2": "Lif ile sindirim desteği",
@@ -228,6 +326,7 @@
         "title": "Junior Mix",
         "ages": "8-12 Yaş",
         "tagline": "Zihinsel Gelişim ve Okul Performansı",
+        "intro": "Gerçek meyve ve sebzeler en saf haliyle, büyüyen bedenler için özel olarak tasarlandı. Çocuğunuz doğanın gerçek faydalarıyla aktif yaşam tarzını destekleyen %100 doğal beslenmeyi günlük rutininin bir parçası olarak keyifle tüketsin.",
         "description": "Erken çocukluktan ergenlik öncesine geçişi hedefler. Elma ve muz tatlılığı korurken, havuç ve limon bağışıklığı güçlendirir.",
         "benefit1": "Hızlı büyüme için enerji (karbonhidratlar)",
         "benefit2": "Okul performansını destekleyen vitaminler (C, A)",
@@ -240,6 +339,7 @@
         "title": "Youth Mix",
         "ages": "13-18 Yaş",
         "tagline": "Enerji, Konsantrasyon ve Aktif Yaşam Desteği",
+        "intro": "Enerji içeceklerine ve yapay meyve sularına %100 doğal bir alternatif. Aktif gençler için gerçek beslenme sağlayan otantik meyve ve sebzeler—takviye değil, beden ve zihin için gerçek bitkisel yakıt.",
         "description": "Ergenlik dönemine uygun yoğun beslenme profili. Çilek ve üzüm antioksidanlarla hafızayı destekler.",
         "benefit1": "Odaklanmayı artıran antioksidanlar (flavonoidler)",
         "benefit2": "Omega-3 ile bilişsel destek",
@@ -268,7 +368,97 @@
       "tagline": "Doğal Gücü, Mükemmel Dengede",
       "company": "BUGE GIDA A.Ş.",
       "badges": "%100 Doğal • %100 Vegan • Şeker Katkısız",
-      "copyright": "© 2024 BUGE GIDA A.Ş. Tüm hakları saklıdır."
+      "copyright": "© 2024 BUGE GIDA A.Ş. Tüm hakları saklıdır.",
+      "privacy": "Gizlilik Politikası",
+      "terms": "Kullanım Şartları"
+    },
+    "privacy": {
+      "title": "Gizlilik Politikası & KVKK Aydınlatma Metni",
+      "intro": "Bu gizlilik politikası ve kişisel verilerin korunmasına ilişkin aydınlatma metni, BUGE GIDA ARGE DANIŞMANLIK SANAYİ TİCARET A.Ş. (\\\"BUGE Gıda\\\" / \\\"Şirket\\\") tarafından www.bugefoods.com web sitesi üzerinden elde edilen kişisel verilerin işlenmesi, korunması ve kullanıcı haklarına ilişkin esasları içerir.",
+      "companyInfo": {
+        "title": "Şirket Bilgileri",
+        "trade": "Ticaret Unvanı: BUGE GIDA ARGE DANIŞMANLIK SANAYİ TİCARET A.Ş.",
+        "mersis": "MERSİS No: 0188128667200001",
+        "registry": "Ticaret Sicil No: 10851",
+        "business": "İşletme Kayıt No: TR-22-K-014193",
+        "headquarters": "Merkez Adres: Trakya Teknopark, Trakya Üniversitesi Teknoloji Geliştirme Bölgesi, 22000 Edirne / Türkiye",
+        "facility": "Üretim Tesisi: Hasan Pehlivan Cd. 1/D, 22500 Havsa / Edirne / Türkiye",
+        "email": "E-posta: contact@bugefoods.com",
+        "web": "Web: www.bugefoods.com"
+      },
+      "collected": {
+        "title": "Toplanan Kişisel Veriler",
+        "intro": "Web sitemiz üzerinden:",
+        "items": ["İsim, soyisim", "E-posta adresi", "Telefon numarası", "IP bilgisi, çerez (cookie) verileri", "İletişim formu veya e-posta aracılığıyla paylaşılan bilgiler"],
+        "outro": "işlenebilmektedir."
+      },
+      "purposes": {
+        "title": "Kişisel Verilerin İşlenme Amaçları",
+        "intro": "Toplanan veriler:",
+        "items": ["Talep, şikâyet ve önerilerin yanıtlanması", "Ürünler, içerikler ve hizmetlerle ilgili kullanıcı ile iletişim kurulması", "Yasal yükümlülüklerin yerine getirilmesi (KVKK, Türk Ticaret Kanunu vb.)", "Web sitesi kullanım verilerinin analiz edilmesi ve hizmet kalitesinin artırılması"],
+        "outro": "amaçlarıyla işlenmektedir."
+      },
+      "transfer": {
+        "title": "Kişisel Verilerin Aktarımı",
+        "intro": "Kullanıcı verileri:",
+        "items": ["Yasal zorunluluk hâlinde resmi kurumlara", "Web hosting, e-posta, güvenlik gibi hizmet alınan yurt içi/yurt dışı teknoloji firmalarına", "İzin verilmişse pazarlama hizmeti veren firmalara"],
+        "outro": "aktarılabilir. Bunun dışında üçüncü kişilerle satılmaz, kiralanmaz, pazarlanmaz."
+      },
+      "rights": {
+        "title": "KVKK Kapsamında Haklarınız (Madde 11)",
+        "intro": "Bize başvurarak:",
+        "items": ["Verilerinizin işlenip işlenmediğini öğrenebilir", "İşlenmişse buna ilişkin bilgi talep edebilir", "Verilerin düzeltilmesini, silinmesini ya da anonim hale getirilmesini isteyebilir", "Otomatik işlenen verilere itiraz edebilir", "KVKK'ya aykırı işlendiyse zararınızın giderilmesini talep edebilirsiniz"],
+        "contact": "Başvuru e-posta adresi: contact@bugefoods.com"
+      },
+      "cookies": {
+        "title": "Çerez (Cookie) Kullanımı",
+        "text": "Web sitemizde kullanıcı deneyimini iyileştirmek amacıyla teknik ve analitik çerezler kullanılmaktadır. Çerez tercihlerinizi tarayıcınız üzerinden değiştirebilir veya silebilirsiniz. Ayrıntılı bilgi \\\"Çerez Politikası\\\" sayfamızda yer alır."
+      },
+      "retention": {
+        "title": "Veri Saklama Süresi",
+        "intro": "Kişisel veriler:",
+        "items": ["İletişim talepleri: maksimum 3 yıl", "Ticari kayıtlar / fatura: 10 yıl (Türk Ticaret Kanunu gereği)", "Çerez verileri: 6 ay – 2 yıl arasında"],
+        "outro": "saklanır ve sonrasında silinir veya anonim hale getirilir."
+      },
+      "security": {
+        "title": "Güvenlik",
+        "text": "Kişisel veriler SSL sertifikası, şifreleme, erişim kısıtlaması ve güvenlik duvarı gibi teknik önlemlerle korunur."
+      },
+      "updates": {
+        "title": "Güncellemeler",
+        "text": "Bu metin gerektiğinde güncellenebilir. En güncel sürüm www.bugefoods.com adresinde yayımlanır."
+      }
+    },
+    "terms": {
+      "title": "Kullanım Şartları",
+      "definitions": {
+        "title": "Tanımlar",
+        "text": "Bu sitede \\\"şirket\\\", BUGE GIDA ARGE DANIŞMANLIK SANAYİ TİCARET A.Ş.; \\\"kullanıcı\\\", siteyi ziyaret eden veya kullanan kişiyi ifade eder."
+      },
+      "acceptance": {
+        "title": "Kullanım Koşullarının Kabulü",
+        "text": "www.bugefoods.com adresine erişen her kullanıcı, aşağıdaki şartları kabul etmiş sayılır. Bu şartları kabul etmiyorsanız, lütfen siteyi kullanmayınız."
+      },
+      "ip": {
+        "title": "Fikri ve Sınai Mülkiyet Hakları",
+        "text": "Sitede yer alan tüm logo, marka, görsel, metin ve tasarımlar BUGE Gıda'ya aittir veya lisanslıdır.\n\nİzin almadan kopyalanamaz, çoğaltılamaz, ticari amaçla kullanılamaz."
+      },
+      "responsibility": {
+        "title": "Kullanım Sorumluluğu",
+        "text": "Kullanıcı, siteyi yalnızca hukuka uygun şekilde kullanmayı kabul eder. Paylaştığı içerikten tamamen kendisi sorumludur."
+      },
+      "accuracy": {
+        "title": "Bilgi Doğruluğu ve Sorumluluk Reddi",
+        "text": "Sitedeki bilgiler sürekli güncellenmeye çalışılır ancak hatalar veya eksiklikler olabilir.\n\nŞirket, doğrudan veya dolaylı zararlardan sorumlu tutulamaz."
+      },
+      "thirdParty": {
+        "title": "Üçüncü Taraf Bağlantılar",
+        "text": "Site, başka sitelere bağlantı verebilir. Bu sitelerin içeriklerinden şirket sorumlu değildir."
+      },
+      "enforcement": {
+        "title": "Yürürlük ve Değişiklik",
+        "text": "Bu metin yayımlandığı anda yürürlüğe girer. Şirket dilediğinde değiştirme hakkını saklı tutar."
+      }
     }
   }
 }

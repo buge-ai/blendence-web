@@ -667,7 +667,15 @@ export default function Home() {
           <h3 className="text-3xl font-bold mb-2">{t.footer.brand}</h3>
           <p className="mb-1 opacity-90">{t.footer.tagline}</p>
           <p className="text-sm opacity-70 mb-6">{t.footer.company}</p>
-          <p className="opacity-80 mb-2">{t.footer.badges}</p>
+          <p className="opacity-80 mb-4">{t.footer.badges}</p>
+          <div className="flex justify-center gap-6 mb-4">
+            <a href="/privacy" className="text-sm opacity-70 hover:opacity-100 transition-opacity">
+              {t.footer.privacy}
+            </a>
+            <a href="/terms" className="text-sm opacity-70 hover:opacity-100 transition-opacity">
+              {t.footer.terms}
+            </a>
+          </div>
           <p className="text-sm opacity-60">{t.footer.copyright}</p>
         </div>
       </footer>
