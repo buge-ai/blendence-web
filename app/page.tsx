@@ -283,9 +283,6 @@ export default function Home() {
                 {/* Ingredients */}
                 <div className="p-8 border-l border-gray-200">
                   <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.ingredients}</h5>
-                  <p className="text-sm text-[var(--dark-gray)] font-light leading-relaxed">
-                    {t.products.greenMix.ingredients}
-                  </p>
                 </div>
 
                 {/* Usage */}
@@ -334,9 +331,6 @@ export default function Home() {
                 {/* Ingredients */}
                 <div className="p-8 border-l border-gray-200">
                   <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.ingredients}</h5>
-                  <p className="text-sm text-[var(--dark-gray)] font-light leading-relaxed">
-                    {t.products.redMix.ingredients}
-                  </p>
                 </div>
 
                 {/* Usage */}
@@ -386,9 +380,6 @@ export default function Home() {
                 </div>
                 <div className="p-8 border-l border-gray-200">
                   <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.ingredients}</h5>
-                  <p className="text-sm text-[var(--dark-gray)] font-light leading-relaxed">
-                    {t.products.childrenMix.ingredients}
-                  </p>
                 </div>
                 <div className="p-8 border-l border-gray-200">
                   <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.usage}</h5>
@@ -429,9 +420,6 @@ export default function Home() {
                 </div>
                 <div className="p-8 border-l border-gray-200">
                   <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.ingredients}</h5>
-                  <p className="text-sm text-[var(--dark-gray)] font-light leading-relaxed">
-                    {t.products.juniorMix.ingredients}
-                  </p>
                 </div>
                 <div className="p-8 border-l border-gray-200">
                   <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.usage}</h5>
@@ -472,9 +460,6 @@ export default function Home() {
                 </div>
                 <div className="p-8 border-l border-gray-200">
                   <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.ingredients}</h5>
-                  <p className="text-sm text-[var(--dark-gray)] font-light leading-relaxed">
-                    {t.products.youthMix.ingredients}
-                  </p>
                 </div>
                 <div className="p-8 border-l border-gray-200">
                   <h5 className="text-sm font-medium mb-3 uppercase tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.labels.usage}</h5>

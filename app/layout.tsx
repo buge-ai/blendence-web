@@ -13,12 +13,12 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "BLENDENCE - Naturally Powerful, Perfectly Balanced | BUGE GIDA A.Ş.",
-  description: "Turkey's first 100% freeze-dried nutritional mix brand. Natural, vegan supplements with advanced freeze-drying technology. Green Mix, Red Mix, and age-specific children's nutrition.",
+  description: "100% freeze-dried nutritional mix brand. Natural, vegan supplements with advanced freeze-drying technology. Green Mix, Red Mix, and age-specific children's nutrition.",
   keywords: "freeze dried, natural supplements, organic nutrition, vegan, BLENDENCE, BUGE GIDA, healthy nutrition, children vitamins",
   authors: [{ name: "BUGE GIDA A.Ş." }],
   openGraph: {
     title: "BLENDENCE - Naturally Powerful, Perfectly Balanced",
-    description: "Turkey's first 100% freeze-dried nutritional mix brand",
+    description: "100% freeze-dried nutritional mix brand",
     type: "website",
     locale: "en_US",
   },

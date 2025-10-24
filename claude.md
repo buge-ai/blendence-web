@@ -52,7 +52,7 @@
 **Brand**: BLENDENCE
 **Motto**: "Naturally powerful, perfectly balanced"
 **Positioning**: Organic supplement vitamin company
-**USP**: Turkey's first 100% freeze-dried mix brand
+**USP**: 100% freeze-dried mix brand
 
 ## Target Audience
 
