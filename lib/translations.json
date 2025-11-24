@@ -126,6 +126,21 @@
         "title": "Natural Fruit Powders for Food Industry",
         "description": "Premium ingredients for the food industry. A natural, healthy alternative instead of chemical or synthetic flavors and colorings."
       },
+      "stages": {
+        "title": "STAGES",
+        "tagline": "Optimized for every life phase",
+        "description": "Designed to support the natural needs of different life phases — from childhood growth to adolescence focus, and even future scenarios such as pregnancy or periods of intense adult routines. Each product is thoughtfully optimized for the specific physiological priorities of its intended audience. The aim is to offer tailored nourishment that grows and adapts alongside the body’s evolving stages of life."
+      },
+      "reset": {
+        "title": "RESET",
+        "tagline": "Restore your natural balance",
+        "description": "Created for moments when the body benefits from refreshing its internal rhythm and returning to a lighter sense of balance. Each blend supports the feeling of clarity and renewal that helps reset daily routines. The category embraces a simple idea: giving the body space to restore its own natural equilibrium."
+      },
+      "shield": {
+        "title": "SHIELD",
+        "tagline": "Strengthen your daily defense",
+        "description": "Dedicated to supporting the body’s natural defense system and promoting long-term resilience. Its formulations are built around strengthening daily protection against the demands of modern life. The category reflects a commitment to sustaining steady, nature-driven vitality and overall well-being."
+      },
       "labels": {
         "benefits": "Benefits",
         "ingredients": "Ingredients",
@@ -158,25 +173,46 @@
       "collected": {
         "title": "Collected Personal Data",
         "intro": "Through our website:",
-        "items": ["Name, surname", "Email address", "Phone number", "IP information, cookie data", "Information shared through contact form or email"],
+        "items": [
+          "Name, surname",
+          "Email address",
+          "Phone number",
+          "IP information, cookie data",
+          "Information shared through contact form or email"
+        ],
         "outro": "may be processed."
       },
       "purposes": {
         "title": "Personal Data Processing Purposes",
         "intro": "Collected data is processed for:",
-        "items": ["Responding to requests, complaints, and suggestions", "Communication with users regarding products, content, and services", "Fulfilling legal obligations (KVKK, Turkish Commercial Code, etc.)", "Analyzing website usage data and improving service quality"],
+        "items": [
+          "Responding to requests, complaints, and suggestions",
+          "Communication with users regarding products, content, and services",
+          "Fulfilling legal obligations (KVKK, Turkish Commercial Code, etc.)",
+          "Analyzing website usage data and improving service quality"
+        ],
         "outro": "for these purposes."
       },
       "transfer": {
         "title": "Transfer of Personal Data",
         "intro": "User data may be transferred to:",
-        "items": ["Official institutions in case of legal obligation", "Domestic/international technology companies providing services such as web hosting, email, security", "Marketing service providers if permission is granted"],
+        "items": [
+          "Official institutions in case of legal obligation",
+          "Domestic/international technology companies providing services such as web hosting, email, security",
+          "Marketing service providers if permission is granted"
+        ],
         "outro": "Apart from these, data is not sold, rented, or marketed to third parties."
       },
       "rights": {
         "title": "Your Rights Under KVKK (Article 11)",
         "intro": "By contacting us, you can:",
-        "items": ["Learn whether your data is being processed", "Request information if it has been processed", "Request correction, deletion, or anonymization of data", "Object to automated data processing", "Request compensation for damages if processed in violation of KVKK"],
+        "items": [
+          "Learn whether your data is being processed",
+          "Request information if it has been processed",
+          "Request correction, deletion, or anonymization of data",
+          "Object to automated data processing",
+          "Request compensation for damages if processed in violation of KVKK"
+        ],
         "contact": "Application email address: contact@bugefoods.com"
       },
       "cookies": {
@@ -186,7 +222,11 @@
       "retention": {
         "title": "Data Retention Period",
         "intro": "Personal data:",
-        "items": ["Communication requests: maximum 3 years", "Commercial records / invoices: 10 years (as required by Turkish Commercial Code)", "Cookie data: 6 months – 2 years"],
+        "items": [
+          "Communication requests: maximum 3 years",
+          "Commercial records / invoices: 10 years (as required by Turkish Commercial Code)",
+          "Cookie data: 6 months – 2 years"
+        ],
         "outro": "is stored and then deleted or anonymized."
       },
       "security": {
@@ -357,6 +397,21 @@
         "title": "Gıda Endüstrisi için Doğal Meyve Tozları",
         "description": "Gıda endüstrisi için premium içerikler. Kimyasal veya sentetik aroma ve renklendirici yerine doğal, sağlıklı bir alternatif."
       },
+      "stages": {
+        "title": "STAGES",
+        "tagline": "Her yaşam evresi için optimize edildi",
+        "description": "Çocukluktaki büyüme döneminden ergenlikteki odaklanma ihtiyacına, hatta hamilelik veya yoğun yetişkin rutinleri gibi gelecekteki senaryolara kadar farklı yaşam evrelerinin doğal ihtiyaçlarını desteklemek için tasarlanmıştır. Her ürün, hedef kitlesinin fizyolojik öncelikleri için özenle optimize edilmiştir. Amaç, vücudun değişen yaşam evreleriyle birlikte büyüyen ve uyum sağlayan özel bir beslenme sunmaktır."
+      },
+      "reset": {
+        "title": "RESET",
+        "tagline": "Doğal dengenizi yeniden kazanın",
+        "description": "Vücudun iç ritmini tazelemesinden ve daha hafif bir denge hissine dönmesinden fayda sağladığı anlar için yaratılmıştır. Her karışım, günlük rutinleri sıfırlamaya yardımcı olan berraklık ve yenilenme hissini destekler. Bu kategori basit bir fikri benimser: vücuda kendi doğal dengesini yeniden kurması için alan tanımak."
+      },
+      "shield": {
+        "title": "SHIELD",
+        "tagline": "Günlük savunmanızı güçlendirin",
+        "description": "Vücudun doğal savunma sistemini desteklemeye ve uzun vadeli dayanıklılığı artırmaya adanmıştır. Formülasyonları, modern yaşamın zorluklarına karşı günlük korumayı güçlendirmek üzerine kurulmuştur. Bu kategori, doğadan gelen istikrarlı bir canlılığı ve genel refahı sürdürme taahhüdünü yansıtır."
+      },
       "labels": {
         "benefits": "Faydaları",
         "ingredients": "İçerikler",
@@ -389,25 +444,46 @@
       "collected": {
         "title": "Toplanan Kişisel Veriler",
         "intro": "Web sitemiz üzerinden:",
-        "items": ["İsim, soyisim", "E-posta adresi", "Telefon numarası", "IP bilgisi, çerez (cookie) verileri", "İletişim formu veya e-posta aracılığıyla paylaşılan bilgiler"],
+        "items": [
+          "İsim, soyisim",
+          "E-posta adresi",
+          "Telefon numarası",
+          "IP bilgisi, çerez (cookie) verileri",
+          "İletişim formu veya e-posta aracılığıyla paylaşılan bilgiler"
+        ],
         "outro": "işlenebilmektedir."
       },
       "purposes": {
         "title": "Kişisel Verilerin İşlenme Amaçları",
         "intro": "Toplanan veriler:",
-        "items": ["Talep, şikâyet ve önerilerin yanıtlanması", "Ürünler, içerikler ve hizmetlerle ilgili kullanıcı ile iletişim kurulması", "Yasal yükümlülüklerin yerine getirilmesi (KVKK, Türk Ticaret Kanunu vb.)", "Web sitesi kullanım verilerinin analiz edilmesi ve hizmet kalitesinin artırılması"],
+        "items": [
+          "Talep, şikâyet ve önerilerin yanıtlanması",
+          "Ürünler, içerikler ve hizmetlerle ilgili kullanıcı ile iletişim kurulması",
+          "Yasal yükümlülüklerin yerine getirilmesi (KVKK, Türk Ticaret Kanunu vb.)",
+          "Web sitesi kullanım verilerinin analiz edilmesi ve hizmet kalitesinin artırılması"
+        ],
         "outro": "amaçlarıyla işlenmektedir."
       },
       "transfer": {
         "title": "Kişisel Verilerin Aktarımı",
         "intro": "Kullanıcı verileri:",
-        "items": ["Yasal zorunluluk hâlinde resmi kurumlara", "Web hosting, e-posta, güvenlik gibi hizmet alınan yurt içi/yurt dışı teknoloji firmalarına", "İzin verilmişse pazarlama hizmeti veren firmalara"],
+        "items": [
+          "Yasal zorunluluk hâlinde resmi kurumlara",
+          "Web hosting, e-posta, güvenlik gibi hizmet alınan yurt içi/yurt dışı teknoloji firmalarına",
+          "İzin verilmişse pazarlama hizmeti veren firmalara"
+        ],
         "outro": "aktarılabilir. Bunun dışında üçüncü kişilerle satılmaz, kiralanmaz, pazarlanmaz."
       },
       "rights": {
         "title": "KVKK Kapsamında Haklarınız (Madde 11)",
         "intro": "Bize başvurarak:",
-        "items": ["Verilerinizin işlenip işlenmediğini öğrenebilir", "İşlenmişse buna ilişkin bilgi talep edebilir", "Verilerin düzeltilmesini, silinmesini ya da anonim hale getirilmesini isteyebilir", "Otomatik işlenen verilere itiraz edebilir", "KVKK'ya aykırı işlendiyse zararınızın giderilmesini talep edebilirsiniz"],
+        "items": [
+          "Verilerinizin işlenip işlenmediğini öğrenebilir",
+          "İşlenmişse buna ilişkin bilgi talep edebilir",
+          "Verilerin düzeltilmesini, silinmesini ya da anonim hale getirilmesini isteyebilir",
+          "Otomatik işlenen verilere itiraz edebilir",
+          "KVKK'ya aykırı işlendiyse zararınızın giderilmesini talep edebilirsiniz"
+        ],
         "contact": "Başvuru e-posta adresi: contact@bugefoods.com"
       },
       "cookies": {
@@ -417,7 +493,11 @@
       "retention": {
         "title": "Veri Saklama Süresi",
         "intro": "Kişisel veriler:",
-        "items": ["İletişim talepleri: maksimum 3 yıl", "Ticari kayıtlar / fatura: 10 yıl (Türk Ticaret Kanunu gereği)", "Çerez verileri: 6 ay – 2 yıl arasında"],
+        "items": [
+          "İletişim talepleri: maksimum 3 yıl",
+          "Ticari kayıtlar / fatura: 10 yıl (Türk Ticaret Kanunu gereği)",
+          "Çerez verileri: 6 ay – 2 yıl arasında"
+        ],
         "outro": "saklanır ve sonrasında silinir veya anonim hale getirilir."
       },
       "security": {

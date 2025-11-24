@@ -3,9 +3,13 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
 
+import Modal from './components/Modal';
+import ProductCarousel from './components/ProductCarousel';
+
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  const [selectedCategory, setSelectedCategory] = useState<{ title: string; description: string } | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,21 +78,19 @@ export default function Home() {
               <div className="flex gap-2 border border-gray-300 rounded-full p-1">
                 <button
                   onClick={() => setLanguage('en')}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                    language === 'en'
-                      ? 'bg-[var(--turquoise)] text-white'
-                      : 'text-[var(--dark-gray)] hover:bg-gray-100'
-                  }`}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${language === 'en'
+                    ? 'bg-[var(--turquoise)] text-white'
+                    : 'text-[var(--dark-gray)] hover:bg-gray-100'
+                    }`}
                 >
                   EN
                 </button>
                 <button
                   onClick={() => setLanguage('tr')}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                    language === 'tr'
-                      ? 'bg-[var(--turquoise)] text-white'
-                      : 'text-[var(--dark-gray)] hover:bg-gray-100'
-                  }`}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${language === 'tr'
+                    ? 'bg-[var(--turquoise)] text-white'
+                    : 'text-[var(--dark-gray)] hover:bg-gray-100'
+                    }`}
                 >
                   TR
                 </button>
@@ -240,7 +242,104 @@ export default function Home() {
       {/* Products Section */}
       <section id="products" className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
+          {/* New Categories: STAGES, RESET, SHIELD */}
+          <div className="mb-32">
+            <div className="text-center mb-16">
+              <h3 className="text-4xl md:text-5xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>Product Categories</h3>
+            </div>
+            <div className="grid lg:grid-cols-3 gap-8">
+              {/* STAGES */}
+              <div className="group relative overflow-hidden rounded-3xl min-h-[400px] transition-all duration-500 hover:shadow-2xl border border-gray-100">
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-teal-50 to-green-100 transition-transform duration-700 group-hover:scale-105"></div>
+
+                <div className="relative h-full p-10 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-4xl font-light mb-3 tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.stages.title}</h3>
+                    <p className="text-xs font-bold uppercase tracking-[0.2em] mb-8 text-emerald-800/60">{t.products.stages.tagline}</p>
+                    <p className="text-lg text-[var(--dark-gray)] font-light leading-relaxed opacity-90 line-clamp-2">
+                      {t.products.stages.description}
+                    </p>
+                  </div>
+                  <div className="flex justify-between items-end mt-8">
+                    <button
+                      onClick={() => setSelectedCategory({ title: t.products.stages.title, description: t.products.stages.description })}
+                      className="text-sm font-medium uppercase tracking-wider text-emerald-800 hover:text-emerald-950 transition-colors border-b border-emerald-800/30 hover:border-emerald-800 pb-1"
+                    >
+                      Read More
+                    </button>
+                    <div className="w-16 h-16 rounded-full bg-white/40 backdrop-blur-md flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:bg-white/60 shadow-sm">
+                      <span className="text-2xl opacity-80">🌱</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* RESET */}
+              <div className="group relative overflow-hidden rounded-3xl min-h-[400px] transition-all duration-500 hover:shadow-2xl border border-gray-100">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 via-sky-50 to-blue-100 transition-transform duration-700 group-hover:scale-105"></div>
+
+                <div className="relative h-full p-10 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-4xl font-light mb-3 tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.reset.title}</h3>
+                    <p className="text-xs font-bold uppercase tracking-[0.2em] mb-8 text-cyan-800/60">{t.products.reset.tagline}</p>
+                    <p className="text-lg text-[var(--dark-gray)] font-light leading-relaxed opacity-90 line-clamp-2">
+                      {t.products.reset.description}
+                    </p>
+                  </div>
+                  <div className="flex justify-between items-end mt-8">
+                    <button
+                      onClick={() => setSelectedCategory({ title: t.products.reset.title, description: t.products.reset.description })}
+                      className="text-sm font-medium uppercase tracking-wider text-cyan-800 hover:text-cyan-950 transition-colors border-b border-cyan-800/30 hover:border-cyan-800 pb-1"
+                    >
+                      Read More
+                    </button>
+                    <div className="w-16 h-16 rounded-full bg-white/40 backdrop-blur-md flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:bg-white/60 shadow-sm">
+                      <span className="text-2xl opacity-80">💧</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* SHIELD */}
+              <div className="group relative overflow-hidden rounded-3xl min-h-[400px] transition-all duration-500 hover:shadow-2xl border border-gray-100">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-amber-50 to-red-100 transition-transform duration-700 group-hover:scale-105"></div>
+
+                <div className="relative h-full p-10 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-4xl font-light mb-3 tracking-wide" style={{ color: 'var(--dark-blue)' }}>{t.products.shield.title}</h3>
+                    <p className="text-xs font-bold uppercase tracking-[0.2em] mb-8 text-orange-800/60">{t.products.shield.tagline}</p>
+                    <p className="text-lg text-[var(--dark-gray)] font-light leading-relaxed opacity-90 line-clamp-2">
+                      {t.products.shield.description}
+                    </p>
+                  </div>
+                  <div className="flex justify-between items-end mt-8">
+                    <button
+                      onClick={() => setSelectedCategory({ title: t.products.shield.title, description: t.products.shield.description })}
+                      className="text-sm font-medium uppercase tracking-wider text-orange-800 hover:text-orange-950 transition-colors border-b border-orange-800/30 hover:border-orange-800 pb-1"
+                    >
+                      Read More
+                    </button>
+                    <div className="w-16 h-16 rounded-full bg-white/40 backdrop-blur-md flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:bg-white/60 shadow-sm">
+                      <span className="text-2xl opacity-80">🛡️</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <Modal
+            isOpen={!!selectedCategory}
+            onClose={() => setSelectedCategory(null)}
+            title={selectedCategory?.title || ''}
+          >
+            <p className="text-lg text-[var(--dark-gray)] font-light leading-relaxed whitespace-pre-wrap">
+              {selectedCategory?.description}
+            </p>
+          </Modal>
+
+          <div className="text-center mb-20 mt-32">
             <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>{t.products.title}</h2>
             <p className="text-xl text-[var(--dark-gray-alt)] font-light max-w-3xl mx-auto">{t.products.subtitle}</p>
           </div>
@@ -471,6 +570,18 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Product Images Carousel */}
+          <div className="my-32">
+            <ProductCarousel
+              images={[
+                '/product/kutu-saşe-mockup1.jpg',
+                '/product/on.jpg',
+                '/product/sachet_mockup_design4.jpg'
+              ]}
+              autoPlayInterval={4000}
+            />
+          </div>
+
           {/* Additional Products */}
           <div>
             <h3 className="text-4xl md:text-5xl font-light mb-16 text-center" style={{ color: 'var(--dark-blue)' }}>{t.products.additionalTitle}</h3>
@@ -490,10 +601,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Technology Section - Freeze Drying Technology */}
-      <section id="technology" className="py-32 bg-white">
+      < section id="technology" className="py-32 bg-white" >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>Freeze Drying Technology</h2>
@@ -552,10 +663,10 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Quality/Certifications Section */}
-      <section id="quality" className="py-16 bg-white">
+      < section id="quality" className="py-16 bg-white" >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-5xl md:text-6xl font-light mb-6" style={{ color: 'var(--dark-blue)' }}>{t.quality.title}</h2>
@@ -592,10 +703,10 @@ export default function Home() {
             <p className="text-base font-light" style={{ color: 'var(--dark-blue)' }}>TÜBİTAK • Trakya Development Agency • Private Investor Support</p>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 bg-gradient-to-br from-[var(--dark-blue)] to-[var(--turquoise)] text-white">
+      < section id="contact" className="py-32 bg-gradient-to-br from-[var(--dark-blue)] to-[var(--turquoise)] text-white" >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-light mb-6 text-white">Get in Touch</h2>
@@ -644,10 +755,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Footer */}
-      <footer className="py-16 bg-[var(--dark-blue)] text-white text-center">
+      < footer className="py-16 bg-[var(--dark-blue)] text-white text-center" >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="text-3xl font-bold mb-2">{t.footer.brand}</h3>
           <p className="mb-1 opacity-90">{t.footer.tagline}</p>
@@ -663,10 +774,10 @@ export default function Home() {
           </div>
           <p className="text-sm opacity-60">{t.footer.copyright}</p>
         </div>
-      </footer>
+      </footer >
 
       {/* Scroll to Top Button */}
-      <ScrollToTop />
+      < ScrollToTop />
     </>
   );
 }
@@ -794,9 +905,8 @@ function ScrollToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-8 right-8 w-14 h-14 rounded-full text-white text-2xl transition-all duration-300 shadow-lg z-50 ${
-        visible ? 'opacity-100 visible' : 'opacity-0 invisible'
-      } hover:scale-110 hover:shadow-2xl`}
+      className={`fixed bottom-8 right-8 w-14 h-14 rounded-full text-white text-2xl transition-all duration-300 shadow-lg z-50 ${visible ? 'opacity-100 visible' : 'opacity-0 invisible'
+        } hover:scale-110 hover:shadow-2xl`}
       style={{ background: 'linear-gradient(135deg, var(--turquoise), var(--turquoise-alt))' }}
     >
       ↑
