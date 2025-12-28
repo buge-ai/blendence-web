@@ -338,25 +338,21 @@
 
 /* Animation Classes */
 .animateIn {
-    animation: flipIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: flipIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .animateOut {
-    animation: flipOut 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: flipOut 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .animateOutReverse {
-    animation: flipOutReverse 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: flipOutReverse 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 @keyframes flipIn {
     0% {
         opacity: 0;
-        transform: rotateY(-90deg) scale(0.9);
-    }
-
-    50% {
-        opacity: 0.5;
+        transform: rotateY(-90deg) scale(0.95);
     }
 
     100% {
@@ -371,13 +367,9 @@
         transform: rotateY(0deg) scale(1);
     }
 
-    50% {
-        opacity: 0.5;
-    }
-
     100% {
         opacity: 0;
-        transform: rotateY(90deg) scale(0.9);
+        transform: rotateY(90deg) scale(0.95);
     }
 }
 
@@ -387,31 +379,10 @@
         transform: rotateY(0deg) scale(1);
     }
 
-    50% {
-        opacity: 0.5;
-    }
-
     100% {
         opacity: 0;
-        transform: rotateY(-90deg) scale(0.9);
+        transform: rotateY(-90deg) scale(0.95);
     }
-}
-
-/* Staggered animations for each box */
-.titleBox.animateIn {
-    animation-delay: 0ms;
-}
-
-.productBox.animateIn {
-    animation-delay: 100ms;
-}
-
-.ingredientsBox.animateIn {
-    animation-delay: 200ms;
-}
-
-.lifestyleBox.animateIn {
-    animation-delay: 150ms;
 }
 
 /* Box rotation animation on transition */
@@ -419,7 +390,7 @@
 .productBox,
 .ingredientsBox,
 .lifestyleBox {
-    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Responsive Design */

@@ -68,38 +68,59 @@ const stagesProducts: StageProduct[] = [
 export default function StagesCarousel() {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
-    const [isAnimating, setIsAnimating] = useState(false);
+    const [animationPhase, setAnimationPhase] = useState<'idle' | 'out' | 'in'>('idle');
     const [direction, setDirection] = useState<'next' | 'prev'>('next');
 
     const goToNext = useCallback(() => {
-        if (isAnimating) return;
+        if (animationPhase !== 'idle') return;
         setDirection('next');
-        setIsAnimating(true);
+        setAnimationPhase('out');
+
+        // Swap content at midpoint when boxes are rotated away
         setTimeout(() => {
             setActiveIndex((prev) => (prev + 1) % stagesProducts.length);
-            setIsAnimating(false);
-        }, 600);
-    }, [isAnimating]);
+            setAnimationPhase('in');
+        }, 350);
+
+        // Animation complete
+        setTimeout(() => {
+            setAnimationPhase('idle');
+        }, 700);
+    }, [animationPhase]);
 
     const goToPrev = useCallback(() => {
-        if (isAnimating) return;
+        if (animationPhase !== 'idle') return;
         setDirection('prev');
-        setIsAnimating(true);
+        setAnimationPhase('out');
+
+        // Swap content at midpoint when boxes are rotated away
         setTimeout(() => {
             setActiveIndex((prev) => (prev - 1 + stagesProducts.length) % stagesProducts.length);
-            setIsAnimating(false);
-        }, 600);
-    }, [isAnimating]);
+            setAnimationPhase('in');
+        }, 350);
+
+        // Animation complete
+        setTimeout(() => {
+            setAnimationPhase('idle');
+        }, 700);
+    }, [animationPhase]);
 
     const goToSlide = useCallback((index: number) => {
-        if (isAnimating || index === activeIndex) return;
+        if (animationPhase !== 'idle' || index === activeIndex) return;
         setDirection(index > activeIndex ? 'next' : 'prev');
-        setIsAnimating(true);
+        setAnimationPhase('out');
+
+        // Swap content at midpoint when boxes are rotated away
         setTimeout(() => {
             setActiveIndex(index);
-            setIsAnimating(false);
-        }, 600);
-    }, [isAnimating, activeIndex]);
+            setAnimationPhase('in');
+        }, 350);
+
+        // Animation complete
+        setTimeout(() => {
+            setAnimationPhase('idle');
+        }, 700);
+    }, [animationPhase, activeIndex]);
 
     useEffect(() => {
         if (isPaused) return;
@@ -108,9 +129,15 @@ export default function StagesCarousel() {
     }, [isPaused, goToNext]);
 
     const currentProduct = stagesProducts[activeIndex];
-    const animClass = isAnimating
-        ? direction === 'next' ? styles.animateOut : styles.animateOutReverse
-        : styles.animateIn;
+
+    // Determine animation class based on phase
+    let animClass = '';
+    if (animationPhase === 'out') {
+        animClass = direction === 'next' ? styles.animateOut : styles.animateOutReverse;
+    } else if (animationPhase === 'in') {
+        animClass = styles.animateIn;
+    }
+
 
     return (
         <section
