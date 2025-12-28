@@ -4,50 +4,48 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 export default function Navigation() {
-    const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-    return (
-        <nav className={`nav-wrapper ${scrolled ? 'glass-header' : ''}`}>
-            <div className="container nav-container">
-                <Link href="/v2" className="nav-logo">
-                    Blendence
-                </Link>
+  return (
+    <nav className={`nav-wrapper ${scrolled ? 'glass-header' : ''}`}>
+      <div className="container nav-container">
+        <Link href="/v2" className="nav-logo">
+          Blendence
+        </Link>
 
-                <div className="nav-links">
-                    <div className="nav-group">
-                        <span className="nav-label">Stages</span>
-                        <div className="nav-dropdown">
-                            <Link href="/v2/stages/kidgrow">KidGrow (4-7)</Link>
-                            <Link href="/v2/stages/kidrise">KidRise (8-12)</Link>
-                            <Link href="/v2/stages/teenfocus">TeenFocus (13-16)</Link>
-                        </div>
-                    </div>
-
-                    <div className="nav-group">
-                        <span className="nav-label">Reset</span>
-                        <div className="nav-dropdown">
-                            <Link href="/v2/reset/balance">Balance</Link>
-                            <Link href="/v2/reset/intense">Intense</Link>
-                        </div>
-                    </div>
-
-                    <Link href="/v2/our-approach" className="nav-link">Our Approach</Link>
-                </div>
-
-                <Link href="/v2/shop" className="btn btn-primary btn-sm">
-                    Shop Now
-                </Link>
+        <div className="nav-links">
+          <div className="nav-group">
+            <span className="nav-label">Stages</span>
+            <div className="nav-dropdown">
+              <Link href="/v2/stages/kidgrow">KidGrow (4-7)</Link>
+              <Link href="/v2/stages/kidrise">KidRise (8-12)</Link>
+              <Link href="/v2/stages/teenfocus">TeenFocus (13-16)</Link>
             </div>
+          </div>
 
-            <style jsx>{`
+          <div className="nav-group">
+            <span className="nav-label">Reset</span>
+            <div className="nav-dropdown">
+              <Link href="/v2/reset/balance">Balance</Link>
+              <Link href="/v2/reset/intense">Intense</Link>
+            </div>
+          </div>
+
+          <Link href="/v2/our-approach" className="nav-link">Our Approach</Link>
+        </div>
+
+        {/* Shop Now button removed as per user request */}
+      </div>
+
+      <style jsx>{`
         .nav-wrapper {
           position: fixed;
           top: 0;
@@ -140,6 +138,6 @@ export default function Navigation() {
           .nav-links { display: none; }
         }
       `}</style>
-        </nav>
-    );
+    </nav>
+  );
 }
