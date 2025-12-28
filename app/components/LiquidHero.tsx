@@ -24,7 +24,7 @@ const SLIDE_CONTENT = [
         subtitle: "STAGES",
         description: "Packed with essential vitamins for growing bodies. A delicious blend of banana, orange, pear, and grapes to fuel their play.",
         ingredients: ["Banana", "Orange", "Pear", "Grapes"],
-        themeColor: "#E8874A"
+        themeColor: "#D67030"
     },
     {
         id: 1,
@@ -32,7 +32,7 @@ const SLIDE_CONTENT = [
         subtitle: "STAGES",
         description: "The perfect morning kickstart. Apple, carrot, and lemon combine for a zesty immunity boost that tastes like sunshine.",
         ingredients: ["Apple", "Carrot", "Lemon", "Banana"],
-        themeColor: "#EAB640"
+        themeColor: "#C89010"
     },
     {
         id: 2,
@@ -40,7 +40,7 @@ const SLIDE_CONTENT = [
         subtitle: "STAGES",
         description: "Stay sharp and focused. A green power blend of kale, spinach, and apple designed to support mental clarity.",
         ingredients: ["Kale", "Spinach", "Apple", "Lemon"],
-        themeColor: "#7EBEAE"
+        themeColor: "#4A9C8C"
     }
 ];
 

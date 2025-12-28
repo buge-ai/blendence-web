@@ -3,8 +3,8 @@
     width: 100%;
     height: 100vh;
     min-height: 700px;
-    background-color: #f9fafb;
-    /* bg-gray-50 */
+    background-color: #000;
+    /* Changed to black to prevent white flash during transition */
     overflow: hidden;
     color: #111;
 }
@@ -25,26 +25,31 @@
     inset: 0;
     width: 100%;
     height: 100%;
-    transition: opacity 1500ms ease-in-out, transform 1500ms ease-in-out;
+    transition: opacity 1200ms ease-in-out, transform 1500ms ease-in-out;
     will-change: transform, opacity;
+    background-color: #000;
 }
 
 .morphSlideActive {
     opacity: 1;
     transform: scale(1);
-    z-index: 1;
+    z-index: 2;
+    /* Active on top */
 }
 
 .morphSlideInactive {
-    opacity: 0;
-    transform: scale(1.05);
-    z-index: 0;
+    opacity: 1;
+    /* Keep visible underneath to prevent flash */
+    transform: scale(1.02);
+    z-index: 1;
+    /* Behind active slide */
 }
 
 .imageWrapper {
     position: relative;
     width: 100%;
     height: 100%;
+    background-color: #000;
 }
 
 .heroImage {
@@ -59,11 +64,12 @@
 .gradientOverlay {
     position: absolute;
     inset: 0;
-    /* Reduced opacity for less fade */
+    /* Clean left fade, completely clear on right half */
     background: linear-gradient(to right,
-            rgba(255, 255, 255, 0.7) 0%,
-            rgba(255, 255, 255, 0.3) 40%,
-            transparent 100%);
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(255, 255, 255, 0.8) 15%,
+            rgba(255, 255, 255, 0.4) 30%,
+            rgba(255, 255, 255, 0) 50%);
 }
 
 @media (max-width: 640px) {
