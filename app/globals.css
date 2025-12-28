@@ -39,7 +39,7 @@
   body {
     background: #ffffff;
     color: #424242;
-    font-family: var(--font-montserrat), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
   }
@@ -48,7 +48,12 @@
     scroll-behavior: smooth;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-weight: 600;
     line-height: 1.2;
     color: var(--dark-blue);
@@ -61,6 +66,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -68,9 +74,12 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.05);
   }
@@ -140,6 +149,7 @@
   0% {
     transform: translateY(0) translateX(0) rotateZ(-2deg) rotateX(25deg) rotateY(-15deg);
   }
+
   100% {
     transform: translateY(0) translateX(-100px) rotateZ(-2deg) rotateX(25deg) rotateY(-15deg);
   }
@@ -187,6 +197,7 @@
     opacity: 0;
     transform: translateX(-100px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);

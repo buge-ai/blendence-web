@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/LanguageContext";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -31,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${montserrat.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased`}>
         <LanguageProvider>
           {children}
         </LanguageProvider>

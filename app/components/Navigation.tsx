@@ -1,143 +1,112 @@
 'use client';
 
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import {
+  Navbar,
+  NavBody,
+  MobileNav,
+  NavbarLogo,
+  MobileNavHeader,
+  MobileNavToggle,
+  MobileNavMenu,
+  NavDropdown,
+} from "./ui/resizable-navbar";
+import { useState } from "react";
+import Link from "next/link";
 
 export default function Navigation() {
-  const [scrolled, setScrolled] = useState(false);
+  const stagesItems = [
+    { name: "KidGrow (4-7)", link: "/stages/kidgrow" },
+    { name: "KidRise (8-12)", link: "/stages/kidrise" },
+    { name: "TeenFocus (13-16)", link: "/stages/teenfocus" },
+  ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const resetItems = [
+    { name: "Balance", link: "/reset/balance" },
+    { name: "Intense", link: "/reset/intense" },
+  ];
+
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className={`nav-wrapper ${scrolled ? 'glass-header' : ''}`}>
-      <div className="container nav-container">
-        <Link href="/v2" className="nav-logo">
-          Blendence
-        </Link>
+    <Navbar className="top-0">
+      {/* Desktop Navigation */}
+      <NavBody className="bg-transparent backdrop-blur-none border-none">
+        <NavbarLogo src="/logo.png" href="/" />
 
-        <div className="nav-links">
-          <div className="nav-group">
-            <span className="nav-label">Stages</span>
-            <div className="nav-dropdown">
-              <Link href="/stages/kidgrow">KidGrow (4-7)</Link>
-              <Link href="/stages/kidrise">KidRise (8-12)</Link>
-              <Link href="/stages/teenfocus">TeenFocus (13-16)</Link>
-            </div>
-          </div>
-
-          <div className="nav-group">
-            <span className="nav-label">Reset</span>
-            <div className="nav-dropdown">
-              <Link href="/reset/balance">Balance</Link>
-              <Link href="/reset/intense">Intense</Link>
-            </div>
-          </div>
-
-          <Link href="/our-approach" className="nav-link">Our Approach</Link>
+        <div className="flex flex-1 items-center justify-center gap-6">
+          <NavDropdown name="Stages" items={stagesItems} />
+          <NavDropdown name="Reset" items={resetItems} />
+          <Link
+            href="/our-approach"
+            className="text-sm font-medium text-neutral-600 hover:text-black dark:text-neutral-300 dark:hover:text-white transition-colors duration-200"
+          >
+            Our Approach
+          </Link>
         </div>
 
-        {/* Shop Now button removed as per user request */}
-      </div>
+        {/* Spacer for layout balance */}
+        <div className="w-[180px] hidden lg:block" />
+      </NavBody>
 
-      <style jsx>{`
-        .nav-wrapper {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          z-index: 1000;
-          transition: all 0.3s ease;
-          padding: 1.5rem 0;
-        }
+      {/* Mobile Navigation */}
+      <MobileNav className="bg-transparent border-none">
+        <MobileNavHeader>
+          <NavbarLogo src="/logo.png" href="/" />
+          <MobileNavToggle
+            isOpen={isMobileMenuOpen}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          />
+        </MobileNavHeader>
 
-        .nav-wrapper.glass-header {
-          padding: 1rem 0;
-        }
+        <MobileNavMenu
+          isOpen={isMobileMenuOpen}
+          onClose={() => setIsMobileMenuOpen(false)}
+        >
+          <div className="flex flex-col gap-6 w-full">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-2 px-2">Stages</p>
+              <div className="flex flex-col gap-1">
+                {stagesItems.map((item, idx) => (
+                  <Link
+                    key={`mobile-stage-${idx}`}
+                    href={item.link}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-neutral-600 dark:text-neutral-300 font-medium text-lg py-2 px-2 hover:bg-black/5 rounded-lg"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
 
-        .nav-container {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        }
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-2 px-2">Reset</p>
+              <div className="flex flex-col gap-1">
+                {resetItems.map((item, idx) => (
+                  <Link
+                    key={`mobile-reset-${idx}`}
+                    href={item.link}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-neutral-600 dark:text-neutral-300 font-medium text-lg py-2 px-2 hover:bg-black/5 rounded-lg"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
 
-        .nav-logo {
-          font-family: var(--font-display);
-          font-size: 1.5rem;
-          font-weight: 700;
-          letter-spacing: -0.03em;
-          color: var(--c-primary-dark);
-        }
-
-        .nav-links {
-          display: flex;
-          gap: 2.5rem;
-          align-items: center;
-        }
-
-        .nav-link, .nav-label {
-          font-weight: 500;
-          font-size: 0.95rem;
-          cursor: pointer;
-          position: relative;
-        }
-
-        .btn-sm {
-          padding: 0.6rem 1.4rem;
-          font-size: 0.9rem;
-        }
-        
-        /* Dropdown logic roughly simulated with hover */
-        .nav-group {
-          position: relative;
-          padding: 1rem 0; 
-        }
-
-        .nav-dropdown {
-          position: absolute;
-          top: 100%;
-          left: 50%;
-          transform: translateX(-50%) translateY(10px);
-          background: white;
-          padding: 1rem;
-          border-radius: 12px;
-          box-shadow: var(--shadow-lg);
-          min-width: 180px;
-          opacity: 0;
-          visibility: hidden;
-          transition: all 0.2s ease;
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-        }
-
-        .nav-group:hover .nav-dropdown {
-          opacity: 1;
-          visibility: visible;
-          transform: translateX(-50%) translateY(0);
-        }
-
-        .nav-dropdown a {
-          font-size: 0.9rem;
-          color: var(--c-neutral-800);
-          padding: 0.5rem;
-          border-radius: 6px;
-        }
-
-        .nav-dropdown a:hover {
-          background: var(--c-neutral-100);
-          color: var(--c-primary);
-        }
-
-        @media (max-width: 768px) {
-          .nav-links { display: none; }
-        }
-      `}</style>
-    </nav>
+            <Link
+              href="/our-approach"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-neutral-800 dark:text-white font-semibold text-lg py-2 px-2 border-t border-neutral-100 dark:border-neutral-800 mt-2 pt-4"
+            >
+              Our Approach
+            </Link>
+          </div>
+        </MobileNavMenu>
+      </MobileNav>
+    </Navbar>
   );
 }
+
+

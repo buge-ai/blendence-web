@@ -8,12 +8,16 @@ import BentoSections from './components/BentoSections';
 import ProductGroups from './components/ProductGroups';
 
 const backgrounds = [
-  '/hero/v2/kid-grow-v2.png',
-  '/hero/v2/kid-rise-v2.png',
-  '/hero/v2/teen-focus-v2.png',
+  '/hero/v3/kid-grow-transparent-background.png',
+  '/hero/v3/kid-rise-transparent-background.png',
+  '/hero/v3/teen-focus-transparent-background.png',
 ];
 
-const products: string[] = []; // No overlay products for v2 hero
+const products = [
+  '/hero/v3/kid-grow-transparent.svg',
+  '/hero/v3/kid-rise-transparent.svg',
+  '/hero/v3/teen-focus-transparent.svg',
+];
 
 export default function V2Home() {
   const [[page, direction], setPage] = useState([0, 0]);
