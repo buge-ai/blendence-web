@@ -1,113 +1,288 @@
 'use client';
 
 import Link from 'next/link';
+import {
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconBrandFacebook,
+  IconArrowRight
+} from '@tabler/icons-react';
 
 export default function Footer() {
-    return (
-        <footer className="footer">
-            <div className="container footer-container">
-                <div className="footer-top">
-                    <div className="footer-brand">
-                        <h3 className="footer-logo">Blendence</h3>
-                        <p className="footer-tagline">Naturally powerful, perfectly balanced.</p>
-                    </div>
-
-                    <div className="footer-nav">
-                        <div className="footer-col">
-                            <h4>Explore</h4>
-                            <Link href="/stages">Stages</Link>
-                            <Link href="/reset">Reset</Link>
-                            <Link href="/our-approach">Our Approach</Link>
-                        </div>
-
-                        <div className="footer-col">
-                            <h4>Legal & Policies</h4>
-                            <Link href="#">Food Safety Policy (FSSC 22000)</Link>
-                            <Link href="#">Gender Equality Statement</Link>
-                            <Link href="#">Privacy Policy</Link>
-                            <Link href="#">Cookies Policy</Link>
-                            <Link href="#">Terms of Use</Link>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="footer-bottom">
-                    <p>&copy; {new Date().getFullYear()} Blendence. All rights reserved.</p>
-                </div>
+  return (
+    <footer className="footer-v2">
+      <div className="container footer-v2-container">
+        {/* TOP SECTION: Brand & Newsletter */}
+        <div className="footer-v2-grid">
+          <div className="footer-v2-main">
+            <Link href="/" className="footer-v2-logo">
+              <img src="/logo.png" alt="Blendence" />
+            </Link>
+            <p className="footer-v2-description">
+              We design nutrition that adapts to real life. Naturally powerful, perfectly balanced, and scientifically formulated for consistency.
+            </p>
+            <div className="footer-v2-socials">
+              <a href="#" aria-label="Instagram"><IconBrandInstagram size={20} /></a>
+              <a href="#" aria-label="LinkedIn"><IconBrandLinkedin size={20} /></a>
+              <a href="#" aria-label="Facebook"><IconBrandFacebook size={20} /></a>
             </div>
+          </div>
 
-            <style>{`
-        .footer {
-          background-color: var(--c-primary-dark);
-          color: var(--c-neutral-200);
-          padding: 4rem 0 2rem;
-          margin-top: auto;
-        }
-        
-        .footer-container {
-          display: flex;
-          flex-direction: column;
-          gap: 3rem;
-        }
-        
-        .footer-top {
-          display: flex;
-          justify-content: space-between;
-          flex-wrap: wrap;
-          gap: 3rem;
-        }
-        
-        .footer-brand {
-          max-width: 300px;
-        }
-        
-        .footer-logo {
-          color: white;
-          margin-bottom: 0.5rem;
-        }
-        
-        .footer-tagline {
-          opacity: 0.7;
-          font-size: 1.1rem;
-        }
-        
-        .footer-nav {
-          display: flex;
-          gap: 4rem;
-          flex-wrap: wrap;
-        }
-        
-        .footer-col {
-          display: flex;
-          flex-direction: column;
-          gap: 0.8rem;
-        }
-        
-        .footer-col h4 {
-          color: white;
-          font-size: 1rem;
-          margin-bottom: 0.5rem;
-        }
-        
-        .footer-col a {
-          color: var(--c-neutral-200);
-          font-size: 0.9rem;
-          opacity: 0.8;
-        }
-        
-        .footer-col a:hover {
-          opacity: 1;
-          color: var(--c-accent-gold);
-        }
-        
-        .footer-bottom {
-          border-top: 1px solid rgba(255,255,255,0.1);
-          padding-top: 2rem;
-          text-align: center;
-          font-size: 0.8rem;
-          opacity: 0.5;
-        }
-      `}</style>
-        </footer>
-    );
+          <div className="footer-v2-col">
+            <h4 className="footer-v2-heading">Stages</h4>
+            <nav className="footer-v2-nav">
+              <Link href="/stages/kidgrow">KidGrow (4-7)</Link>
+              <Link href="/stages/kidrise">KidRise (8-12)</Link>
+              <Link href="/stages/teenfocus">TeenFocus (13-16)</Link>
+              <Link href="/reset/balance">Reset Balance</Link>
+              <Link href="/reset/intense">Reset Intense</Link>
+            </nav>
+          </div>
+
+          <div className="footer-v2-col">
+            <h4 className="footer-v2-heading">Company</h4>
+            <nav className="footer-v2-nav">
+              <Link href="/our-approach">Our Approach</Link>
+              <Link href="/about">About Us</Link>
+              <Link href="/contact">Contact</Link>
+              <Link href="/faq">FAQ</Link>
+            </nav>
+          </div>
+
+          <div className="footer-v2-col newsletter-col">
+            <h4 className="footer-v2-heading">Newsletter</h4>
+            <p className="newsletter-text">Subscribe to receive updates on new blends and nutritional insights.</p>
+            <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
+              <input type="email" placeholder="Email address" className="newsletter-input" required />
+              <button type="submit" className="newsletter-btn" aria-label="Subscribe">
+                <IconArrowRight size={18} />
+              </button>
+            </form>
+          </div>
+        </div>
+
+        {/* BOTTOM SECTION: Legal & Copyright */}
+        <div className="footer-v2-bottom">
+          <div className="footer-v2-legal">
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms of Use</Link>
+            <Link href="/cookies">Cookie Settings</Link>
+          </div>
+          <p className="footer-v2-copyright">
+            &copy; {new Date().getFullYear()} BLENDENCE by BUGE GIDA A.Ş. All rights reserved.
+          </p>
+        </div>
+      </div>
+
+      <style jsx>{`
+                .footer-v2 {
+                    background-color: #0A0A0B;
+                    color: #A1A1AA;
+                    padding: 8rem 0 4rem;
+                    position: relative;
+                    overflow: hidden;
+                    border-top: 1px solid rgba(255, 255, 255, 0.05);
+                }
+
+                .footer-v2::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 50%;
+                    height: 50%;
+                    background: radial-gradient(circle at top right, rgba(0, 188, 212, 0.03) 0%, transparent 70%);
+                    pointer-events: none;
+                }
+
+                .footer-v2-container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 0 2rem;
+                }
+
+                .footer-v2-grid {
+                    display: grid;
+                    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+                    gap: 4rem;
+                    margin-bottom: 6rem;
+                }
+
+                .footer-v2-main {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
+                }
+
+                .footer-v2-logo img {
+                    height: 3.5rem;
+                    width: auto;
+                    filter: brightness(0) invert(1);
+                    opacity: 1;
+                }
+
+                .footer-v2-description {
+                    font-size: 0.95rem;
+                    line-height: 1.6;
+                    max-width: 320px;
+                }
+
+                .footer-v2-socials {
+                    display: flex;
+                    gap: 1rem;
+                    margin-top: 0.5rem;
+                }
+
+                .footer-v2-socials a {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.03);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    transition: all 0.3s ease;
+                    border: 1px solid rgba(255, 255, 255, 0.05);
+                }
+
+                .footer-v2-socials a:hover {
+                    background: rgba(255, 255, 255, 0.1);
+                    transform: translateY(-2px);
+                    border-color: rgba(255, 255, 255, 0.2);
+                }
+
+                .footer-v2-heading {
+                    color: white;
+                    font-size: 0.85rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    margin-bottom: 2rem;
+                }
+
+                .footer-v2-nav {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+
+                .footer-v2-nav a {
+                    font-size: 0.95rem;
+                    color: #A1A1AA;
+                    transition: color 0.2s ease;
+                }
+
+                .footer-v2-nav a:hover {
+                    color: white;
+                }
+
+                .newsletter-text {
+                    font-size: 0.9rem;
+                    margin-bottom: 1.5rem;
+                    line-height: 1.5;
+                }
+
+                .newsletter-form {
+                    position: relative;
+                    display: flex;
+                }
+
+                .newsletter-input {
+                    width: 100%;
+                    background: rgba(255, 255, 255, 0.03);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    padding: 0.8rem 3.5rem 0.8rem 1rem;
+                    border-radius: 8px;
+                    color: white;
+                    font-size: 0.9rem;
+                    outline: none;
+                    transition: all 0.3s ease;
+                }
+
+                .newsletter-input:focus {
+                    border-color: rgba(0, 188, 212, 0.5);
+                    background: rgba(255, 255, 255, 0.05);
+                }
+
+                .newsletter-btn {
+                    position: absolute;
+                    right: 5px;
+                    top: 5px;
+                    bottom: 5px;
+                    width: 34px;
+                    background: white;
+                    color: black;
+                    border: none;
+                    border-radius: 6px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+
+                .newsletter-btn:hover {
+                    background: #E4E4E7;
+                    transform: scale(1.05);
+                }
+
+                .footer-v2-bottom {
+                    padding-top: 3rem;
+                    border-top: 1px solid rgba(255, 255, 255, 0.05);
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 2rem;
+                }
+
+                .footer-v2-legal {
+                    display: flex;
+                    gap: 2rem;
+                }
+
+                .footer-v2-legal a {
+                    font-size: 0.85rem;
+                    color: #71717A;
+                    transition: color 0.2s ease;
+                }
+
+                .footer-v2-legal a:hover {
+                    color: white;
+                }
+
+                .footer-v2-copyright {
+                    font-size: 0.85rem;
+                    color: #52525B;
+                }
+
+                @media (max-width: 1024px) {
+                    .footer-v2-grid {
+                        grid-template-columns: 1fr 1fr;
+                        gap: 3rem;
+                    }
+                }
+
+                @media (max-width: 640px) {
+                    .footer-v2 {
+                        padding: 4rem 0 3rem;
+                    }
+                    .footer-v2-grid {
+                        grid-template-columns: 1fr;
+                        gap: 3rem;
+                    }
+                    .footer-v2-bottom {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        text-align: left;
+                    }
+                    .footer-v2-legal {
+                        flex-direction: column;
+                        gap: 1rem;
+                    }
+                }
+            `}</style>
+    </footer>
+  );
 }
