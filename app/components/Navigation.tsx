@@ -27,6 +27,7 @@ export default function Navigation() {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+
   return (
     <Navbar className="top-0">
       {/* Desktop Navigation */}
