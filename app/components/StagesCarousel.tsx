@@ -70,9 +70,15 @@ export default function StagesCarousel() {
     const [isPaused, setIsPaused] = useState(false);
     const [animationPhase, setAnimationPhase] = useState<'idle' | 'out' | 'in'>('idle');
     const [direction, setDirection] = useState<'next' | 'prev'>('next');
+    const animationPhaseRef = React.useRef(animationPhase);
+
+    // Keep ref in sync with state
+    React.useEffect(() => {
+        animationPhaseRef.current = animationPhase;
+    }, [animationPhase]);
 
     const goToNext = useCallback(() => {
-        if (animationPhase !== 'idle') return;
+        if (animationPhaseRef.current !== 'idle') return;
         setDirection('next');
         setAnimationPhase('out');
 
@@ -86,10 +92,10 @@ export default function StagesCarousel() {
         setTimeout(() => {
             setAnimationPhase('idle');
         }, 700);
-    }, [animationPhase]);
+    }, []);
 
     const goToPrev = useCallback(() => {
-        if (animationPhase !== 'idle') return;
+        if (animationPhaseRef.current !== 'idle') return;
         setDirection('prev');
         setAnimationPhase('out');
 
@@ -103,24 +109,29 @@ export default function StagesCarousel() {
         setTimeout(() => {
             setAnimationPhase('idle');
         }, 700);
-    }, [animationPhase]);
+    }, []);
 
     const goToSlide = useCallback((index: number) => {
-        if (animationPhase !== 'idle' || index === activeIndex) return;
-        setDirection(index > activeIndex ? 'next' : 'prev');
-        setAnimationPhase('out');
+        if (animationPhaseRef.current !== 'idle') return;
+        setActiveIndex((currentActiveIndex) => {
+            if (index === currentActiveIndex) return currentActiveIndex;
+            setDirection(index > currentActiveIndex ? 'next' : 'prev');
+            setAnimationPhase('out');
 
-        // Swap content at midpoint when boxes are rotated away
-        setTimeout(() => {
-            setActiveIndex(index);
-            setAnimationPhase('in');
-        }, 350);
+            // Swap content at midpoint when boxes are rotated away
+            setTimeout(() => {
+                setActiveIndex(index);
+                setAnimationPhase('in');
+            }, 350);
 
-        // Animation complete
-        setTimeout(() => {
-            setAnimationPhase('idle');
-        }, 700);
-    }, [animationPhase, activeIndex]);
+            // Animation complete
+            setTimeout(() => {
+                setAnimationPhase('idle');
+            }, 700);
+
+            return currentActiveIndex; // Don't change yet, let the timeout do it
+        });
+    }, []);
 
     useEffect(() => {
         if (isPaused) return;
@@ -143,8 +154,6 @@ export default function StagesCarousel() {
         <section
             id="stages-section"
             className={styles.stagesSection}
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
         >
             <div className={styles.container}>
                 {/* Section Header */}
