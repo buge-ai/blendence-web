@@ -181,7 +181,7 @@ export default function V2Home() {
                 padding: 4rem 2rem;
             }
             .reverse-mobile .grid-visual-left {
-                order: -1; 
+                order: 1; 
             }
             .display-text { font-size: 3rem; }
         }
