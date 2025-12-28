@@ -60,6 +60,28 @@ const resetProducts = [
 ];
 
 export default function BentoSections() {
+    const [activeIndex, setActiveIndex] = React.useState(1);
+    const [isPaused, setIsPaused] = React.useState(false);
+
+    React.useEffect(() => {
+        if (isPaused) return;
+        const interval = setInterval(() => {
+            setActiveIndex((prev) => (prev + 1) % stagesProducts.length);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [isPaused, activeIndex]); // Reset timer on index change
+
+    const getPositionClass = (index: number) => {
+        if (index === activeIndex) return 'card-center';
+        const len = stagesProducts.length;
+        if (index === (activeIndex - 1 + len) % len) return 'card-left';
+        return 'card-right';
+    };
+
+    const handleDotClick = (index: number) => {
+        setActiveIndex(index);
+    };
+
     return (
         <>
             {/* STAGES SECTION */}
@@ -72,9 +94,17 @@ export default function BentoSections() {
                         </p>
                     </div>
 
-                    <div className="bento-grid stages-grid">
-                        {stagesProducts.map((product) => (
-                            <Link href={product.href} key={product.id} className="stage-card">
+                    <div
+                        className="bento-grid stages-grid"
+                        onMouseEnter={() => setIsPaused(true)}
+                        onMouseLeave={() => setIsPaused(false)}
+                    >
+                        {stagesProducts.map((product, index) => (
+                            <Link
+                                href={product.href}
+                                key={product.id}
+                                className={`stage-card ${getPositionClass(index)}`}
+                            >
                                 <div className="card-bg">
                                     <div
                                         className="bg-image"
@@ -107,6 +137,18 @@ export default function BentoSections() {
                                     </div>
                                 </div>
                             </Link>
+                        ))}
+                    </div>
+
+                    {/* Carousel Navigation Dots */}
+                    <div className="carousel-nav">
+                        {stagesProducts.map((_, index) => (
+                            <button
+                                key={index}
+                                className={`nav-dot ${index === activeIndex ? 'active' : ''}`}
+                                onClick={() => handleDotClick(index)}
+                                aria-label={`Go to slide ${index + 1}`}
+                            />
                         ))}
                     </div>
                 </div>
@@ -182,8 +224,15 @@ export default function BentoSections() {
         }
 
         .stages-grid {
-             grid-template-columns: repeat(3, 1fr);
-             height: 600px; /* Fixed height for the row */
+             /* Lifecycle as flexible carousel container */
+             position: relative;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             height: 600px; 
+             margin-top: 2rem;
+             perspective: 1200px;
+             overflow: visible; 
         }
 
         /* STAGE CARD (New Design) - Use :global to target Link component */
@@ -200,7 +249,87 @@ export default function BentoSections() {
             width: 100%;
             height: 100%;
             background-color: #111; /* Fallback color */
+            
+            /* Carousel Transitions */
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transform-origin: center center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
+
+        /* CAROUSEL STATES */
+        :global(.stage-card.card-center) {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) scale(1.1);
+            z-index: 20;
+            opacity: 1;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            filter: brightness(1.1);
+            width: 32%; 
+            height: 80%;
+        }
+
+        :global(.stage-card.card-left) {
+            position: absolute;
+            left: 20%;
+            transform: translateX(-50%) scale(0.9);
+            z-index: 10;
+            opacity: 0.6;
+            filter: brightness(0.7) blur(1px);
+            width: 28%;
+            height: 70%;
+            cursor: pointer;
+        }
+
+        :global(.stage-card.card-right) {
+            position: absolute;
+            left: 80%;
+            transform: translateX(-50%) scale(0.9);
+            z-index: 10;
+            opacity: 0.6;
+            filter: brightness(0.7) blur(1px);
+            width: 28%;
+            height: 70%;
+            cursor: pointer;
+        }
+        
+        /* NAVIGATION DOTS */
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            z-index: 30;
+            position: relative;
+        }
+        
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+            background: transparent;
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-dot:hover {
+            border-color: #666;
+            transform: scale(1.2);
+        }
+        
+        .nav-dot.active {
+            background: #111;
+            border-color: #111;
+            transform: scale(1.2);
+        }
+
+        /* Make side cards clickable to navigate to them? 
+           For now they link to their pages. 
+           If clicked, they go to page. 
+        */
 
         /* BACKGROUNDS */
         :global(.stage-card) .card-bg {
@@ -409,6 +538,28 @@ export default function BentoSections() {
             .stages-grid, .reset-grid {
                 grid-template-columns: 1fr;
                 height: auto;
+                display: grid; /* Reset from flex to grid on mobile */
+                gap: 2rem;
+            }
+            .stages-grid {
+                perspective: none;
+                overflow: visible;
+            }
+            /* Reset positioning for mobile to stack them */
+            :global(.stage-card), 
+            :global(.stage-card.card-center), 
+            :global(.stage-card.card-left), 
+            :global(.stage-card.card-right) {
+                position: relative;
+                left: auto;
+                transform: none;
+                top: auto;
+                width: 100%;
+                opacity: 1;
+                filter: none;
+                z-index: 1;
+                height: 500px;
+                margin-bottom: 0;
             }
             :global(.stage-card) {
                 height: 400px; /* Taller on mobile to show image */
