@@ -192,9 +192,11 @@ export default function V2Home() {
         .grid-visual-right, .grid-visual-left {
             width: 100%;
             height: 100%;
-            min-height: 500px;
+            aspect-ratio: 3 / 4;
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
+            background-color: #f9f9f9;
         }
 
         .visual-designed {
@@ -211,7 +213,9 @@ export default function V2Home() {
                 min-height: auto;
             }
             .grid-visual-right, .grid-visual-left {
-                height: 400px;
+                height: auto;
+                width: 100%;
+                aspect-ratio: 3 / 4;
             }
             .grid-content-left, .grid-content-right {
                 padding: 4rem 2rem;
