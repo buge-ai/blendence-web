@@ -84,62 +84,61 @@ export default function LiquidHero({ backgrounds, activeIndex, onSlideChange, on
                 })}
             </div>
 
-            {/* 2. Content Layer (Text & UI) */}
-            {SLIDE_CONTENT.map((slide, index) => {
-                const isActive = index === activeIndex;
-                const matchesBackground = index < backgrounds.length;
-                if (!matchesBackground) return null;
+            {/* 2. Content Layout (Static + Dynamic) */}
+            <div className={styles.layoutWrapper}>
+                <div className={styles.contentStack}>
 
-                return (
-                    <div
-                        key={slide.id}
-                        className={`${styles.contentLayer} ${isActive ? styles.layerActive : styles.layerInactive} ${isActive ? styles.animVisible : ''}`}
-                    >
-                        <div className={styles.contentContainer}>
-
-                            {/* Badge */}
-                            <div className={`${styles.badgeWrapper} ${styles.animItem} ${styles.delay1}`}>
-                                <span className={styles.badge} style={{ color: slide.themeColor }}>
-                                    {slide.subtitle}
-                                </span>
-                                <span className={styles.naturalTag}>
-                                    <IconLeaf size={14} /> 100% Natural
-                                </span>
-                            </div>
-
-                            {/* Title */}
-                            <h1 className={`${styles.mainTitle} ${styles.animItem} ${styles.delay2}`}>
-                                <span className={styles.titleLine}>Blendence</span>
-                                <span className={styles.titleLine} style={{ color: slide.themeColor }}>
-                                    {slide.title}
-                                </span>
-                            </h1>
-
-                            {/* Description */}
-                            <p className={`${styles.description} ${styles.animItem} ${styles.delay3}`}>
-                                {slide.description}
-                            </p>
-
-                            {/* Ingredients */}
-                            <div className={`${styles.ingredients} ${styles.animItem} ${styles.delay4}`}>
-                                {slide.ingredients.map((ing, i) => (
-                                    <span key={i} className={styles.ingredientPill}>
-                                        {ing}
-                                    </span>
-                                ))}
-                            </div>
-
-                            {/* Buttons */}
-                            <div className={`${styles.buttonGroup} ${styles.animItem} ${styles.delay5}`}>
-                                <button className={styles.btnSecondary} style={{ color: slide.themeColor, borderColor: slide.themeColor }}>
-                                    VIEW NUTRITION
-                                    <IconArrowRight size={18} />
-                                </button>
-                            </div>
-                        </div>
+                    {/* Static Title Block */}
+                    <div className={styles.staticBlock}>
+                        <h1 className={styles.staticTitle}>
+                            Designed nutrition for everyday balance.
+                        </h1>
+                        <p className={styles.staticSubtitle}>
+                            Naturally powerful, perfectly balanced.
+                        </p>
                     </div>
-                );
-            })}
+
+                    {/* Dynamic Slides Stack */}
+                    <div className={styles.dynamicStack}>
+                        {SLIDE_CONTENT.map((slide, index) => {
+                            const isActive = index === activeIndex;
+                            // Ensure we only render if background exists (safety)
+                            if (index >= backgrounds.length) return null;
+
+                            return (
+                                <div
+                                    key={slide.id}
+                                    className={`${styles.slideItem} ${isActive ? styles.slideItemActive : ''} ${isActive ? styles.animVisible : ''}`}
+                                >
+                                    <div className={`${styles.badgeWrapper} ${styles.animItem} ${styles.delay1}`}>
+                                        <span className={styles.badge} style={{ color: slide.themeColor }}>
+                                            {slide.subtitle}
+                                        </span>
+                                        <span className={styles.naturalTag}>
+                                            <IconLeaf size={14} /> 100% Natural
+                                        </span>
+                                    </div>
+
+                                    <h1 className={`${styles.mainTitle} ${styles.animItem} ${styles.delay2}`}>
+                                        <span className={styles.titleLine} style={{ color: slide.themeColor }}>
+                                            {slide.title}
+                                        </span>
+                                    </h1>
+
+                                    <div className={`${styles.ingredients} ${styles.animItem} ${styles.delay4}`}>
+                                        {slide.ingredients.map((ing, i) => (
+                                            <span key={i} className={styles.ingredientPill}>
+                                                {ing}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+
+                </div>
+            </div>
 
             {/* 3. Navigation Controls */}
             <div className={styles.navContainer}>

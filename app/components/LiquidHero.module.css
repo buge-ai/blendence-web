@@ -55,48 +55,119 @@
 }
 
 /* Gradient Overlay */
+/* Gradient Overlay */
 .gradientOverlay {
     position: absolute;
     inset: 0;
-    /* gradient-to-r from-white/90 via-white/40 to-transparent */
+    /* Reduced opacity for less fade */
     background: linear-gradient(to right,
-            rgba(255, 255, 255, 0.9) 0%,
-            rgba(255, 255, 255, 0.4) 40%,
+            rgba(255, 255, 255, 0.7) 0%,
+            rgba(255, 255, 255, 0.3) 40%,
             transparent 100%);
 }
 
 @media (max-width: 640px) {
     .gradientOverlay {
         background: linear-gradient(to bottom,
-                rgba(255, 255, 255, 0.9) 0%,
-                rgba(255, 255, 255, 0.6) 50%,
+                rgba(255, 255, 255, 0.8) 0%,
+                rgba(255, 255, 255, 0.5) 50%,
                 rgba(255, 255, 255, 0.2) 100%);
     }
 }
 
 /* -----------------------------
-   Content Layer
+   Static Top-Left Overlay
 ----------------------------- */
-.contentLayer {
+.staticOverlay {
     position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    transition: opacity 500ms ease;
-    padding-left: 6rem;
-    /* Adjust based on container */
-    padding-right: 6rem;
+    top: 3rem;
+    left: 6rem;
+    z-index: 25;
+    max-width: 600px;
+    pointer-events: auto;
 }
 
 @media (max-width: 1024px) {
-    .contentLayer {
-        padding-left: 3rem;
-        padding-right: 3rem;
+    .staticOverlay {
+        left: 3rem;
     }
 }
 
 @media (max-width: 768px) {
-    .contentLayer {
+    .staticOverlay {
+        left: 2rem;
+        top: 2rem;
+        max-width: 300px;
+    }
+}
+
+.staticTitle {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #111;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.staticSubtitle {
+    font-size: 1.125rem;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.exploreBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: white;
+    color: #111;
+    border: 1px solid #e5e7eb;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.exploreBtn:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* -----------------------------
+   Content Layer
+----------------------------- */
+/* -----------------------------
+   Content Layout (Static + Dynamic)
+----------------------------- */
+.layoutWrapper {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-start;
+    padding-left: 6rem;
+    padding-top: 10rem;
+    z-index: 20;
+    pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+    .layoutWrapper {
+        padding-left: 3rem;
+        padding-right: 3rem;
+        padding-top: 8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .layoutWrapper {
         justify-content: center;
         text-align: center;
         padding: 2rem;
@@ -105,21 +176,37 @@
     }
 }
 
-.contentContainer {
+.contentStack {
     max-width: 600px;
     width: 100%;
-}
-
-.layerActive {
-    opacity: 1;
-    z-index: 20;
     pointer-events: auto;
+    display: flex;
+    flex-direction: column;
 }
 
-.layerInactive {
+.staticBlock {
+    margin-bottom: 2rem;
+}
+
+/* Dynamic Content Stack (Grid for overlapping) */
+.dynamicStack {
+    display: grid;
+    grid-template-areas: "stack";
+    position: relative;
+}
+
+.slideItem {
+    grid-area: stack;
+    transition: opacity 500ms ease, transform 500ms ease;
     opacity: 0;
-    z-index: 10;
     pointer-events: none;
+    transform: translateY(10px);
+}
+
+.slideItemActive {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
 }
 
 /* Animation Utilities for Text */
