@@ -1,262 +1,169 @@
 'use client';
 
-import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { IconChevronLeft, IconChevronRight, IconArrowRight, IconShoppingBag, IconLeaf } from '@tabler/icons-react';
 import styles from './LiquidHero.module.css';
 
-// Product data for each slide
-const slideData = [
-    {
-        id: 0,
-        tag: 'KIDGROW',
-        tagColor: '#7ED957',
-        title: 'Foundation\nfor Growth',
-        subtitle: 'Ages 4-7',
-        description: 'Optimized nutrition for early growth stages — designed to fit naturally into everyday routines.',
-        cta: 'Explore KidGrow',
-        accentGlow: 'rgba(126, 217, 87, 0.4)'
-    },
-    {
-        id: 1,
-        tag: 'KIDRISE',
-        tagColor: '#FFB347',
-        title: 'Energy\nfor Learning',
-        subtitle: 'Ages 8-12',
-        description: 'Optimized nutrition for learning and active routines — supporting consistency throughout school days.',
-        cta: 'Explore KidRise',
-        accentGlow: 'rgba(255, 179, 71, 0.4)'
-    },
-    {
-        id: 2,
-        tag: 'TEENFOCUS',
-        tagColor: '#87CEEB',
-        title: 'Clarity\nfor Excellence',
-        subtitle: 'Ages 13-16',
-        description: 'Optimized nutrition for focus-intensive stages — designed for mentally demanding school years.',
-        cta: 'Explore TeenFocus',
-        accentGlow: 'rgba(135, 206, 235, 0.4)'
-    }
-];
-
-// Background enters from LEFT, exits to RIGHT (or vice versa)
-const backgroundVariants = {
-    enter: (direction: number) => ({
-        x: direction > 0 ? '-100%' : '100%',
-        opacity: 1,
-        zIndex: 0,
-    }),
-    center: {
-        x: 0,
-        opacity: 1,
-        zIndex: 1,
-        transition: {
-            x: { type: "spring" as const, stiffness: 120, damping: 25, restDelta: 0.5 },
-            opacity: { duration: 0.4 }
-        }
-    },
-    exit: (direction: number) => ({
-        x: direction > 0 ? '100.1%' : '-100.1%',
-        opacity: 1,
-        zIndex: 0,
-        transition: {
-            x: { type: "spring" as const, stiffness: 120, damping: 25, restDelta: 0.5 },
-            opacity: { duration: 0.4 }
-        }
-    })
-};
-
-// Product enters from RIGHT, exits to LEFT (opposite of background)
-const productVariants = {
-    enter: (direction: number) => ({
-        x: direction > 0 ? '150%' : '-150%',
-        opacity: 1,
-        scale: 0.9,
-        rotate: direction > 0 ? 10 : -10,
-    }),
-    center: {
-        x: 0,
-        opacity: 1,
-        scale: 1,
-        rotate: 0,
-        transition: {
-            x: { type: "spring" as const, stiffness: 40, damping: 20, restDelta: 0.5 },
-            scale: { duration: 1.2 },
-            rotate: { duration: 1.2 }
-        }
-    },
-    exit: (direction: number) => ({
-        x: direction > 0 ? '-150%' : '150%',
-        opacity: 1,
-        scale: 0.9,
-        rotate: direction > 0 ? -10 : 10,
-        transition: {
-            x: { type: "spring" as const, stiffness: 40, damping: 20, restDelta: 0.5 },
-            scale: { duration: 1.2 },
-            rotate: { duration: 1.2 }
-        }
-    })
-};
+const AUTO_PLAY_INTERVAL = 6000;
 
 interface LiquidHeroProps {
     backgrounds: string[];
     products?: string[];
     activeIndex: number;
-    direction: number;
+    direction?: number;
     onSlideChange?: (index: number) => void;
     onNext?: () => void;
     onPrev?: () => void;
 }
 
-export default function LiquidHero({ backgrounds, products, activeIndex, direction, onSlideChange, onNext, onPrev }: LiquidHeroProps) {
-    const currentSlide = slideData[activeIndex] || slideData[0];
+// Data mapping for specific slides
+const SLIDE_CONTENT = [
+    {
+        id: 0,
+        title: "KidGrow",
+        subtitle: "STAGES",
+        description: "Packed with essential vitamins for growing bodies. A delicious blend of banana, orange, pear, and grapes to fuel their play.",
+        ingredients: ["Banana", "Orange", "Pear", "Grapes"],
+        themeColor: "#E8874A"
+    },
+    {
+        id: 1,
+        title: "KidRise",
+        subtitle: "STAGES",
+        description: "The perfect morning kickstart. Apple, carrot, and lemon combine for a zesty immunity boost that tastes like sunshine.",
+        ingredients: ["Apple", "Carrot", "Lemon", "Banana"],
+        themeColor: "#EAB640"
+    },
+    {
+        id: 2,
+        title: "TeenFocus",
+        subtitle: "STAGES",
+        description: "Stay sharp and focused. A green power blend of kale, spinach, and apple designed to support mental clarity.",
+        ingredients: ["Kale", "Spinach", "Apple", "Lemon"],
+        themeColor: "#7EBEAE"
+    }
+];
+
+export default function LiquidHero({ backgrounds, activeIndex, onSlideChange, onNext, onPrev }: LiquidHeroProps) {
+    const [isPaused, setIsPaused] = useState(false);
+
+    // Auto-play Logic
+    useEffect(() => {
+        if (isPaused) return;
+        const timer = setInterval(() => {
+            if (onNext) onNext();
+        }, AUTO_PLAY_INTERVAL);
+        return () => clearInterval(timer);
+    }, [isPaused, onNext]);
 
     return (
-        <div className={styles.liquidHeroContainer}>
-            {/* Mobile Static Background - Only visible on mobile */}
-            <div className={styles.mobileBackground}>
-                <img
-                    src="/hero/v3/general-9-16-background.png"
-                    alt=""
-                    className={styles.backgroundImage}
-                />
-            </div>
-
-            {/* Animated Background Slider - Hidden on mobile */}
-            <div className={styles.backgroundSlider}>
-                <AnimatePresence initial={false} custom={direction}>
-                    <motion.div
-                        key={`bg-${activeIndex}`}
-                        custom={direction}
-                        variants={backgroundVariants}
-                        initial="enter"
-                        animate="center"
-                        exit="exit"
-                        className={styles.backgroundSlide}
-                    >
-                        <img
-                            src={backgrounds[activeIndex]}
-                            alt=""
-                            className={styles.backgroundImage}
-                        />
-                    </motion.div>
-                </AnimatePresence>
-            </div>
-
-            <div className={styles.heroGradientOverlay} />
-
-            <motion.div
-                className={styles.accentGlow}
-                animate={{
-                    background: `radial-gradient(circle at 50% 50%, ${currentSlide.accentGlow} 0%, transparent 60%)`
-                }}
-                transition={{ duration: 0.8 }}
-            />
-
-            {/* Product Carousel - Only render if products exist */}
-            {products && products.length > 0 && (
-                <div className={styles.productCarouselContainer}>
-                    <AnimatePresence initial={false} custom={direction}>
-                        <motion.div
-                            key={`product-${activeIndex}`}
-                            custom={direction}
-                            variants={productVariants}
-                            initial="enter"
-                            animate="center"
-                            exit="exit"
-                            className={styles.carouselItem}
+        <div
+            className={styles.liquidHeroContainer}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+        >
+            {/* 1. Morph Image Layer (Backgrounds) */}
+            <div className={styles.morphLayer}>
+                {backgrounds.map((bg, index) => {
+                    const isActive = index === activeIndex;
+                    return (
+                        <div
+                            key={`bg-${index}`}
+                            className={`${styles.morphSlide} ${isActive ? styles.morphSlideActive : styles.morphSlideInactive}`}
                         >
-                            <div className={styles.productImageWrapper}>
-                                <motion.img
-                                    src={products[activeIndex]}
-                                    alt={currentSlide.tag}
-                                    className={styles.productImage}
+                            <div className={styles.imageWrapper}>
+                                <img
+                                    src={bg}
+                                    alt={`Slide ${index}`}
+                                    className={styles.heroImage}
                                 />
+                                <div className={styles.gradientOverlay} />
                             </div>
-                        </motion.div>
-                    </AnimatePresence>
-                </div>
-            )}
-
-            <div className={styles.particlesContainer}>
-                {[...Array(15)].map((_, i) => (
-                    <motion.div
-                        key={i}
-                        className={styles.particle}
-                        animate={{
-                            opacity: [0.2, 0.5, 0.2],
-                            y: [-20, -100],
-                        }}
-                        transition={{
-                            duration: 4 + Math.random() * 4,
-                            repeat: Infinity,
-                            delay: Math.random() * 5,
-                            ease: "linear"
-                        }}
-                        style={{
-                            left: `${Math.random() * 100}%`,
-                            width: `${2 + Math.random() * 3}px`,
-                            height: `${2 + Math.random() * 3}px`,
-                            backgroundColor: 'white'
-                        }}
-                    />
-                ))}
+                        </div>
+                    );
+                })}
             </div>
 
-            {/* Content Layer - Static Brand Message */}
-            <div className={`${styles.contentLayer} ${styles.staticContent}`}>
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                    <h1 className={styles.heroTitle}>
-                        Designed nutrition<br />for everyday balance.
-                    </h1>
-                    <p className={styles.heroSubtitle}>Naturally powerful, perfectly balanced.</p>
+            {/* 2. Content Layer (Text & UI) */}
+            {SLIDE_CONTENT.map((slide, index) => {
+                const isActive = index === activeIndex;
+                const matchesBackground = index < backgrounds.length;
+                if (!matchesBackground) return null;
 
-                    <motion.a
-                        href="/approach"
-                        className={styles.heroCta}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        Explore our approach &rarr;
-                    </motion.a>
-                </motion.div>
-            </div>
-
-            {/* Arrow Navigation */}
-            <div className={styles.heroArrows}>
-                <button className={`${styles.arrowBtn} ${styles.prevBtn}`} onClick={onPrev} aria-label="Previous slide">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M19 12H5M12 19l-7-7 7-7" />
-                    </svg>
-                </button>
-                <button className={`${styles.arrowBtn} ${styles.nextBtn}`} onClick={onNext} aria-label="Next slide">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                </button>
-            </div>
-
-            {/* Navigation Elements */}
-            <div className={styles.productList}>
-                {slideData.map((slide, index) => (
-                    <motion.button
+                return (
+                    <div
                         key={slide.id}
-                        className={`${styles.productListItem} ${index === activeIndex ? styles.active : ''}`}
-                        onClick={() => onSlideChange?.(index)}
+                        className={`${styles.contentLayer} ${isActive ? styles.layerActive : styles.layerInactive} ${isActive ? styles.animVisible : ''}`}
                     >
-                        <motion.span
-                            className={styles.listIndicator}
-                            animate={{
-                                width: index === activeIndex ? 24 : 6,
-                                backgroundColor: index === activeIndex ? slide.tagColor : 'rgba(255,255,255,0.3)'
-                            }}
+                        <div className={styles.contentContainer}>
+
+                            {/* Badge */}
+                            <div className={`${styles.badgeWrapper} ${styles.animItem} ${styles.delay1}`}>
+                                <span className={styles.badge} style={{ color: slide.themeColor }}>
+                                    {slide.subtitle}
+                                </span>
+                                <span className={styles.naturalTag}>
+                                    <IconLeaf size={14} /> 100% Natural
+                                </span>
+                            </div>
+
+                            {/* Title */}
+                            <h1 className={`${styles.mainTitle} ${styles.animItem} ${styles.delay2}`}>
+                                <span className={styles.titleLine}>Blendence</span>
+                                <span className={styles.titleLine} style={{ color: slide.themeColor }}>
+                                    {slide.title}
+                                </span>
+                            </h1>
+
+                            {/* Description */}
+                            <p className={`${styles.description} ${styles.animItem} ${styles.delay3}`}>
+                                {slide.description}
+                            </p>
+
+                            {/* Ingredients */}
+                            <div className={`${styles.ingredients} ${styles.animItem} ${styles.delay4}`}>
+                                {slide.ingredients.map((ing, i) => (
+                                    <span key={i} className={styles.ingredientPill}>
+                                        {ing}
+                                    </span>
+                                ))}
+                            </div>
+
+                            {/* Buttons */}
+                            <div className={`${styles.buttonGroup} ${styles.animItem} ${styles.delay5}`}>
+                                <button className={styles.btnSecondary} style={{ color: slide.themeColor, borderColor: slide.themeColor }}>
+                                    VIEW NUTRITION
+                                    <IconArrowRight size={18} />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                );
+            })}
+
+            {/* 3. Navigation Controls */}
+            <div className={styles.navContainer}>
+                {/* Dots / Indicators */}
+                <div className={styles.navInner}>
+                    {backgrounds.map((_, idx) => (
+                        <button
+                            key={idx}
+                            onClick={() => onSlideChange?.(idx)}
+                            className={`${styles.indicator} ${idx === activeIndex ? styles.indicatorActive : styles.indicatorInactive}`}
+                            aria-label={`Go to slide ${idx + 1}`}
                         />
-                        {slide.tag}
-                    </motion.button>
-                ))}
+                    ))}
+                </div>
+
+                {/* Arrows */}
+                <div className={styles.navArrows}>
+                    <button className={styles.arrowBtn} onClick={onPrev} aria-label="Previous slide">
+                        <IconChevronLeft size={24} />
+                    </button>
+                    <button className={styles.arrowBtn} onClick={onNext} aria-label="Next slide">
+                        <IconChevronRight size={24} />
+                    </button>
+                </div>
             </div>
         </div>
     );

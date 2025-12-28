@@ -8,9 +8,9 @@ import BentoSections from './components/BentoSections';
 import ProductGroups from './components/ProductGroups';
 
 const backgrounds = [
-  '/hero/v3/kid-grow-transparent-background.png',
-  '/hero/v3/kid-rise-transparent-background.png',
-  '/hero/v3/teen-focus-transparent-background.png',
+  '/hero/v4/kid-grow-v4.png',
+  '/hero/v4/kid-rise-v4.png',
+  '/hero/v4/teen-focus-v4.png',
 ];
 
 const products = [
