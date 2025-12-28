@@ -25,21 +25,21 @@ export default function Navigation() {
           <div className="nav-group">
             <span className="nav-label">Stages</span>
             <div className="nav-dropdown">
-              <Link href="/v2/stages/kidgrow">KidGrow (4-7)</Link>
-              <Link href="/v2/stages/kidrise">KidRise (8-12)</Link>
-              <Link href="/v2/stages/teenfocus">TeenFocus (13-16)</Link>
+              <Link href="/stages/kidgrow">KidGrow (4-7)</Link>
+              <Link href="/stages/kidrise">KidRise (8-12)</Link>
+              <Link href="/stages/teenfocus">TeenFocus (13-16)</Link>
             </div>
           </div>
 
           <div className="nav-group">
             <span className="nav-label">Reset</span>
             <div className="nav-dropdown">
-              <Link href="/v2/reset/balance">Balance</Link>
-              <Link href="/v2/reset/intense">Intense</Link>
+              <Link href="/reset/balance">Balance</Link>
+              <Link href="/reset/intense">Intense</Link>
             </div>
           </div>
 
-          <Link href="/v2/our-approach" className="nav-link">Our Approach</Link>
+          <Link href="/our-approach" className="nav-link">Our Approach</Link>
         </div>
 
         {/* Shop Now button removed as per user request */}

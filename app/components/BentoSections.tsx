@@ -12,7 +12,7 @@ const stagesProducts = [
         range: 'Years',
         desc: 'Optimized nutrition for early growth stages.',
         fullDesc: 'Designed to fit naturally into everyday routines, supporting early development with essential nutrients.',
-        href: '/v2/stages/kidgrow',
+        href: '/stages/kidgrow',
         image: '/product/kid-grow.png',
         overlayColor: 'rgba(27, 94, 32, 0.8)' // Green tint
     },
@@ -23,7 +23,7 @@ const stagesProducts = [
         range: 'Years',
         desc: 'Supporting consistency throughout school days.',
         fullDesc: 'Optimized for learning and active routines, providing sustained energy without the crash.',
-        href: '/v2/stages/kidrise',
+        href: '/stages/kidrise',
         image: '/product/kid-rise.png',
         overlayColor: 'rgba(230, 81, 0, 0.8)' // Orange tint
     },
@@ -34,7 +34,7 @@ const stagesProducts = [
         range: 'Years',
         desc: 'Designed for mentally demanding school years.',
         fullDesc: 'Focus-intensive formula that helps teenagers stay sharp and balanced during stressful periods.',
-        href: '/v2/stages/teenfocus',
+        href: '/stages/teenfocus',
         image: '/product/teen-focus.png',
         overlayColor: 'rgba(13, 71, 161, 0.8)' // Blue tint
     }
@@ -46,7 +46,7 @@ const resetProducts = [
         title: 'Reset Balance',
         tag: 'Everyday',
         desc: 'Supporting lightness and balance during periods when daily routines feel heavier.',
-        href: '/v2/reset/balance',
+        href: '/reset/balance',
         bgColor: '#e0f2f1', // Very light teal
     },
     {
@@ -54,7 +54,7 @@ const resetProducts = [
         title: 'Reset Intense',
         tag: 'Targeted',
         desc: 'Clean, plant-based formulation for moments requiring deeper nutritional reset and portability.',
-        href: '/v2/reset/intense',
+        href: '/reset/intense',
         bgColor: '#f3e5f5', // Very light purple
     }
 ];

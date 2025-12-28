@@ -15,9 +15,9 @@ export default function Footer() {
                     <div className="footer-nav">
                         <div className="footer-col">
                             <h4>Explore</h4>
-                            <Link href="/v2/stages">Stages</Link>
-                            <Link href="/v2/reset">Reset</Link>
-                            <Link href="/v2/our-approach">Our Approach</Link>
+                            <Link href="/stages">Stages</Link>
+                            <Link href="/reset">Reset</Link>
+                            <Link href="/our-approach">Our Approach</Link>
                         </div>
 
                         <div className="footer-col">

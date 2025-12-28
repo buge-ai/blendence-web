@@ -9,7 +9,7 @@ const categories = [
     {
         id: 'stages',
         name: 'Stages',
-        href: '/v2/stages',
+        href: '/stages',
         description: 'Nutrition designed for life stages',
         gradient: 'linear-gradient(135deg, #2d5016 0%, #4a7c23 50%, #7ed957 100%)',
         products: [
@@ -17,7 +17,7 @@ const categories = [
                 id: 'kidgrow',
                 name: 'KidGrow',
                 ageRange: '4-7',
-                href: '/v2/stages/kidgrow',
+                href: '/stages/kidgrow',
                 gradient: 'linear-gradient(145deg, #7ed957 0%, #4caf50 50%, #2e7d32 100%)',
                 accentColor: '#7ed957',
             },
@@ -25,7 +25,7 @@ const categories = [
                 id: 'kidrise',
                 name: 'KidRise',
                 ageRange: '8-12',
-                href: '/v2/stages/kidrise',
+                href: '/stages/kidrise',
                 gradient: 'linear-gradient(145deg, #ffb347 0%, #ff9800 50%, #e65100 100%)',
                 accentColor: '#ffb347',
             },
@@ -33,7 +33,7 @@ const categories = [
                 id: 'teenfocus',
                 name: 'TeenFocus',
                 ageRange: '13-16',
-                href: '/v2/stages/teenfocus',
+                href: '/stages/teenfocus',
                 gradient: 'linear-gradient(145deg, #87ceeb 0%, #42a5f5 50%, #1565c0 100%)',
                 accentColor: '#87ceeb',
             },
@@ -42,7 +42,7 @@ const categories = [
     {
         id: 'reset',
         name: 'Reset',
-        href: '/v2/reset',
+        href: '/reset',
         description: 'Moments of balance',
         gradient: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
         products: [
@@ -50,7 +50,7 @@ const categories = [
                 id: 'reset-balance',
                 name: 'Balance',
                 tagline: 'Everyday',
-                href: '/v2/reset/balance',
+                href: '/reset/balance',
                 gradient: 'linear-gradient(145deg, #e8d5b7 0%, #c9b896 50%, #a89b7c 100%)',
                 accentColor: '#e8d5b7',
             },
@@ -58,7 +58,7 @@ const categories = [
                 id: 'reset-intense',
                 name: 'Intense',
                 tagline: 'Targeted',
-                href: '/v2/reset/intense',
+                href: '/reset/intense',
                 gradient: 'linear-gradient(145deg, #6b4e71 0%, #4a3550 50%, #2d1f30 100%)',
                 accentColor: '#9b7a9e',
             },
@@ -113,7 +113,7 @@ export default function HeroSection() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.9, duration: 0.6 }}
                     >
-                        <Link href="/v2/approach" className="cta-button">
+                        <Link href="/approach" className="cta-button">
                             Explore our approach
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <path d="M5 12h14M12 5l7 7-7 7" />
