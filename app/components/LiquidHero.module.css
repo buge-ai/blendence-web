@@ -68,9 +68,8 @@
 }
 
 .carouselItem {
-    position: relative;
-    width: auto;
-    height: auto;
+    position: absolute;
+    inset: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -317,7 +316,7 @@
     /* Move product to middle-bottom area */
     .productCarouselContainer {
         top: auto;
-        bottom: 18%;
+        bottom: 28%;
         left: 50%;
         right: auto;
         transform: translateX(-50%);

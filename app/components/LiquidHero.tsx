@@ -38,29 +38,29 @@ const slideData = [
     }
 ];
 
-// Background enters from LEFT, exits to LEFT (opposite of product)
+// Background enters from LEFT, exits to RIGHT (or vice versa)
 const backgroundVariants = {
     enter: (direction: number) => ({
-        x: direction > 0 ? '-100%' : '100%', // Enter from left when going forward
-        opacity: 0,
-        scale: 1.05,
+        x: direction > 0 ? '-100%' : '100%',
+        opacity: 1,
+        zIndex: 0,
     }),
     center: {
         x: 0,
         opacity: 1,
-        scale: 1,
+        zIndex: 1,
         transition: {
-            duration: 0.8,
-            ease: [0.25, 0.46, 0.45, 0.94] as const
+            x: { type: "spring" as const, stiffness: 120, damping: 25, restDelta: 0.5 },
+            opacity: { duration: 0.4 }
         }
     },
     exit: (direction: number) => ({
-        x: direction < 0 ? '-100%' : '100%', // Exit to left when going forward
-        opacity: 0,
-        scale: 1.05,
+        x: direction > 0 ? '100.1%' : '-100.1%',
+        opacity: 1,
+        zIndex: 0,
         transition: {
-            duration: 0.8,
-            ease: [0.25, 0.46, 0.45, 0.94] as const
+            x: { type: "spring" as const, stiffness: 120, damping: 25, restDelta: 0.5 },
+            opacity: { duration: 0.4 }
         }
     })
 };
@@ -68,7 +68,7 @@ const backgroundVariants = {
 // Product enters from RIGHT, exits to RIGHT (opposite of background)
 const productVariants = {
     enter: (direction: number) => ({
-        x: direction > 0 ? '100%' : '-100%', // Enter from right when going forward
+        x: direction > 0 ? '100%' : '-100%',
         opacity: 0,
         scale: 0.9,
         rotate: direction > 0 ? 5 : -5,
@@ -79,19 +79,19 @@ const productVariants = {
         scale: 1,
         rotate: 0,
         transition: {
-            duration: 0.7,
-            ease: [0.25, 0.46, 0.45, 0.94] as const,
-            delay: 0.1 // Slight delay for staggered effect
+            duration: 1.2,
+            ease: [0.22, 1, 0.36, 1] as const,
+            delay: 0.15
         }
     },
     exit: (direction: number) => ({
-        x: direction < 0 ? '100%' : '-100%', // Exit to right when going forward
+        x: direction < 0 ? '100%' : '-100%',
         opacity: 0,
         scale: 0.9,
         rotate: direction < 0 ? 5 : -5,
         transition: {
-            duration: 0.6,
-            ease: [0.25, 0.46, 0.45, 0.94] as const
+            duration: 1.0,
+            ease: [0.22, 1, 0.36, 1] as const
         }
     })
 };
@@ -122,7 +122,7 @@ export default function LiquidHero({ backgrounds, products, activeIndex, directi
 
             {/* Animated Background Slider - Hidden on mobile */}
             <div className={styles.backgroundSlider}>
-                <AnimatePresence initial={false} custom={direction} mode="popLayout">
+                <AnimatePresence initial={false} custom={direction}>
                     <motion.div
                         key={`bg-${activeIndex}`}
                         custom={direction}
@@ -154,7 +154,7 @@ export default function LiquidHero({ backgrounds, products, activeIndex, directi
             {/* Product Carousel - Only render if products exist */}
             {products && products.length > 0 && (
                 <div className={styles.productCarouselContainer}>
-                    <AnimatePresence initial={false} custom={direction} mode="popLayout">
+                    <AnimatePresence initial={false} custom={direction}>
                         <motion.div
                             key={`product-${activeIndex}`}
                             custom={direction}
