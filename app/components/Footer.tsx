@@ -42,7 +42,7 @@ export default function Footer() {
           <div className="footer-v2-col">
             <h4 className="footer-v2-heading">Company</h4>
             <nav className="footer-v2-nav">
-              <Link href="/our-approach">Our Approach</Link>
+              <Link href="/approach">Our Approach</Link>
               <Link href="/about">About Us</Link>
               <Link href="/contact">Contact</Link>
               <Link href="/faq">FAQ</Link>

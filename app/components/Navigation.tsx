@@ -38,7 +38,7 @@ export default function Navigation() {
           <NavDropdown name="Stages" items={stagesItems} />
           <NavDropdown name="Reset" items={resetItems} />
           <Link
-            href="/our-approach"
+            href="/approach"
             className="text-sm font-medium text-neutral-600 hover:text-black dark:text-neutral-300 dark:hover:text-white transition-colors duration-200"
           >
             Our Approach
@@ -97,7 +97,7 @@ export default function Navigation() {
             </div>
 
             <Link
-              href="/our-approach"
+              href="/approach"
               onClick={() => setIsMobileMenuOpen(false)}
               className="text-neutral-800 dark:text-white font-semibold text-lg py-2 px-2 border-t border-neutral-100 dark:border-neutral-800 mt-2 pt-4"
             >
