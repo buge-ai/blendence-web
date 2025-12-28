@@ -173,7 +173,12 @@ export default function StagesCarousel() {
                         {/* Bottom Row */}
                         <div className={styles.bottomRow}>
                             {/* Product Image Box */}
-                            <div className={`${styles.productBox} ${animClass}`}>
+                            <div
+                                className={`${styles.productBox} ${animClass}`}
+                                style={{
+                                    '--accent-color': currentProduct.accentColor
+                                } as React.CSSProperties}
+                            >
                                 <div className={styles.productImageWrapper}>
                                     <Image
                                         src={currentProduct.productImage}

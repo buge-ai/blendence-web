@@ -40,6 +40,7 @@
     grid-template-columns: 1fr 380px;
     gap: 1.5rem;
     min-height: 600px;
+    perspective: 1200px;
 }
 
 .leftColumn {
@@ -66,6 +67,8 @@
     align-items: flex-start;
     justify-content: flex-start;
     min-height: 220px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
 }
 
 .patternBg {
@@ -133,13 +136,15 @@
 
 /* Product Box - Bottom Left */
 .productBox {
-    background: linear-gradient(145deg, #1a3a3a 0%, #0d2d2d 100%);
+    background: var(--accent-color, #1a3a3a);
     border-radius: 24px;
     padding: 1.5rem;
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
 }
 
 .productImageWrapper {
@@ -176,6 +181,8 @@
     padding: 2rem;
     display: flex;
     flex-direction: column;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
 }
 
 .ingredientsHeader {
@@ -243,6 +250,8 @@
     overflow: hidden;
     position: relative;
     background: #1a3a3a;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
 }
 
 .lifestyleImageWrapper {
@@ -329,50 +338,62 @@
 
 /* Animation Classes */
 .animateIn {
-    animation: fadeSlideIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: flipIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .animateOut {
-    animation: fadeSlideOut 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: flipOut 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .animateOutReverse {
-    animation: fadeSlideOutReverse 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: flipOutReverse 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-@keyframes fadeSlideIn {
-    from {
+@keyframes flipIn {
+    0% {
         opacity: 0;
-        transform: translateY(20px) scale(0.95);
+        transform: rotateY(-90deg) scale(0.9);
     }
 
-    to {
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
         opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-@keyframes fadeSlideOut {
-    from {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateY(-20px) scale(0.95);
+        transform: rotateY(0deg) scale(1);
     }
 }
 
-@keyframes fadeSlideOutReverse {
-    from {
+@keyframes flipOut {
+    0% {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: rotateY(0deg) scale(1);
     }
 
-    to {
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
         opacity: 0;
-        transform: translateY(20px) scale(0.95);
+        transform: rotateY(90deg) scale(0.9);
+    }
+}
+
+@keyframes flipOutReverse {
+    0% {
+        opacity: 1;
+        transform: rotateY(0deg) scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+        transform: rotateY(-90deg) scale(0.9);
     }
 }
 
