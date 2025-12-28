@@ -66,7 +66,7 @@ export default function ProductLayout({
                     <div className="container">
                         <div className="features-grid">
                             {features.map((feature, idx) => (
-                                <div key={idx} className={`feature-card ${idx === 0 ? 'full-width' : ''}`}>
+                                <div key={idx} className={`feature-card ${idx % 3 === 0 ? 'full-width' : ''}`}>
                                     <h3>{feature.title}</h3>
                                     <div className="feature-body">{feature.content}</div>
                                 </div>

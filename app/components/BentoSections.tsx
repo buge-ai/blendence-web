@@ -550,22 +550,25 @@ export default function BentoSections() {
             :global(.stage-card.card-center), 
             :global(.stage-card.card-left), 
             :global(.stage-card.card-right) {
-                position: relative;
-                left: auto;
-                transform: none;
-                top: auto;
-                width: 100%;
-                opacity: 1;
-                filter: none;
-                z-index: 1;
+                position: relative !important;
+                left: auto !important;
+                transform: none !important;
+                top: auto !important;
+                width: 100% !important;
+                opacity: 1 !important;
+                filter: none !important;
+                z-index: 1 !important;
                 height: 500px;
-                margin-bottom: 0;
+                margin-bottom: 0 !important;
             }
             :global(.stage-card) {
                 height: 400px; /* Taller on mobile to show image */
             }
             .ramp-heading {
                 font-size: 2.5rem;
+            }
+            .carousel-nav {
+                display: none;
             }
         }
       `}</style>
