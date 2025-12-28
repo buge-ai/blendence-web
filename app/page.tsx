@@ -144,27 +144,49 @@ export default function V2Home() {
         }
 
         .grid-content-left, .grid-content-right {
-            padding: 6rem;
+            padding: 8rem 6rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
+        .section-label {
+            display: block;
+            text-transform: none;
+            font-size: 1.125rem;
+            color: #111;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .display-text {
+            font-size: 4.2rem;
+            font-weight: 700;
+            line-height: 1.05;
+            color: #1A4D5C;
+            margin-bottom: 3rem;
+            letter-spacing: -0.03em;
+        }
+
         .section-text {
-            margin-top: 2rem;
-            max-width: 500px;
+            margin-top: 1rem;
+            max-width: 650px;
         }
         
         .section-text h3 {
-             font-size: 1.5rem;
-             margin-bottom: 1rem;
-             font-weight: 500;
+             font-size: 2.6rem;
+             margin-bottom: 2rem;
+             font-weight: 700;
+             color: #1A4D5C;
+             letter-spacing: -0.02em;
+             line-height: 1.1;
         }
 
         .section-text p {
-             font-size: 1.125rem;
-             color: #555;
+             font-size: 1.35rem;
+             color: #444;
              line-height: 1.6;
+             max-width: 580px;
         }
 
         .grid-visual-right, .grid-visual-left {

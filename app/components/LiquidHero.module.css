@@ -55,16 +55,13 @@
 
 .productCarouselContainer {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: auto;
-    height: auto;
+    inset: 0;
     z-index: 10;
     pointer-events: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .carouselItem {
@@ -315,11 +312,21 @@
 
     /* Move product to middle-bottom area */
     .productCarouselContainer {
-        top: auto;
-        bottom: 28%;
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
+        inset: 0;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: 28vh;
+        transform: none;
+    }
+
+    .carouselItem {
+        align-items: flex-end;
+        padding-bottom: 25vh;
     }
 
     .productList {

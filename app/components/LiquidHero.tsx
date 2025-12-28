@@ -65,13 +65,13 @@ const backgroundVariants = {
     })
 };
 
-// Product enters from RIGHT, exits to RIGHT (opposite of background)
+// Product enters from RIGHT, exits to LEFT (opposite of background)
 const productVariants = {
     enter: (direction: number) => ({
-        x: direction > 0 ? '100%' : '-100%',
-        opacity: 0,
+        x: direction > 0 ? '150%' : '-150%',
+        opacity: 1,
         scale: 0.9,
-        rotate: direction > 0 ? 5 : -5,
+        rotate: direction > 0 ? 10 : -10,
     }),
     center: {
         x: 0,
@@ -79,19 +79,20 @@ const productVariants = {
         scale: 1,
         rotate: 0,
         transition: {
-            duration: 1.2,
-            ease: [0.22, 1, 0.36, 1] as const,
-            delay: 0.15
+            x: { type: "spring" as const, stiffness: 40, damping: 20, restDelta: 0.5 },
+            scale: { duration: 1.2 },
+            rotate: { duration: 1.2 }
         }
     },
     exit: (direction: number) => ({
-        x: direction < 0 ? '100%' : '-100%',
-        opacity: 0,
+        x: direction > 0 ? '-150%' : '150%',
+        opacity: 1,
         scale: 0.9,
-        rotate: direction < 0 ? 5 : -5,
+        rotate: direction > 0 ? -10 : 10,
         transition: {
-            duration: 1.0,
-            ease: [0.22, 1, 0.36, 1] as const
+            x: { type: "spring" as const, stiffness: 40, damping: 20, restDelta: 0.5 },
+            scale: { duration: 1.2 },
+            rotate: { duration: 1.2 }
         }
     })
 };
