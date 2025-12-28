@@ -2,43 +2,6 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-
-const stagesProducts = [
-    {
-        id: 'kidgrow',
-        title: 'KidGrow',
-        age: '4–7',
-        range: 'Years',
-        desc: 'Optimized nutrition for early growth stages.',
-        fullDesc: 'Designed to fit naturally into everyday routines, supporting early development with essential nutrients.',
-        href: '/stages/kidgrow',
-        image: '/product/kid-grow.png',
-        overlayColor: 'rgba(27, 94, 32, 0.8)' // Green tint
-    },
-    {
-        id: 'kidrise',
-        title: 'KidRise',
-        age: '8–12',
-        range: 'Years',
-        desc: 'Supporting consistency throughout school days.',
-        fullDesc: 'Optimized for learning and active routines, providing sustained energy without the crash.',
-        href: '/stages/kidrise',
-        image: '/product/kid-rise.png',
-        overlayColor: 'rgba(230, 81, 0, 0.8)' // Orange tint
-    },
-    {
-        id: 'teenfocus',
-        title: 'TeenFocus',
-        age: '13–16',
-        range: 'Years',
-        desc: 'Designed for mentally demanding school years.',
-        fullDesc: 'Focus-intensive formula that helps teenagers stay sharp and balanced during stressful periods.',
-        href: '/stages/teenfocus',
-        image: '/product/teen-focus.png',
-        overlayColor: 'rgba(13, 71, 161, 0.8)' // Blue tint
-    }
-];
 
 const resetProducts = [
     {
@@ -60,99 +23,8 @@ const resetProducts = [
 ];
 
 export default function BentoSections() {
-    const [activeIndex, setActiveIndex] = React.useState(1);
-    const [isPaused, setIsPaused] = React.useState(false);
-
-    React.useEffect(() => {
-        if (isPaused) return;
-        const interval = setInterval(() => {
-            setActiveIndex((prev) => (prev + 1) % stagesProducts.length);
-        }, 3000);
-        return () => clearInterval(interval);
-    }, [isPaused, activeIndex]); // Reset timer on index change
-
-    const getPositionClass = (index: number) => {
-        if (index === activeIndex) return 'card-center';
-        const len = stagesProducts.length;
-        if (index === (activeIndex - 1 + len) % len) return 'card-left';
-        return 'card-right';
-    };
-
-    const handleDotClick = (index: number) => {
-        setActiveIndex(index);
-    };
-
     return (
         <>
-            {/* STAGES SECTION */}
-            <section id="stages-section" className="bento-section">
-                <div className="container">
-                    <div className="section-header">
-                        <h2 className="ramp-heading">Nutrition designed for<br />the stages of life.</h2>
-                        <p className="ramp-subheading">
-                            As the body’s needs shift across different stages of life, nutrition should adapt accordingly.
-                        </p>
-                    </div>
-
-                    <div
-                        className="bento-grid stages-grid"
-                        onMouseEnter={() => setIsPaused(true)}
-                        onMouseLeave={() => setIsPaused(false)}
-                    >
-                        {stagesProducts.map((product, index) => (
-                            <Link
-                                href={product.href}
-                                key={product.id}
-                                className={`stage-card ${getPositionClass(index)}`}
-                            >
-                                <div className="card-bg">
-                                    <div
-                                        className="bg-image"
-                                        style={{
-                                            backgroundImage: `url('${product.image}')`,
-                                            width: '100%',
-                                            height: '100%',
-                                            backgroundSize: 'cover',
-                                            backgroundPosition: 'center',
-                                            position: 'absolute',
-                                            inset: 0,
-                                            transition: 'transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)'
-                                        }}
-                                    />
-                                    <div className="bg-overlay" />
-                                </div>
-
-                                <div className="card-top">
-                                    <span className="product-title">{product.title}</span>
-                                </div>
-
-                                <div className="card-content-bottom">
-                                    <div className="norm-content">
-                                        <span className="age-badge">{product.age} {product.range}</span>
-                                    </div>
-                                    <div className="hover-content">
-                                        <h3 className="hover-headline">{product.desc}</h3>
-                                        <div className="hover-divider" />
-                                        <p className="hover-sub">{product.fullDesc}</p>
-                                    </div>
-                                </div>
-                            </Link>
-                        ))}
-                    </div>
-
-                    {/* Carousel Navigation Dots */}
-                    <div className="carousel-nav">
-                        {stagesProducts.map((_, index) => (
-                            <button
-                                key={index}
-                                className={`nav-dot ${index === activeIndex ? 'active' : ''}`}
-                                onClick={() => handleDotClick(index)}
-                                aria-label={`Go to slide ${index + 1}`}
-                            />
-                        ))}
-                    </div>
-                </div>
-            </section>
 
             {/* RESET SECTION */}
             <section id="reset-section" className="bento-section highlight-bg">

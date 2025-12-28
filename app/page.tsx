@@ -5,6 +5,7 @@ import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import LiquidHero from './components/LiquidHero';
 import BentoSections from './components/BentoSections';
+import StagesCarousel from './components/StagesCarousel';
 import ProductGroups from './components/ProductGroups';
 
 const backgrounds = [
@@ -85,7 +86,10 @@ export default function V2Home() {
         {/* SECTION 4: PRODUCT GROUPS (Stages & Reset Selection) */}
         <ProductGroups />
 
-        {/* SECTION 5 & 6: BENTO GRIDS (Stages & Reset Product Details) */}
+        {/* SECTION 5: NEW STAGES CAROUSEL */}
+        <StagesCarousel />
+
+        {/* SECTION 6: BENTO GRIDS (Reset Product Details) */}
         <BentoSections />
 
         {/* SECTION 7: OUR APPROACH */}
