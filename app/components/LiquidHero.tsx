@@ -23,7 +23,7 @@ const SLIDE_CONTENT = [
         title: "KidGrow",
         subtitle: "STAGES",
         description: "Packed with essential vitamins for growing bodies. A delicious blend of banana, orange, pear, and grapes to fuel their play.",
-        ingredients: ["Banana", "Orange", "Pear", "Grapes"],
+        badges: ["Designed blend", "Plant-based", "Stage-optimized"],
         themeColor: "#D67030"
     },
     {
@@ -31,7 +31,7 @@ const SLIDE_CONTENT = [
         title: "KidRise",
         subtitle: "STAGES",
         description: "The perfect morning kickstart. Apple, carrot, and lemon combine for a zesty immunity boost that tastes like sunshine.",
-        ingredients: ["Apple", "Carrot", "Lemon", "Banana"],
+        badges: ["Clean formulation", "Plant-based", "Thoughtfully designed"],
         themeColor: "#C89010"
     },
     {
@@ -39,7 +39,7 @@ const SLIDE_CONTENT = [
         title: "TeenFocus",
         subtitle: "STAGES",
         description: "Stay sharp and focused. A green power blend of kale, spinach, and apple designed to support mental clarity.",
-        ingredients: ["Kale", "Spinach", "Apple", "Lemon"],
+        badges: ["Designed blend", "Stage-optimized", "Clean formulation"],
         themeColor: "#4A9C8C"
     }
 ];
@@ -114,9 +114,6 @@ export default function LiquidHero({ backgrounds, activeIndex, onSlideChange, on
                                         <span className={styles.badge} style={{ color: slide.themeColor }}>
                                             {slide.subtitle}
                                         </span>
-                                        <span className={styles.naturalTag}>
-                                            <IconLeaf size={14} /> 100% Natural
-                                        </span>
                                     </div>
 
                                     <h1 className={`${styles.mainTitle} ${styles.animItem} ${styles.delay2}`}>
@@ -126,9 +123,9 @@ export default function LiquidHero({ backgrounds, activeIndex, onSlideChange, on
                                     </h1>
 
                                     <div className={`${styles.ingredients} ${styles.animItem} ${styles.delay4}`}>
-                                        {slide.ingredients.map((ing, i) => (
+                                        {slide.badges.map((badge, i) => (
                                             <span key={i} className={styles.ingredientPill}>
-                                                {ing}
+                                                <IconLeaf size={14} /> {badge}
                                             </span>
                                         ))}
                                     </div>

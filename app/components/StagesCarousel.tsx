@@ -8,14 +8,13 @@ import styles from './StagesCarousel.module.css';
 interface StageProduct {
     id: string;
     title: string;
-    age: string;
-    range: string;
+    tagline: string;
     desc: string;
     fullDesc: string;
     href: string;
     productImage: string;
     lifestyleImage: string;
-    ingredients: string[];
+    whyBlend: string[];
     accentColor: string;
     patternColor: string;
 }
@@ -24,42 +23,51 @@ const stagesProducts: StageProduct[] = [
     {
         id: 'kidgrow',
         title: 'KidGrow',
-        age: '4–7',
-        range: 'Years',
+        tagline: 'Designed for early growth stages, suitable for all ages.',
         desc: 'Optimized nutrition for early growth stages.',
         fullDesc: 'Designed to fit naturally into everyday routines, supporting early development with essential nutrients.',
         href: '/stages/kidgrow',
         productImage: '/main/stages/kid-grow.png',
         lifestyleImage: '/main/stages/kid-grow-glass.png',
-        ingredients: ['Grape', 'Orange', 'Peach', 'Banana', 'Orange Peel'],
+        whyBlend: [
+            "During early growth stages, the body requires a variety of nutritional building blocks as part of normal development.",
+            "Many of these components are naturally present in fruits and vegetables commonly included in balanced diets.",
+            "KidGrow is designed by identifying these everyday needs first, then selecting plant-based ingredients where they naturally occur — combined into a blend that fits easily into daily routines."
+        ],
         accentColor: '#D67030',
         patternColor: '#E8A06A'
     },
     {
         id: 'kidrise',
         title: 'KidRise',
-        age: '8–12',
-        range: 'Years',
+        tagline: 'Designed for school-age routines, suitable for all ages.',
         desc: 'Supporting consistency throughout school days.',
         fullDesc: 'Optimized for learning and active routines, providing sustained energy without the crash.',
         href: '/stages/kidrise',
         productImage: '/main/stages/kid-rise.png',
         lifestyleImage: '/main/stages/kid-rise-glass.png',
-        ingredients: ['Apple', 'Banana', 'Carrot', 'Lemon', 'Orange Peel'],
+        whyBlend: [
+            "School-age years come with changing routines and increasing cognitive and physical demands.",
+            "A balanced diet during this stage typically includes a range of plant-based foods that naturally contain essential nutritional components.",
+            "KidRise is designed by mapping these stage-specific needs first, then blending selected fruits and vegetables into a formulation that supports everyday consistency."
+        ],
         accentColor: '#C89010',
         patternColor: '#E0B850'
     },
     {
         id: 'teenfocus',
         title: 'TeenFocus',
-        age: '13–16',
-        range: 'Years',
+        tagline: 'Designed for focus-intensive teenage stages.',
         desc: 'Designed for mentally demanding school years.',
         fullDesc: 'Focus-intensive formula that helps teenagers stay sharp and balanced during stressful periods.',
         href: '/stages/teenfocus',
         productImage: '/main/stages/teen-focus.png',
         lifestyleImage: '/main/stages/teen-focus-glass.png',
-        ingredients: ['Strawberry', 'Grape', 'Kiwi', 'Lemon', 'Banana', 'Flaxseed'],
+        whyBlend: [
+            "As school routines become more demanding, maintaining everyday focus plays a bigger role in daily life.",
+            "During early teenage years, nutritional needs naturally evolve alongside learning and active routines.",
+            "TeenFocus is designed around these changing needs, using plant-based ingredients where essential nutritional components naturally occur — combined into a blend that fits easily into daily routines."
+        ],
         accentColor: '#4A9C8C',
         patternColor: '#7CBFB2'
     }
@@ -226,12 +234,11 @@ export default function StagesCarousel() {
                                     />
                                 </div>
                                 <div className={styles.productInfo}>
-                                    <span className={styles.ageLabel}>{currentProduct.age}</span>
-                                    <span className={styles.rangeLabel}>{currentProduct.range}</span>
+                                    <span className={styles.taglineLabel}>{currentProduct.tagline}</span>
                                 </div>
                             </div>
 
-                            {/* Ingredients Box */}
+                            {/* Why This Blend Box */}
                             <div
                                 className={`${styles.ingredientsBox} ${animClass}`}
                                 style={{
@@ -239,16 +246,15 @@ export default function StagesCarousel() {
                                 } as React.CSSProperties}
                             >
                                 <div className={styles.ingredientsHeader}>
-                                    <span className={styles.ingredientsLabel}>Ingredients</span>
+                                    <span className={styles.ingredientsLabel}>Why this blend</span>
                                 </div>
-                                <ul className={styles.ingredientsList}>
-                                    {currentProduct.ingredients.map((ingredient, idx) => (
-                                        <li key={idx} className={styles.ingredientItem}>
-                                            <span className={styles.ingredientDot} />
-                                            {ingredient}
-                                        </li>
+                                <div className={styles.whyBlendContent}>
+                                    {currentProduct.whyBlend.map((paragraph: string, idx: number) => (
+                                        <p key={idx} className={styles.whyBlendParagraph}>
+                                            {paragraph}
+                                        </p>
                                     ))}
-                                </ul>
+                                </div>
                                 <Link href={currentProduct.href} className={styles.learnMore}>
                                     Learn more →
                                 </Link>

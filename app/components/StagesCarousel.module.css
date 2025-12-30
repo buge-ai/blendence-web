@@ -159,19 +159,11 @@
     margin-top: 1rem;
 }
 
-.ageLabel {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #ffffff;
-    line-height: 1;
-}
-
-.rangeLabel {
-    font-size: 0.875rem;
+.taglineLabel {
+    font-size: 0.9rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.6);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.4;
 }
 
 /* Ingredients Box - Bottom Center/Right */
@@ -225,6 +217,30 @@
     border-radius: 50%;
     background: var(--accent-color, #0d4f4f);
     flex-shrink: 0;
+}
+
+/* Why This Blend Content */
+.whyBlendContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    overflow-y: auto;
+    max-height: 280px;
+}
+
+.whyBlendParagraph {
+    font-size: 0.9rem;
+    color: #2a2a2a;
+    line-height: 1.6;
+    margin: 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.whyBlendParagraph:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
 .learnMore {

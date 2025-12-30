@@ -331,15 +331,18 @@
 }
 
 .ingredientPill {
-    padding: 0.375rem 0.75rem;
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(4px);
-    border: 1px solid #e5e7eb;
-    border-radius: 0.375rem;
-    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 9999px;
+    font-size: 0.8125rem;
     font-weight: 500;
     color: #374151;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
 .buttonGroup {
