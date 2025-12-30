@@ -66,7 +66,8 @@ export default function Footer() {
           <div className="footer-v2-legal">
             <Link href="/privacy">Privacy Policy</Link>
             <Link href="/terms">Terms of Use</Link>
-            <Link href="/cookies">Cookie Settings</Link>
+            <Link href="/food-safety">Food Safety</Link>
+            <Link href="/gender-equality">Gender Equality</Link>
           </div>
           <p className="footer-v2-copyright">
             &copy; {new Date().getFullYear()} BLENDENCE by BUGE GIDA A.Ş. All rights reserved.

@@ -90,9 +90,9 @@ export default function LiquidHero({ backgrounds, activeIndex, onSlideChange, on
 
                     {/* Static Title Block */}
                     <div className={styles.staticBlock}>
-                        <h1 className={styles.staticTitle}>
-                            Designed nutrition for everyday balance.
-                        </h1>
+                        <h2 className={styles.staticTitle}>
+                            Designed nutrition for everyday balance
+                        </h2>
                         <p className={styles.staticSubtitle}>
                             Naturally powerful, perfectly balanced.
                         </p>
@@ -116,11 +116,11 @@ export default function LiquidHero({ backgrounds, activeIndex, onSlideChange, on
                                         </span>
                                     </div>
 
-                                    <h1 className={`${styles.mainTitle} ${styles.animItem} ${styles.delay2}`}>
+                                    <h3 className={`${styles.mainTitle} ${styles.animItem} ${styles.delay2}`}>
                                         <span className={styles.titleLine} style={{ color: slide.themeColor }}>
                                             {slide.title}
                                         </span>
-                                    </h1>
+                                    </h3>
 
                                     <div className={`${styles.ingredients} ${styles.animItem} ${styles.delay4}`}>
                                         {slide.badges.map((badge, i) => (

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import LiquidHero from './components/LiquidHero';
-import BentoSections from './components/BentoSections';
+import ResetSpotlight from './components/ResetSpotlight';
 import StagesCarousel from './components/StagesCarousel';
 import ProductGroups from './components/ProductGroups';
 
@@ -89,8 +89,8 @@ export default function V2Home() {
         {/* SECTION 5: NEW STAGES CAROUSEL */}
         <StagesCarousel />
 
-        {/* SECTION 6: BENTO GRIDS (Reset Product Details) */}
-        <BentoSections />
+        {/* SECTION 6: RESET SPOTLIGHT (Bento Grid Design) */}
+        <ResetSpotlight />
 
         {/* SECTION 7: OUR APPROACH */}
         <section className="approach-teaser centered-block">

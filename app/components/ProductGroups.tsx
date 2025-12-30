@@ -28,7 +28,8 @@ export default function ProductGroups() {
             <div className="group-card reset-group">
                 <div className="group-content">
                     <h2 className="group-title">Reset</h2>
-                    <p className="group-desc">Nutrition for moments of balance. Supporting lightness when daily routines feel heavier.</p>
+                    <p className="group-desc">Designed for moments when lightness and balance matter more.</p>
+                    <p className="group-subdesc">Some periods feel heavier than usual. Reset is designed to support balance and digestive lightness during those moments — without turning nutrition into a ritual or a promise.</p>
                     <a href="#reset-section" onClick={(e) => scrollToSection(e, 'reset-section')} className="group-link">
                         Explore Reset <span className="arrow">↓</span>
                     </a>
@@ -78,8 +79,15 @@ export default function ProductGroups() {
         .group-desc {
             font-size: 1.25rem;
             line-height: 1.5;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1rem;
             color: #444;
+        }
+
+        .group-subdesc {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            color: #666;
         }
 
         .group-link {

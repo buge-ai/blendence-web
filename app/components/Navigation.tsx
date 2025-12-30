@@ -9,6 +9,7 @@ import {
   MobileNavToggle,
   MobileNavMenu,
   NavDropdown,
+  NavLinksWrapper,
 } from "./ui/resizable-navbar";
 import { useState } from "react";
 import Link from "next/link";
@@ -34,7 +35,7 @@ export default function Navigation() {
       <NavBody className="bg-transparent backdrop-blur-none border-none">
         <NavbarLogo src="/logo.png" href="/" />
 
-        <div className="flex flex-1 items-center justify-center gap-6">
+        <NavLinksWrapper>
           <NavDropdown name="Stages" items={stagesItems} />
           <NavDropdown name="Reset" items={resetItems} />
           <Link
@@ -43,7 +44,7 @@ export default function Navigation() {
           >
             Our Approach
           </Link>
-        </div>
+        </NavLinksWrapper>
 
         {/* Spacer for layout balance */}
         <div className="w-[180px] hidden lg:block" />

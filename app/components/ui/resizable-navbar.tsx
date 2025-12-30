@@ -110,7 +110,14 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
                 className,
             )}
         >
-            {children}
+            {React.Children.map(children, (child) =>
+                React.isValidElement(child)
+                    ? React.cloneElement(
+                        child as React.ReactElement<{ visible?: boolean }>,
+                        { visible },
+                    )
+                    : child,
+            )}
         </motion.div>
     );
 };
@@ -252,6 +259,36 @@ export const NavbarLogo = ({ src = "/logo.png", alt = "logo", href = "/" }: { sr
                 className="h-14 w-auto object-contain"
             />
         </Link>
+    );
+};
+
+export const NavLinksWrapper = ({
+    children,
+    visible,
+    className
+}: {
+    children: React.ReactNode;
+    visible?: boolean;
+    className?: string;
+}) => {
+    return (
+        <motion.div
+            animate={{
+                opacity: visible ? 1 : 0,
+                y: visible ? 0 : -10,
+                pointerEvents: visible ? "auto" : "none",
+            }}
+            transition={{
+                duration: 0.3,
+                ease: "easeOut",
+            }}
+            className={cn(
+                "flex flex-1 items-center justify-center gap-6",
+                className
+            )}
+        >
+            {children}
+        </motion.div>
     );
 };
 

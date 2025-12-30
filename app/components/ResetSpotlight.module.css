@@ -1,0 +1,480 @@
+/* Reset Spotlight Section - Sage Green/Olive Theme with White Boxes */
+
+.resetSection {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #B8C5A2 0%, #A0AF8A 50%, #8B9A6B 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+.sectionHeader {
+    margin-bottom: 3rem;
+    max-width: 800px;
+}
+
+.heading {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+.subheading {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+}
+
+/* Bento Grid Layout */
+.bentoGrid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 1.5rem;
+    min-height: 600px;
+    perspective: 1200px;
+}
+
+.leftColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.bottomRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+/* Title Box - Top Left - WHITE */
+.titleBox {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 2rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 220px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.patternBg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+    color: var(--accent-color, #8B9A6B);
+}
+
+.patternSvg {
+    width: 100%;
+    height: 100%;
+}
+
+.titleContent {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    width: 100%;
+}
+
+.productLink {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+.titleRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.25rem;
+}
+
+.productTitle {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--accent-color, #8B9A6B);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin: 0;
+}
+
+.trademark {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--accent-color, #8B9A6B);
+    opacity: 0.8;
+    margin-top: 0.25rem;
+}
+
+.productDesc {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #2a2a2a;
+    margin: 1rem 0 0.5rem 0;
+    line-height: 1.3;
+}
+
+.productFullDesc {
+    font-size: 0.95rem;
+    color: rgba(42, 42, 42, 0.75);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Product Box - Bottom Left - WHITE */
+.productBox {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.productImageWrapper {
+    position: relative;
+    flex: 1;
+    min-height: 200px;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.taglineLabel {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--accent-color, #8B9A6B);
+    line-height: 1.4;
+}
+
+/* Ingredients/Why This Blend Box - WHITE */
+.ingredientsBox {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.ingredientsHeader {
+    margin-bottom: 1.5rem;
+}
+
+.ingredientsLabel {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-color, #8B9A6B);
+}
+
+/* Why This Blend Content */
+.whyBlendContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    overflow-y: auto;
+    max-height: 280px;
+}
+
+.whyBlendParagraph {
+    font-size: 0.9rem;
+    color: #2a2a2a;
+    line-height: 1.6;
+    margin: 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(139, 154, 107, 0.15);
+}
+
+.whyBlendParagraph:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.learnMore {
+    margin-top: auto;
+    padding-top: 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--accent-color, #8B9A6B);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: gap 0.3s ease;
+}
+
+.learnMore:hover {
+    gap: 0.5rem;
+}
+
+/* Lifestyle Box - Right (9:16 aspect ratio) - WHITE */
+.lifestyleBox {
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    background: #ffffff;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.lifestyleImageWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+}
+
+/* Carousel Controls */
+.carouselControls {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.playBtn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.playBtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.progressBar {
+    display: flex;
+    gap: 0.5rem;
+    flex: 1;
+    max-width: 400px;
+}
+
+.progressSegment {
+    flex: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.progressSegment:hover {
+    transform: scaleY(1.5);
+}
+
+.progressFill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: #ffffff;
+    border-radius: 2px;
+}
+
+.progressSegment.active .progressFill {
+    animation: progressAnimation 6s linear forwards;
+}
+
+@keyframes progressAnimation {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* Animation Classes */
+.animateIn {
+    animation: flipIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animateOut {
+    animation: flipOut 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animateOutReverse {
+    animation: flipOutReverse 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes flipIn {
+    0% {
+        opacity: 0;
+        transform: rotateY(-90deg) scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateY(0deg) scale(1);
+    }
+}
+
+@keyframes flipOut {
+    0% {
+        opacity: 1;
+        transform: rotateY(0deg) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: rotateY(90deg) scale(0.95);
+    }
+}
+
+@keyframes flipOutReverse {
+    0% {
+        opacity: 1;
+        transform: rotateY(0deg) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: rotateY(-90deg) scale(0.95);
+    }
+}
+
+/* Box rotation animation on transition */
+.titleBox,
+.productBox,
+.ingredientsBox,
+.lifestyleBox {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .bentoGrid {
+        grid-template-columns: 1fr 320px;
+    }
+
+    .productTitle {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .bentoGrid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .lifestyleBox {
+        order: -1;
+        aspect-ratio: 16 / 9;
+    }
+
+    .lifestyleImageWrapper {
+        min-height: 300px;
+    }
+
+    .bottomRow {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .productTitle {
+        font-size: 2.75rem;
+    }
+
+    .heading {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .resetSection {
+        padding: 4rem 0;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .bentoGrid {
+        gap: 0.75rem;
+    }
+
+    .bottomRow {
+        grid-template-columns: 1fr;
+    }
+
+    .titleBox {
+        min-height: 150px;
+        padding: 1.5rem;
+    }
+
+    .productTitle {
+        font-size: 2.25rem;
+    }
+
+    .productBox,
+    .ingredientsBox {
+        padding: 1.25rem;
+    }
+
+    .productImageWrapper {
+        min-height: 180px;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .subheading {
+        font-size: 1rem;
+    }
+
+    .carouselControls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .progressBar {
+        width: 100%;
+        max-width: none;
+    }
+}
