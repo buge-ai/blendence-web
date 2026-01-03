@@ -7,19 +7,22 @@ import {
   IconBrandFacebook,
   IconArrowRight
 } from '@tabler/icons-react';
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function Footer() {
+  const { t, language } = useLanguage();
+
   return (
     <footer className="footer-v2">
       <div className="container footer-v2-container">
         {/* TOP SECTION: Brand & Newsletter */}
         <div className="footer-v2-grid">
           <div className="footer-v2-main">
-            <Link href="/" className="footer-v2-logo">
+            <Link href={`/${language}`} className="footer-v2-logo">
               <img src="/logo.png" alt="Blendence" />
             </Link>
             <p className="footer-v2-description">
-              We design nutrition that adapts to real life. Naturally powerful, perfectly balanced, and scientifically formulated for consistency.
+              {t.footer.description}
             </p>
             <div className="footer-v2-socials">
               <a href="#" aria-label="Instagram"><IconBrandInstagram size={20} /></a>
@@ -29,31 +32,31 @@ export default function Footer() {
           </div>
 
           <div className="footer-v2-col">
-            <h4 className="footer-v2-heading">Stages</h4>
+            <h4 className="footer-v2-heading">{t.footer.stages}</h4>
             <nav className="footer-v2-nav">
-              <Link href="/stages/kidgrow">KidGrow (4-7)</Link>
-              <Link href="/stages/kidrise">KidRise (8-12)</Link>
-              <Link href="/stages/teenfocus">TeenFocus (13-16)</Link>
-              <Link href="/reset/balance">Reset Balance</Link>
-              <Link href="/reset/intense">Reset Intense</Link>
+              <Link href={`/${language}/stages/kidgrow`}>KidGrow (4-7)</Link>
+              <Link href={`/${language}/stages/kidrise`}>KidRise (8-12)</Link>
+              <Link href={`/${language}/stages/teenfocus`}>TeenFocus (13-16)</Link>
+              <Link href={`/${language}/reset/balance`}>Reset Balance</Link>
+              <Link href={`/${language}/reset/intense`}>Reset Intense</Link>
             </nav>
           </div>
 
           <div className="footer-v2-col">
-            <h4 className="footer-v2-heading">Company</h4>
+            <h4 className="footer-v2-heading">{t.footer.company}</h4>
             <nav className="footer-v2-nav">
-              <Link href="/approach">Our Approach</Link>
-              <Link href="/about">About Us</Link>
-              <Link href="/contact">Contact</Link>
-              <Link href="/faq">FAQ</Link>
+              <Link href={`/${language}/approach`}>{t.footer.ourApproach}</Link>
+              <Link href={`/${language}/about`}>{t.footer.aboutUs}</Link>
+              <Link href={`/${language}/contact`}>{t.footer.contact}</Link>
+              <Link href={`/${language}/faq`}>{t.footer.faq}</Link>
             </nav>
           </div>
 
           <div className="footer-v2-col newsletter-col">
-            <h4 className="footer-v2-heading">Newsletter</h4>
-            <p className="newsletter-text">Subscribe to receive updates on new blends and nutritional insights.</p>
+            <h4 className="footer-v2-heading">{t.footer.newsletter}</h4>
+            <p className="newsletter-text">{t.footer.newsletterText}</p>
             <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-              <input type="email" placeholder="Email address" className="newsletter-input" required />
+              <input type="email" placeholder={t.footer.emailPlaceholder} className="newsletter-input" required />
               <button type="submit" className="newsletter-btn" aria-label="Subscribe">
                 <IconArrowRight size={18} />
               </button>
@@ -64,13 +67,13 @@ export default function Footer() {
         {/* BOTTOM SECTION: Legal & Copyright */}
         <div className="footer-v2-bottom">
           <div className="footer-v2-legal">
-            <Link href="/privacy">Privacy Policy</Link>
-            <Link href="/terms">Terms of Use</Link>
-            <Link href="/food-safety">Food Safety</Link>
-            <Link href="/gender-equality">Gender Equality</Link>
+            <Link href={`/${language}/privacy`}>{t.footer.privacyPolicy}</Link>
+            <Link href={`/${language}/terms`}>{t.footer.termsOfUse}</Link>
+            <Link href={`/${language}/food-safety`}>{t.footer.foodSafety}</Link>
+            <Link href={`/${language}/gender-equality`}>{t.footer.genderEquality}</Link>
           </div>
           <p className="footer-v2-copyright">
-            &copy; {new Date().getFullYear()} BLENDENCE by BUGE GIDA A.Ş. All rights reserved.
+            &copy; {new Date().getFullYear()} {t.footer.copyright}
           </p>
         </div>
       </div>

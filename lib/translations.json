@@ -22,6 +22,23 @@
       "balance": "Balance",
       "intense": "Intense"
     },
+    "footer": {
+      "description": "We design nutrition that adapts to real life. Naturally powerful, perfectly balanced, and scientifically formulated for consistency.",
+      "stages": "Stages",
+      "company": "Company",
+      "ourApproach": "Our Approach",
+      "aboutUs": "About Us",
+      "contact": "Contact",
+      "faq": "FAQ",
+      "newsletter": "Newsletter",
+      "newsletterText": "Subscribe to receive updates on new blends and nutritional insights.",
+      "emailPlaceholder": "Email address",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfUse": "Terms of Use",
+      "foodSafety": "Food Safety",
+      "genderEquality": "Gender Equality",
+      "copyright": "BLENDENCE by BUGE GIDA A.Ş. All rights reserved."
+    },
     "hero": {
       "subtitle": "100% Freeze-Dried Nutritional Mix Brand",
       "title": "Naturally Powerful, Perfectly Balanced",
@@ -473,15 +490,6 @@
         "usage": "Usage"
       }
     },
-    "footer": {
-      "brand": "BLENDENCE",
-      "tagline": "Naturally Powerful, Perfectly Balanced",
-      "company": "BUGE GIDA A.Ş.",
-      "badges": "100% Natural • 100% Vegan • No Added Sugar",
-      "copyright": "© 2024 BUGE GIDA A.Ş. All rights reserved.",
-      "privacy": "Privacy Policy",
-      "terms": "Terms & Conditions"
-    },
     "privacy": {
       "title": "Privacy Policy & KVKK Disclosure",
       "intro": "This privacy policy and personal data protection disclosure text contains the principles regarding the processing, protection, and user rights of personal data obtained by BUGE GIDA ARGE DANIŞMANLIK SANAYİ TİCARET A.Ş. (\\\"BUGE Gıda\\\" / \\\"Company\\\") through the www.bugefoods.com website.",
@@ -618,6 +626,23 @@
       "teenFocus": "TeenFocus (13-16)",
       "balance": "Balance",
       "intense": "Intense"
+    },
+    "footer": {
+      "description": "Gerçek yaşama uyum sağlayan beslenme tasarlıyoruz. Doğal güçlü, mükemmel dengeli ve tutarlılık için bilimsel olarak formüle edilmiş.",
+      "stages": "Stages",
+      "company": "Şirket",
+      "ourApproach": "Yaklaşımımız",
+      "aboutUs": "Hakkımızda",
+      "contact": "İletişim",
+      "faq": "SSS",
+      "newsletter": "Bülten",
+      "newsletterText": "Yeni karışımlar ve beslenme bilgileri hakkında güncellemeler almak için abone olun.",
+      "emailPlaceholder": "E-posta adresi",
+      "privacyPolicy": "Gizlilik Politikası",
+      "termsOfUse": "Kullanım Şartları",
+      "foodSafety": "Gıda Güvenliği",
+      "genderEquality": "Toplumsal Cinsiyet Eşitliği",
+      "copyright": "BUGE GIDA A.Ş. tarafından BLENDENCE. Tüm hakları saklıdır."
     },
     "hero": {
       "subtitle": "%100 Dondurarak Kurutulmuş Beslenme Karışımı Markası",
@@ -1069,15 +1094,6 @@
         "ingredients": "İçerikler",
         "usage": "Kullanım"
       }
-    },
-    "footer": {
-      "brand": "BLENDENCE",
-      "tagline": "Doğal Gücü, Mükemmel Dengede",
-      "company": "BUGE GIDA A.Ş.",
-      "badges": "%100 Doğal • %100 Vegan • Şeker Katkısız",
-      "copyright": "© 2024 BUGE GIDA A.Ş. Tüm hakları saklıdır.",
-      "privacy": "Gizlilik Politikası",
-      "terms": "Kullanım Şartları"
     },
     "privacy": {
       "title": "Gizlilik Politikası & KVKK Aydınlatma Metni",
