@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Footer from '@/app/components/Footer';
 import { useLanguage } from '@/lib/LanguageContext';
 
 export default function PrivacyPage() {
@@ -26,21 +27,19 @@ export default function PrivacyPage() {
               <div className="flex gap-2 border border-gray-300 rounded-full p-1">
                 <button
                   onClick={() => setLanguage('en')}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                    language === 'en'
-                      ? 'bg-[var(--turquoise)] text-white'
-                      : 'text-[var(--dark-gray)] hover:bg-gray-100'
-                  }`}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${language === 'en'
+                    ? 'bg-[var(--turquoise)] text-white'
+                    : 'text-[var(--dark-gray)] hover:bg-gray-100'
+                    }`}
                 >
                   EN
                 </button>
                 <button
                   onClick={() => setLanguage('tr')}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                    language === 'tr'
-                      ? 'bg-[var(--turquoise)] text-white'
-                      : 'text-[var(--dark-gray)] hover:bg-gray-100'
-                  }`}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${language === 'tr'
+                    ? 'bg-[var(--turquoise)] text-white'
+                    : 'text-[var(--dark-gray)] hover:bg-gray-100'
+                    }`}
                 >
                   TR
                 </button>
@@ -178,22 +177,8 @@ export default function PrivacyPage() {
       </main>
 
       {/* Footer */}
-      <footer className="py-16 bg-[var(--dark-blue)] text-white text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-3xl font-bold mb-2">{t.footer.brand}</h3>
-          <p className="mb-1 opacity-90">{t.footer.tagline}</p>
-          <p className="text-sm opacity-70 mb-6">{t.footer.company}</p>
-          <div className="flex justify-center gap-6 mb-4">
-            <Link href="/privacy" className="text-sm opacity-70 hover:opacity-100 transition-opacity">
-              {t.footer.privacy}
-            </Link>
-            <Link href="/terms" className="text-sm opacity-70 hover:opacity-100 transition-opacity">
-              {t.footer.terms}
-            </Link>
-          </div>
-          <p className="text-sm opacity-60">{t.footer.copyright}</p>
-        </div>
-      </footer>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

@@ -4,8 +4,12 @@ import React from 'react';
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
 import Link from 'next/link';
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function ApproachPage() {
+    const { t, language } = useLanguage();
+    const p = t.approachPage;
+
     return (
         <div className="approach-page">
             <Navigation />
@@ -14,12 +18,10 @@ export default function ApproachPage() {
                 {/* Hero Section */}
                 <section className="approach-hero">
                     <div className="container">
-                        <h1>The Blendence Method</h1>
-                        <h2 className="subtitle">Designing nutrition by starting with real-life needs</h2>
+                        <h1>{p.title}</h1>
+                        <h2 className="subtitle">{p.subtitle}</h2>
                         <p className="lead">
-                            At Blendence, we don't start with ingredients.
-                            We start by understanding how nutritional needs change across different life stages and everyday moments.
-                            Our products are designed around this simple idea: nutrition should fit real life, not the other way around.
+                            {p.lead}
                         </p>
                     </div>
                 </section>
@@ -28,14 +30,11 @@ export default function ApproachPage() {
                 <section className="section">
                     <div className="container">
                         <div className="section-divider"></div>
-                        <h2>Needs first. Ingredients second.</h2>
+                        <h2>{p.needsFirst.title}</h2>
                         <div className="content-block">
-                            <p>Nutritional needs are not static.</p>
-                            <p>They evolve with age, routines, and different phases of life.</p>
-                            <p>
-                                Our approach begins by identifying these needs first — then selecting plant-based ingredients where relevant nutritional components naturally occur.
-                                Only after this step do we design the blend itself.
-                            </p>
+                            {p.needsFirst.content.map((paragraph, index) => (
+                                <p key={index}>{paragraph}</p>
+                            ))}
                         </div>
                     </div>
                 </section>
@@ -44,29 +43,15 @@ export default function ApproachPage() {
                 <section className="section steps-section">
                     <div className="container">
                         <div className="section-divider"></div>
-                        <h2>How our blends are designed</h2>
+                        <h2>{p.howDesigned.title}</h2>
                         <div className="steps-grid">
-                            <div className="step">
-                                <span className="step-number">1</span>
-                                <h3>Identify the need</h3>
-                                <p>
-                                    We look at how the body's needs change across life stages or specific moments, such as growth periods, school routines, or times when balance feels more important.
-                                </p>
-                            </div>
-                            <div className="step">
-                                <span className="step-number">2</span>
-                                <h3>Select natural sources</h3>
-                                <p>
-                                    We choose fruits and vegetables where these nutritional components naturally occur, without unnecessary additions or complexity.
-                                </p>
-                            </div>
-                            <div className="step">
-                                <span className="step-number">3</span>
-                                <h3>Formulate for real life</h3>
-                                <p>
-                                    Blends are designed to fit easily into everyday routines — not to create new rituals or unrealistic expectations.
-                                </p>
-                            </div>
+                            {p.howDesigned.steps.map((step, index) => (
+                                <div className="step" key={index}>
+                                    <span className="step-number">{index + 1}</span>
+                                    <h3>{step.title}</h3>
+                                    <p>{step.content}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>
@@ -75,21 +60,15 @@ export default function ApproachPage() {
                 <section className="section two-ways-section">
                     <div className="container">
                         <div className="section-divider"></div>
-                        <h2>Two ways of thinking about nutrition</h2>
+                        <h2>{p.twoWays.title}</h2>
                         <div className="two-ways-grid">
                             <div className="way-card">
-                                <h3>Stages</h3>
-                                <p>
-                                    Stages focuses on life phases.
-                                    From early growth to school years and teenage routines, each blend is designed around how nutritional needs evolve over time.
-                                </p>
+                                <h3>{p.twoWays.stages.title}</h3>
+                                <p>{p.twoWays.stages.content}</p>
                             </div>
                             <div className="way-card">
-                                <h3>Reset</h3>
-                                <p>
-                                    Reset focuses on moments.
-                                    It is designed for periods when routines shift and lightness or balance becomes more relevant.
-                                </p>
+                                <h3>{p.twoWays.reset.title}</h3>
+                                <p>{p.twoWays.reset.content}</p>
                             </div>
                         </div>
                     </div>
@@ -99,12 +78,9 @@ export default function ApproachPage() {
                 <section className="section">
                     <div className="container">
                         <div className="section-divider"></div>
-                        <h2>Technology as a tool</h2>
+                        <h2>{p.technology.title}</h2>
                         <div className="content-block">
-                            <p>
-                                We use food processing technologies such as freeze drying to preserve the natural character of plant-based ingredients.
-                                Technology supports our approach — it does not define it.
-                            </p>
+                            <p>{p.technology.content}</p>
                         </div>
                     </div>
                 </section>
@@ -113,19 +89,17 @@ export default function ApproachPage() {
                 <section className="section quality-section">
                     <div className="container">
                         <div className="section-divider"></div>
-                        <h2>Quality & Responsibility</h2>
+                        <h2>{p.quality.title}</h2>
                         <div className="content-block">
-                            <p>
-                                Our production operates under structured food safety and quality systems aligned with international standards, including FSSC 22000.
-                            </p>
-                            <p className="learn-more">Learn more about our commitments:</p>
+                            <p>{p.quality.content}</p>
+                            <p className="learn-more">{p.quality.learnMore}</p>
                             <div className="policy-links">
-                                <Link href="/food-safety" className="policy-link">
-                                    Food Safety Policy
+                                <Link href={`/${language}/food-safety`} className="policy-link">
+                                    {p.quality.foodSafetyLink}
                                     <span className="arrow">→</span>
                                 </Link>
-                                <Link href="/gender-equality" className="policy-link">
-                                    Gender Equality Plan
+                                <Link href={`/${language}/gender-equality`} className="policy-link">
+                                    {p.quality.genderEqualityLink}
                                     <span className="arrow">→</span>
                                 </Link>
                             </div>
@@ -158,6 +132,7 @@ export default function ApproachPage() {
                     margin-bottom: 1.5rem;
                     letter-spacing: -0.03em;
                     line-height: 1.1;
+                    color: #111;
                 }
                 .subtitle {
                     font-size: 1.5rem;
@@ -187,6 +162,7 @@ export default function ApproachPage() {
                     font-weight: 400;
                     margin-bottom: 2rem;
                     letter-spacing: -0.02em;
+                    color: #111;
                 }
                 .content-block p {
                     font-size: 1.2rem;
@@ -225,6 +201,7 @@ export default function ApproachPage() {
                     font-size: 1.25rem;
                     font-weight: 500;
                     margin-bottom: 1rem;
+                    color: #111;
                 }
                 .step p {
                     font-size: 1.05rem;
@@ -248,6 +225,7 @@ export default function ApproachPage() {
                     font-size: 1.5rem;
                     font-weight: 500;
                     margin-bottom: 1rem;
+                    color: #111;
                 }
                 .way-card p {
                     font-size: 1.1rem;

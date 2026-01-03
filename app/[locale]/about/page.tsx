@@ -4,8 +4,12 @@ import React from 'react';
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
 import Link from 'next/link';
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function AboutPage() {
+    const { t, language } = useLanguage();
+    const p = t.aboutPage;
+
     return (
         <div className="about-page">
             <Navigation />
@@ -13,7 +17,7 @@ export default function AboutPage() {
             <main>
                 <section className="about-hero">
                     <div className="container">
-                        <h1>About Blendence</h1>
+                        <h1>{p.title}</h1>
                     </div>
                 </section>
 
@@ -21,16 +25,14 @@ export default function AboutPage() {
                     <div className="container">
                         <div className="content-block">
                             <p className="intro">
-                                Blendence is a nutrition brand built around thoughtful formulation and real-life relevance.
+                                {p.intro}
                             </p>
                             <p>
-                                We design plant-based blends by starting with needs, not ingredients. Our approach brings together food engineering, nutritional insight, and everyday usability to create products that fit naturally into daily routines.
+                                {p.description}
                             </p>
-                            <p className="company-note">
-                                Blendence is part of <strong>BUGE Foods</strong>, a food-tech company focused on clean formulation, food safety, and responsible production.
-                            </p>
-                            <Link href="/approach" className="approach-link">
-                                Explore our approach
+                            <p className="company-note" dangerouslySetInnerHTML={{ __html: p.companyNote }} />
+                            <Link href={`/${language}/approach`} className="approach-link">
+                                {p.exploreApproach}
                                 <span className="arrow">→</span>
                             </Link>
                         </div>
@@ -86,7 +88,7 @@ export default function AboutPage() {
                     border-top: 1px solid #eee;
                     margin-top: 3rem;
                 }
-                .company-note strong {
+                .company-note :global(strong) {
                     color: #111;
                 }
                 .approach-link {

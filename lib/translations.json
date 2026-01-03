@@ -360,6 +360,114 @@
         }
       }
     },
+    "aboutPage": {
+      "title": "About Blendence",
+      "intro": "Blendence is a nutrition brand built around thoughtful formulation and real-life relevance.",
+      "description": "We design plant-based blends by starting with needs, not ingredients. Our approach brings together food engineering, nutritional insight, and everyday usability to create products that fit naturally into daily routines.",
+      "companyNote": "Blendence is part of <strong>BUGE Foods</strong>, a food-tech company focused on clean formulation, food safety, and responsible production.",
+      "exploreApproach": "Explore our approach",
+      "backToHome": "Back to Home"
+    },
+    "approachPage": {
+      "title": "The Blendence Method",
+      "subtitle": "Designing nutrition by starting with real-life needs",
+      "lead": "At Blendence, we don't start with ingredients. We start by understanding how nutritional needs change across different life stages and everyday moments. Our products are designed around this simple idea: nutrition should fit real life, not the other way around.",
+      "needsFirst": {
+        "title": "Needs first. Ingredients second.",
+        "content": [
+          "Nutritional needs are not static.",
+          "They evolve with age, routines, and different phases of life.",
+          "Our approach begins by identifying these needs first — then selecting plant-based ingredients where relevant nutritional components naturally occur. Only after this step do we design the blend itself."
+        ]
+      },
+      "howDesigned": {
+        "title": "How our blends are designed",
+        "steps": [
+          {
+            "title": "Identify the need",
+            "content": "We look at how the body's needs change across life stages or specific moments, such as growth periods, school routines, or times when balance feels more important."
+          },
+          {
+            "title": "Select natural sources",
+            "content": "We choose fruits and vegetables where these nutritional components naturally occur, without unnecessary additions or complexity."
+          },
+          {
+            "title": "Formulate for real life",
+            "content": "Blends are designed to fit easily into everyday routines — not to create new rituals or unrealistic expectations."
+          }
+        ]
+      },
+      "twoWays": {
+        "title": "Two ways of thinking about nutrition",
+        "stages": {
+          "title": "Stages",
+          "content": "Stages focuses on life phases. From early growth to school years and teenage routines, each blend is designed around how nutritional needs evolve over time."
+        },
+        "reset": {
+          "title": "Reset",
+          "content": "Reset focuses on moments. It is designed for periods when routines shift and lightness or balance becomes more relevant."
+        }
+      },
+      "technology": {
+        "title": "Technology as a tool",
+        "content": "We use food processing technologies such as freeze drying to preserve the natural character of plant-based ingredients. Technology supports our approach — it does not define it."
+      },
+      "quality": {
+        "title": "Quality & Responsibility",
+        "content": "Our production operates under structured food safety and quality systems aligned with international standards, including FSSC 22000.",
+        "learnMore": "Learn more about our commitments:",
+        "foodSafetyLink": "Food Safety Policy",
+        "genderEqualityLink": "Gender Equality Plan"
+      }
+    },
+    "foodSafetyPage": {
+      "backToHome": "Back to Home",
+      "title": "Food Safety and Quality Policy",
+      "policyTitle": "FSSC 22000 FOOD SAFETY AND QUALITY POLICY",
+      "paragraphs": [
+        "As Buge Gıda Ar-Ge Danışmanlık San. Tic. A.Ş. (Buge Foods), we are committed to producing freeze-dried fruit and vegetable products in full compliance with the Turkish Food Codex, applicable legal regulations, and FSSC 22000 / ISO 22000 standards.",
+        "We prioritize food safety, consumer health, and consistent quality at every stage of our operations, aiming to deliver safe and reliable products to consumers.",
+        "In order to meet customer expectations and maintain the highest level of satisfaction, we continuously improve our production processes, increase efficiency, and ensure consistent product quality.",
+        "We control food safety risks throughout the entire production chain, ensure full traceability, and maintain a transparent and honest production approach.",
+        "We establish relationships with our suppliers based on mutual trust and a shared commitment to quality, preserve product authenticity from raw material sourcing onward, and implement necessary measures to prevent fraud and adulteration.",
+        "We promote a strong food safety culture across the organization by providing continuous training to increase employees' knowledge, awareness, and sense of responsibility.",
+        "We conduct all activities with an environmentally responsible, ethical, and sustainable approach, use natural resources efficiently, and act with a strong sense of social responsibility.",
+        "By continuously improving our quality and food safety management system, and striving to be a reliable, innovative, and exemplary organization within the sector, this policy constitutes the foundation of Buge Foods' FSSC 22000 Food Safety and Quality Policy."
+      ],
+      "signature": "General Manager – Buge Foods"
+    },
+    "genderEqualityPage": {
+      "backToHome": "Back to Home",
+      "title": "Gender Equality Plan",
+      "docInfo": {
+        "gepTitle": "Gender Equality Plan (GEP)",
+        "company": "BUGE GIDA ARGE DANIŞMANLIK SANAYİ TİCARET A.Ş. (BUGE Foods | Blendence)",
+        "publicDoc": "Public Document",
+        "effectiveDate": "Effective Date: October 2025",
+        "version": "Version: 1.1"
+      },
+      "sections": {
+        "orgProfile": {
+          "title": "1. Organisation Profile",
+          "items": {
+            "name": "BUGE GIDA ARGE DANIŞMANLIK SANAYİ TİCARET A.Ş.",
+            "brand": "Blendence",
+            "founded": "2024",
+            "headquarters": "Trakya Teknopark, Trakya University Technology Development Zone, 22000 Edirne, Türkiye",
+            "productionFacility": "Hasan Pehlivan Cd. 1/D, 22500 Havsa, Edirne, Türkiye",
+            "legalStatus": "Privately held SME (Small and Medium-sized Enterprise)",
+            "chairOfBoard": "Assoc. Prof. Dr. Buket Aşkın"
+          }
+        },
+        "commitment": {
+          "title": "2. Commitment to Gender Equality",
+          "content": [
+            "BUGE Foods is committed to promoting gender equality, non-discrimination, and equal opportunities in all aspects of its activities. The company aligns with the EU Charter of Fundamental Rights, Commission Recommendation 2003/361/EC for SMEs, and the Horizon Europe Gender Equality Guidelines.",
+            "We uphold zero tolerance toward discrimination, harassment, or bias based on gender, ethnicity, religion, age, or any other identity. This Gender Equality Plan (GEP) is a public document, signed by the company's top management, and will be published on our official website."
+          ]
+        }
+      }
+    },
     "about": {
       "title": "Innovating Natural Nutrition",
       "subtitle": "Our brand philosophy revolves around the concept of natural balance. By combining advanced freeze-drying technology with nature's best ingredients, we create products that not only taste great but also empower healthier lifestyles.\nBlendence is committed to sustainability, quality, and innovation, positioning us at the forefront of the food tech industry.",
@@ -962,6 +1070,114 @@
             "title": "Günlük hayata nasıl uyar",
             "content": "Günlük rutinlerin kalıcı bir parçası olarak değil, ihtiyaç duyulduğunda kullanılmak üzere tasarlandı. Belirli anlar için pratik. Katı zamanlama veya döngüler olmadan esnek kullanım."
           }
+        }
+      }
+    },
+    "aboutPage": {
+      "title": "Blendence Hakkında",
+      "intro": "Blendence, düşünceli formülasyon ve gerçek yaşam uygunluğu etrafında inşa edilmiş bir beslenme markasıdır.",
+      "description": "Bitki bazlı karışımları malzemelerle değil, ihtiyaçlarla başlayarak tasarlıyoruz. Yaklaşımımız, günlük rutinlere doğal olarak uyan ürünler oluşturmak için gıda mühendisliğini, beslenme bilgisini ve günlük kullanılabilirliği bir araya getiriyor.",
+      "companyNote": "Blendence, temiz formülasyon, gıda güvenliği ve sorumlu üretime odaklanan bir gıda teknolojisi şirketi olan <strong>BUGE Foods</strong>'un bir parçasıdır.",
+      "exploreApproach": "Yaklaşımımızı keşfedin",
+      "backToHome": "Ana Sayfaya Dön"
+    },
+    "approachPage": {
+      "title": "Blendence Metodu",
+      "subtitle": "Gerçek yaşam ihtiyaçlarından başlayarak beslenme tasarlamak",
+      "lead": "Blendence'te malzemelerle başlamıyoruz. Farklı yaşam aşamaları ve günlük anlar boyunca beslenme ihtiyaçlarının nasıl değiştiğini anlamakla başlıyoruz. Ürünlerimiz basit bir fikir etrafında tasarlandı: beslenme gerçek yaşama uymalı, tersi değil.",
+      "needsFirst": {
+        "title": "Önce ihtiyaçlar. Sonra malzemeler.",
+        "content": [
+          "Beslenme ihtiyaçları statik değildir.",
+          "Yaşla, rutinlerle ve yaşamın farklı aşamalarıyla birlikte evrilirler.",
+          "Yaklaşımımız önce bu ihtiyaçları belirlemekle başlar — ardından ilgili beslenme bileşenlerinin doğal olarak bulunduğu bitki bazlı malzemeleri seçeriz. Ancak bu adımdan sonra karışımın kendisini tasarlarız."
+        ]
+      },
+      "howDesigned": {
+        "title": "Karışımlarımız nasıl tasarlanır",
+        "steps": [
+          {
+            "title": "İhtiyacı belirle",
+            "content": "Vücudun ihtiyaçlarının yaşam aşamaları veya büyüme dönemleri, okul rutinleri ya da dengenin daha önemli hissedildiği zamanlar gibi belirli anlarda nasıl değiştiğine bakıyoruz."
+          },
+          {
+            "title": "Doğal kaynakları seç",
+            "content": "Bu beslenme bileşenlerinin gereksiz eklemeler veya karmaşıklık olmadan doğal olarak bulunduğu meyve ve sebzeleri seçiyoruz."
+          },
+          {
+            "title": "Gerçek yaşam için formüle et",
+            "content": "Karışımlar, yeni ritüeller veya gerçekçi olmayan beklentiler yaratmak için değil, günlük rutinlere kolayca uyacak şekilde tasarlanmıştır."
+          }
+        ]
+      },
+      "twoWays": {
+        "title": "Beslenme hakkında düşünmenin iki yolu",
+        "stages": {
+          "title": "Stages",
+          "content": "Stages yaşam aşamalarına odaklanır. Erken büyümeden okul yıllarına ve ergenlik rutinlerine kadar, her karışım beslenme ihtiyaçlarının zaman içinde nasıl evrildiğine göre tasarlanmıştır."
+        },
+        "reset": {
+          "title": "Reset",
+          "content": "Reset anlara odaklanır. Rutinlerin değiştiği ve hafiflik veya dengenin daha uygun hale geldiği dönemler için tasarlanmıştır."
+        }
+      },
+      "technology": {
+        "title": "Bir araç olarak teknoloji",
+        "content": "Bitki bazlı malzemelerin doğal karakterini korumak için dondurarak kurutma gibi gıda işleme teknolojilerini kullanıyoruz. Teknoloji yaklaşımımızı destekler — onu tanımlamaz."
+      },
+      "quality": {
+        "title": "Kalite ve Sorumluluk",
+        "content": "Üretimimiz, FSSC 22000 dahil uluslararası standartlarla uyumlu yapılandırılmış gıda güvenliği ve kalite sistemleri altında çalışmaktadır.",
+        "learnMore": "Taahhütlerimiz hakkında daha fazla bilgi edinin:",
+        "foodSafetyLink": "Gıda Güvenliği Politikası",
+        "genderEqualityLink": "Toplumsal Cinsiyet Eşitliği Planı"
+      }
+    },
+    "foodSafetyPage": {
+      "backToHome": "Ana Sayfaya Dön",
+      "title": "Gıda Güvenliği ve Kalite Politikası",
+      "policyTitle": "FSSC 22000 GIDA GÜVENLİĞİ VE KALİTE POLİTİKASI",
+      "paragraphs": [
+        "Buge Gıda Ar-Ge Danışmanlık San. Tic. A.Ş. (Buge Foods) olarak, dondurarak kurutulmuş meyve ve sebze ürünlerini Türk Gıda Kodeksi, yürürlükteki yasal düzenlemeler ve FSSC 22000 / ISO 22000 standartlarına tam uyumlu olarak üretmeyi taahhüt ediyoruz.",
+        "Operasyonlarımızın her aşamasında gıda güvenliğini, tüketici sağlığını ve tutarlı kaliteyi ön planda tutarak tüketicilere güvenli ve güvenilir ürünler sunmayı hedefliyoruz.",
+        "Müşteri beklentilerini karşılamak ve en yüksek memnuniyet düzeyini korumak için üretim süreçlerimizi sürekli iyileştiriyor, verimliliği artırıyor ve tutarlı ürün kalitesi sağlıyoruz.",
+        "Tüm üretim zinciri boyunca gıda güvenliği risklerini kontrol ediyor, tam izlenebilirlik sağlıyor ve şeffaf ve dürüst bir üretim yaklaşımı sürdürüyoruz.",
+        "Tedarikçilerimizle karşılıklı güven ve kaliteye ortak bağlılık temelinde ilişkiler kuruyoruz, hammadde temininden itibaren ürün özgünlüğünü koruyoruz ve dolandırıcılık ile tahrifi önlemek için gerekli önlemleri uyguluyoruz.",
+        "Çalışanların bilgi, farkındalık ve sorumluluk duygusunu artırmak için sürekli eğitim sağlayarak kuruluş genelinde güçlü bir gıda güvenliği kültürünü teşvik ediyoruz.",
+        "Tüm faaliyetleri çevreye duyarlı, etik ve sürdürülebilir bir yaklaşımla yürütüyor, doğal kaynakları verimli kullanıyor ve güçlü bir sosyal sorumluluk bilinci ile hareket ediyoruz.",
+        "Kalite ve gıda güvenliği yönetim sistemimizi sürekli iyileştirerek ve sektörde güvenilir, yenilikçi ve örnek bir kuruluş olmaya çalışarak, bu politika Buge Foods'un FSSC 22000 Gıda Güvenliği ve Kalite Politikası'nın temelini oluşturmaktadır."
+      ],
+      "signature": "Genel Müdür – Buge Foods"
+    },
+    "genderEqualityPage": {
+      "backToHome": "Ana Sayfaya Dön",
+      "title": "Toplumsal Cinsiyet Eşitliği Planı",
+      "docInfo": {
+        "gepTitle": "Toplumsal Cinsiyet Eşitliği Planı (GEP)",
+        "company": "BUGE GIDA ARGE DANIŞMANLIK SANAYİ TİCARET A.Ş. (BUGE Foods | Blendence)",
+        "publicDoc": "Kamuya Açık Belge",
+        "effectiveDate": "Yürürlük Tarihi: Ekim 2025",
+        "version": "Sürüm: 1.1"
+      },
+      "sections": {
+        "orgProfile": {
+          "title": "1. Kuruluş Profili",
+          "items": {
+            "name": "BUGE GIDA ARGE DANIŞMANLIK SANAYİ TİCARET A.Ş.",
+            "brand": "Blendence",
+            "founded": "2024",
+            "headquarters": "Trakya Teknopark, Trakya Üniversitesi Teknoloji Geliştirme Bölgesi, 22000 Edirne, Türkiye",
+            "productionFacility": "Hasan Pehlivan Cd. 1/D, 22500 Havsa, Edirne, Türkiye",
+            "legalStatus": "Özel mülkiyete ait KOBİ (Küçük ve Orta Ölçekli İşletme)",
+            "chairOfBoard": "Doç. Dr. Buket Aşkın"
+          }
+        },
+        "commitment": {
+          "title": "2. Toplumsal Cinsiyet Eşitliğine Bağlılık",
+          "content": [
+            "BUGE Foods, faaliyetlerinin tüm yönlerinde toplumsal cinsiyet eşitliğini, ayrımcılık yapmamayı ve fırsat eşitliğini teşvik etmeye kararlıdır. Şirket, AB Temel Haklar Şartı, KOBİ'ler için Komisyon Tavsiyesi 2003/361/EC ve Horizon Europe Toplumsal Cinsiyet Eşitliği Yönergeleri ile uyumludur.",
+            "Cinsiyet, etnisite, din, yaş veya herhangi başka bir kimliğe dayalı ayrımcılık, taciz veya önyargıya karşı sıfır tolerans ilkesini benimsiyoruz. Bu Toplumsal Cinsiyet Eşitliği Planı (GEP), şirketin üst yönetimi tarafından imzalanan kamuya açık bir belgedir ve resmi web sitemizde yayınlanacaktır."
+          ]
         }
       }
     },
