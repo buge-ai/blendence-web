@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { IconChevronLeft, IconChevronRight, IconArrowRight, IconShoppingBag, IconLeaf } from '@tabler/icons-react';
+import { IconChevronLeft, IconChevronRight, IconLeaf } from '@tabler/icons-react';
 import styles from './LiquidHero.module.css';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const AUTO_PLAY_INTERVAL = 6000;
 
@@ -16,36 +17,27 @@ interface LiquidHeroProps {
     onPrev?: () => void;
 }
 
-// Data mapping for specific slides
-const SLIDE_CONTENT = [
-    {
-        id: 0,
-        title: "KidGrow",
-        subtitle: "STAGES",
-        description: "Packed with essential vitamins for growing bodies. A delicious blend of banana, orange, pear, and grapes to fuel their play.",
-        badges: ["Designed blend", "Plant-based", "Stage-optimized"],
-        themeColor: "#D67030"
-    },
-    {
-        id: 1,
-        title: "KidRise",
-        subtitle: "STAGES",
-        description: "The perfect morning kickstart. Apple, carrot, and lemon combine for a zesty immunity boost that tastes like sunshine.",
-        badges: ["Clean formulation", "Plant-based", "Thoughtfully designed"],
-        themeColor: "#C89010"
-    },
-    {
-        id: 2,
-        title: "TeenFocus",
-        subtitle: "STAGES",
-        description: "Stay sharp and focused. A green power blend of kale, spinach, and apple designed to support mental clarity.",
-        badges: ["Designed blend", "Stage-optimized", "Clean formulation"],
-        themeColor: "#4A9C8C"
-    }
+// Theme colors for each slide
+const SLIDE_COLORS = [
+    "#D67030", // KidGrow
+    "#C89010", // KidRise
+    "#4A9C8C"  // TeenFocus
 ];
 
 export default function LiquidHero({ backgrounds, activeIndex, onSlideChange, onNext, onPrev }: LiquidHeroProps) {
     const [isPaused, setIsPaused] = useState(false);
+    const { t } = useLanguage();
+
+    // Get slide content from translations
+    const slideKeys = ['kidgrow', 'kidrise', 'teenfocus'] as const;
+    const slides = slideKeys.map((key, index) => ({
+        id: index,
+        title: t.mainPage.hero.slides[key].title,
+        subtitle: t.mainPage.hero.slides[key].subtitle,
+        description: t.mainPage.hero.slides[key].description,
+        badges: t.mainPage.hero.slides[key].badges,
+        themeColor: SLIDE_COLORS[index]
+    }));
 
     // Auto-play Logic
     useEffect(() => {
@@ -91,16 +83,16 @@ export default function LiquidHero({ backgrounds, activeIndex, onSlideChange, on
                     {/* Static Title Block */}
                     <div className={styles.staticBlock}>
                         <h2 className={styles.staticTitle}>
-                            Designed nutrition for everyday balance
+                            {t.mainPage.hero.staticTitle}
                         </h2>
                         <p className={styles.staticSubtitle}>
-                            Naturally powerful, perfectly balanced.
+                            {t.mainPage.hero.staticSubtitle}
                         </p>
                     </div>
 
                     {/* Dynamic Slides Stack */}
                     <div className={styles.dynamicStack}>
-                        {SLIDE_CONTENT.map((slide, index) => {
+                        {slides.map((slide, index) => {
                             const isActive = index === activeIndex;
                             // Ensure we only render if background exists (safety)
                             if (index >= backgrounds.length) return null;

@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
-import BentoSections from '../components/BentoSections';
+import Navigation from '@/app/components/Navigation';
+import Footer from '@/app/components/Footer';
+import BentoSections from '@/app/components/BentoSections';
 
 export default function ResetCategoryPage() {
     return (

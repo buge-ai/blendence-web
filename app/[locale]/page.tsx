@@ -1,12 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
-import LiquidHero from './components/LiquidHero';
-import ResetSpotlight from './components/ResetSpotlight';
-import StagesCarousel from './components/StagesCarousel';
-import ProductGroups from './components/ProductGroups';
+import Link from 'next/link';
+import Navigation from '@/app/components/Navigation';
+import Footer from '@/app/components/Footer';
+import LiquidHero from '@/app/components/LiquidHero';
+import ResetSpotlight from '@/app/components/ResetSpotlight';
+import StagesCarousel from '@/app/components/StagesCarousel';
+import ProductGroups from '@/app/components/ProductGroups';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const backgrounds = [
   '/hero/v4/kid-grow-v4.png',
@@ -22,6 +24,7 @@ const products = [
 
 export default function V2Home() {
   const [[page, direction], setPage] = useState([0, 0]);
+  const { t, language } = useLanguage();
 
   const paginate = (newDirection: number) => {
     setPage([page + newDirection, newDirection]);
@@ -60,11 +63,11 @@ export default function V2Home() {
         {/* SECTION 2: DESIGNED, NOT IMPROVISED */}
         <section className="section-grid intro-grid">
           <div className="grid-content-left centered">
-            <span className="section-label">Philosophy</span>
-            <h2 className="display-text">Designed,<br />not improvised.</h2>
+            <span className="section-label">{t.mainPage.philosophy.label}</span>
+            <h2 className="display-text" dangerouslySetInnerHTML={{ __html: t.mainPage.philosophy.title.replace(/\n/g, '<br/>') }} />
             <div className="section-text">
-              <h3>Deliberate Process</h3>
-              <p>At Blendence, nutrition doesn’t happen by chance. Every blend is designed through a deliberate process that aligns nutritional science with real-life use.</p>
+              <h3>{t.mainPage.philosophy.heading}</h3>
+              <p>{t.mainPage.philosophy.description}</p>
             </div>
           </div>
           <div className="grid-visual-right visual-designed"></div>
@@ -74,11 +77,11 @@ export default function V2Home() {
         <section className="section-grid adaptation-grid reverse-mobile">
           <div className="grid-visual-left visual-adapts"></div>
           <div className="grid-content-right centered">
-            <span className="section-label">Adaptability</span>
-            <h2 className="display-text">Nutrition that adapts<br />to real life.</h2>
+            <span className="section-label">{t.mainPage.adaptability.label}</span>
+            <h2 className="display-text" dangerouslySetInnerHTML={{ __html: t.mainPage.adaptability.title.replace(/\n/g, '<br/>') }} />
             <div className="section-text">
-              <h3>Real Life Adaptation</h3>
-              <p>From home to school, from work to demanding periods, daily routines are rarely the same. Blendence is designed to fit into real life — without rituals, complexity, or extremes.</p>
+              <h3>{t.mainPage.adaptability.heading}</h3>
+              <p>{t.mainPage.adaptability.description}</p>
             </div>
           </div>
         </section>
@@ -95,12 +98,12 @@ export default function V2Home() {
         {/* SECTION 7: OUR APPROACH */}
         <section className="approach-teaser centered-block">
           <div className="container">
-            <h2 className="section-title">How we design nutrition.</h2>
+            <h2 className="section-title">{t.mainPage.approach.title}</h2>
             <div className="approach-message">
-              <p className="big-statement">We don’t start with ingredients.<br />We start with needs.</p>
-              <p className="approach-desc">Our approach brings together nutritional science, food engineering, and real-life use to create blends that are relevant, consistent, and clean.</p>
+              <p className="big-statement" dangerouslySetInnerHTML={{ __html: t.mainPage.approach.bigStatement.replace(/\n/g, '<br/>') }} />
+              <p className="approach-desc">{t.mainPage.approach.description}</p>
             </div>
-            <a href="/approach" className="btn-outline">Our approach</a>
+            <Link href={`/${language}/approach`} className="btn-outline">{t.mainPage.approach.button}</Link>
           </div>
         </section>
 

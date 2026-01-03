@@ -2,8 +2,11 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function ProductGroups() {
+    const { t } = useLanguage();
+
     const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
         e.preventDefault();
         const element = document.getElementById(id);
@@ -16,10 +19,10 @@ export default function ProductGroups() {
         <section className="product-groups">
             <div className="group-card stages-group">
                 <div className="group-content">
-                    <h2 className="group-title">Stages</h2>
-                    <p className="group-desc">Nutrition designed for the stages of life. Adapted to shifting needs across growth and development.</p>
+                    <h2 className="group-title">{t.mainPage.productGroups.stagesTitle}</h2>
+                    <p className="group-desc">{t.mainPage.productGroups.stagesDescription}</p>
                     <a href="#stages-section" onClick={(e) => scrollToSection(e, 'stages-section')} className="group-link">
-                        Explore Stages <span className="arrow">↓</span>
+                        {t.mainPage.productGroups.exploreRange} <span className="arrow">↓</span>
                     </a>
                 </div>
                 <div className="group-bg-overlay gradient-stages"></div>
@@ -27,11 +30,10 @@ export default function ProductGroups() {
 
             <div className="group-card reset-group">
                 <div className="group-content">
-                    <h2 className="group-title">Reset</h2>
-                    <p className="group-desc">Designed for moments when lightness and balance matter more.</p>
-                    <p className="group-subdesc">Some periods feel heavier than usual. Reset is designed to support balance and digestive lightness during those moments — without turning nutrition into a ritual or a promise.</p>
+                    <h2 className="group-title">{t.mainPage.productGroups.resetTitle}</h2>
+                    <p className="group-desc">{t.mainPage.productGroups.resetDescription}</p>
                     <a href="#reset-section" onClick={(e) => scrollToSection(e, 'reset-section')} className="group-link">
-                        Explore Reset <span className="arrow">↓</span>
+                        {t.mainPage.productGroups.exploreRange} <span className="arrow">↓</span>
                     </a>
                 </div>
                 <div className="group-bg-overlay gradient-reset"></div>
@@ -79,7 +81,7 @@ export default function ProductGroups() {
         .group-desc {
             font-size: 1.25rem;
             line-height: 1.5;
-            margin-bottom: 1rem;
+            margin-bottom: 2.5rem;
             color: #444;
         }
 

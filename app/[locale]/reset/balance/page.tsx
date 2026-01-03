@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import ProductLayout from '../../components/ProductLayout';
+import ProductLayout from '@/app/components/ProductLayout';
 
 export default function ResetBalancePage() {
     return (

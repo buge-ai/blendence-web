@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const resetProducts = [
     {
@@ -23,6 +24,28 @@ const resetProducts = [
 ];
 
 export default function BentoSections() {
+    const { t } = useLanguage();
+
+    // Build reset products with translations
+    const translatedResetProducts = [
+        {
+            id: 'balance',
+            title: t.mainPage.resetSpotlight.products.balance.title,
+            tag: t.mainPage.resetSpotlight.products.balance.tag,
+            desc: t.mainPage.resetSpotlight.products.balance.desc,
+            href: '/reset/balance',
+            bgColor: '#e0f2f1',
+        },
+        {
+            id: 'intense',
+            title: t.mainPage.resetSpotlight.products.intense.title,
+            tag: t.mainPage.resetSpotlight.products.intense.tag,
+            desc: t.mainPage.resetSpotlight.products.intense.desc,
+            href: '/reset/intense',
+            bgColor: '#f3e5f5',
+        }
+    ];
+
     return (
         <>
 
@@ -30,20 +53,20 @@ export default function BentoSections() {
             <section id="reset-section" className="bento-section highlight-bg">
                 <div className="container">
                     <div className="section-header">
-                        <h2 className="ramp-heading">Moments of balance.</h2>
+                        <h2 className="ramp-heading">{t.mainPage.resetSpotlight.heading}</h2>
                         <p className="ramp-subheading">
-                            Designed for moments when lightness and balance matter more.
+                            {t.mainPage.resetSpotlight.subheading}
                         </p>
                     </div>
 
                     <div className="bento-grid reset-grid">
-                        {resetProducts.map((product) => (
+                        {translatedResetProducts.map((product) => (
                             <Link href={product.href} key={product.id} className="bento-card reset-card">
                                 <div className="card-content">
                                     <span className="card-label">{product.tag}</span>
                                     <h3>{product.title}</h3>
                                     <p>{product.desc}</p>
-                                    <span className="link-arrow">Learn more &rarr;</span>
+                                    <span className="link-arrow">{t.mainPage.resetSpotlight.learnMore} &rarr;</span>
                                 </div>
                                 <div className="card-backdrop" style={{ background: product.bgColor }} />
                             </Link>

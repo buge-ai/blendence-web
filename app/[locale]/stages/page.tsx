@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
-import StagesCarousel from '../components/StagesCarousel';
-import ProductGroups from '../components/ProductGroups';
+import Navigation from '@/app/components/Navigation';
+import Footer from '@/app/components/Footer';
+import StagesCarousel from '@/app/components/StagesCarousel';
+import ProductGroups from '@/app/components/ProductGroups';
 
 export default function StagesCategoryPage() {
     return (

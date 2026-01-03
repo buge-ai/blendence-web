@@ -1,12 +1,26 @@
 {
   "en": {
+    "common": {
+      "language": "Language",
+      "english": "English",
+      "turkish": "Türkçe",
+      "learnMore": "Learn more"
+    },
     "nav": {
       "home": "Home",
       "about": "About",
       "products": "Products",
       "technology": "Technology",
       "quality": "Quality",
-      "contact": "Contact"
+      "contact": "Contact",
+      "stages": "Stages",
+      "reset": "Reset",
+      "ourApproach": "Our Approach",
+      "kidGrow": "KidGrow (4-7)",
+      "kidRise": "KidRise (8-12)",
+      "teenFocus": "TeenFocus (13-16)",
+      "balance": "Balance",
+      "intense": "Intense"
     },
     "hero": {
       "subtitle": "100% Freeze-Dried Nutritional Mix Brand",
@@ -16,6 +30,132 @@
       "noSugar": "No Added Sugar",
       "description": "Dedicated to providing natural, functional, and safe products for consumers of all ages. Our mission is to deliver wholesome nutrition, ensuring that everyone can enjoy the health benefits of high-quality ingredients without any additives or preservatives.",
       "cta": "Discover Our Products"
+    },
+    "mainPage": {
+      "hero": {
+        "staticTitle": "Designed nutrition for everyday balance",
+        "staticSubtitle": "Naturally powerful, perfectly balanced.",
+        "slides": {
+          "kidgrow": {
+            "title": "KidGrow",
+            "subtitle": "STAGES",
+            "description": "Packed with essential vitamins for growing bodies. A delicious blend of banana, orange, pear, and grapes to fuel their play.",
+            "badges": [
+              "Designed blend",
+              "Plant-based",
+              "Stage-optimized"
+            ]
+          },
+          "kidrise": {
+            "title": "KidRise",
+            "subtitle": "STAGES",
+            "description": "The perfect morning kickstart. Apple, carrot, and lemon combine for a zesty immunity boost that tastes like sunshine.",
+            "badges": [
+              "Clean formulation",
+              "Plant-based",
+              "Thoughtfully designed"
+            ]
+          },
+          "teenfocus": {
+            "title": "TeenFocus",
+            "subtitle": "STAGES",
+            "description": "Stay sharp and focused. A green power blend of kale, spinach, and apple designed to support mental clarity.",
+            "badges": [
+              "Designed blend",
+              "Stage-optimized",
+              "Clean formulation"
+            ]
+          }
+        }
+      },
+      "philosophy": {
+        "label": "Philosophy",
+        "title": "Designed, not improvised.",
+        "heading": "Deliberate Process",
+        "description": "At Blendence, nutrition doesn't happen by chance. Every blend is designed through a deliberate process that aligns nutritional science with real-life use."
+      },
+      "adaptability": {
+        "label": "Adaptability",
+        "title": "Nutrition that adapts to real life.",
+        "heading": "Real Life Adaptation",
+        "description": "From home to school, from work to demanding periods, daily routines are rarely the same. Blendence is designed to fit into real life — without rituals, complexity, or extremes."
+      },
+      "productGroups": {
+        "title": "Two ranges, one philosophy.",
+        "subtitle": "Whether you're navigating daily stages or seeking a fresh reset, Blendence offers clean, plant-based nutrition designed for real life.",
+        "stagesTitle": "Stages",
+        "stagesTagline": "Nutrition for growing needs",
+        "stagesDescription": "Thoughtfully designed blends for different life stages. From early growth to teenage years, each formulation adapts to evolving nutritional needs.",
+        "resetTitle": "Reset",
+        "resetTagline": "Balance when you need it",
+        "resetDescription": "Clean, plant-based formulations for moments when the body needs lightness and balance. Designed for portability and everyday use.",
+        "viewRange": "View range",
+        "exploreRange": "Explore range"
+      },
+      "stagesCarousel": {
+        "heading": "Nutrition designed for the stages of life.",
+        "subheading": "As the body's needs shift across different stages of life, nutrition should adapt accordingly.",
+        "whyBlendLabel": "Why this blend",
+        "learnMore": "Learn more →",
+        "products": {
+          "kidgrow": {
+            "title": "KidGrow",
+            "tagline": "Designed for early growth stages, suitable for all ages.",
+            "desc": "Optimized nutrition for early growth stages.",
+            "fullDesc": "Designed to fit naturally into everyday routines, supporting early development with essential nutrients.",
+            "whyBlend": [
+              "During early growth stages, the body requires a variety of nutritional building blocks as part of normal development.",
+              "Many of these components are naturally present in fruits and vegetables commonly included in balanced diets.",
+              "KidGrow is designed by identifying these everyday needs first, then selecting plant-based ingredients where they naturally occur — combined into a blend that fits easily into daily routines."
+            ]
+          },
+          "kidrise": {
+            "title": "KidRise",
+            "tagline": "Designed for school-age routines, suitable for all ages.",
+            "desc": "Supporting consistency throughout school days.",
+            "fullDesc": "Optimized for learning and active routines, providing sustained energy without the crash.",
+            "whyBlend": [
+              "School-age years come with changing routines and increasing cognitive and physical demands.",
+              "A balanced diet during this stage typically includes a range of plant-based foods that naturally contain essential nutritional components.",
+              "KidRise is designed by mapping these stage-specific needs first, then blending selected fruits and vegetables into a formulation that supports everyday consistency."
+            ]
+          },
+          "teenfocus": {
+            "title": "TeenFocus",
+            "tagline": "Designed for focus-intensive teenage stages.",
+            "desc": "Designed for mentally demanding school years.",
+            "fullDesc": "Focus-intensive formula that helps teenagers stay sharp and balanced during stressful periods.",
+            "whyBlend": [
+              "As school routines become more demanding, maintaining everyday focus plays a bigger role in daily life.",
+              "During early teenage years, nutritional needs naturally evolve alongside learning and active routines.",
+              "TeenFocus is designed around these changing needs, using plant-based ingredients where essential nutritional components naturally occur — combined into a blend that fits easily into daily routines."
+            ]
+          }
+        }
+      },
+      "resetSpotlight": {
+        "heading": "Moments of balance.",
+        "subheading": "Designed for moments when lightness and balance matter more.",
+        "products": {
+          "balance": {
+            "tag": "Everyday",
+            "title": "Reset Balance",
+            "desc": "Supporting lightness and balance during periods when daily routines feel heavier."
+          },
+          "intense": {
+            "tag": "Targeted",
+            "title": "Reset Intense",
+            "desc": "Clean, plant-based formulation for moments requiring deeper nutritional reset and portability."
+          }
+        },
+        "learnMore": "Learn more"
+      },
+      "approach": {
+        "title": "How we design nutrition.",
+        "bigStatement": "We don't start with ingredients. We start with needs.",
+        "description": "Our approach brings together nutritional science, food engineering, and real-life use to create blends that are relevant, consistent, and clean.",
+        "button": "Our approach"
+      }
     },
     "about": {
       "title": "Innovating Natural Nutrition",
@@ -271,13 +411,27 @@
     }
   },
   "tr": {
+    "common": {
+      "language": "Dil",
+      "english": "English",
+      "turkish": "Türkçe",
+      "learnMore": "Daha fazla"
+    },
     "nav": {
       "home": "Ana Sayfa",
       "about": "Hakkımızda",
       "products": "Ürünler",
       "technology": "Teknoloji",
       "quality": "Kalite",
-      "contact": "İletişim"
+      "contact": "İletişim",
+      "stages": "Stages",
+      "reset": "Reset",
+      "ourApproach": "Yaklaşımımız",
+      "kidGrow": "KidGrow (4-7)",
+      "kidRise": "KidRise (8-12)",
+      "teenFocus": "TeenFocus (13-16)",
+      "balance": "Balance",
+      "intense": "Intense"
     },
     "hero": {
       "subtitle": "%100 Dondurarak Kurutulmuş Beslenme Karışımı Markası",
@@ -287,6 +441,132 @@
       "noSugar": "Şeker Katkısız",
       "description": "Her yaştan tüketici için doğal, fonksiyonel ve güvenli ürünler sunmaya kendini adamış. Misyonumuz, herkesin katkı maddesi ve koruyucu içermeyen yüksek kaliteli içeriklerin sağlık faydalarından yararlanabilmesini sağlamaktır.",
       "cta": "Ürünlerimizi Keşfedin"
+    },
+    "mainPage": {
+      "hero": {
+        "staticTitle": "Günlük denge için tasarlanmış beslenme",
+        "staticSubtitle": "Doğal olarak güçlü, mükemmel dengeli.",
+        "slides": {
+          "kidgrow": {
+            "title": "KidGrow",
+            "subtitle": "STAGES",
+            "description": "Büyüyen bedenler için temel vitaminlerle dolu. Muz, portakal, armut ve üzümün lezzetli karışımı.",
+            "badges": [
+              "Tasarlanmış karışım",
+              "Bitki bazlı",
+              "Aşamaya uygun"
+            ]
+          },
+          "kidrise": {
+            "title": "KidRise",
+            "subtitle": "STAGES",
+            "description": "Mükemmel sabah başlangıcı. Elma, havuç ve limonun bağışıklık artırıcı ferahlatıcı birleşimi.",
+            "badges": [
+              "Temiz formülasyon",
+              "Bitki bazlı",
+              "Özenle tasarlanmış"
+            ]
+          },
+          "teenfocus": {
+            "title": "TeenFocus",
+            "subtitle": "STAGES",
+            "description": "Keskin ve odaklı kalın. Zihinsel berraklığı desteklemek için tasarlanmış yeşil güç karışımı.",
+            "badges": [
+              "Tasarlanmış karışım",
+              "Aşamaya uygun",
+              "Temiz formülasyon"
+            ]
+          }
+        }
+      },
+      "philosophy": {
+        "label": "Felsefe",
+        "title": "Tasarlandı, doğaçlama değil.",
+        "heading": "Bilinçli Süreç",
+        "description": "Blendence'de beslenme tesadüfe bırakılmaz. Her karışım, beslenme bilimini gerçek yaşam kullanımıyla uyumlu hale getiren bilinçli bir süreçle tasarlanır."
+      },
+      "adaptability": {
+        "label": "Uyum",
+        "title": "Gerçek hayata uyum sağlayan beslenme.",
+        "heading": "Gerçek Hayat Uyumu",
+        "description": "Evden okula, işten zorlu dönemlere, günlük rutinler nadiren aynı kalır. Blendence, gerçek hayata sığacak şekilde tasarlandı — ritüeller, karmaşıklık veya aşırılıklar olmadan."
+      },
+      "productGroups": {
+        "title": "İki seri, tek felsefe.",
+        "subtitle": "İster günlük aşamalarla başa çıkın, ister taze bir sıfırlama arayın, Blendence gerçek yaşam için tasarlanmış temiz, bitki bazlı beslenme sunar.",
+        "stagesTitle": "Stages",
+        "stagesTagline": "Büyüyen ihtiyaçlar için beslenme",
+        "stagesDescription": "Farklı yaşam aşamaları için özenle tasarlanmış karışımlar. Erken büyümeden ergenliğe, her formülasyon gelişen beslenme ihtiyaçlarına uyum sağlar.",
+        "resetTitle": "Reset",
+        "resetTagline": "İhtiyacınız olduğunda denge",
+        "resetDescription": "Vücudun hafiflik ve dengeye ihtiyaç duyduğu anlar için temiz, bitki bazlı formülasyonlar. Taşınabilirlik ve günlük kullanım için tasarlandı.",
+        "viewRange": "Seriyi görüntüle",
+        "exploreRange": "Seriyi keşfet"
+      },
+      "stagesCarousel": {
+        "heading": "Yaşamın aşamaları için tasarlanmış beslenme.",
+        "subheading": "Vücudun ihtiyaçları yaşamın farklı aşamalarında değiştikçe, beslenme de buna göre uyum sağlamalıdır.",
+        "whyBlendLabel": "Neden bu karışım",
+        "learnMore": "Daha fazla →",
+        "products": {
+          "kidgrow": {
+            "title": "KidGrow",
+            "tagline": "Erken büyüme aşamaları için tasarlandı, tüm yaşlara uygundur.",
+            "desc": "Erken büyüme aşamaları için optimize edilmiş beslenme.",
+            "fullDesc": "Günlük rutinlere doğal olarak uyum sağlamak için tasarlandı, temel besinlerle erken gelişimi destekler.",
+            "whyBlend": [
+              "Erken büyüme aşamalarında vücut, normal gelişimin bir parçası olarak çeşitli beslenme yapı taşları gerektirir.",
+              "Bu bileşenlerin çoğu, dengeli diyetlerde yaygın olarak bulunan meyve ve sebzelerde doğal olarak mevcuttur.",
+              "KidGrow, önce bu günlük ihtiyaçları belirleyerek, ardından doğal olarak bulundukları bitki bazlı bileşenleri seçerek tasarlandı — günlük rutinlere kolayca sığan bir karışım haline getirildi."
+            ]
+          },
+          "kidrise": {
+            "title": "KidRise",
+            "tagline": "Okul çağı rutinleri için tasarlandı, tüm yaşlara uygundur.",
+            "desc": "Okul günleri boyunca tutarlılığı destekler.",
+            "fullDesc": "Öğrenme ve aktif rutinler için optimize edildi, çöküş olmadan sürekli enerji sağlar.",
+            "whyBlend": [
+              "Okul çağı yılları, değişen rutinler ve artan bilişsel ve fiziksel taleplerle gelir.",
+              "Bu aşamada dengeli bir diyet, genellikle temel beslenme bileşenlerini doğal olarak içeren bir dizi bitki bazlı gıdayı içerir.",
+              "KidRise, önce bu aşamaya özgü ihtiyaçları haritalayarak, ardından seçilmiş meyve ve sebzeleri günlük tutarlılığı destekleyen bir formülasyonda harmanlayarak tasarlandı."
+            ]
+          },
+          "teenfocus": {
+            "title": "TeenFocus",
+            "tagline": "Odak yoğunluklu ergenlik aşamaları için tasarlandı.",
+            "desc": "Zihinsel olarak zorlu okul yılları için tasarlandı.",
+            "fullDesc": "Ergenlerin stresli dönemlerde keskin ve dengeli kalmasına yardımcı olan odak yoğunluklu formül.",
+            "whyBlend": [
+              "Okul rutinleri daha zorlu hale geldikçe, günlük odağı korumak günlük yaşamda daha büyük bir rol oynar.",
+              "Erken ergenlik yıllarında, beslenme ihtiyaçları doğal olarak öğrenme ve aktif rutinlerle birlikte evrilir.",
+              "TeenFocus, bu değişen ihtiyaçlar etrafında tasarlandı, temel beslenme bileşenlerinin doğal olarak bulunduğu bitki bazlı bileşenleri kullanarak — günlük rutinlere kolayca sığan bir karışım haline getirildi."
+            ]
+          }
+        }
+      },
+      "resetSpotlight": {
+        "heading": "Denge anları.",
+        "subheading": "Hafiflik ve dengenin daha çok önem kazandığı anlar için tasarlandı.",
+        "products": {
+          "balance": {
+            "tag": "Günlük",
+            "title": "Reset Balance",
+            "desc": "Günlük rutinlerin daha ağır hissedildiği dönemlerde hafiflik ve dengeyi destekler."
+          },
+          "intense": {
+            "tag": "Hedefli",
+            "title": "Reset Intense",
+            "desc": "Daha derin beslenme sıfırlaması gerektiren anlar için temiz, bitki bazlı formülasyon ve taşınabilirlik."
+          }
+        },
+        "learnMore": "Daha fazla"
+      },
+      "approach": {
+        "title": "Beslenmeyi nasıl tasarlıyoruz.",
+        "bigStatement": "Malzemelerle başlamıyoruz. İhtiyaçlarla başlıyoruz.",
+        "description": "Yaklaşımımız, alakalı, tutarlı ve temiz karışımlar oluşturmak için beslenme bilimini, gıda mühendisliğini ve gerçek yaşam kullanımını bir araya getiriyor.",
+        "button": "Yaklaşımımız"
+      }
     },
     "about": {
       "title": "Doğal Beslenmede İnovasyon",
@@ -398,17 +678,17 @@
         "description": "Gıda endüstrisi için premium içerikler. Kimyasal veya sentetik aroma ve renklendirici yerine doğal, sağlıklı bir alternatif."
       },
       "stages": {
-        "title": "STAGES",
+        "title": "Stages",
         "tagline": "Her yaşam evresi için optimize edildi",
         "description": "Çocukluktaki büyüme döneminden ergenlikteki odaklanma ihtiyacına, hatta hamilelik veya yoğun yetişkin rutinleri gibi gelecekteki senaryolara kadar farklı yaşam evrelerinin doğal ihtiyaçlarını desteklemek için tasarlanmıştır. Her ürün, hedef kitlesinin fizyolojik öncelikleri için özenle optimize edilmiştir. Amaç, vücudun değişen yaşam evreleriyle birlikte büyüyen ve uyum sağlayan özel bir beslenme sunmaktır."
       },
       "reset": {
-        "title": "RESET",
+        "title": "Reset",
         "tagline": "Doğal dengenizi yeniden kazanın",
         "description": "Vücudun iç ritmini tazelemesinden ve daha hafif bir denge hissine dönmesinden fayda sağladığı anlar için yaratılmıştır. Her karışım, günlük rutinleri sıfırlamaya yardımcı olan berraklık ve yenilenme hissini destekler. Bu kategori basit bir fikri benimser: vücuda kendi doğal dengesini yeniden kurması için alan tanımak."
       },
       "shield": {
-        "title": "SHIELD",
+        "title": "Shield",
         "tagline": "Günlük savunmanızı güçlendirin",
         "description": "Vücudun doğal savunma sistemini desteklemeye ve uzun vadeli dayanıklılığı artırmaya adanmıştır. Formülasyonları, modern yaşamın zorluklarına karşı günlük korumayı güçlendirmek üzerine kurulmuştur. Bu kategori, doğadan gelen istikrarlı bir canlılığı ve genel refahı sürdürme taahhüdünü yansıtır."
       },

@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './StagesCarousel.module.css';
+import { useLanguage } from '@/lib/LanguageContext';
 
 interface StageProduct {
     id: string;
@@ -19,55 +20,29 @@ interface StageProduct {
     patternColor: string;
 }
 
-const stagesProducts: StageProduct[] = [
+// Static product data (images and colors)
+const PRODUCT_DATA = [
     {
         id: 'kidgrow',
-        title: 'KidGrow',
-        tagline: 'Designed for early growth stages, suitable for all ages.',
-        desc: 'Optimized nutrition for early growth stages.',
-        fullDesc: 'Designed to fit naturally into everyday routines, supporting early development with essential nutrients.',
         href: '/stages/kidgrow',
         productImage: '/main/stages/kid-grow.png',
         lifestyleImage: '/main/stages/kid-grow-glass.png',
-        whyBlend: [
-            "During early growth stages, the body requires a variety of nutritional building blocks as part of normal development.",
-            "Many of these components are naturally present in fruits and vegetables commonly included in balanced diets.",
-            "KidGrow is designed by identifying these everyday needs first, then selecting plant-based ingredients where they naturally occur — combined into a blend that fits easily into daily routines."
-        ],
         accentColor: '#D67030',
         patternColor: '#E8A06A'
     },
     {
         id: 'kidrise',
-        title: 'KidRise',
-        tagline: 'Designed for school-age routines, suitable for all ages.',
-        desc: 'Supporting consistency throughout school days.',
-        fullDesc: 'Optimized for learning and active routines, providing sustained energy without the crash.',
         href: '/stages/kidrise',
         productImage: '/main/stages/kid-rise.png',
         lifestyleImage: '/main/stages/kid-rise-glass.png',
-        whyBlend: [
-            "School-age years come with changing routines and increasing cognitive and physical demands.",
-            "A balanced diet during this stage typically includes a range of plant-based foods that naturally contain essential nutritional components.",
-            "KidRise is designed by mapping these stage-specific needs first, then blending selected fruits and vegetables into a formulation that supports everyday consistency."
-        ],
         accentColor: '#C89010',
         patternColor: '#E0B850'
     },
     {
         id: 'teenfocus',
-        title: 'TeenFocus',
-        tagline: 'Designed for focus-intensive teenage stages.',
-        desc: 'Designed for mentally demanding school years.',
-        fullDesc: 'Focus-intensive formula that helps teenagers stay sharp and balanced during stressful periods.',
         href: '/stages/teenfocus',
         productImage: '/main/stages/teen-focus.png',
         lifestyleImage: '/main/stages/teen-focus-glass.png',
-        whyBlend: [
-            "As school routines become more demanding, maintaining everyday focus plays a bigger role in daily life.",
-            "During early teenage years, nutritional needs naturally evolve alongside learning and active routines.",
-            "TeenFocus is designed around these changing needs, using plant-based ingredients where essential nutritional components naturally occur — combined into a blend that fits easily into daily routines."
-        ],
         accentColor: '#4A9C8C',
         patternColor: '#7CBFB2'
     }
@@ -79,6 +54,22 @@ export default function StagesCarousel() {
     const [animationPhase, setAnimationPhase] = useState<'idle' | 'out' | 'in'>('idle');
     const [direction, setDirection] = useState<'next' | 'prev'>('next');
     const animationPhaseRef = React.useRef(animationPhase);
+    const { t } = useLanguage();
+
+    // Combine static data with translations
+    const productKeys = ['kidgrow', 'kidrise', 'teenfocus'] as const;
+    const stagesProducts: StageProduct[] = PRODUCT_DATA.map((product, index) => {
+        const key = productKeys[index];
+        const translations = t.mainPage.stagesCarousel.products[key];
+        return {
+            ...product,
+            title: translations.title,
+            tagline: translations.tagline,
+            desc: translations.desc,
+            fullDesc: translations.fullDesc,
+            whyBlend: translations.whyBlend
+        };
+    });
 
     // Keep ref in sync with state
     React.useEffect(() => {
@@ -100,7 +91,7 @@ export default function StagesCarousel() {
         setTimeout(() => {
             setAnimationPhase('idle');
         }, 700);
-    }, []);
+    }, [stagesProducts.length]);
 
     const goToPrev = useCallback(() => {
         if (animationPhaseRef.current !== 'idle') return;
@@ -117,7 +108,7 @@ export default function StagesCarousel() {
         setTimeout(() => {
             setAnimationPhase('idle');
         }, 700);
-    }, []);
+    }, [stagesProducts.length]);
 
     const goToSlide = useCallback((index: number) => {
         if (animationPhaseRef.current !== 'idle') return;
@@ -166,11 +157,9 @@ export default function StagesCarousel() {
             <div className={styles.container}>
                 {/* Section Header */}
                 <div className={styles.sectionHeader}>
-                    <h2 className={styles.heading}>
-                        Nutrition designed for<br />the stages of life.
-                    </h2>
+                    <h2 className={styles.heading} dangerouslySetInnerHTML={{ __html: t.mainPage.stagesCarousel.heading.replace(/\n/g, '<br/>') }} />
                     <p className={styles.subheading}>
-                        As the body's needs shift across different stages of life, nutrition should adapt accordingly.
+                        {t.mainPage.stagesCarousel.subheading}
                     </p>
                 </div>
 
@@ -246,7 +235,7 @@ export default function StagesCarousel() {
                                 } as React.CSSProperties}
                             >
                                 <div className={styles.ingredientsHeader}>
-                                    <span className={styles.ingredientsLabel}>Why this blend</span>
+                                    <span className={styles.ingredientsLabel}>{t.mainPage.stagesCarousel.whyBlendLabel}</span>
                                 </div>
                                 <div className={styles.whyBlendContent}>
                                     {currentProduct.whyBlend.map((paragraph: string, idx: number) => (
@@ -256,7 +245,7 @@ export default function StagesCarousel() {
                                     ))}
                                 </div>
                                 <Link href={currentProduct.href} className={styles.learnMore}>
-                                    Learn more →
+                                    {t.mainPage.stagesCarousel.learnMore}
                                 </Link>
                             </div>
                         </div>
@@ -296,7 +285,7 @@ export default function StagesCarousel() {
                     </button>
 
                     <div className={styles.progressBar}>
-                        {stagesProducts.map((_, idx) => (
+                        {stagesProducts.map((product, idx) => (
                             <button
                                 key={idx}
                                 className={`${styles.progressSegment} ${idx === activeIndex ? styles.active : ''}`}
@@ -307,7 +296,7 @@ export default function StagesCarousel() {
                                     className={styles.progressFill}
                                     style={{
                                         animationPlayState: idx === activeIndex && !isPaused ? 'running' : 'paused',
-                                        backgroundColor: idx === activeIndex ? stagesProducts[idx].accentColor : undefined
+                                        backgroundColor: idx === activeIndex ? product.accentColor : undefined
                                     }}
                                 />
                             </button>
