@@ -135,20 +135,35 @@
       },
       "resetSpotlight": {
         "heading": "Moments of balance.",
-        "subheading": "Designed for moments when lightness and balance matter more.",
+        "subheading": "Reset is designed for moments when the body feels heavier than usual. Its plant-based, fiber-supported formulation is designed to support digestive lightness and a sense of balance.",
+        "whyBlendLabel": "Why this blend",
+        "learnMore": "Learn more →",
         "products": {
           "balance": {
             "tag": "Everyday",
             "title": "Reset Balance",
-            "desc": "Supporting lightness and balance during periods when daily routines feel heavier."
+            "tagline": "Everyday — Designed for ongoing routines",
+            "desc": "Supporting lightness and balance.",
+            "fullDesc": "Designed for periods when daily routines continue, but a lighter, more balanced option feels more appropriate.",
+            "whyBlend": [
+              "Reset Balance focuses on continuity, not intensity.",
+              "It is designed for moments when you want to support balance and digestive lightness without disrupting your everyday flow.",
+              "Rather than adding more, Reset Balance is about reducing unnecessary load — supporting fluid balance, digestive-friendly routines, and satiety between meals."
+            ]
           },
           "intense": {
             "tag": "Targeted",
             "title": "Reset Intense",
-            "desc": "Clean, plant-based formulation for moments requiring deeper nutritional reset and portability."
+            "tagline": "Targeted — Designed for focused moments",
+            "desc": "A more pronounced sense of lightness.",
+            "fullDesc": "Designed for periods when everyday balance feels harder to maintain and a more concentrated approach becomes relevant.",
+            "whyBlend": [
+              "Reset Intense focuses on intensity of formulation, not intensity of use.",
+              "It is designed for moments when you want to support digestive lightness and balance in a shorter, more focused way.",
+              "Intended for intermittent use, rather than continuous routines — practical for specific moments when a stronger sense of lightness is preferred."
+            ]
           }
-        },
-        "learnMore": "Learn more"
+        }
       },
       "approach": {
         "title": "How we design nutrition.",
@@ -546,20 +561,35 @@
       },
       "resetSpotlight": {
         "heading": "Denge anları.",
-        "subheading": "Hafiflik ve dengenin daha çok önem kazandığı anlar için tasarlandı.",
+        "subheading": "Reset, vücudun normalden daha ağır hissedildiği anlar için tasarlandı. Bitki bazlı, lif destekli formülasyonu sindirim hafifliğini ve denge hissini desteklemek için tasarlandı.",
+        "whyBlendLabel": "Neden bu karışım",
+        "learnMore": "Daha fazla →",
         "products": {
           "balance": {
             "tag": "Günlük",
             "title": "Reset Balance",
-            "desc": "Günlük rutinlerin daha ağır hissedildiği dönemlerde hafiflik ve dengeyi destekler."
+            "tagline": "Günlük — Devam eden rutinler için tasarlandı",
+            "desc": "Hafiflik ve dengeyi destekler.",
+            "fullDesc": "Günlük rutinlerin devam ettiği ancak daha hafif, daha dengeli bir seçeneğin daha uygun hissedildiği dönemler için tasarlandı.",
+            "whyBlend": [
+              "Reset Balance yoğunluğa değil, sürekliliğe odaklanır.",
+              "Günlük akışınızı bozmadan denge ve sindirim hafifliğini desteklemek istediğiniz anlar için tasarlandı.",
+              "Daha fazla eklemek yerine, Reset Balance gereksiz yükü azaltmakla ilgilidir — sıvı dengesini, sindirime uygun rutinleri ve öğün arası tokluk hissini destekler."
+            ]
           },
           "intense": {
             "tag": "Hedefli",
             "title": "Reset Intense",
-            "desc": "Daha derin beslenme sıfırlaması gerektiren anlar için temiz, bitki bazlı formülasyon ve taşınabilirlik."
+            "tagline": "Hedefli — Odaklanmış anlar için tasarlandı",
+            "desc": "Daha belirgin bir hafiflik hissi.",
+            "fullDesc": "Günlük dengenin korunmasının zorlaştığı ve daha yoğun bir yaklaşımın uygun hale geldiği dönemler için tasarlandı.",
+            "whyBlend": [
+              "Reset Intense kullanım yoğunluğuna değil, formülasyon yoğunluğuna odaklanır.",
+              "Sindirim hafifliğini ve dengeyi daha kısa, daha odaklı bir şekilde desteklemek istediğiniz anlar için tasarlandı.",
+              "Sürekli rutinler yerine aralıklı kullanım için tasarlandı — daha güçlü bir hafiflik hissinin tercih edildiği belirli anlar için pratik."
+            ]
           }
-        },
-        "learnMore": "Daha fazla"
+        }
       },
       "approach": {
         "title": "Beslenmeyi nasıl tasarlıyoruz.",

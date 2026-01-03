@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './ResetSpotlight.module.css';
+import { useLanguage } from '@/lib/LanguageContext';
 
 interface ResetProduct {
     id: string;
@@ -19,39 +20,22 @@ interface ResetProduct {
     patternColor: string;
 }
 
-const resetProducts: ResetProduct[] = [
+// Static product data (images and colors)
+const PRODUCT_DATA = [
     {
         id: 'balance',
-        title: 'Reset Balance',
-        tagline: 'Everyday — Designed for ongoing routines',
-        desc: 'Supporting lightness and balance.',
-        fullDesc: 'Designed for periods when daily routines continue, but a lighter, more balanced option feels more appropriate.',
         href: '/reset/balance',
         productImage: '/product/product-1.png',
         lifestyleImage: '/main/reset/reset-balance-glass.png',
-        whyBlend: [
-            "Reset Balance focuses on continuity, not intensity.",
-            "It is designed for moments when you want to support balance and digestive lightness without disrupting your everyday flow.",
-            "Rather than adding more, Reset Balance is about reducing unnecessary load — supporting fluid balance, digestive-friendly routines, and satiety between meals."
-        ],
-        accentColor: '#8B9A6B', // Sage green
+        accentColor: '#8B9A6B',
         patternColor: '#A8B88D'
     },
     {
         id: 'intense',
-        title: 'Reset Intense',
-        tagline: 'Targeted — Designed for focused moments',
-        desc: 'A more pronounced sense of lightness.',
-        fullDesc: 'Designed for periods when everyday balance feels harder to maintain and a more concentrated approach becomes relevant.',
         href: '/reset/intense',
         productImage: '/product/product-1.png',
         lifestyleImage: '/main/reset/reset-intense-glass.png',
-        whyBlend: [
-            "Reset Intense focuses on intensity of formulation, not intensity of use.",
-            "It is designed for moments when you want to support digestive lightness and balance in a shorter, more focused way.",
-            "Intended for intermittent use, rather than continuous routines — practical for specific moments when a stronger sense of lightness is preferred."
-        ],
-        accentColor: '#7A8B65', // Soft olive
+        accentColor: '#7A8B65',
         patternColor: '#96A67E'
     }
 ];
@@ -62,6 +46,23 @@ export default function ResetSpotlight() {
     const [animationPhase, setAnimationPhase] = useState<'idle' | 'out' | 'in'>('idle');
     const [direction, setDirection] = useState<'next' | 'prev'>('next');
     const animationPhaseRef = React.useRef(animationPhase);
+    const { t, language } = useLanguage();
+
+    // Combine static data with translations
+    const productKeys = ['balance', 'intense'] as const;
+    const resetProducts: ResetProduct[] = PRODUCT_DATA.map((product, index) => {
+        const key = productKeys[index];
+        const translations = t.mainPage.resetSpotlight.products[key];
+        return {
+            ...product,
+            href: `/${language}/reset/${product.id}`,
+            title: translations.title,
+            tagline: translations.tagline,
+            desc: translations.desc,
+            fullDesc: translations.fullDesc,
+            whyBlend: translations.whyBlend
+        };
+    });
 
     // Keep ref in sync with state
     React.useEffect(() => {
@@ -83,7 +84,7 @@ export default function ResetSpotlight() {
         setTimeout(() => {
             setAnimationPhase('idle');
         }, 700);
-    }, []);
+    }, [resetProducts.length]);
 
     const goToPrev = useCallback(() => {
         if (animationPhaseRef.current !== 'idle') return;
@@ -100,7 +101,7 @@ export default function ResetSpotlight() {
         setTimeout(() => {
             setAnimationPhase('idle');
         }, 700);
-    }, []);
+    }, [resetProducts.length]);
 
     const goToSlide = useCallback((index: number) => {
         if (animationPhaseRef.current !== 'idle') return;
@@ -149,11 +150,9 @@ export default function ResetSpotlight() {
             <div className={styles.container}>
                 {/* Section Header */}
                 <div className={styles.sectionHeader}>
-                    <h2 className={styles.heading}>
-                        Moments of<br />balance.
-                    </h2>
+                    <h2 className={styles.heading} dangerouslySetInnerHTML={{ __html: t.mainPage.resetSpotlight.heading.replace(/\n/g, '<br/>') }} />
                     <p className={styles.subheading}>
-                        Reset is designed for moments when the body feels heavier than usual. Its plant-based, fiber-supported formulation is designed to support digestive lightness and a sense of balance.
+                        {t.mainPage.resetSpotlight.subheading}
                     </p>
                 </div>
 
@@ -229,7 +228,7 @@ export default function ResetSpotlight() {
                                 } as React.CSSProperties}
                             >
                                 <div className={styles.ingredientsHeader}>
-                                    <span className={styles.ingredientsLabel}>Why this blend</span>
+                                    <span className={styles.ingredientsLabel}>{t.mainPage.resetSpotlight.whyBlendLabel}</span>
                                 </div>
                                 <div className={styles.whyBlendContent}>
                                     {currentProduct.whyBlend.map((paragraph: string, idx: number) => (
@@ -239,7 +238,7 @@ export default function ResetSpotlight() {
                                     ))}
                                 </div>
                                 <Link href={currentProduct.href} className={styles.learnMore}>
-                                    Learn more →
+                                    {t.mainPage.resetSpotlight.learnMore}
                                 </Link>
                             </div>
                         </div>
@@ -279,7 +278,7 @@ export default function ResetSpotlight() {
                     </button>
 
                     <div className={styles.progressBar}>
-                        {resetProducts.map((_, idx) => (
+                        {resetProducts.map((product, idx) => (
                             <button
                                 key={idx}
                                 className={`${styles.progressSegment} ${idx === activeIndex ? styles.active : ''}`}
@@ -290,7 +289,7 @@ export default function ResetSpotlight() {
                                     className={styles.progressFill}
                                     style={{
                                         animationPlayState: idx === activeIndex && !isPaused ? 'running' : 'paused',
-                                        backgroundColor: idx === activeIndex ? resetProducts[idx].accentColor : undefined
+                                        backgroundColor: idx === activeIndex ? product.accentColor : undefined
                                     }}
                                 />
                             </button>
