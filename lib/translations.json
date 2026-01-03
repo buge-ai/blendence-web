@@ -172,6 +172,177 @@
         "button": "Our approach"
       }
     },
+    "productPages": {
+      "kidgrow": {
+        "title": "KidGrow",
+        "subtitle": "Optimized nutrition for early growth stages (4–7).",
+        "description": "Practical support for everyday routines during early childhood.",
+        "tag": "Stages — 4–7",
+        "features": {
+          "why": {
+            "title": "Why KidGrow?",
+            "content": [
+              "Early childhood is about building habits as much as it is about growth.",
+              "KidGrow is designed as a healthier alternative to sugary drinks and snacks — offering a practical, nourishing option that fits naturally between meals and daily routines."
+            ]
+          },
+          "when": {
+            "title": "When is it relevant?",
+            "intro": "Ages 4–7 mark a foundational stage. During this period, children experience:",
+            "list": [
+              "Rapid physical development",
+              "Evolving daily routines",
+              "Changing nutritional needs"
+            ],
+            "outro": "KidGrow is optimized for this stage, where consistency and balance matter more than intensity."
+          },
+          "how": {
+            "title": "How it fits into daily life",
+            "list": [
+              "Easy to prepare and consume",
+              "Suitable for regular use",
+              "Especially suited for morning or daytime routines",
+              "Integrates naturally into everyday life without complexity"
+            ]
+          },
+          "note": {
+            "title": "A note for parents",
+            "content": "KidGrow is a food product, not a medicine. While optimized for early growth stages, it can be consumed by individuals of different ages. The formulation is designed to be most relevant during this stage."
+          }
+        }
+      },
+      "kidrise": {
+        "title": "KidRise",
+        "subtitle": "Optimized nutrition for learning and active routines (8–12).",
+        "description": "Designed to support consistency throughout school days.",
+        "tag": "Stages — 8–12",
+        "features": {
+          "why": {
+            "title": "Why KidRise?",
+            "content": [
+              "As school routines begin, daily demands increase.",
+              "KidRise is designed as a practical alternative to sugary drinks and snacks — supporting steady energy during longer, more structured days."
+            ]
+          },
+          "when": {
+            "title": "When is it relevant?",
+            "content": [
+              "Ages 8–12 represent a transition. Learning becomes more structured, days become longer, and routines more demanding.",
+              "KidRise is optimized for this stage, where steady energy and routine compatibility matter more than intensity."
+            ]
+          },
+          "how": {
+            "title": "How it fits into daily life",
+            "list": [
+              "Easy to prepare and consume",
+              "Suitable for regular use",
+              "Designed to fit into busy school-day schedules",
+              "No strict timing or cycles required"
+            ]
+          },
+          "note": {
+            "title": "A note for parents",
+            "content": "KidRise is a food product, not a medicine. While optimized for school-age routines, it can be consumed by individuals of different ages. The formulation is designed to be most relevant during this stage."
+          }
+        }
+      },
+      "teenfocus": {
+        "title": "TeenFocus",
+        "subtitle": "Optimized nutrition for focus-intensive stages (13–16).",
+        "description": "Designed to support consistency during mentally demanding school years.",
+        "tag": "Stages — 13–16",
+        "features": {
+          "why": {
+            "title": "Why TeenFocus?",
+            "content": [
+              "As school years progress, mental demands increase. Longer study periods, more information, and sustained attention become part of daily routines.",
+              "TeenFocus is designed to support focus during these periods — without turning nutrition into pressure or shortcuts."
+            ]
+          },
+          "when": {
+            "title": "When is it relevant?",
+            "content": "Ages 13–16 are often mentally intensive. TeenFocus is optimized for stages where clarity and consistency matter more than stimulation."
+          },
+          "how": {
+            "title": "How it fits into daily life",
+            "list": [
+              "Fits naturally into study routines and longer school days",
+              "Easy to prepare",
+              "Suitable for regular use",
+              "No strict timing required"
+            ]
+          },
+          "note": {
+            "title": "A note on use",
+            "content": "TeenFocus is a food product, not a medicine. While optimized for focus-intensive teenage years, it can be consumed by individuals of different ages."
+          }
+        }
+      },
+      "resetBalance": {
+        "title": "Reset Balance",
+        "subtitle": "Designed to support lightness and balance in everyday routines.",
+        "description": "Designed for periods when daily routines continue, but a lighter, more balanced option feels more appropriate.",
+        "tag": "Reset — Everyday",
+        "features": {
+          "what": {
+            "title": "What is it about?",
+            "content": [
+              "Reset Balance focuses on continuity, not intensity.",
+              "It is designed for moments when you want to support balance and digestive lightness without disrupting your everyday flow. Rather than adding more, Reset Balance is about reducing unnecessary load."
+            ]
+          },
+          "when": {
+            "title": "When is it relevant?",
+            "list": [
+              "When meals feel heavier than usual",
+              "When a lighter, plant-based option is preferred between meals",
+              "When digestive comfort and simplicity become daily priorities",
+              "When maintaining balance matters more than stimulation"
+            ]
+          },
+          "supports": {
+            "title": "What it supports",
+            "list": [
+              "Fluid balance and digestive lightness",
+              "Digestive-friendly routines (fiber-supported)",
+              "Satiety between meals"
+            ]
+          },
+          "how": {
+            "title": "How it fits into daily life",
+            "content": "Suitable for regular, ongoing routines. Works well as a lighter alternative between meals. No strict timing. No cycles."
+          }
+        }
+      },
+      "resetIntense": {
+        "title": "Reset Intense",
+        "subtitle": "Designed for moments when a more pronounced sense of lightness is preferred.",
+        "description": "Designed for periods when everyday balance feels harder to maintain and a more concentrated approach becomes relevant.",
+        "tag": "Reset — Targeted",
+        "features": {
+          "what": {
+            "title": "What is it about?",
+            "content": [
+              "Reset Intense focuses on intensity of formulation, not intensity of use.",
+              "It is designed for moments when you want to support digestive lightness and balance in a shorter, more focused way. Intended for intermittent use, rather than continuous routines."
+            ]
+          },
+          "when": {
+            "title": "When is it relevant?",
+            "list": [
+              "When a stronger sense of lightness is preferred",
+              "When meals or routines feel noticeably heavier than usual",
+              "When a more concentrated, plant-based option feels appropriate",
+              "When digestive comfort and simplicity become immediate priorities"
+            ]
+          },
+          "how": {
+            "title": "How it fits into daily life",
+            "content": "Designed to be used when needed, not as a permanent part of daily routines. Practical for specific moments. Flexible use without rigid timing or cycles."
+          }
+        }
+      }
+    },
     "about": {
       "title": "Innovating Natural Nutrition",
       "subtitle": "Our brand philosophy revolves around the concept of natural balance. By combining advanced freeze-drying technology with nature's best ingredients, we create products that not only taste great but also empower healthier lifestyles.\nBlendence is committed to sustainability, quality, and innovation, positioning us at the forefront of the food tech industry.",
@@ -596,6 +767,177 @@
         "bigStatement": "Malzemelerle başlamıyoruz. İhtiyaçlarla başlıyoruz.",
         "description": "Yaklaşımımız, alakalı, tutarlı ve temiz karışımlar oluşturmak için beslenme bilimini, gıda mühendisliğini ve gerçek yaşam kullanımını bir araya getiriyor.",
         "button": "Yaklaşımımız"
+      }
+    },
+    "productPages": {
+      "kidgrow": {
+        "title": "KidGrow",
+        "subtitle": "Erken büyüme aşamaları için optimize edilmiş beslenme (4–7).",
+        "description": "Erken çocukluk döneminde günlük rutinler için pratik destek.",
+        "tag": "Aşamalar — 4–7",
+        "features": {
+          "why": {
+            "title": "Neden KidGrow?",
+            "content": [
+              "Erken çocukluk dönemi, büyüme kadar alışkanlık oluşturmakla da ilgilidir.",
+              "KidGrow, şekerli içeceklere ve atıştırmalıklara daha sağlıklı bir alternatif olarak tasarlandı — öğün aralarında ve günlük rutinlere doğal olarak uyan pratik, besleyici bir seçenek sunuyor."
+            ]
+          },
+          "when": {
+            "title": "Ne zaman uygundur?",
+            "intro": "4–7 yaş, temel bir aşamadır. Bu dönemde çocuklar:",
+            "list": [
+              "Hızlı fiziksel gelişim",
+              "Gelişen günlük rutinler",
+              "Değişen beslenme ihtiyaçları"
+            ],
+            "outro": "KidGrow, tutarlılık ve dengenin yoğunluktan daha önemli olduğu bu aşama için optimize edilmiştir."
+          },
+          "how": {
+            "title": "Günlük hayata nasıl uyar",
+            "list": [
+              "Hazırlaması ve tüketmesi kolay",
+              "Düzenli kullanıma uygun",
+              "Özellikle sabah veya gündüz rutinleri için ideal",
+              "Karmaşıklık olmadan günlük yaşama doğal olarak entegre olur"
+            ]
+          },
+          "note": {
+            "title": "Ebeveynler için not",
+            "content": "KidGrow bir gıda ürünüdür, ilaç değildir. Erken büyüme aşamaları için optimize edilmiş olsa da, farklı yaştaki bireyler tarafından tüketilebilir. Formülasyon, bu aşamada en uygun olacak şekilde tasarlanmıştır."
+          }
+        }
+      },
+      "kidrise": {
+        "title": "KidRise",
+        "subtitle": "Öğrenme ve aktif rutinler için optimize edilmiş beslenme (8–12).",
+        "description": "Okul günleri boyunca tutarlılığı desteklemek için tasarlandı.",
+        "tag": "Aşamalar — 8–12",
+        "features": {
+          "why": {
+            "title": "Neden KidRise?",
+            "content": [
+              "Okul rutinleri başladığında, günlük talepler artar.",
+              "KidRise, şekerli içeceklere ve atıştırmalıklara pratik bir alternatif olarak tasarlandı — daha uzun, daha yapılandırılmış günlerde sürekli enerjiyi destekliyor."
+            ]
+          },
+          "when": {
+            "title": "Ne zaman uygundur?",
+            "content": [
+              "8–12 yaş bir geçiş dönemini temsil eder. Öğrenme daha yapılandırılmış hale gelir, günler uzar ve rutinler daha talepkar olur.",
+              "KidRise, sürekli enerji ve rutin uyumluluğunun yoğunluktan daha önemli olduğu bu aşama için optimize edilmiştir."
+            ]
+          },
+          "how": {
+            "title": "Günlük hayata nasıl uyar",
+            "list": [
+              "Hazırlaması ve tüketmesi kolay",
+              "Düzenli kullanıma uygun",
+              "Yoğun okul günü programlarına uyacak şekilde tasarlandı",
+              "Katı zamanlama veya döngü gerektirmez"
+            ]
+          },
+          "note": {
+            "title": "Ebeveynler için not",
+            "content": "KidRise bir gıda ürünüdür, ilaç değildir. Okul çağı rutinleri için optimize edilmiş olsa da, farklı yaştaki bireyler tarafından tüketilebilir. Formülasyon, bu aşamada en uygun olacak şekilde tasarlanmıştır."
+          }
+        }
+      },
+      "teenfocus": {
+        "title": "TeenFocus",
+        "subtitle": "Odak yoğunluklu aşamalar için optimize edilmiş beslenme (13–16).",
+        "description": "Zihinsel olarak zorlu okul yıllarında tutarlılığı desteklemek için tasarlandı.",
+        "tag": "Aşamalar — 13–16",
+        "features": {
+          "why": {
+            "title": "Neden TeenFocus?",
+            "content": [
+              "Okul yılları ilerledikçe, zihinsel talepler artar. Daha uzun çalışma dönemleri, daha fazla bilgi ve sürekli dikkat günlük rutinlerin bir parçası haline gelir.",
+              "TeenFocus, bu dönemlerde odaklanmayı desteklemek için tasarlandı — beslenmeyi baskıya veya kısayollara dönüştürmeden."
+            ]
+          },
+          "when": {
+            "title": "Ne zaman uygundur?",
+            "content": "13–16 yaş genellikle zihinsel olarak yoğun bir dönemdir. TeenFocus, berraklık ve tutarlılığın uyarımdan daha önemli olduğu aşamalar için optimize edilmiştir."
+          },
+          "how": {
+            "title": "Günlük hayata nasıl uyar",
+            "list": [
+              "Çalışma rutinlerine ve daha uzun okul günlerine doğal olarak uyar",
+              "Hazırlaması kolay",
+              "Düzenli kullanıma uygun",
+              "Katı zamanlama gerektirmez"
+            ]
+          },
+          "note": {
+            "title": "Kullanım hakkında not",
+            "content": "TeenFocus bir gıda ürünüdür, ilaç değildir. Odak yoğunluklu ergenlik yılları için optimize edilmiş olsa da, farklı yaştaki bireyler tarafından tüketilebilir."
+          }
+        }
+      },
+      "resetBalance": {
+        "title": "Reset Balance",
+        "subtitle": "Günlük rutinlerde hafiflik ve dengeyi desteklemek için tasarlandı.",
+        "description": "Günlük rutinlerin devam ettiği ancak daha hafif, daha dengeli bir seçeneğin daha uygun hissedildiği dönemler için tasarlandı.",
+        "tag": "Reset — Günlük",
+        "features": {
+          "what": {
+            "title": "Ne hakkında?",
+            "content": [
+              "Reset Balance yoğunluğa değil, sürekliliğe odaklanır.",
+              "Günlük akışınızı bozmadan denge ve sindirim hafifliğini desteklemek istediğiniz anlar için tasarlandı. Daha fazla eklemek yerine, Reset Balance gereksiz yükü azaltmakla ilgilidir."
+            ]
+          },
+          "when": {
+            "title": "Ne zaman uygundur?",
+            "list": [
+              "Yemekler normalden daha ağır hissedildiğinde",
+              "Öğün aralarında daha hafif, bitki bazlı bir seçenek tercih edildiğinde",
+              "Sindirim konforu ve sadelik günlük öncelik haline geldiğinde",
+              "Uyarımdan çok denge korumanın önemli olduğunda"
+            ]
+          },
+          "supports": {
+            "title": "Neyi destekler",
+            "list": [
+              "Sıvı dengesi ve sindirim hafifliği",
+              "Sindirimi destekleyen rutinler (lif destekli)",
+              "Öğün arası tokluk hissi"
+            ]
+          },
+          "how": {
+            "title": "Günlük hayata nasıl uyar",
+            "content": "Düzenli, devam eden rutinler için uygundur. Öğün aralarında daha hafif bir alternatif olarak iyi çalışır. Katı zamanlama yok. Döngü yok."
+          }
+        }
+      },
+      "resetIntense": {
+        "title": "Reset Intense",
+        "subtitle": "Daha belirgin bir hafiflik hissinin tercih edildiği anlar için tasarlandı.",
+        "description": "Günlük dengenin korunmasının zorlaştığı ve daha yoğun bir yaklaşımın uygun hale geldiği dönemler için tasarlandı.",
+        "tag": "Reset — Hedefli",
+        "features": {
+          "what": {
+            "title": "Ne hakkında?",
+            "content": [
+              "Reset Intense kullanım yoğunluğuna değil, formülasyon yoğunluğuna odaklanır.",
+              "Sindirim hafifliğini ve dengeyi daha kısa, daha odaklı bir şekilde desteklemek istediğiniz anlar için tasarlandı. Sürekli rutinler yerine aralıklı kullanım için tasarlandı."
+            ]
+          },
+          "when": {
+            "title": "Ne zaman uygundur?",
+            "list": [
+              "Daha güçlü bir hafiflik hissi tercih edildiğinde",
+              "Yemekler veya rutinler normalden belirgin şekilde daha ağır hissedildiğinde",
+              "Daha yoğun, bitki bazlı bir seçenek uygun hissedildiğinde",
+              "Sindirim konforu ve sadelik acil öncelik haline geldiğinde"
+            ]
+          },
+          "how": {
+            "title": "Günlük hayata nasıl uyar",
+            "content": "Günlük rutinlerin kalıcı bir parçası olarak değil, ihtiyaç duyulduğunda kullanılmak üzere tasarlandı. Belirli anlar için pratik. Katı zamanlama veya döngüler olmadan esnek kullanım."
+          }
+        }
       }
     },
     "about": {

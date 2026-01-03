@@ -2,54 +2,58 @@
 
 import React from 'react';
 import ProductLayout from '@/app/components/ProductLayout';
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function KidGrowPage() {
+    const { t } = useLanguage();
+    const p = t.productPages.kidgrow;
+
     return (
         <ProductLayout
-            title="KidGrow"
-            subtitle="Optimized nutrition for early growth stages (4–7)."
-            description="Practical support for everyday routines during early childhood."
-            tag="Stages — 4–7"
+            title={p.title}
+            subtitle={p.subtitle}
+            description={p.description}
+            tag={p.tag}
             heroImage="/hero/hero-backgrounds/kid-grow.png"
             themeColor="#7ed957"
             features={[
                 {
-                    title: "Why KidGrow?",
+                    title: p.features.why.title,
                     content: (
                         <>
-                            <p>Early childhood is about building habits as much as it is about growth.</p>
-                            <p>KidGrow is designed as a healthier alternative to sugary drinks and snacks — offering a practical, nourishing option that fits naturally between meals and daily routines.</p>
+                            {p.features.why.content.map((text, i) => (
+                                <p key={i}>{text}</p>
+                            ))}
                         </>
                     )
                 },
                 {
-                    title: "When is it relevant?",
+                    title: p.features.when.title,
                     content: (
                         <>
-                            <p>Ages 4–7 mark a foundational stage. During this period, children experience:</p>
+                            <p>{p.features.when.intro}</p>
                             <ul>
-                                <li>Rapid physical development</li>
-                                <li>Evolving daily routines</li>
-                                <li>Changing nutritional needs</li>
+                                {p.features.when.list.map((item, i) => (
+                                    <li key={i}>{item}</li>
+                                ))}
                             </ul>
-                            <p>KidGrow is optimized for this stage, where consistency and balance matter more than intensity.</p>
+                            <p>{p.features.when.outro}</p>
                         </>
                     )
                 },
                 {
-                    title: "How it fits into daily life",
+                    title: p.features.how.title,
                     content: (
                         <ul>
-                            <li>Easy to prepare and consume</li>
-                            <li>Suitable for regular use</li>
-                            <li>Especially suited for morning or daytime routines</li>
-                            <li>Integrates naturally into everyday life without complexity</li>
+                            {p.features.how.list.map((item, i) => (
+                                <li key={i}>{item}</li>
+                            ))}
                         </ul>
                     )
                 },
                 {
-                    title: "A note for parents",
-                    content: "KidGrow is a food product, not a medicine. While optimized for early growth stages, it can be consumed by individuals of different ages. The formulation is designed to be most relevant during this stage."
+                    title: p.features.note.title,
+                    content: p.features.note.content
                 }
             ]}
         />

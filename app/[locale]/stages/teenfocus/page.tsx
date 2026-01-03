@@ -2,46 +2,50 @@
 
 import React from 'react';
 import ProductLayout from '@/app/components/ProductLayout';
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function TeenFocusPage() {
+    const { t } = useLanguage();
+    const p = t.productPages.teenfocus;
+
     return (
         <ProductLayout
-            title="TeenFocus"
-            subtitle="Optimized nutrition for focus-intensive stages (13–16)."
-            description="Designed to support consistency during mentally demanding school years."
-            tag="Stages — 13–16"
+            title={p.title}
+            subtitle={p.subtitle}
+            description={p.description}
+            tag={p.tag}
             heroImage="/hero/hero-backgrounds/teen-focus.png"
             themeColor="#87ceeb"
             features={[
                 {
-                    title: "Why TeenFocus?",
+                    title: p.features.why.title,
                     content: (
                         <>
-                            <p>As school years progress, mental demands increase. Longer study periods, more information, and sustained attention become part of daily routines.</p>
-                            <p>TeenFocus is designed to support focus during these periods — without turning nutrition into pressure or shortcuts.</p>
+                            {p.features.why.content.map((text, i) => (
+                                <p key={i}>{text}</p>
+                            ))}
                         </>
                     )
                 },
                 {
-                    title: "When is it relevant?",
+                    title: p.features.when.title,
                     content: (
-                        <p>Ages 13–16 are often mentally intensive. TeenFocus is optimized for stages where clarity and consistency matter more than stimulation.</p>
+                        <p>{p.features.when.content}</p>
                     )
                 },
                 {
-                    title: "How it fits into daily life",
+                    title: p.features.how.title,
                     content: (
                         <ul>
-                            <li>Fits naturally into study routines and longer school days</li>
-                            <li>Easy to prepare</li>
-                            <li>Suitable for regular use</li>
-                            <li>No strict timing required</li>
+                            {p.features.how.list.map((item, i) => (
+                                <li key={i}>{item}</li>
+                            ))}
                         </ul>
                     )
                 },
                 {
-                    title: "A note on use",
-                    content: "TeenFocus is a food product, not a medicine. While optimized for focus-intensive teenage years, it can be consumed by individuals of different ages."
+                    title: p.features.note.title,
+                    content: p.features.note.content
                 }
             ]}
         />

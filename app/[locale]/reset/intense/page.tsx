@@ -2,40 +2,44 @@
 
 import React from 'react';
 import ProductLayout from '@/app/components/ProductLayout';
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function ResetIntensePage() {
+    const { t } = useLanguage();
+    const p = t.productPages.resetIntense;
+
     return (
         <ProductLayout
-            title="Reset Intense"
-            subtitle="Designed for moments when a more pronounced sense of lightness is preferred."
-            description="Designed for periods when everyday balance feels harder to maintain and a more concentrated approach becomes relevant."
-            tag="Reset — Targeted"
-            heroImage="/product/product-1.png" // Placeholder
+            title={p.title}
+            subtitle={p.subtitle}
+            description={p.description}
+            tag={p.tag}
+            heroImage="/product/product-1.png"
             themeColor="#6b4e71"
             features={[
                 {
-                    title: "What is it about?",
+                    title: p.features.what.title,
                     content: (
                         <>
-                            <p>Reset Intense focuses on intensity of formulation, not intensity of use.</p>
-                            <p>It is designed for moments when you want to support digestive lightness and balance in a shorter, more focused way. Intended for intermittent use, rather than continuous routines.</p>
+                            {p.features.what.content.map((text, i) => (
+                                <p key={i}>{text}</p>
+                            ))}
                         </>
                     )
                 },
                 {
-                    title: "When is it relevant?",
+                    title: p.features.when.title,
                     content: (
                         <ul>
-                            <li>When a stronger sense of lightness is preferred</li>
-                            <li>When meals or routines feel noticeably heavier than usual</li>
-                            <li>When a more concentrated, plant-based option feels appropriate</li>
-                            <li>When digestive comfort and simplicity become immediate priorities</li>
+                            {p.features.when.list.map((item, i) => (
+                                <li key={i}>{item}</li>
+                            ))}
                         </ul>
                     )
                 },
                 {
-                    title: "How it fits into daily life",
-                    content: "Designed to be used when needed, not as a permanent part of daily routines. Practical for specific moments. Flexible use without rigid timing or cycles."
+                    title: p.features.how.title,
+                    content: p.features.how.content
                 }
             ]}
         />
