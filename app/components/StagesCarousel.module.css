@@ -449,6 +449,10 @@
 }
 
 @media (max-width: 768px) {
+    .lifestyleBox {
+        display: none;
+    }
+
     .stagesSection {
         padding: 4rem 0;
     }
