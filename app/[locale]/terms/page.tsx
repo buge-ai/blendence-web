@@ -13,12 +13,12 @@ export default function TermsPage() {
       <nav className="fixed top-0 w-full z-50 bg-white/98 shadow-lg">
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <Link href="/" className="flex-shrink-0">
+            <Link href={`/${language}`} className="flex-shrink-0">
               <img src="/logo.png" alt="BLENDENCE" className="h-12 w-auto" />
             </Link>
             <div className="flex items-center gap-6">
               <Link
-                href="/"
+                href={`/${language}`}
                 className="text-[var(--dark-gray)] font-medium hover:text-[var(--turquoise)] transition-colors duration-300"
               >
                 {language === 'en' ? 'Back to Home' : 'Ana Sayfaya Dön'}
