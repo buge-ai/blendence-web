@@ -426,6 +426,10 @@
 }
 
 @media (max-width: 768px) {
+    .lifestyleBox {
+        display: none;
+    }
+
     .resetSection {
         padding: 4rem 0;
     }
