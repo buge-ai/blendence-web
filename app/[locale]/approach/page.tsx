@@ -123,13 +123,15 @@ export default function ApproachPage() {
                 
                 /* Hero */
                 .approach-hero {
-                    padding: 12rem 0 6rem;
-                    background: linear-gradient(180deg, #f9f9fa 0%, #fff 100%);
+                    padding: 10rem 0 4rem;
+                    background: url('/approach-background.png') no-repeat center center;
+                    background-size: cover;
+                    position: relative;
                 }
                 h1 {
                     font-size: 4.5rem;
                     font-weight: 300;
-                    margin-bottom: 1.5rem;
+                    margin-bottom: 1rem;
                     letter-spacing: -0.03em;
                     line-height: 1.1;
                     color: #111;
@@ -138,7 +140,7 @@ export default function ApproachPage() {
                     font-size: 1.5rem;
                     font-weight: 400;
                     color: #666;
-                    margin-bottom: 3rem;
+                    margin-bottom: 2rem;
                 }
                 .lead {
                     font-size: 1.35rem;
@@ -149,26 +151,40 @@ export default function ApproachPage() {
 
                 /* Sections */
                 .section {
-                    padding: 6rem 0;
+                    padding: 4rem 0;
                 }
                 .section-divider {
                     width: 100%;
                     height: 1px;
                     background: #e5e5e5;
-                    margin-bottom: 4rem;
+                    margin-bottom: 3rem;
                 }
                 h2 {
                     font-size: 2.25rem;
                     font-weight: 400;
-                    margin-bottom: 2rem;
+                    margin-bottom: 1.5rem;
                     letter-spacing: -0.02em;
                     color: #111;
+                    position: relative;
+                    display: inline-block;
+                }
+                h2::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 12px;
+                    background: linear-gradient(90deg, rgba(166, 198, 169, 0.4) 0%, rgba(200, 220, 195, 0.3) 50%, rgba(166, 198, 169, 0.15) 100%);
+                    border-radius: 4px;
+                    z-index: -1;
+                    transform: skewX(-3deg);
                 }
                 .content-block p {
                     font-size: 1.2rem;
                     line-height: 1.8;
                     color: #444;
-                    margin-bottom: 1.5rem;
+                    margin-bottom: 1rem;
                 }
                 .content-block p:last-child {
                     margin-bottom: 0;
@@ -179,7 +195,7 @@ export default function ApproachPage() {
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
                     gap: 3rem;
-                    margin-top: 3rem;
+                    margin-top: 2rem;
                 }
                 .step {
                     position: relative;
@@ -200,7 +216,7 @@ export default function ApproachPage() {
                 .step h3 {
                     font-size: 1.25rem;
                     font-weight: 500;
-                    margin-bottom: 1rem;
+                    margin-bottom: 0.75rem;
                     color: #111;
                 }
                 .step p {
@@ -214,17 +230,17 @@ export default function ApproachPage() {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
                     gap: 2rem;
-                    margin-top: 3rem;
+                    margin-top: 2rem;
                 }
                 .way-card {
-                    padding: 3rem;
+                    padding: 2.5rem;
                     background: #fafafa;
                     border-radius: 16px;
                 }
                 .way-card h3 {
                     font-size: 1.5rem;
                     font-weight: 500;
-                    margin-bottom: 1rem;
+                    margin-bottom: 0.75rem;
                     color: #111;
                 }
                 .way-card p {
@@ -235,10 +251,10 @@ export default function ApproachPage() {
 
                 /* Quality */
                 .quality-section {
-                    padding-bottom: 8rem;
+                    padding-bottom: 6rem;
                 }
                 .learn-more {
-                    margin-top: 2rem;
+                    margin-top: 1.5rem;
                     color: #888;
                     font-size: 1rem !important;
                 }
@@ -246,7 +262,7 @@ export default function ApproachPage() {
                     display: flex;
                     flex-direction: column;
                     gap: 1rem;
-                    margin-top: 1.5rem;
+                    margin-top: 1rem;
                 }
                 .policy-link {
                     display: inline-flex;
@@ -269,7 +285,7 @@ export default function ApproachPage() {
 
                 @media (max-width: 768px) {
                     .approach-hero {
-                        padding: 8rem 0 4rem;
+                        padding: 7rem 0 3rem;
                     }
                     h1 {
                         font-size: 2.75rem;
@@ -281,20 +297,20 @@ export default function ApproachPage() {
                         font-size: 1.15rem;
                     }
                     .section {
-                        padding: 4rem 0;
+                        padding: 3rem 0;
                     }
                     h2 {
                         font-size: 1.75rem;
                     }
                     .steps-grid {
                         grid-template-columns: 1fr;
-                        gap: 2.5rem;
+                        gap: 2rem;
                     }
                     .two-ways-grid {
                         grid-template-columns: 1fr;
                     }
                     .way-card {
-                        padding: 2rem;
+                        padding: 1.5rem;
                     }
                 }
             `}</style>

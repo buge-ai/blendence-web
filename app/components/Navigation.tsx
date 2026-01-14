@@ -59,6 +59,10 @@ export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
 
+  // Detect if we're on the homepage
+  const pathWithoutLocale = getPathWithoutLocale();
+  const isHomepage = pathWithoutLocale === '/' || pathWithoutLocale === '';
+
   const handleLanguageChange = (lang: Locale) => {
     setLanguage(lang);
     setIsLanguageDropdownOpen(false);
@@ -67,7 +71,7 @@ export default function Navigation() {
   return (
     <Navbar className="top-0">
       {/* Desktop Navigation */}
-      <NavBody className="bg-transparent backdrop-blur-none border-none">
+      <NavBody className="bg-transparent backdrop-blur-none border-none" isHomepage={isHomepage}>
         <NavbarLogo src="/logo.png" href={`/${language}`} />
 
         <NavLinksWrapper>
@@ -75,7 +79,7 @@ export default function Navigation() {
           <NavDropdown name={t.nav.reset} items={resetItems} />
           <Link
             href={`/${language}/approach`}
-            className="text-sm font-medium text-neutral-600 hover:text-black dark:text-neutral-300 dark:hover:text-white transition-colors duration-200"
+            className="text-sm font-medium text-neutral-700 hover:text-black transition-colors duration-200"
           >
             {t.nav.ourApproach}
           </Link>
@@ -85,18 +89,18 @@ export default function Navigation() {
         <div className="relative hidden lg:block">
           <button
             onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
-            className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-neutral-600 hover:text-black dark:text-neutral-300 dark:hover:text-white transition-colors duration-200 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800"
+            className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-neutral-700 hover:text-black transition-colors duration-200 rounded-lg hover:bg-neutral-100"
           >
             <IconWorld size={18} />
             <span className="uppercase">{language}</span>
           </button>
 
           {isLanguageDropdownOpen && (
-            <div className="absolute right-0 top-full mt-2 bg-white dark:bg-neutral-900 rounded-xl shadow-lg border border-neutral-200 dark:border-neutral-700 py-2 min-w-[140px] z-50">
+            <div className="absolute right-0 top-full mt-2 bg-white rounded-xl shadow-lg border border-neutral-200 py-2 min-w-[140px] z-50">
               <Link
                 href={getLocalizedPath('en')}
                 onClick={() => setIsLanguageDropdownOpen(false)}
-                className={`block w-full text-left px-4 py-2 text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors ${language === 'en' ? 'font-semibold text-black dark:text-white' : 'text-neutral-600 dark:text-neutral-300'
+                className={`block w-full text-left px-4 py-2 text-sm hover:bg-neutral-100 transition-colors ${language === 'en' ? 'font-semibold text-black' : 'text-neutral-700'
                   }`}
               >
                 {t.common.english}
@@ -104,7 +108,7 @@ export default function Navigation() {
               <Link
                 href={getLocalizedPath('tr')}
                 onClick={() => setIsLanguageDropdownOpen(false)}
-                className={`block w-full text-left px-4 py-2 text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors ${language === 'tr' ? 'font-semibold text-black dark:text-white' : 'text-neutral-600 dark:text-neutral-300'
+                className={`block w-full text-left px-4 py-2 text-sm hover:bg-neutral-100 transition-colors ${language === 'tr' ? 'font-semibold text-black' : 'text-neutral-700'
                   }`}
               >
                 {t.common.turkish}
@@ -115,7 +119,7 @@ export default function Navigation() {
       </NavBody>
 
       {/* Mobile Navigation */}
-      <MobileNav className="bg-transparent border-none">
+      <MobileNav className="bg-transparent border-none" isHomepage={isHomepage}>
         <MobileNavHeader>
           <NavbarLogo src="/logo.png" href={`/${language}`} />
           <MobileNavToggle
@@ -137,7 +141,7 @@ export default function Navigation() {
                     key={`mobile-stage-${idx}`}
                     href={item.link}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-neutral-600 dark:text-neutral-300 font-medium text-lg py-2 px-2 hover:bg-black/5 rounded-lg"
+                    className="text-neutral-700 font-medium text-lg py-2 px-2 hover:bg-black/5 rounded-lg"
                   >
                     {item.name}
                   </Link>
@@ -153,7 +157,7 @@ export default function Navigation() {
                     key={`mobile-reset-${idx}`}
                     href={item.link}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-neutral-600 dark:text-neutral-300 font-medium text-lg py-2 px-2 hover:bg-black/5 rounded-lg"
+                    className="text-neutral-700 font-medium text-lg py-2 px-2 hover:bg-black/5 rounded-lg"
                   >
                     {item.name}
                   </Link>
@@ -164,21 +168,21 @@ export default function Navigation() {
             <Link
               href={`/${language}/approach`}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-neutral-800 dark:text-white font-semibold text-lg py-2 px-2 border-t border-neutral-100 dark:border-neutral-800 mt-2 pt-4"
+              className="text-neutral-800 font-semibold text-lg py-2 px-2 border-t border-neutral-100 mt-2 pt-4"
             >
               {t.nav.ourApproach}
             </Link>
 
             {/* Language Switcher - Mobile */}
-            <div className="border-t border-neutral-100 dark:border-neutral-800 pt-4 mt-2">
+            <div className="border-t border-neutral-100 pt-4 mt-2">
               <p className="text-xs font-bold uppercase tracking-widest text-neutral-400 mb-2 px-2">{t.common.language}</p>
               <div className="flex gap-2 px-2">
                 <Link
                   href={getLocalizedPath('en')}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium text-center transition-colors ${language === 'en'
-                      ? 'bg-black text-white dark:bg-white dark:text-black'
-                      : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300'
+                    ? 'bg-black text-white'
+                    : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
                     }`}
                 >
                   {t.common.english}
@@ -187,8 +191,8 @@ export default function Navigation() {
                   href={getLocalizedPath('tr')}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium text-center transition-colors ${language === 'tr'
-                      ? 'bg-black text-white dark:bg-white dark:text-black'
-                      : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300'
+                    ? 'bg-black text-white'
+                    : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
                     }`}
                 >
                   {t.common.turkish}

@@ -88,6 +88,12 @@ export default function LiquidHero({ backgrounds, activeIndex, onSlideChange, on
                         <p className={styles.staticSubtitle}>
                             {t.mainPage.hero.staticSubtitle}
                         </p>
+                        <a href="#stages-section" className={styles.exploreBtn}>
+                            {t.hero.cta}
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
                     </div>
 
                     {/* Dynamic Slides Stack */}

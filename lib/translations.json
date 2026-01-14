@@ -16,20 +16,20 @@
       "stages": "Stages",
       "reset": "Reset",
       "ourApproach": "Our Approach",
-      "kidGrow": "KidGrow (4-7)",
-      "kidRise": "KidRise (8-12)",
-      "teenFocus": "TeenFocus (13-16)",
+      "kidGrow": "KidGrow",
+      "kidRise": "KidRise",
+      "teenFocus": "TeenFocus",
       "balance": "Balance",
       "intense": "Intense"
     },
     "footer": {
       "description": "We design nutrition that adapts to real life. Naturally powerful, perfectly balanced, and scientifically formulated for consistency.",
       "stages": "Stages",
+      "reset": "Reset",
       "company": "Company",
       "ourApproach": "Our Approach",
       "aboutUs": "About Us",
       "contact": "Contact",
-      "faq": "FAQ",
       "newsletter": "Newsletter",
       "newsletterText": "Subscribe to receive updates on new blends and nutritional insights.",
       "emailPlaceholder": "Email address",
@@ -37,7 +37,7 @@
       "termsOfUse": "Terms of Use",
       "foodSafety": "Food Safety",
       "genderEquality": "Gender Equality",
-      "copyright": "BLENDENCE by BUGE GIDA A.Ş. All rights reserved."
+      "copyright": "BLENDENCE, a brand of Buge Foods. All rights reserved."
     },
     "hero": {
       "subtitle": "100% Freeze-Dried Nutritional Mix Brand",
@@ -180,7 +180,9 @@
               "Intended for intermittent use, rather than continuous routines — practical for specific moments when a stronger sense of lightness is preferred."
             ]
           }
-        }
+        },
+        "cta": "Explore Reset Range",
+        "ctaLink": "/reset/balance"
       },
       "approach": {
         "title": "How we design nutrition.",
@@ -729,20 +731,20 @@
       "stages": "Stages",
       "reset": "Reset",
       "ourApproach": "Yaklaşımımız",
-      "kidGrow": "KidGrow (4-7)",
-      "kidRise": "KidRise (8-12)",
-      "teenFocus": "TeenFocus (13-16)",
+      "kidGrow": "KidGrow",
+      "kidRise": "KidRise",
+      "teenFocus": "TeenFocus",
       "balance": "Balance",
       "intense": "Intense"
     },
     "footer": {
       "description": "Gerçek yaşama uyum sağlayan beslenme tasarlıyoruz. Doğal güçlü, mükemmel dengeli ve tutarlılık için bilimsel olarak formüle edilmiş.",
       "stages": "Stages",
+      "reset": "Reset",
       "company": "Şirket",
       "ourApproach": "Yaklaşımımız",
       "aboutUs": "Hakkımızda",
       "contact": "İletişim",
-      "faq": "SSS",
       "newsletter": "Bülten",
       "newsletterText": "Yeni karışımlar ve beslenme bilgileri hakkında güncellemeler almak için abone olun.",
       "emailPlaceholder": "E-posta adresi",
@@ -750,7 +752,7 @@
       "termsOfUse": "Kullanım Şartları",
       "foodSafety": "Gıda Güvenliği",
       "genderEquality": "Toplumsal Cinsiyet Eşitliği",
-      "copyright": "BUGE GIDA A.Ş. tarafından BLENDENCE. Tüm hakları saklıdır."
+      "copyright": "BLENDENCE, Buge Foods markasıdır. Tüm hakları saklıdır."
     },
     "hero": {
       "subtitle": "%100 Dondurarak Kurutulmuş Beslenme Karışımı Markası",
@@ -893,7 +895,9 @@
               "Sürekli rutinler yerine aralıklı kullanım için tasarlandı — daha güçlü bir hafiflik hissinin tercih edildiği belirli anlar için pratik."
             ]
           }
-        }
+        },
+        "cta": "Reset Ürünlerini Keşfet",
+        "ctaLink": "/reset/balance"
       },
       "approach": {
         "title": "Beslenmeyi nasıl tasarlıyoruz.",

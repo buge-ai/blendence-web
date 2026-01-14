@@ -481,4 +481,31 @@
         width: 100%;
         max-width: none;
     }
+
+    .ctaButton {
+        margin-top: 1rem;
+    }
+}
+
+/* CTA Button */
+.ctaButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    background: #ffffff;
+    color: #5a6a4a;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-left: auto;
+}
+
+.ctaButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background: #f9f9f9;
 }

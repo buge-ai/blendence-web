@@ -295,6 +295,13 @@ export default function ResetSpotlight() {
                             </button>
                         ))}
                     </div>
+
+                    <Link href={`/${language}${t.mainPage.resetSpotlight.ctaLink}`} className={styles.ctaButton}>
+                        {t.mainPage.resetSpotlight.cta}
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </Link>
                 </div>
             </div>
         </section>

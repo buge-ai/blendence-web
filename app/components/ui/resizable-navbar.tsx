@@ -22,6 +22,7 @@ interface NavBodyProps {
     children: React.ReactNode;
     className?: string;
     visible?: boolean;
+    isHomepage?: boolean;
 }
 
 interface NavItemsProps {
@@ -37,6 +38,7 @@ interface MobileNavProps {
     children: React.ReactNode;
     className?: string;
     visible?: boolean;
+    isHomepage?: boolean;
 }
 
 interface MobileNavHeaderProps {
@@ -84,17 +86,20 @@ export const Navbar = ({ children, className }: NavbarProps) => {
     );
 };
 
-export const NavBody = ({ children, className, visible }: NavBodyProps) => {
+export const NavBody = ({ children, className, visible, isHomepage }: NavBodyProps) => {
+    // On homepage, hide entire navbar until scrolled; on other pages, always visible
+    const shouldShow = isHomepage ? visible : true;
+
     return (
         <motion.div
             animate={{
-                backdropFilter: visible ? "blur(10px)" : "none",
-                boxShadow: visible
-                    ? "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
-                    : "none",
-                width: visible ? "40%" : "100%",
-                y: visible ? 20 : 0,
-                backgroundColor: visible ? "rgba(255, 255, 255, 0.8)" : "transparent",
+                backdropFilter: "blur(10px)",
+                boxShadow: "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset",
+                width: "40%",
+                y: 20,
+                backgroundColor: "rgba(255, 255, 255, 0.8)",
+                opacity: shouldShow ? 1 : 0,
+                pointerEvents: shouldShow ? "auto" : "none",
             }}
             transition={{
                 type: "spring",
@@ -102,22 +107,14 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
                 damping: 50,
             }}
             style={{
-                minWidth: visible ? "800px" : "100%",
+                minWidth: "800px",
             }}
             className={cn(
                 "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full px-8 py-4 lg:flex",
-                visible && "dark:bg-neutral-950/80",
                 className,
             )}
         >
-            {React.Children.map(children, (child) =>
-                React.isValidElement(child)
-                    ? React.cloneElement(
-                        child as React.ReactElement<{ visible?: boolean }>,
-                        { visible },
-                    )
-                    : child,
-            )}
+            {children}
         </motion.div>
     );
 };
@@ -129,7 +126,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
         <motion.div
             onMouseLeave={() => setHovered(null)}
             className={cn(
-                "flex flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:space-x-2",
+                "flex flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-neutral-700 transition duration-200 hover:text-neutral-900 lg:space-x-2",
                 className,
             )}
         >
@@ -137,37 +134,40 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
                 <Link
                     onMouseEnter={() => setHovered(idx)}
                     onClick={onItemClick}
-                    className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
+                    className="relative px-4 py-2 text-neutral-700"
                     key={`link-${idx}`}
                     href={item.link}
                 >
                     {hovered === idx && (
                         <motion.div
                             layoutId="hovered"
-                            className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
+                            className="absolute inset-0 h-full w-full rounded-full bg-gray-100"
                         />
                     )}
-                    <span className="relative z-20 transition-colors duration-200 hover:text-black dark:hover:text-white">{item.name}</span>
+                    <span className="relative z-20 transition-colors duration-200 hover:text-black">{item.name}</span>
                 </Link>
             ))}
         </motion.div>
     );
 };
 
-export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
+export const MobileNav = ({ children, className, visible, isHomepage }: MobileNavProps) => {
+    // On homepage, hide entire mobile navbar until scrolled; on other pages, always visible
+    const shouldShow = isHomepage ? visible : true;
+
     return (
         <motion.div
             animate={{
-                backdropFilter: visible ? "blur(10px)" : "none",
-                boxShadow: visible
-                    ? "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
-                    : "none",
-                width: visible ? "90%" : "100%",
-                paddingRight: visible ? "20px" : "1.5rem",
-                paddingLeft: visible ? "20px" : "1.5rem",
-                borderRadius: visible ? "12px" : "0px",
-                y: visible ? 20 : 0,
-                backgroundColor: visible ? "rgba(255, 255, 255, 0.8)" : "transparent",
+                backdropFilter: "blur(10px)",
+                boxShadow: "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset",
+                width: "90%",
+                paddingRight: "20px",
+                paddingLeft: "20px",
+                borderRadius: "12px",
+                y: 20,
+                backgroundColor: "rgba(255, 255, 255, 0.8)",
+                opacity: shouldShow ? 1 : 0,
+                pointerEvents: shouldShow ? "auto" : "none",
             }}
             transition={{
                 type: "spring",
@@ -176,7 +176,6 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
             }}
             className={cn(
                 "relative z-50 mx-auto flex w-full flex-col items-center justify-between py-4 lg:hidden",
-                visible && "dark:bg-neutral-950/80",
                 className,
             )}
         >
@@ -215,7 +214,7 @@ export const MobileNavMenu = ({
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     className={cn(
-                        "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-xl bg-white/90 px-6 py-8 shadow-xl backdrop-blur-lg dark:bg-neutral-950/90",
+                        "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-xl bg-white/95 px-6 py-8 shadow-xl backdrop-blur-lg",
                         className,
                     )}
                 >
@@ -236,12 +235,12 @@ export const MobileNavToggle = ({
     return (
         <button
             onClick={onClick}
-            className="p-2 transition-colors duration-200 hover:bg-black/5 dark:hover:bg-white/5 rounded-full"
+            className="p-2 transition-colors duration-200 hover:bg-black/5 rounded-full"
         >
             {isOpen ? (
-                <IconX className="w-6 h-6 text-black dark:text-white" />
+                <IconX className="w-6 h-6 text-neutral-800" />
             ) : (
-                <IconMenu2 className="w-6 h-6 text-black dark:text-white" />
+                <IconMenu2 className="w-6 h-6 text-neutral-800" />
             )}
         </button>
     );
@@ -264,31 +263,23 @@ export const NavbarLogo = ({ src = "/logo.png", alt = "logo", href = "/" }: { sr
 
 export const NavLinksWrapper = ({
     children,
-    visible,
     className
 }: {
     children: React.ReactNode;
     visible?: boolean;
+    isHomepage?: boolean;
     className?: string;
 }) => {
+    // Visibility is now controlled at the NavBody level, so always show content
     return (
-        <motion.div
-            animate={{
-                opacity: visible ? 1 : 0,
-                y: visible ? 0 : -10,
-                pointerEvents: visible ? "auto" : "none",
-            }}
-            transition={{
-                duration: 0.3,
-                ease: "easeOut",
-            }}
+        <div
             className={cn(
                 "flex flex-1 items-center justify-center gap-6",
                 className
             )}
         >
             {children}
-        </motion.div>
+        </div>
     );
 };
 
@@ -314,9 +305,9 @@ export const NavbarButton = ({
 
     const variantStyles = {
         primary:
-            "bg-black text-white hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200 shadow-lg shadow-black/5",
+            "bg-black text-white hover:bg-neutral-800 shadow-lg shadow-black/5",
         secondary:
-            "bg-transparent text-black hover:bg-black/5 dark:text-white dark:hover:bg-white/5",
+            "bg-transparent text-neutral-800 hover:bg-black/5",
         dark:
             "bg-neutral-900 text-white hover:bg-black",
         gradient:
@@ -350,7 +341,7 @@ export const NavDropdown = ({
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
         >
-            <button className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300 transition-colors duration-200 hover:text-black dark:hover:text-white flex items-center gap-1 cursor-pointer font-medium text-sm">
+            <button className="relative px-4 py-2 text-neutral-700 transition-colors duration-200 hover:text-black flex items-center gap-1 cursor-pointer font-medium text-sm">
                 {name}
                 <IconChevronDown className={cn("w-4 h-4 transition-transform duration-200", isOpen && "rotate-180")} />
             </button>
@@ -362,7 +353,7 @@ export const NavDropdown = ({
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                         className={cn(
-                            "absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 rounded-xl bg-white/90 backdrop-blur-xl border border-neutral-200/50 shadow-2xl p-2 z-[100] dark:bg-neutral-900/90 dark:border-neutral-800",
+                            "absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 rounded-xl bg-white/95 backdrop-blur-xl border border-neutral-200/50 shadow-2xl p-2 z-[100]",
                             className
                         )}
                     >
@@ -370,7 +361,7 @@ export const NavDropdown = ({
                             <Link
                                 key={idx}
                                 href={item.link}
-                                className="block px-4 py-2 text-sm text-neutral-600 hover:text-black hover:bg-black/5 rounded-lg transition-all dark:text-neutral-400 dark:hover:text-white dark:hover:bg-white/5"
+                                className="block px-4 py-2 text-sm text-neutral-700 hover:text-black hover:bg-black/5 rounded-lg transition-all"
                             >
                                 {item.name}
                             </Link>

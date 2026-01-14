@@ -34,11 +34,17 @@ export default function Footer() {
           <div className="footer-v2-col">
             <h4 className="footer-v2-heading">{t.footer.stages}</h4>
             <nav className="footer-v2-nav">
-              <Link href={`/${language}/stages/kidgrow`}>KidGrow (4-7)</Link>
-              <Link href={`/${language}/stages/kidrise`}>KidRise (8-12)</Link>
-              <Link href={`/${language}/stages/teenfocus`}>TeenFocus (13-16)</Link>
-              <Link href={`/${language}/reset/balance`}>Reset Balance</Link>
-              <Link href={`/${language}/reset/intense`}>Reset Intense</Link>
+              <Link href={`/${language}/stages/kidgrow`}>{t.nav.kidGrow}</Link>
+              <Link href={`/${language}/stages/kidrise`}>{t.nav.kidRise}</Link>
+              <Link href={`/${language}/stages/teenfocus`}>{t.nav.teenFocus}</Link>
+            </nav>
+          </div>
+
+          <div className="footer-v2-col">
+            <h4 className="footer-v2-heading">{t.footer.reset}</h4>
+            <nav className="footer-v2-nav">
+              <Link href={`/${language}/reset/balance`}>{t.nav.balance}</Link>
+              <Link href={`/${language}/reset/intense`}>{t.nav.intense}</Link>
             </nav>
           </div>
 
@@ -48,7 +54,6 @@ export default function Footer() {
               <Link href={`/${language}/approach`}>{t.footer.ourApproach}</Link>
               <Link href={`/${language}/about`}>{t.footer.aboutUs}</Link>
               <Link href={`/${language}/contact`}>{t.footer.contact}</Link>
-              <Link href={`/${language}/faq`}>{t.footer.faq}</Link>
             </nav>
           </div>
 
@@ -107,8 +112,8 @@ export default function Footer() {
 
                 .footer-v2-grid {
                     display: grid;
-                    grid-template-columns: 2fr 1fr 1fr 1.5fr;
-                    gap: 4rem;
+                    grid-template-columns: 1.8fr 1fr 1fr 1fr 1.5fr;
+                    gap: 3rem;
                     margin-bottom: 6rem;
                 }
 
