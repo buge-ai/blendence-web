@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLanguage } from '@/lib/LanguageContext';
 
 export default function ProductGroups() {
@@ -19,7 +20,15 @@ export default function ProductGroups() {
         <section className="product-groups">
             <div className="group-card stages-group">
                 <div className="group-content">
-                    <h2 className="group-title">{t.mainPage.productGroups.stagesTitle}</h2>
+                    <div className="group-logo">
+                        <Image
+                            src="/logos/reset_stage_logo_stages_org_color.png"
+                            alt="Stages"
+                            width={320}
+                            height={120}
+                            style={{ objectFit: 'contain' }}
+                        />
+                    </div>
                     <p className="group-desc">{t.mainPage.productGroups.stagesDescription}</p>
                     <a href="#stages-section" onClick={(e) => scrollToSection(e, 'stages-section')} className="group-link">
                         {t.mainPage.productGroups.exploreRange} <span className="arrow">↓</span>
@@ -30,7 +39,15 @@ export default function ProductGroups() {
 
             <div className="group-card reset-group">
                 <div className="group-content">
-                    <h2 className="group-title">{t.mainPage.productGroups.resetTitle}</h2>
+                    <div className="group-logo">
+                        <Image
+                            src="/logos/reset_stage_logo_reset_org_color.png"
+                            alt="Reset"
+                            width={320}
+                            height={120}
+                            style={{ objectFit: 'contain' }}
+                        />
+                    </div>
                     <p className="group-desc">{t.mainPage.productGroups.resetDescription}</p>
                     <a href="#reset-section" onClick={(e) => scrollToSection(e, 'reset-section')} className="group-link">
                         {t.mainPage.productGroups.exploreRange} <span className="arrow">↓</span>
@@ -69,6 +86,12 @@ export default function ProductGroups() {
             position: relative;
             z-index: 2;
             max-width: 500px;
+        }
+
+        .group-logo {
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
         }
 
         .group-title {

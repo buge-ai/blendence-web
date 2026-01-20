@@ -1,74 +1,30 @@
 'use client';
 
-import Link from 'next/link';
+import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
 import { useLanguage } from '@/lib/LanguageContext';
 
 export default function PrivacyPage() {
-  const { language, setLanguage, t } = useLanguage();
+  const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-white/98 shadow-lg">
-        <div className="w-full px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <Link href={`/${language}`} className="flex-shrink-0">
-              <img src="/logo.png" alt="BLENDENCE" className="h-12 w-auto" />
-            </Link>
-            <div className="flex items-center gap-6">
-              <Link
-                href={`/${language}`}
-                className="text-[var(--dark-gray)] font-medium hover:text-[var(--turquoise)] transition-colors duration-300"
-              >
-                {language === 'en' ? 'Back to Home' : 'Ana Sayfaya Dön'}
-              </Link>
-              {/* Language Toggle */}
-              <div className="flex gap-2 border border-gray-300 rounded-full p-1">
-                <button
-                  onClick={() => setLanguage('en')}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${language === 'en'
-                    ? 'bg-[var(--turquoise)] text-white'
-                    : 'text-[var(--dark-gray)] hover:bg-gray-100'
-                    }`}
-                >
-                  EN
-                </button>
-                <button
-                  onClick={() => setLanguage('tr')}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${language === 'tr'
-                    ? 'bg-[var(--turquoise)] text-white'
-                    : 'text-[var(--dark-gray)] hover:bg-gray-100'
-                    }`}
-                >
-                  TR
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+    <div className="privacy-page">
+      <Navigation />
 
       {/* Content */}
-      <main className="pt-32 pb-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-light mb-8" style={{ color: 'var(--dark-blue)' }}>
-            {t.privacy.title}
-          </h1>
+      <main className="content-wrapper">
+        <div className="container">
+          <h1 className="page-title">{t.privacy.title}</h1>
 
           {/* Introduction */}
-          <div className="mb-8">
-            <p className="text-lg text-[var(--dark-gray)] leading-relaxed">
-              {t.privacy.intro}
-            </p>
+          <div className="intro-text">
+            <p>{t.privacy.intro}</p>
           </div>
 
           {/* Company Information */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-medium mb-4" style={{ color: 'var(--dark-blue)' }}>
-              {t.privacy.companyInfo.title}
-            </h2>
-            <div className="space-y-2 text-[var(--dark-gray)]">
+          <section className="content-section">
+            <h2 className="section-title">{t.privacy.companyInfo.title}</h2>
+            <div className="info-list">
               <p>{t.privacy.companyInfo.trade}</p>
               <p>{t.privacy.companyInfo.mersis}</p>
               <p>{t.privacy.companyInfo.registry}</p>
@@ -81,104 +37,186 @@ export default function PrivacyPage() {
           </section>
 
           {/* Collected Data */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-medium mb-4" style={{ color: 'var(--dark-blue)' }}>
-              {t.privacy.collected.title}
-            </h2>
-            <p className="text-[var(--dark-gray)] mb-3">{t.privacy.collected.intro}</p>
-            <ul className="list-disc list-inside space-y-2 text-[var(--dark-gray)] ml-4">
+          <section className="content-section">
+            <h2 className="section-title">{t.privacy.collected.title}</h2>
+            <p className="section-intro">{t.privacy.collected.intro}</p>
+            <ul className="bullet-list">
               {t.privacy.collected.items.map((item: string, index: number) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
-            <p className="text-[var(--dark-gray)] mt-3">{t.privacy.collected.outro}</p>
+            <p className="section-outro">{t.privacy.collected.outro}</p>
           </section>
 
           {/* Processing Purposes */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-medium mb-4" style={{ color: 'var(--dark-blue)' }}>
-              {t.privacy.purposes.title}
-            </h2>
-            <p className="text-[var(--dark-gray)] mb-3">{t.privacy.purposes.intro}</p>
-            <ul className="list-disc list-inside space-y-2 text-[var(--dark-gray)] ml-4">
+          <section className="content-section">
+            <h2 className="section-title">{t.privacy.purposes.title}</h2>
+            <p className="section-intro">{t.privacy.purposes.intro}</p>
+            <ul className="bullet-list">
               {t.privacy.purposes.items.map((item: string, index: number) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
-            <p className="text-[var(--dark-gray)] mt-3">{t.privacy.purposes.outro}</p>
+            <p className="section-outro">{t.privacy.purposes.outro}</p>
           </section>
 
           {/* Data Transfer */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-medium mb-4" style={{ color: 'var(--dark-blue)' }}>
-              {t.privacy.transfer.title}
-            </h2>
-            <p className="text-[var(--dark-gray)] mb-3">{t.privacy.transfer.intro}</p>
-            <ul className="list-disc list-inside space-y-2 text-[var(--dark-gray)] ml-4">
+          <section className="content-section">
+            <h2 className="section-title">{t.privacy.transfer.title}</h2>
+            <p className="section-intro">{t.privacy.transfer.intro}</p>
+            <ul className="bullet-list">
               {t.privacy.transfer.items.map((item: string, index: number) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
-            <p className="text-[var(--dark-gray)] mt-3">{t.privacy.transfer.outro}</p>
+            <p className="section-outro">{t.privacy.transfer.outro}</p>
           </section>
 
           {/* Rights */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-medium mb-4" style={{ color: 'var(--dark-blue)' }}>
-              {t.privacy.rights.title}
-            </h2>
-            <p className="text-[var(--dark-gray)] mb-3">{t.privacy.rights.intro}</p>
-            <ul className="list-disc list-inside space-y-2 text-[var(--dark-gray)] ml-4">
+          <section className="content-section">
+            <h2 className="section-title">{t.privacy.rights.title}</h2>
+            <p className="section-intro">{t.privacy.rights.intro}</p>
+            <ul className="bullet-list">
               {t.privacy.rights.items.map((item: string, index: number) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
-            <p className="text-[var(--dark-gray)] mt-4 font-medium">{t.privacy.rights.contact}</p>
+            <p className="section-contact">{t.privacy.rights.contact}</p>
           </section>
 
           {/* Cookies */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-medium mb-4" style={{ color: 'var(--dark-blue)' }}>
-              {t.privacy.cookies.title}
-            </h2>
-            <p className="text-[var(--dark-gray)]">{t.privacy.cookies.text}</p>
+          <section className="content-section">
+            <h2 className="section-title">{t.privacy.cookies.title}</h2>
+            <p>{t.privacy.cookies.text}</p>
           </section>
 
           {/* Retention */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-medium mb-4" style={{ color: 'var(--dark-blue)' }}>
-              {t.privacy.retention.title}
-            </h2>
-            <p className="text-[var(--dark-gray)] mb-3">{t.privacy.retention.intro}</p>
-            <ul className="list-disc list-inside space-y-2 text-[var(--dark-gray)] ml-4">
+          <section className="content-section">
+            <h2 className="section-title">{t.privacy.retention.title}</h2>
+            <p className="section-intro">{t.privacy.retention.intro}</p>
+            <ul className="bullet-list">
               {t.privacy.retention.items.map((item: string, index: number) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
-            <p className="text-[var(--dark-gray)] mt-3">{t.privacy.retention.outro}</p>
+            <p className="section-outro">{t.privacy.retention.outro}</p>
           </section>
 
           {/* Security */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-medium mb-4" style={{ color: 'var(--dark-blue)' }}>
-              {t.privacy.security.title}
-            </h2>
-            <p className="text-[var(--dark-gray)]">{t.privacy.security.text}</p>
+          <section className="content-section">
+            <h2 className="section-title">{t.privacy.security.title}</h2>
+            <p>{t.privacy.security.text}</p>
           </section>
 
           {/* Updates */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-medium mb-4" style={{ color: 'var(--dark-blue)' }}>
-              {t.privacy.updates.title}
-            </h2>
-            <p className="text-[var(--dark-gray)]">{t.privacy.updates.text}</p>
+          <section className="content-section">
+            <h2 className="section-title">{t.privacy.updates.title}</h2>
+            <p>{t.privacy.updates.text}</p>
           </section>
         </div>
       </main>
 
-      {/* Footer */}
-      {/* Footer */}
       <Footer />
+
+      <style jsx>{`
+        .privacy-page {
+          background-color: #ffffff;
+          color: #111;
+          font-family: 'Inter', sans-serif;
+          min-height: 100vh;
+        }
+
+        .content-wrapper {
+          padding: 8rem 2rem 6rem;
+        }
+
+        .container {
+          max-width: 900px;
+          margin: 0 auto;
+        }
+
+        .page-title {
+          font-size: 3rem;
+          font-weight: 600;
+          color: #1A4D5C;
+          margin-bottom: 2rem;
+          letter-spacing: -0.02em;
+        }
+
+        .intro-text {
+          font-size: 1.125rem;
+          line-height: 1.7;
+          color: #444;
+          margin-bottom: 3rem;
+          padding-bottom: 2rem;
+          border-bottom: 1px solid #eee;
+        }
+
+        .content-section {
+          margin-bottom: 3rem;
+        }
+
+        .section-title {
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: #1A4D5C;
+          margin-bottom: 1rem;
+        }
+
+        .section-intro,
+        .section-outro {
+          font-size: 1rem;
+          line-height: 1.7;
+          color: #444;
+          margin-bottom: 1rem;
+        }
+
+        .section-contact {
+          font-size: 1rem;
+          line-height: 1.7;
+          color: #1A4D5C;
+          font-weight: 500;
+          margin-top: 1rem;
+        }
+
+        .info-list {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          color: #444;
+          font-size: 1rem;
+          line-height: 1.6;
+        }
+
+        .bullet-list {
+          list-style: disc;
+          padding-left: 1.5rem;
+          margin: 1rem 0;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .bullet-list li {
+          font-size: 1rem;
+          line-height: 1.6;
+          color: #444;
+        }
+
+        @media (max-width: 768px) {
+          .content-wrapper {
+            padding: 6rem 1rem 4rem;
+          }
+
+          .page-title {
+            font-size: 2rem;
+          }
+
+          .section-title {
+            font-size: 1.25rem;
+          }
+        }
+      `}</style>
     </div>
   );
 }

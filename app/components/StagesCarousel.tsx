@@ -157,7 +157,15 @@ export default function StagesCarousel() {
             <div className={styles.container}>
                 {/* Section Header */}
                 <div className={styles.sectionHeader}>
-                    <h2 className={styles.heading} dangerouslySetInnerHTML={{ __html: t.mainPage.stagesCarousel.heading.replace(/\n/g, '<br/>') }} />
+                    <div className={styles.logoWrapper}>
+                        <Image
+                            src="/logos/reset_stage_logo_stages_org_color.png"
+                            alt="Stages"
+                            width={400}
+                            height={140}
+                            style={{ objectFit: 'contain' }}
+                        />
+                    </div>
                     <p className={styles.subheading}>
                         {t.mainPage.stagesCarousel.subheading}
                     </p>

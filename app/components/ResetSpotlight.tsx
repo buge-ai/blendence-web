@@ -25,7 +25,7 @@ const PRODUCT_DATA = [
     {
         id: 'balance',
         href: '/reset/balance',
-        productImage: '/product/product-1.png',
+        productImage: '/main/reset/balance_front.png',
         lifestyleImage: '/main/reset/reset-balance-glass.png',
         accentColor: '#8B9A6B',
         patternColor: '#A8B88D'
@@ -33,7 +33,7 @@ const PRODUCT_DATA = [
     {
         id: 'intense',
         href: '/reset/intense',
-        productImage: '/product/product-1.png',
+        productImage: '/main/reset/intense_front.png',
         lifestyleImage: '/main/reset/reset-intense-glass.png',
         accentColor: '#7A8B65',
         patternColor: '#96A67E'
@@ -150,7 +150,15 @@ export default function ResetSpotlight() {
             <div className={styles.container}>
                 {/* Section Header */}
                 <div className={styles.sectionHeader}>
-                    <h2 className={styles.heading} dangerouslySetInnerHTML={{ __html: t.mainPage.resetSpotlight.heading.replace(/\n/g, '<br/>') }} />
+                    <div className={styles.logoWrapper}>
+                        <Image
+                            src="/logos/reset_stage_logo_reset_org_color.png"
+                            alt="Reset"
+                            width={400}
+                            height={140}
+                            style={{ objectFit: 'contain' }}
+                        />
+                    </div>
                     <p className={styles.subheading}>
                         {t.mainPage.resetSpotlight.subheading}
                     </p>

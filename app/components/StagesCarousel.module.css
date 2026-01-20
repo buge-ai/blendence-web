@@ -18,6 +18,10 @@
     max-width: 800px;
 }
 
+.logoWrapper {
+    margin-bottom: 1.5rem;
+}
+
 .heading {
     font-size: 3.5rem;
     line-height: 1.1;
