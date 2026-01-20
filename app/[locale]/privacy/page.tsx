@@ -2,116 +2,105 @@
 
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
-import { useLanguage } from '@/lib/LanguageContext';
 
 export default function PrivacyPage() {
-  const { t } = useLanguage();
-
   return (
-    <div className="privacy-page">
+    <div className="policy-page">
       <Navigation />
 
-      {/* Content */}
       <main className="content-wrapper">
         <div className="container">
-          <h1 className="page-title">{t.privacy.title}</h1>
+          <h1 className="page-title">Privacy Policy</h1>
+          <p className="last-updated">Last updated: 13.01.2026</p>
 
-          {/* Introduction */}
-          <div className="intro-text">
-            <p>{t.privacy.intro}</p>
-          </div>
-
-          {/* Company Information */}
           <section className="content-section">
-            <h2 className="section-title">{t.privacy.companyInfo.title}</h2>
-            <div className="info-list">
-              <p>{t.privacy.companyInfo.trade}</p>
-              <p>{t.privacy.companyInfo.mersis}</p>
-              <p>{t.privacy.companyInfo.registry}</p>
-              <p>{t.privacy.companyInfo.business}</p>
-              <p>{t.privacy.companyInfo.headquarters}</p>
-              <p>{t.privacy.companyInfo.facility}</p>
-              <p>{t.privacy.companyInfo.email}</p>
-              <p>{t.privacy.companyInfo.web}</p>
-            </div>
+            <h2 className="section-title">1. Introduction</h2>
+            <p>This Privacy Policy explains how Blendence ("we", "our", or "us") collects, uses, and protects personal data when you visit our website.</p>
+            <p>We are committed to handling personal data responsibly and in accordance with applicable data protection laws, including the GDPR and Turkish data protection regulations (KVKK).</p>
           </section>
 
-          {/* Collected Data */}
           <section className="content-section">
-            <h2 className="section-title">{t.privacy.collected.title}</h2>
-            <p className="section-intro">{t.privacy.collected.intro}</p>
+            <h2 className="section-title">2. Information We Collect</h2>
+            <p>When you use our website, we may collect limited personal information, including:</p>
             <ul className="bullet-list">
-              {t.privacy.collected.items.map((item: string, index: number) => (
-                <li key={index}>{item}</li>
-              ))}
+              <li>Basic technical data (such as IP address, browser type, and device information)</li>
+              <li>Information you voluntarily provide through contact forms or inquiries</li>
             </ul>
-            <p className="section-outro">{t.privacy.collected.outro}</p>
+            <p>We do not intentionally collect sensitive personal data.</p>
           </section>
 
-          {/* Processing Purposes */}
           <section className="content-section">
-            <h2 className="section-title">{t.privacy.purposes.title}</h2>
-            <p className="section-intro">{t.privacy.purposes.intro}</p>
+            <h2 className="section-title">3. How We Use Your Information</h2>
+            <p>Collected information may be used to:</p>
             <ul className="bullet-list">
-              {t.privacy.purposes.items.map((item: string, index: number) => (
-                <li key={index}>{item}</li>
-              ))}
+              <li>Respond to inquiries or messages</li>
+              <li>Improve website functionality and user experience</li>
+              <li>Ensure website security and performance</li>
+              <li>Comply with legal obligations</li>
             </ul>
-            <p className="section-outro">{t.privacy.purposes.outro}</p>
+            <p>Personal data is not used for automated decision-making or profiling.</p>
           </section>
 
-          {/* Data Transfer */}
           <section className="content-section">
-            <h2 className="section-title">{t.privacy.transfer.title}</h2>
-            <p className="section-intro">{t.privacy.transfer.intro}</p>
+            <h2 className="section-title">4. Data Sharing</h2>
+            <p>We do not sell or rent personal data to third parties.</p>
+            <p>Personal data may be shared only when necessary:</p>
             <ul className="bullet-list">
-              {t.privacy.transfer.items.map((item: string, index: number) => (
-                <li key={index}>{item}</li>
-              ))}
+              <li>With service providers supporting website functionality</li>
+              <li>To comply with legal or regulatory requirements</li>
             </ul>
-            <p className="section-outro">{t.privacy.transfer.outro}</p>
+            <p>All such parties are required to handle data securely and confidentially.</p>
           </section>
 
-          {/* Rights */}
           <section className="content-section">
-            <h2 className="section-title">{t.privacy.rights.title}</h2>
-            <p className="section-intro">{t.privacy.rights.intro}</p>
+            <h2 className="section-title">5. Data Retention</h2>
+            <p>Personal data is retained only for as long as necessary to fulfill the purposes outlined in this policy or as required by applicable laws.</p>
+          </section>
+
+          <section className="content-section">
+            <h2 className="section-title">6. Your Rights</h2>
+            <p>Depending on applicable law, you may have the right to:</p>
             <ul className="bullet-list">
-              {t.privacy.rights.items.map((item: string, index: number) => (
-                <li key={index}>{item}</li>
-              ))}
+              <li>Access your personal data</li>
+              <li>Request correction or deletion</li>
+              <li>Object to certain processing activities</li>
+              <li>Withdraw consent where applicable</li>
             </ul>
-            <p className="section-contact">{t.privacy.rights.contact}</p>
+            <p>Requests can be made by contacting us using the details below.</p>
           </section>
 
-          {/* Cookies */}
-          <section className="content-section">
-            <h2 className="section-title">{t.privacy.cookies.title}</h2>
-            <p>{t.privacy.cookies.text}</p>
-          </section>
+          <div className="divider"></div>
 
-          {/* Retention */}
+          <h2 className="page-subtitle">Cookies Policy</h2>
+
           <section className="content-section">
-            <h2 className="section-title">{t.privacy.retention.title}</h2>
-            <p className="section-intro">{t.privacy.retention.intro}</p>
+            <h2 className="section-title">7. Use of Cookies</h2>
+            <p>Our website uses cookies and similar technologies to ensure basic functionality and improve user experience.</p>
+            <p>Cookies may be used to:</p>
             <ul className="bullet-list">
-              {t.privacy.retention.items.map((item: string, index: number) => (
-                <li key={index}>{item}</li>
-              ))}
+              <li>Remember user preferences</li>
+              <li>Analyze website usage in an aggregated and anonymous manner</li>
+              <li>Ensure website security</li>
             </ul>
-            <p className="section-outro">{t.privacy.retention.outro}</p>
+            <p>We do not use cookies for intrusive advertising or tracking across external websites.</p>
           </section>
 
-          {/* Security */}
           <section className="content-section">
-            <h2 className="section-title">{t.privacy.security.title}</h2>
-            <p>{t.privacy.security.text}</p>
+            <h2 className="section-title">8. Managing Cookies</h2>
+            <p>You can control or disable cookies through your browser settings.</p>
+            <p>Please note that disabling certain cookies may affect website functionality.</p>
           </section>
 
-          {/* Updates */}
           <section className="content-section">
-            <h2 className="section-title">{t.privacy.updates.title}</h2>
-            <p>{t.privacy.updates.text}</p>
+            <h2 className="section-title">9. Updates to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time.</p>
+            <p>Any changes will be published on this page with an updated revision date.</p>
+          </section>
+
+          <section className="content-section">
+            <h2 className="section-title">10. Contact</h2>
+            <p>If you have questions about this Privacy Policy or how your data is handled, please contact us at:</p>
+            <p className="contact-email">contact@bugefoods.com</p>
           </section>
         </div>
       </main>
@@ -119,7 +108,7 @@ export default function PrivacyPage() {
       <Footer />
 
       <style jsx>{`
-        .privacy-page {
+        .policy-page {
           background-color: #ffffff;
           color: #111;
           font-family: 'Inter', sans-serif;
@@ -139,53 +128,47 @@ export default function PrivacyPage() {
           font-size: 3rem;
           font-weight: 600;
           color: #1A4D5C;
-          margin-bottom: 2rem;
+          margin-bottom: 0.5rem;
           letter-spacing: -0.02em;
         }
 
-        .intro-text {
-          font-size: 1.125rem;
-          line-height: 1.7;
-          color: #444;
+        .last-updated {
+          font-size: 0.95rem;
+          color: #666;
           margin-bottom: 3rem;
           padding-bottom: 2rem;
           border-bottom: 1px solid #eee;
         }
 
+        .page-subtitle {
+          font-size: 2rem;
+          font-weight: 600;
+          color: #1A4D5C;
+          margin-bottom: 2rem;
+        }
+
+        .divider {
+          height: 1px;
+          background: #eee;
+          margin: 3rem 0;
+        }
+
         .content-section {
-          margin-bottom: 3rem;
+          margin-bottom: 2.5rem;
         }
 
         .section-title {
-          font-size: 1.5rem;
+          font-size: 1.35rem;
           font-weight: 600;
           color: #1A4D5C;
           margin-bottom: 1rem;
         }
 
-        .section-intro,
-        .section-outro {
+        .content-section p {
           font-size: 1rem;
-          line-height: 1.7;
+          line-height: 1.8;
           color: #444;
-          margin-bottom: 1rem;
-        }
-
-        .section-contact {
-          font-size: 1rem;
-          line-height: 1.7;
-          color: #1A4D5C;
-          font-weight: 500;
-          margin-top: 1rem;
-        }
-
-        .info-list {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-          color: #444;
-          font-size: 1rem;
-          line-height: 1.6;
+          margin-bottom: 0.75rem;
         }
 
         .bullet-list {
@@ -203,6 +186,11 @@ export default function PrivacyPage() {
           color: #444;
         }
 
+        .contact-email {
+          font-weight: 600;
+          color: #1A4D5C;
+        }
+
         @media (max-width: 768px) {
           .content-wrapper {
             padding: 6rem 1rem 4rem;
@@ -212,8 +200,12 @@ export default function PrivacyPage() {
             font-size: 2rem;
           }
 
+          .page-subtitle {
+            font-size: 1.5rem;
+          }
+
           .section-title {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
           }
         }
       `}</style>

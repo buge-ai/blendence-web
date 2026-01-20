@@ -37,7 +37,7 @@
       "termsOfUse": "Terms of Use",
       "foodSafety": "Food Safety",
       "genderEquality": "Gender Equality",
-      "copyright": "BLENDENCE, a brand of Buge Foods. All rights reserved."
+      "copyright": "BLENDENCE, a brand of <a href='https://bugefoods.com' target='_blank' rel='noopener noreferrer'>Buge Foods</a>. All rights reserved."
     },
     "hero": {
       "subtitle": "100% Freeze-Dried Nutritional Mix Brand",
@@ -366,7 +366,7 @@
       "title": "About Blendence",
       "intro": "Blendence is a nutrition brand built around thoughtful formulation and real-life relevance.",
       "description": "We design plant-based blends by starting with needs, not ingredients. Our approach brings together food engineering, nutritional insight, and everyday usability to create products that fit naturally into daily routines.",
-      "companyNote": "Blendence is part of <strong>BUGE Foods</strong>, a food-tech company focused on clean formulation, food safety, and responsible production.",
+      "companyNote": "Blendence is part of <a href='https://bugefoods.com' target='_blank' rel='noopener noreferrer' style='color:#1A4D5C;font-weight:600;text-decoration:none;'><strong>BUGE Foods</strong></a>, a food-tech company focused on clean formulation, food safety, and responsible production.",
       "exploreApproach": "Explore our approach",
       "backToHome": "Back to Home"
     },
@@ -466,6 +466,211 @@
           "content": [
             "BUGE Foods is committed to promoting gender equality, non-discrimination, and equal opportunities in all aspects of its activities. The company aligns with the EU Charter of Fundamental Rights, Commission Recommendation 2003/361/EC for SMEs, and the Horizon Europe Gender Equality Guidelines.",
             "We uphold zero tolerance toward discrimination, harassment, or bias based on gender, ethnicity, religion, age, or any other identity. This Gender Equality Plan (GEP) is a public document, signed by the company's top management, and will be published on our official website."
+          ]
+        },
+        "officer": {
+          "title": "3. Gender Equality Officer & Dedicated Resources",
+          "intro": "To ensure implementation and follow-up, BUGE Foods has appointed:",
+          "officerTitle": "Gender Equality Officer:",
+          "officerName": "Assoc. Prof. Dr. Buket Aşkın",
+          "officerRoles": [
+            "Chair of the Board, BUGE Foods",
+            "Vice Chair of the TOBB Women Entrepreneurs Executive Board",
+            "Lecturer at Kırklareli University"
+          ],
+          "officerBio": "Dr. Aşkın has served for over 10 years in the TOBB Women Entrepreneurs Board, participated in 8 national-level projects aimed at empowering women in business, and led 3 of them as a project director. She is actively involved in mentoring programs to support educated women entering the workforce and promoting equal opportunities.",
+          "resources": "The company allocates administrative time and internal resources to maintain gender equality actions, awareness activities, and monitoring."
+        },
+        "genderBalance": {
+          "title": "4. Current Gender Balance",
+          "table": [
+            {
+              "category": "Headcount",
+              "status": "50% female"
+            },
+            {
+              "category": "Board Members / Shareholders",
+              "status": "4 total (1 female scientist)"
+            },
+            {
+              "category": "Leadership",
+              "status": "Female-led: Chair of the Board is a woman (Assoc. Prof. Dr. Buket Aşkın)"
+            }
+          ],
+          "note": "Gender equality is integrated into BUGE Foods' governance, decision-making, and company culture."
+        },
+        "policyAreas": {
+          "title": "5. Policy Areas",
+          "areas": [
+            {
+              "id": "5.1",
+              "title": "Work–Life Balance and Organisational Culture",
+              "items": [
+                "Flexible working conditions where feasible",
+                "Supportive attitude toward parental leave, breastfeeding, and family needs",
+                "Equal respect for professional and personal responsibilities"
+              ]
+            },
+            {
+              "id": "5.2",
+              "title": "Gender Balance in Decision-Making",
+              "items": [
+                "Equal representation in management",
+                "Commitment to women's leadership roles within the company"
+              ]
+            },
+            {
+              "id": "5.3",
+              "title": "Gender Equality in Recruitment and Career Development",
+              "items": [
+                "All recruitment and promotion based strictly on qualifications and skills",
+                "Transparent evaluation criteria",
+                "Equal access to training and development programs"
+              ]
+            },
+            {
+              "id": "5.4",
+              "title": "Equal Pay for Equal Work",
+              "items": [
+                "Salaries and benefits are determined solely by position and experience",
+                "Periodic review to ensure fairness"
+              ]
+            },
+            {
+              "id": "5.5",
+              "title": "Measures Against Gender-Based Violence and Harassment",
+              "items": [
+                "Zero-tolerance policy against harassment, including sexual or psychological harassment",
+                "A clear internal reporting procedure (see Section 6)"
+              ]
+            }
+          ]
+        },
+        "harassment": {
+          "title": "6. Harassment Reporting Procedure",
+          "intro": "BUGE Foods provides a confidential and fair mechanism for reporting any form of harassment or discrimination.",
+          "channelsTitle": "Reporting Channels:",
+          "channels": [
+            "Directly to the Gender Equality Officer",
+            "Confidential email: contact@bugefoods.com",
+            "In-person or written communication"
+          ],
+          "procedureTitle": "Procedure:",
+          "procedure": [
+            "Reports can be submitted verbally or in writing.",
+            "All reports remain confidential.",
+            "The case is reviewed by management within 10 working days.",
+            "External advisors or legal authorities may be consulted if needed.",
+            "No retaliation is tolerated against individuals reporting in good faith."
+          ]
+        },
+        "dataCollection": {
+          "title": "7. Data Collection and Monitoring",
+          "intro": "BUGE Foods collects and maintains sex-disaggregated data on employees annually.",
+          "indicatorsTitle": "Indicators monitored:",
+          "indicators": [
+            "Gender ratio among employees and management",
+            "Salary equity",
+            "Participation in trainings and projects",
+            "Reported cases of harassment or bias (if any)"
+          ],
+          "note": "Results will be discussed annually by the management board, with updates to the GEP every two years or upon major organisational change."
+        },
+        "training": {
+          "title": "8. Training and Awareness",
+          "intro": "BUGE Foods recognises the importance of continuous awareness on gender equality and unconscious bias.",
+          "commitmentsTitle": "The company commits to:",
+          "commitments": [
+            "Organising its first internal awareness and unconscious bias training session in the second quarter of 2026, followed by annual sessions.",
+            "Engaging external experts or collaborating with institutions when necessary.",
+            "Recording attendance and feedback for future improvements."
+          ],
+          "pastTitle": "Past Initiatives:",
+          "pastContent": "In 2023, Assoc. Prof. Dr. Buket Aşkın participated in the \"Gender Equality and Women's Economic Participation\" training organised by the Edirne Commodity Exchange, reflecting the company's proactive stance toward gender awareness."
+        },
+        "publication": {
+          "title": "9. Publication and Accessibility",
+          "content": [
+            "This document is a public document.",
+            "It will be published on the official website (www.bugefoods.com) and made available to all employees and partners.",
+            "Hard copies are stored at both company sites (HQ and production facility)."
+          ]
+        },
+        "signature": {
+          "title": "10. Signature and Approval",
+          "intro": "Signed on behalf of BUGE GIDA ARGE DANIŞMANLIK SANAYİ TİCARET A.Ş.",
+          "tableHeaders": [
+            "Name",
+            "Title",
+            "Signature",
+            "Date"
+          ],
+          "tableData": {
+            "name": "Assoc. Prof. Dr. Buket Aşkın",
+            "title": "Chair of the Board & Gender Equality Officer",
+            "signature": "—",
+            "date": "20.10.2025"
+          }
+        },
+        "appendix": {
+          "title": "Annex / Appendix – Gender Equality Action Plan & KPIs",
+          "tableHeaders": [
+            "Objective",
+            "Action / Measure",
+            "Indicator (KPI)",
+            "Timeline",
+            "Responsible"
+          ],
+          "actions": [
+            {
+              "objective": "Formalise and publish the GEP",
+              "action": "Upload signed GEP to company website as a public document",
+              "kpi": "Public link available online",
+              "timeline": "By Q4 2025",
+              "responsible": "Gender Equality Officer"
+            },
+            {
+              "objective": "Assign responsibility & resources",
+              "action": "Appoint Assoc. Prof. Dr. Buket Aşkın as Gender Equality Officer",
+              "kpi": "Official appointment announced",
+              "timeline": "By Q4 2025",
+              "responsible": "Board of Directors"
+            },
+            {
+              "objective": "Start data collection & monitoring",
+              "action": "Record and store sex-disaggregated employee data",
+              "kpi": "First internal gender data record completed",
+              "timeline": "By Q4 2025",
+              "responsible": "HR / Admin"
+            },
+            {
+              "objective": "Awareness & unconscious bias training",
+              "action": "First training session on gender equality & bias",
+              "kpi": "1 training delivered",
+              "timeline": "Q2 2026",
+              "responsible": "Gender Equality Officer"
+            },
+            {
+              "objective": "Harassment reporting mechanism",
+              "action": "Create email/form for confidential reporting",
+              "kpi": "Reporting channel active and shared with employees",
+              "timeline": "By Q4 2025",
+              "responsible": "HR + Legal"
+            },
+            {
+              "objective": "Promote women's leadership visibility",
+              "action": "Publish annual communication on female leadership or mentoring",
+              "kpi": "1 update per year (website or LinkedIn)",
+              "timeline": "From Q4 2025 onward",
+              "responsible": "Communications"
+            },
+            {
+              "objective": "Annual monitoring & update of GEP",
+              "action": "Review implementation progress and update if necessary",
+              "kpi": "Annual review conducted",
+              "timeline": "Every Q4 starting 2025",
+              "responsible": "Gender Equality Officer & Board"
+            }
           ]
         }
       }
@@ -712,6 +917,43 @@
         "title": "Enforcement and Amendments",
         "text": "This text enters into force upon publication. The company reserves the right to amend it at any time."
       }
+    },
+    "contactPage": {
+      "title": "Contact",
+      "subtitle": "We'd love to hear from you. Get in touch with us.",
+      "headquarters": {
+        "label": "Headquarters",
+        "address": "Trakya Teknopark, Trakya University Ayşekadın Campus, 22100, Edirne"
+      },
+      "production": {
+        "label": "Production Facility",
+        "address": "Hasan Pehlivan Cd. No:5/3, Havsa/Edirne, 22500"
+      },
+      "phone": {
+        "label": "WhatsApp & Phone",
+        "number": "+90 540 022 3922"
+      },
+      "email": {
+        "label": "Email",
+        "address": "contact@bugefoods.com"
+      },
+      "map": {
+        "title": "Find Us"
+      },
+      "form": {
+        "title": "Send us a message",
+        "name": "Full Name",
+        "namePlaceholder": "Your name",
+        "email": "Email Address",
+        "emailPlaceholder": "your@email.com",
+        "subject": "Subject",
+        "subjectPlaceholder": "How can we help?",
+        "message": "Message",
+        "messagePlaceholder": "Write your message here...",
+        "submit": "Send Message",
+        "success": "Thank you! Your message has been sent successfully.",
+        "error": "Something went wrong. Please try again."
+      }
     }
   },
   "tr": {
@@ -752,7 +994,7 @@
       "termsOfUse": "Kullanım Şartları",
       "foodSafety": "Gıda Güvenliği",
       "genderEquality": "Toplumsal Cinsiyet Eşitliği",
-      "copyright": "BLENDENCE, Buge Foods markasıdır. Tüm hakları saklıdır."
+      "copyright": "BLENDENCE, <a href='https://bugefoods.com' target='_blank' rel='noopener noreferrer'>Buge Foods</a> markasıdır. Tüm hakları saklıdır."
     },
     "hero": {
       "subtitle": "%100 Dondurarak Kurutulmuş Beslenme Karışımı Markası",
@@ -1081,7 +1323,7 @@
       "title": "Blendence Hakkında",
       "intro": "Blendence, düşünceli formülasyon ve gerçek yaşam uygunluğu etrafında inşa edilmiş bir beslenme markasıdır.",
       "description": "Bitki bazlı karışımları malzemelerle değil, ihtiyaçlarla başlayarak tasarlıyoruz. Yaklaşımımız, günlük rutinlere doğal olarak uyan ürünler oluşturmak için gıda mühendisliğini, beslenme bilgisini ve günlük kullanılabilirliği bir araya getiriyor.",
-      "companyNote": "Blendence, temiz formülasyon, gıda güvenliği ve sorumlu üretime odaklanan bir gıda teknolojisi şirketi olan <strong>BUGE Foods</strong>'un bir parçasıdır.",
+      "companyNote": "Blendence, temiz formülasyon, gıda güvenliği ve sorumlu üretime odaklanan bir gıda teknolojisi şirketi olan <a href='https://bugefoods.com' target='_blank' rel='noopener noreferrer' style='color:#1A4D5C;font-weight:600;text-decoration:none;'><strong>BUGE Foods</strong></a>'un bir parçasıdır.",
       "exploreApproach": "Yaklaşımımızı keşfedin",
       "backToHome": "Ana Sayfaya Dön"
     },
@@ -1181,6 +1423,211 @@
           "content": [
             "BUGE Foods, faaliyetlerinin tüm yönlerinde toplumsal cinsiyet eşitliğini, ayrımcılık yapmamayı ve fırsat eşitliğini teşvik etmeye kararlıdır. Şirket, AB Temel Haklar Şartı, KOBİ'ler için Komisyon Tavsiyesi 2003/361/EC ve Horizon Europe Toplumsal Cinsiyet Eşitliği Yönergeleri ile uyumludur.",
             "Cinsiyet, etnisite, din, yaş veya herhangi başka bir kimliğe dayalı ayrımcılık, taciz veya önyargıya karşı sıfır tolerans ilkesini benimsiyoruz. Bu Toplumsal Cinsiyet Eşitliği Planı (GEP), şirketin üst yönetimi tarafından imzalanan kamuya açık bir belgedir ve resmi web sitemizde yayınlanacaktır."
+          ]
+        },
+        "officer": {
+          "title": "3. Toplumsal Cinsiyet Eşitliği Sorumlusu ve Ayrılan Kaynaklar",
+          "intro": "Uygulama ve takibi sağlamak için BUGE Foods şu atamayı yapmıştır:",
+          "officerTitle": "Toplumsal Cinsiyet Eşitliği Sorumlusu:",
+          "officerName": "Doç. Dr. Buket Aşkın",
+          "officerRoles": [
+            "BUGE Foods Yönetim Kurulu Başkanı",
+            "TOBB Kadın Girişimciler Kurulu Başkan Yardımcısı",
+            "Kırklareli Üniversitesi Öğretim Üyesi"
+          ],
+          "officerBio": "Dr. Aşkın, TOBB Kadın Girişimciler Kurulu'nda 10 yılı aşkın süredir görev yapmakta, iş dünyasında kadınların güçlendirilmesine yönelik 8 ulusal düzeyde projeye katılmış ve bunların 3'üne proje direktörü olarak liderlik etmiştir. Eğitimli kadınların iş gücüne katılmasını desteklemek ve fırsat eşitliğini teşvik etmek için mentorluk programlarında aktif olarak yer almaktadır.",
+          "resources": "Şirket, toplumsal cinsiyet eşitliği eylemlerini, farkındalık faaliyetlerini ve izlemeyi sürdürmek için idari zaman ve iç kaynaklar ayırmaktadır."
+        },
+        "genderBalance": {
+          "title": "4. Mevcut Cinsiyet Dengesi",
+          "table": [
+            {
+              "category": "Çalışan Sayısı",
+              "status": "%50 kadın"
+            },
+            {
+              "category": "Yönetim Kurulu Üyeleri / Hissedarlar",
+              "status": "Toplam 4 (1 kadın bilim insanı)"
+            },
+            {
+              "category": "Liderlik",
+              "status": "Kadın liderlikli: Yönetim Kurulu Başkanı kadın (Doç. Dr. Buket Aşkın)"
+            }
+          ],
+          "note": "Toplumsal cinsiyet eşitliği, BUGE Foods'un yönetişimine, karar alma süreçlerine ve şirket kültürüne entegre edilmiştir."
+        },
+        "policyAreas": {
+          "title": "5. Politika Alanları",
+          "areas": [
+            {
+              "id": "5.1",
+              "title": "İş-Yaşam Dengesi ve Örgüt Kültürü",
+              "items": [
+                "Mümkün olduğunda esnek çalışma koşulları",
+                "Doğum izni, emzirme ve aile ihtiyaçlarına destekleyici tutum",
+                "Mesleki ve kişisel sorumluluklara eşit saygı"
+              ]
+            },
+            {
+              "id": "5.2",
+              "title": "Karar Alma Süreçlerinde Cinsiyet Dengesi",
+              "items": [
+                "Yönetimde eşit temsil",
+                "Şirket içinde kadın liderlik rollerine bağlılık"
+              ]
+            },
+            {
+              "id": "5.3",
+              "title": "İşe Alım ve Kariyer Gelişiminde Cinsiyet Eşitliği",
+              "items": [
+                "Tüm işe alım ve terfiler yalnızca nitelik ve becerilere dayalı",
+                "Şeffaf değerlendirme kriterleri",
+                "Eğitim ve gelişim programlarına eşit erişim"
+              ]
+            },
+            {
+              "id": "5.4",
+              "title": "Eşit İşe Eşit Ücret",
+              "items": [
+                "Maaş ve yan haklar yalnızca pozisyon ve deneyime göre belirlenir",
+                "Adaleti sağlamak için periyodik gözden geçirme"
+              ]
+            },
+            {
+              "id": "5.5",
+              "title": "Cinsiyete Dayalı Şiddet ve Tacize Karşı Önlemler",
+              "items": [
+                "Cinsel veya psikolojik taciz dahil olmak üzere tacize karşı sıfır tolerans politikası",
+                "Net bir iç raporlama prosedürü (Bölüm 6'ya bakınız)"
+              ]
+            }
+          ]
+        },
+        "harassment": {
+          "title": "6. Taciz Raporlama Prosedürü",
+          "intro": "BUGE Foods, her türlü taciz veya ayrımcılığın bildirilmesi için gizli ve adil bir mekanizma sağlamaktadır.",
+          "channelsTitle": "Raporlama Kanalları:",
+          "channels": [
+            "Doğrudan Toplumsal Cinsiyet Eşitliği Sorumlusuna",
+            "Gizli e-posta: contact@bugefoods.com",
+            "Yüz yüze veya yazılı iletişim"
+          ],
+          "procedureTitle": "Prosedür:",
+          "procedure": [
+            "Raporlar sözlü veya yazılı olarak sunulabilir.",
+            "Tüm raporlar gizli tutulur.",
+            "Vaka 10 iş günü içinde yönetim tarafından incelenir.",
+            "Gerektiğinde dış danışmanlar veya hukuki makamlarla görüşülebilir.",
+            "İyi niyetle rapor eden bireylere karşı misilleme yapılmasına tolerans gösterilmez."
+          ]
+        },
+        "dataCollection": {
+          "title": "7. Veri Toplama ve İzleme",
+          "intro": "BUGE Foods, çalışanlara ilişkin cinsiyete ayrıştırılmış verileri yıllık olarak toplar ve saklar.",
+          "indicatorsTitle": "İzlenen Göstergeler:",
+          "indicators": [
+            "Çalışanlar ve yönetim arasındaki cinsiyet oranı",
+            "Maaş eşitliği",
+            "Eğitim ve projelere katılım",
+            "Raporlanan taciz veya önyargı vakaları (varsa)"
+          ],
+          "note": "Sonuçlar yönetim kurulu tarafından yıllık olarak tartışılacak, GEP iki yılda bir veya büyük örgütsel değişikliklerde güncellenecektir."
+        },
+        "training": {
+          "title": "8. Eğitim ve Farkındalık",
+          "intro": "BUGE Foods, toplumsal cinsiyet eşitliği ve bilinçsiz önyargı konusunda sürekli farkındalığın önemini kabul etmektedir.",
+          "commitmentsTitle": "Şirket şunları taahhüt etmektedir:",
+          "commitments": [
+            "2026 yılının ikinci çeyreğinde ilk iç farkındalık ve bilinçsiz önyargı eğitim oturumunu düzenlemek, ardından yıllık oturumlar gerçekleştirmek.",
+            "Gerektiğinde dış uzmanlarla çalışmak veya kurumlarla işbirliği yapmak.",
+            "Gelecekteki iyileştirmeler için katılım ve geri bildirimleri kaydetmek."
+          ],
+          "pastTitle": "Geçmiş Girişimler:",
+          "pastContent": "2023 yılında Doç. Dr. Buket Aşkın, Edirne Ticaret Borsası tarafından düzenlenen \"Toplumsal Cinsiyet Eşitliği ve Kadınların Ekonomik Katılımı\" eğitimine katılmış olup, bu durum şirketin toplumsal cinsiyet farkındalığına yönelik proaktif tutumunu yansıtmaktadır."
+        },
+        "publication": {
+          "title": "9. Yayınlama ve Erişilebilirlik",
+          "content": [
+            "Bu belge kamuya açık bir belgedir.",
+            "Resmi web sitesinde (www.bugefoods.com) yayınlanacak ve tüm çalışanlar ile ortakların erişimine sunulacaktır.",
+            "Basılı kopyalar her iki şirket tesisinde (merkez ve üretim tesisi) saklanmaktadır."
+          ]
+        },
+        "signature": {
+          "title": "10. İmza ve Onay",
+          "intro": "BUGE GIDA ARGE DANIŞMANLIK SANAYİ TİCARET A.Ş. adına imzalanmıştır.",
+          "tableHeaders": [
+            "İsim",
+            "Unvan",
+            "İmza",
+            "Tarih"
+          ],
+          "tableData": {
+            "name": "Doç. Dr. Buket Aşkın",
+            "title": "Yönetim Kurulu Başkanı ve Toplumsal Cinsiyet Eşitliği Sorumlusu",
+            "signature": "—",
+            "date": "20.10.2025"
+          }
+        },
+        "appendix": {
+          "title": "Ek – Toplumsal Cinsiyet Eşitliği Eylem Planı ve KPI'lar",
+          "tableHeaders": [
+            "Hedef",
+            "Eylem / Önlem",
+            "Gösterge (KPI)",
+            "Zaman Çizelgesi",
+            "Sorumlu"
+          ],
+          "actions": [
+            {
+              "objective": "GEP'i resmileştir ve yayınla",
+              "action": "İmzalı GEP'i kamuya açık belge olarak şirket web sitesine yükle",
+              "kpi": "Çevrimiçi herkese açık link mevcut",
+              "timeline": "2025 4. Çeyrek sonuna kadar",
+              "responsible": "Toplumsal Cinsiyet Eşitliği Sorumlusu"
+            },
+            {
+              "objective": "Sorumluluk ve kaynaklar ata",
+              "action": "Doç. Dr. Buket Aşkın'ı Toplumsal Cinsiyet Eşitliği Sorumlusu olarak ata",
+              "kpi": "Resmi atama duyuruldu",
+              "timeline": "2025 4. Çeyrek sonuna kadar",
+              "responsible": "Yönetim Kurulu"
+            },
+            {
+              "objective": "Veri toplama ve izlemeye başla",
+              "action": "Cinsiyete ayrıştırılmış çalışan verilerini kaydet ve sakla",
+              "kpi": "İlk iç cinsiyet veri kaydı tamamlandı",
+              "timeline": "2025 4. Çeyrek sonuna kadar",
+              "responsible": "İK / İdari"
+            },
+            {
+              "objective": "Farkındalık ve bilinçsiz önyargı eğitimi",
+              "action": "Toplumsal cinsiyet eşitliği ve önyargı üzerine ilk eğitim oturumu",
+              "kpi": "1 eğitim verildi",
+              "timeline": "2026 2. Çeyrek",
+              "responsible": "Toplumsal Cinsiyet Eşitliği Sorumlusu"
+            },
+            {
+              "objective": "Taciz raporlama mekanizması",
+              "action": "Gizli raporlama için e-posta/form oluştur",
+              "kpi": "Raporlama kanalı aktif ve çalışanlarla paylaşıldı",
+              "timeline": "2025 4. Çeyrek sonuna kadar",
+              "responsible": "İK + Hukuk"
+            },
+            {
+              "objective": "Kadın liderliğinin görünürlüğünü artır",
+              "action": "Kadın liderliği veya mentorluk hakkında yıllık iletişim yayınla",
+              "kpi": "Yılda 1 güncelleme (web sitesi veya LinkedIn)",
+              "timeline": "2025 4. Çeyrekten itibaren",
+              "responsible": "İletişim"
+            },
+            {
+              "objective": "GEP'in yıllık izlenmesi ve güncellenmesi",
+              "action": "Uygulama ilerlemesini gözden geçir ve gerekirse güncelle",
+              "kpi": "Yıllık inceleme yapıldı",
+              "timeline": "2025'ten itibaren her 4. Çeyrek",
+              "responsible": "Toplumsal Cinsiyet Eşitliği Sorumlusu ve Yönetim Kurulu"
+            }
           ]
         }
       }
@@ -1426,6 +1873,43 @@
       "enforcement": {
         "title": "Yürürlük ve Değişiklik",
         "text": "Bu metin yayımlandığı anda yürürlüğe girer. Şirket dilediğinde değiştirme hakkını saklı tutar."
+      }
+    },
+    "contactPage": {
+      "title": "İletişim",
+      "subtitle": "Sizden haber almak isteriz. Bizimle iletişime geçin.",
+      "headquarters": {
+        "label": "Genel Merkez",
+        "address": "Trakya Teknopark, Trakya Üniversitesi Ayşekadın Yerleşkesi, 22100, Edirne"
+      },
+      "production": {
+        "label": "Üretim Tesisi",
+        "address": "Hasan Pehlivan Cd. No:5/3, Havsa/Edirne, 22500"
+      },
+      "phone": {
+        "label": "WhatsApp ve Telefon",
+        "number": "+90 540 022 3922"
+      },
+      "email": {
+        "label": "E-posta",
+        "address": "contact@bugefoods.com"
+      },
+      "map": {
+        "title": "Bizi Bulun"
+      },
+      "form": {
+        "title": "Bize mesaj gönderin",
+        "name": "Ad Soyad",
+        "namePlaceholder": "Adınız",
+        "email": "E-posta Adresi",
+        "emailPlaceholder": "email@adresiniz.com",
+        "subject": "Konu",
+        "subjectPlaceholder": "Size nasıl yardımcı olabiliriz?",
+        "message": "Mesaj",
+        "messagePlaceholder": "Mesajınızı buraya yazın...",
+        "submit": "Mesaj Gönder",
+        "success": "Teşekkürler! Mesajınız başarıyla gönderildi.",
+        "error": "Bir şeyler yanlış gitti. Lütfen tekrar deneyin."
       }
     }
   }

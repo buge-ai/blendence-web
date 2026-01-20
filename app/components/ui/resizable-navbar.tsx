@@ -326,10 +326,12 @@ export const NavbarButton = ({
 };
 export const NavDropdown = ({
     name,
+    link,
     items,
     className
 }: {
     name: string;
+    link: string;
     items: { name: string; link: string }[];
     className?: string
 }) => {
@@ -341,10 +343,13 @@ export const NavDropdown = ({
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}
         >
-            <button className="relative px-4 py-2 text-neutral-700 transition-colors duration-200 hover:text-black flex items-center gap-1 cursor-pointer font-medium text-sm">
+            <Link
+                href={link}
+                className="relative px-4 py-2 text-neutral-700 transition-colors duration-200 hover:text-black flex items-center gap-1 cursor-pointer font-medium text-sm"
+            >
                 {name}
                 <IconChevronDown className={cn("w-4 h-4 transition-transform duration-200", isOpen && "rotate-180")} />
-            </button>
+            </Link>
 
             <AnimatePresence>
                 {isOpen && (

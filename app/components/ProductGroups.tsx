@@ -6,15 +6,7 @@ import Image from 'next/image';
 import { useLanguage } from '@/lib/LanguageContext';
 
 export default function ProductGroups() {
-    const { t } = useLanguage();
-
-    const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-        e.preventDefault();
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
+    const { t, language } = useLanguage();
 
     return (
         <section className="product-groups">
@@ -30,9 +22,9 @@ export default function ProductGroups() {
                         />
                     </div>
                     <p className="group-desc">{t.mainPage.productGroups.stagesDescription}</p>
-                    <a href="#stages-section" onClick={(e) => scrollToSection(e, 'stages-section')} className="group-link">
-                        {t.mainPage.productGroups.exploreRange} <span className="arrow">↓</span>
-                    </a>
+                    <Link href={`/${language}/stages`} className="group-link">
+                        {t.mainPage.productGroups.exploreRange} <span className="arrow">→</span>
+                    </Link>
                 </div>
                 <div className="group-bg-overlay gradient-stages"></div>
             </div>
@@ -49,9 +41,9 @@ export default function ProductGroups() {
                         />
                     </div>
                     <p className="group-desc">{t.mainPage.productGroups.resetDescription}</p>
-                    <a href="#reset-section" onClick={(e) => scrollToSection(e, 'reset-section')} className="group-link">
-                        {t.mainPage.productGroups.exploreRange} <span className="arrow">↓</span>
-                    </a>
+                    <Link href={`/${language}/reset`} className="group-link">
+                        {t.mainPage.productGroups.exploreRange} <span className="arrow">→</span>
+                    </Link>
                 </div>
                 <div className="group-bg-overlay gradient-reset"></div>
             </div>
@@ -138,7 +130,7 @@ export default function ProductGroups() {
             transition: transform 0.2s;
         }
         .group-link:hover .arrow {
-            transform: translateY(4px);
+            transform: translateX(4px);
         }
 
         /* Backgrounds */

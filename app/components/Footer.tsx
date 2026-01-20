@@ -77,9 +77,7 @@ export default function Footer() {
             <Link href={`/${language}/food-safety`}>{t.footer.foodSafety}</Link>
             <Link href={`/${language}/gender-equality`}>{t.footer.genderEquality}</Link>
           </div>
-          <p className="footer-v2-copyright">
-            &copy; {new Date().getFullYear()} {t.footer.copyright}
-          </p>
+          <p className="footer-v2-copyright" dangerouslySetInnerHTML={{ __html: `&copy; ${new Date().getFullYear()} ${t.footer.copyright}` }} />
         </div>
       </div>
 
@@ -264,6 +262,16 @@ export default function Footer() {
                 .footer-v2-copyright {
                     font-size: 0.85rem;
                     color: #52525B;
+                }
+
+                .footer-v2-copyright a {
+                    color: #A1A1AA;
+                    text-decoration: none;
+                    transition: color 0.2s ease;
+                }
+
+                .footer-v2-copyright a:hover {
+                    color: white;
                 }
 
                 @media (max-width: 1024px) {

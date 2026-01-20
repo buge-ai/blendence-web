@@ -75,8 +75,8 @@ export default function Navigation() {
         <NavbarLogo src="/logo.png" href={`/${language}`} />
 
         <NavLinksWrapper>
-          <NavDropdown name={t.nav.stages} items={stagesItems} />
-          <NavDropdown name={t.nav.reset} items={resetItems} />
+          <NavDropdown name={t.nav.stages} link={`/${language}/stages`} items={stagesItems} />
+          <NavDropdown name={t.nav.reset} link={`/${language}/reset`} items={resetItems} />
           <Link
             href={`/${language}/approach`}
             className="text-sm font-medium text-neutral-700 hover:text-black transition-colors duration-200"
