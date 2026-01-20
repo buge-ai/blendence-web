@@ -14,7 +14,7 @@ export default function ResetBalancePage() {
             subtitle={p.subtitle}
             description={p.description}
             tag={p.tag}
-            heroImage="/product/product-1.png"
+            heroImage="/product/balance_front.png"
             themeColor="#a89b7c"
             features={[
                 {

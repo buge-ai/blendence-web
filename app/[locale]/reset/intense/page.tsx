@@ -14,7 +14,7 @@ export default function ResetIntensePage() {
             subtitle={p.subtitle}
             description={p.description}
             tag={p.tag}
-            heroImage="/product/product-1.png"
+            heroImage="/product/intense_front.png"
             themeColor="#6b4e71"
             features={[
                 {
