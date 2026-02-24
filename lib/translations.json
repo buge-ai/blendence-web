@@ -49,6 +49,12 @@
       "cta": "Discover Our Products"
     },
     "mainPage": {
+      "videoHero": {
+        "tagline": "Naturally Powerful, Perfectly Balanced.",
+        "subtitle": "Five freeze-dried blends designed for every stage of life — from childhood growth to peak performance.",
+        "scrollCta": "Discover",
+        "cta": "Explore Our Products"
+      },
       "hero": {
         "staticTitle": "Designed nutrition for everyday balance",
         "staticSubtitle": "Naturally powerful, perfectly balanced.",
@@ -1006,6 +1012,12 @@
       "cta": "Ürünlerimizi Keşfedin"
     },
     "mainPage": {
+      "videoHero": {
+        "tagline": "Doğal Olarak Güçlü, Mükemmel Dengeli.",
+        "subtitle": "Çocukluktan zirve performansa — hayatın her aşaması için tasarlanmış beş dondurularak kurutulmuş karışım.",
+        "scrollCta": "Keşfet",
+        "cta": "Ürünlerimizi Keşfedin"
+      },
       "hero": {
         "staticTitle": "Günlük denge için tasarlanmış beslenme",
         "staticSubtitle": "Doğal olarak güçlü, mükemmel dengeli.",

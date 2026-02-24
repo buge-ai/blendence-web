@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
+import VideoHero from '@/app/components/VideoHero';
 import LiquidHero from '@/app/components/LiquidHero';
 import ResetSpotlight from '@/app/components/ResetSpotlight';
 import StagesCarousel from '@/app/components/StagesCarousel';
@@ -45,8 +46,13 @@ export default function V2Home() {
       <Navigation />
 
       <main>
-        {/* HERO SECTION - Liquid Animation */}
-        <section className="hero-section-wrapper">
+        {/* VIDEO HERO SECTION */}
+        <section className="video-hero-section-wrapper">
+          <VideoHero />
+        </section>
+
+        {/* HERO SECTION - Liquid Animation (hidden for now) */}
+        {/* <section className="hero-section-wrapper">
           <LiquidHero
             backgrounds={backgrounds}
             products={products}
@@ -56,7 +62,7 @@ export default function V2Home() {
             onNext={() => paginate(1)}
             onPrev={() => paginate(-1)}
           />
-        </section>
+        </section> */}
 
         {/* SECTION 2 & 3: INTRO / MANIFESTO */}
         {/* Ramp Style: Large typography, airy spacing, clean white background */}
@@ -117,22 +123,25 @@ export default function V2Home() {
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
         }
-        
+
+        .video-hero-section-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            height: 100dvh;
+            overflow: hidden;
+        }
+
         .hero-section-wrapper {
             position: relative;
-            height: 100vh;
-            height: 100dvh; /* Dynamic viewport height for mobile */
-            min-height: 600px; /* Minimum height to ensure content fits */
             width: 100%;
-            overflow: hidden;
-            background: #000;
+            background: #ffffff;
+            padding: 2rem 2.5rem 2.5rem;
         }
 
         @media (max-width: 768px) {
             .hero-section-wrapper {
-                height: auto;
-                min-height: 100vh;
-                min-height: 100dvh;
+                padding: 1.5rem 1rem 1.5rem;
             }
         }
 
@@ -142,16 +151,21 @@ export default function V2Home() {
             padding: 0 2rem;
         }
 
-        /* GRID LAYOUTS (Re-introduced) */
+        /* GRID LAYOUTS */
         .section-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            min-height: 85vh;
+            min-height: auto;
             background: #fff;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 3rem;
+            gap: 3rem;
+            align-items: center;
         }
 
         .grid-content-left, .grid-content-right {
-            padding: 8rem 6rem;
+            padding: 3rem 2rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -160,50 +174,52 @@ export default function V2Home() {
         .section-label {
             display: block;
             text-transform: none;
-            font-size: 1.125rem;
-            color: #111;
-            margin-bottom: 1.5rem;
-            font-weight: 400;
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
         }
 
         .display-text {
-            font-size: 4.2rem;
+            font-size: 2.8rem;
             font-weight: 700;
-            line-height: 1.05;
+            line-height: 1.1;
             color: #1A4D5C;
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
             letter-spacing: -0.03em;
         }
 
         .section-text {
-            margin-top: 1rem;
-            max-width: 650px;
+            margin-top: 0.5rem;
+            max-width: 520px;
         }
-        
+
         .section-text h3 {
-             font-size: 2.6rem;
-             margin-bottom: 2rem;
-             font-weight: 700;
+             font-size: 1.6rem;
+             margin-bottom: 1rem;
+             font-weight: 600;
              color: #1A4D5C;
-             letter-spacing: -0.02em;
-             line-height: 1.1;
+             letter-spacing: -0.01em;
+             line-height: 1.2;
         }
 
         .section-text p {
-             font-size: 1.35rem;
-             color: #444;
+             font-size: 1.05rem;
+             color: #555;
              line-height: 1.6;
-             max-width: 580px;
+             max-width: 480px;
         }
 
         .grid-visual-right, .grid-visual-left {
             width: 100%;
-            height: 100%;
             aspect-ratio: 3 / 4;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-color: #f9f9f9;
+            background-color: #f5f5f5;
+            border-radius: 1.25rem;
+            overflow: hidden;
         }
 
         .visual-designed {
@@ -217,20 +233,20 @@ export default function V2Home() {
         @media (max-width: 1024px) {
             .section-grid {
                 grid-template-columns: 1fr;
-                min-height: auto;
+                padding: 2rem 1.5rem;
+                gap: 2rem;
             }
             .grid-visual-right, .grid-visual-left {
-                height: auto;
                 width: 100%;
                 aspect-ratio: 3 / 4;
             }
             .grid-content-left, .grid-content-right {
-                padding: 4rem 2rem;
+                padding: 2rem 1rem;
             }
             .reverse-mobile .grid-visual-left {
-                order: 1; 
+                order: 1;
             }
-            .display-text { font-size: 3rem; }
+            .display-text { font-size: 2.2rem; }
         }
 
 
@@ -282,7 +298,6 @@ export default function V2Home() {
 
         /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .display-text { font-size: 3.5rem; }
             .manifesto-grid { grid-template-columns: 1fr; }
             .manifesto-card { padding: 3rem; min-height: auto; }
         }

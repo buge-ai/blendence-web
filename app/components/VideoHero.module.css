@@ -1,0 +1,320 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.videoDesktop {
+  display: block;
+}
+
+.videoMobile {
+  display: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.scrim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.35) 55%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+}
+
+/* Text content — centered in upper portion */
+.topContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 22vh;
+}
+
+.tagline {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1A4D5C;
+  letter-spacing: -0.02em;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: #555;
+  margin-top: 0.8rem;
+  max-width: 520px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  padding: 0.7rem 1.6rem;
+  background: #1A4D5C;
+  color: #fff;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  pointer-events: auto;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(26, 77, 92, 0.3);
+}
+
+.ctaButton:hover {
+  background: #153f4b;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(26, 77, 92, 0.4);
+}
+
+/* Products — large, overlapping fan */
+.productRow {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3vh;
+  pointer-events: auto;
+}
+
+.productItem {
+  flex: 0 0 auto;
+  cursor: pointer;
+  transition: transform 0.35s ease;
+  margin-left: -22px;
+  margin-right: -22px;
+}
+
+.productItem:first-child {
+  margin-left: 0;
+}
+
+.productItem:last-child {
+  margin-right: 0;
+}
+
+.productCenter {
+  z-index: 3;
+}
+
+.productItem:hover {
+  transform: translateY(-12px) scale(1.04);
+  z-index: 5;
+}
+
+.productImage {
+  width: 240px;
+  height: auto;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.2));
+}
+
+.productCenter .productImage {
+  width: 265px;
+}
+
+/* Mobile fan carousel — hidden on desktop */
+.mobileCarousel {
+  display: none;
+}
+
+.mobileFan {
+  position: relative;
+  width: 100%;
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileFanItem {
+  position: absolute;
+  cursor: pointer;
+  transform-origin: center bottom;
+}
+
+.mobileFanActive {
+  z-index: 5;
+}
+
+.mobileProductImageWrap {
+  position: relative;
+  width: 55vw;
+  aspect-ratio: 3 / 5;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.2));
+}
+
+
+/* Scroll indicator — pinned to bottom */
+.scrollIndicator {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.scrollText {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #1A4D5C;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.scrollArrow {
+  width: 16px;
+  height: 16px;
+  border-right: 2px solid #1A4D5C;
+  border-bottom: 2px solid #1A4D5C;
+  transform: rotate(45deg);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: rotate(45deg) translateY(0);
+  }
+  40% {
+    transform: rotate(45deg) translateY(5px);
+  }
+  60% {
+    transform: rotate(45deg) translateY(2px);
+  }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .productImage {
+    width: 180px;
+  }
+
+  .productCenter .productImage {
+    width: 200px;
+  }
+
+  .productItem {
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .videoDesktop {
+    display: none;
+  }
+
+  .videoMobile {
+    display: block;
+    object-position: center center;
+  }
+
+  .scrim {
+    height: 55%;
+  }
+
+  .topContent {
+    padding-top: 32vh;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .tagline {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    margin-top: 0.4rem;
+  }
+
+  .ctaButton {
+    margin-top: 0.5rem;
+    padding: 0.6rem 1.4rem;
+    font-size: 0.8rem;
+  }
+
+  .productRow {
+    display: none;
+  }
+
+  .mobileCarousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    margin-top: 1vh;
+    pointer-events: auto;
+  }
+
+  .scrollIndicator {
+    bottom: 0.8rem;
+  }
+
+  .scrollText {
+    font-size: 0.6rem;
+  }
+
+  .scrollArrow {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topContent {
+    padding-top: 18vh;
+  }
+
+  .tagline {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.78rem;
+  }
+
+  .mobileProductImageWrap {
+    width: 50vw;
+  }
+}

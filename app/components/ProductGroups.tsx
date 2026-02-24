@@ -52,7 +52,7 @@ export default function ProductGroups() {
         .product-groups {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            min-height: 80vh; /* Takes up substantial vertical space */
+            min-height: 80vh;
             background: #fff;
         }
 
@@ -121,7 +121,7 @@ export default function ProductGroups() {
             padding-bottom: 4px;
             transition: border-color 0.2s;
         }
-        
+
         .group-link:hover {
             border-bottom-color: #111;
         }

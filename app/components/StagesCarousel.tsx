@@ -25,7 +25,7 @@ const PRODUCT_DATA = [
     {
         id: 'kidgrow',
         href: '/stages/kidgrow',
-        productImage: '/main/stages/kid-grow.png',
+        productImage: '/product/kid-grow.png',
         lifestyleImage: '/main/stages/kid-grow-glass.png',
         accentColor: '#D67030',
         patternColor: '#E8A06A'
@@ -33,7 +33,7 @@ const PRODUCT_DATA = [
     {
         id: 'kidrise',
         href: '/stages/kidrise',
-        productImage: '/main/stages/kid-rise.png',
+        productImage: '/product/kid-rise.png',
         lifestyleImage: '/main/stages/kid-rise-glass.png',
         accentColor: '#C89010',
         patternColor: '#E0B850'
@@ -41,7 +41,7 @@ const PRODUCT_DATA = [
     {
         id: 'teenfocus',
         href: '/stages/teenfocus',
-        productImage: '/main/stages/teen-focus.png',
+        productImage: '/product/teen-focus.png',
         lifestyleImage: '/main/stages/teen-focus-glass.png',
         accentColor: '#4A9C8C',
         patternColor: '#7CBFB2'
@@ -259,12 +259,12 @@ export default function StagesCarousel() {
                         </div>
                     </div>
 
-                    {/* Right Column - Lifestyle Image (9:16) */}
+                    {/* Right Column - Product Image */}
                     <div className={`${styles.lifestyleBox} ${animClass}`}>
                         <div className={styles.lifestyleImageWrapper}>
                             <Image
                                 src={currentProduct.lifestyleImage}
-                                alt={`${currentProduct.title} lifestyle`}
+                                alt={`${currentProduct.title}`}
                                 fill
                                 style={{ objectFit: 'cover' }}
                                 sizes="(max-width: 768px) 100vw, 400px"

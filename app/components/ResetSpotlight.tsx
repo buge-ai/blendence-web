@@ -25,7 +25,7 @@ const PRODUCT_DATA = [
     {
         id: 'balance',
         href: '/reset/balance',
-        productImage: '/main/reset/balance_front.png',
+        productImage: '/product/balance_front.png',
         lifestyleImage: '/main/reset/reset-balance-glass.png',
         accentColor: '#8B9A6B',
         patternColor: '#A8B88D'
@@ -33,7 +33,7 @@ const PRODUCT_DATA = [
     {
         id: 'intense',
         href: '/reset/intense',
-        productImage: '/main/reset/intense_front.png',
+        productImage: '/product/intense_front.png',
         lifestyleImage: '/main/reset/reset-intense-glass.png',
         accentColor: '#7A8B65',
         patternColor: '#96A67E'
@@ -252,12 +252,12 @@ export default function ResetSpotlight() {
                         </div>
                     </div>
 
-                    {/* Right Column - Lifestyle Image (9:16) */}
+                    {/* Right Column - Product Image */}
                     <div className={`${styles.lifestyleBox} ${animClass}`}>
                         <div className={styles.lifestyleImageWrapper}>
                             <Image
                                 src={currentProduct.lifestyleImage}
-                                alt={`${currentProduct.title} lifestyle`}
+                                alt={`${currentProduct.title}`}
                                 fill
                                 style={{ objectFit: 'cover' }}
                                 sizes="(max-width: 768px) 100vw, 400px"
