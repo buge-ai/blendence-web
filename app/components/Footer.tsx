@@ -84,7 +84,7 @@ export default function Footer() {
 
       <style jsx>{`
                 .footer-v2 {
-                    background-color: #0A0A0B;
+                    background-color: #1A4D5C;
                     color: #A1A1AA;
                     padding: 8rem 0 4rem;
                     position: relative;
