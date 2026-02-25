@@ -81,7 +81,7 @@ export default function TermsPage() {
         .policy-page {
           background-color: #ffffff;
           color: #111;
-          font-family: 'Inter', sans-serif;
+          font-family: var(--font-montserrat), 'Montserrat', sans-serif;
           min-height: 100vh;
         }
 

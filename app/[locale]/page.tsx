@@ -80,7 +80,7 @@ export default function V2Home() {
         .v2-app {
             background-color: #ffffff;
             color: #111;
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-montserrat), 'Montserrat', sans-serif;
             overflow-x: hidden;
         }
 

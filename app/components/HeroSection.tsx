@@ -233,7 +233,7 @@ export default function HeroSection() {
                 }
 
                 .brand-title {
-                    font-family: var(--font-display, sans-serif);
+                    font-family: var(--font-montserrat), 'Montserrat', sans-serif;
                     font-size: clamp(2.5rem, 5vw, 4.5rem);
                     font-weight: 800;
                     line-height: 1.05;

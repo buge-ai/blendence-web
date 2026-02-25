@@ -111,7 +111,7 @@ export default function PrivacyPage() {
         .policy-page {
           background-color: #ffffff;
           color: #111;
-          font-family: 'Inter', sans-serif;
+          font-family: var(--font-montserrat), 'Montserrat', sans-serif;
           min-height: 100vh;
         }
 

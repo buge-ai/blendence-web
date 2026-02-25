@@ -106,7 +106,7 @@ export default function ProductLayout({
         .product-page {
             background: #ffffff;
             color: #111;
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-montserrat), 'Montserrat', sans-serif;
         }
 
         .container {
