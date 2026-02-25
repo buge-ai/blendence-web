@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
 import { useLanguage } from '@/lib/LanguageContext';
+import { blob } from '@/lib/blob';
 
 interface Product {
     id: string;
@@ -17,19 +18,19 @@ interface Product {
 const products: Product[] = [
     {
         id: 'kidgrow',
-        image: '/product/kid-grow.png',
+        image: blob('products/kid-grow.png'),
         link: '/stages/kidgrow',
         ageRange: '4-7',
     },
     {
         id: 'kidrise',
-        image: '/product/kid-rise.png',
+        image: blob('products/kid-rise.png'),
         link: '/stages/kidrise',
         ageRange: '8-12',
     },
     {
         id: 'teenfocus',
-        image: '/product/teen-focus.png',
+        image: blob('products/teen-focus.png'),
         link: '/stages/teenfocus',
         ageRange: '13-16',
     },
@@ -93,7 +94,7 @@ export default function StagesCategoryPage() {
                     <div className="container">
                         <div className="logo-wrapper">
                             <Image
-                                src="/logos/reset_stage_logo_stages_org_color.png"
+                                src={blob('logos/reset_stage_logo_stages_org_color.png')}
                                 alt="Stages Logo"
                                 width={320}
                                 height={120}

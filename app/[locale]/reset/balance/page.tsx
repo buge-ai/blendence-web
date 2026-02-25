@@ -3,6 +3,7 @@
 import React from 'react';
 import ProductLayout from '@/app/components/ProductLayout';
 import { useLanguage } from '@/lib/LanguageContext';
+import { blob } from '@/lib/blob';
 
 export default function ResetBalancePage() {
     const { t } = useLanguage();
@@ -14,7 +15,7 @@ export default function ResetBalancePage() {
             subtitle={p.subtitle}
             description={p.description}
             tag={p.tag}
-            heroImage="/product/balance_front.png"
+            heroImage={blob('products/balance_front.png')}
             themeColor="#a89b7c"
             features={[
                 {

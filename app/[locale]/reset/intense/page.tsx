@@ -3,6 +3,7 @@
 import React from 'react';
 import ProductLayout from '@/app/components/ProductLayout';
 import { useLanguage } from '@/lib/LanguageContext';
+import { blob } from '@/lib/blob';
 
 export default function ResetIntensePage() {
     const { t } = useLanguage();
@@ -14,7 +15,7 @@ export default function ResetIntensePage() {
             subtitle={p.subtitle}
             description={p.description}
             tag={p.tag}
-            heroImage="/product/intense_front.png"
+            heroImage={blob('products/intense_front.png')}
             themeColor="#6b4e71"
             features={[
                 {

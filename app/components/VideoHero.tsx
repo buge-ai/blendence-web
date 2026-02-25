@@ -4,14 +4,15 @@ import React, { useRef, useState, useCallback, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
+import { blob } from '@/lib/blob';
 import styles from './VideoHero.module.css';
 
 const products = [
-  { src: '/product/kid-grow.png', name: 'KidGrow', rotate: -6, y: 8 },
-  { src: '/product/kid-rise.png', name: 'KidRise', rotate: -3, y: 2 },
-  { src: '/product/teen-focus.png', name: 'TeenFocus', rotate: 0, y: -4 },
-  { src: '/product/balance_front.png', name: 'Balance', rotate: 3, y: 2 },
-  { src: '/product/intense_front.png', name: 'Intense', rotate: 6, y: 8 },
+  { src: blob('products/kid-grow.png'), name: 'KidGrow', rotate: -6, y: 8 },
+  { src: blob('products/kid-rise.png'), name: 'KidRise', rotate: -3, y: 2 },
+  { src: blob('products/teen-focus.png'), name: 'TeenFocus', rotate: 0, y: -4 },
+  { src: blob('products/balance_front.png'), name: 'Balance', rotate: 3, y: 2 },
+  { src: blob('products/intense_front.png'), name: 'Intense', rotate: 6, y: 8 },
 ];
 
 export default function VideoHero() {
@@ -69,7 +70,7 @@ export default function VideoHero() {
       {/* Desktop video */}
       <video
         className={`${styles.video} ${styles.videoDesktop}`}
-        src="/0224.mp4"
+        src={blob('videos/0224.mp4')}
         autoPlay
         muted
         playsInline
@@ -79,7 +80,7 @@ export default function VideoHero() {
       {/* Mobile video (9:16) — trigger 0.5s before end */}
       <video
         className={`${styles.video} ${styles.videoMobile}`}
-        src="/0224-mobile.mp4"
+        src={blob('videos/0224-mobile.mp4')}
         autoPlay
         muted
         playsInline

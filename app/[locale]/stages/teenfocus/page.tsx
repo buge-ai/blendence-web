@@ -3,6 +3,7 @@
 import React from 'react';
 import ProductLayout from '@/app/components/ProductLayout';
 import { useLanguage } from '@/lib/LanguageContext';
+import { blob } from '@/lib/blob';
 
 export default function TeenFocusPage() {
     const { t } = useLanguage();
@@ -14,7 +15,7 @@ export default function TeenFocusPage() {
             subtitle={p.subtitle}
             description={p.description}
             tag={p.tag}
-            heroImage="/hero/hero-backgrounds/teen-focus.png"
+            heroImage={blob('products/teen-focus.png')}
             themeColor="#87ceeb"
             features={[
                 {

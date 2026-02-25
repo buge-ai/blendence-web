@@ -3,6 +3,7 @@
 import React from 'react';
 import ProductLayout from '@/app/components/ProductLayout';
 import { useLanguage } from '@/lib/LanguageContext';
+import { blob } from '@/lib/blob';
 
 export default function KidGrowPage() {
     const { t } = useLanguage();
@@ -14,7 +15,7 @@ export default function KidGrowPage() {
             subtitle={p.subtitle}
             description={p.description}
             tag={p.tag}
-            heroImage="/hero/hero-backgrounds/kid-grow.png"
+            heroImage={blob('products/kid-grow.png')}
             themeColor="#7ed957"
             features={[
                 {

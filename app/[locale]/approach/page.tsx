@@ -5,6 +5,7 @@ import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
 import Link from 'next/link';
 import { useLanguage } from '@/lib/LanguageContext';
+import { blob } from '@/lib/blob';
 
 export default function ApproachPage() {
     const { t, language } = useLanguage();
@@ -124,7 +125,7 @@ export default function ApproachPage() {
                 /* Hero */
                 .approach-hero {
                     padding: 10rem 0 4rem;
-                    background: url('/approach-background.png') no-repeat center center;
+                    background: url('${blob('main/approach-background.png')}') no-repeat center center;
                     background-size: cover;
                     position: relative;
                 }

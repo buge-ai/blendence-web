@@ -15,6 +15,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLanguage, Locale, locales } from "@/lib/LanguageContext";
+import { blob } from "@/lib/blob";
 
 export default function Navigation() {
   const { language, t } = useLanguage();
@@ -46,7 +47,7 @@ export default function Navigation() {
     <Navbar>
       {/* Desktop Navigation */}
       <NavBody>
-        <NavbarLogo src="/logo.png" href={`/${language}`} />
+        <NavbarLogo src={blob('logos/logo.png')} href={`/${language}`} />
         <NavItems items={navItems} />
         <div className="flex items-center gap-2">
           <Link href={getLocalizedPath(otherLang)}>
@@ -60,7 +61,7 @@ export default function Navigation() {
       {/* Mobile Navigation */}
       <MobileNav>
         <MobileNavHeader>
-          <NavbarLogo src="/logo.png" href={`/${language}`} />
+          <NavbarLogo src={blob('logos/logo.png')} href={`/${language}`} />
           <MobileNavToggle
             isOpen={isMobileMenuOpen}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

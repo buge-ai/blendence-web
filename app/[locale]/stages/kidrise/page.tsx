@@ -3,6 +3,7 @@
 import React from 'react';
 import ProductLayout from '@/app/components/ProductLayout';
 import { useLanguage } from '@/lib/LanguageContext';
+import { blob } from '@/lib/blob';
 
 export default function KidRisePage() {
     const { t } = useLanguage();
@@ -14,7 +15,7 @@ export default function KidRisePage() {
             subtitle={p.subtitle}
             description={p.description}
             tag={p.tag}
-            heroImage="/hero/hero-backgrounds/kid-rise.png"
+            heroImage={blob('products/kid-rise.png')}
             themeColor="#ffb347"
             features={[
                 {

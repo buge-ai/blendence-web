@@ -8,6 +8,7 @@ import {
   IconArrowRight
 } from '@tabler/icons-react';
 import { useLanguage } from '@/lib/LanguageContext';
+import { blob } from '@/lib/blob';
 
 export default function Footer() {
   const { t, language } = useLanguage();
@@ -19,7 +20,7 @@ export default function Footer() {
         <div className="footer-v2-grid">
           <div className="footer-v2-main">
             <Link href={`/${language}`} className="footer-v2-logo">
-              <img src="/logo.png" alt="Blendence" />
+              <img src={blob('logos/logo.png')} alt="Blendence" />
             </Link>
             <p className="footer-v2-description">
               {t.footer.description}

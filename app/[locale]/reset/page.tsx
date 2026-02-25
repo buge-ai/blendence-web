@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
 import { useLanguage } from '@/lib/LanguageContext';
+import { blob } from '@/lib/blob';
 
 interface Product {
     id: string;
@@ -16,12 +17,12 @@ interface Product {
 const products: Product[] = [
     {
         id: 'balance',
-        image: '/product/balance_front.png',
+        image: blob('products/balance_front.png'),
         link: '/reset/balance',
     },
     {
         id: 'intense',
-        image: '/product/intense_front.png',
+        image: blob('products/intense_front.png'),
         link: '/reset/intense',
     },
 ];
@@ -74,7 +75,7 @@ export default function ResetCategoryPage() {
                     <div className="container">
                         <div className="logo-wrapper">
                             <Image
-                                src="/logos/reset_stage_logo_reset_org_color.png"
+                                src={blob('logos/reset_stage_logo_reset_org_color.png')}
                                 alt="Reset Logo"
                                 width={280}
                                 height={100}

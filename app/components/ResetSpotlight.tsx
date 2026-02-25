@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './ResetSpotlight.module.css';
 import { useLanguage } from '@/lib/LanguageContext';
+import { blob } from '@/lib/blob';
 
 interface ResetProduct {
     id: string;
@@ -25,16 +26,16 @@ const PRODUCT_DATA = [
     {
         id: 'balance',
         href: '/reset/balance',
-        productImage: '/product/balance_front.png',
-        lifestyleImage: '/main/reset/reset-balance-glass.png',
+        productImage: blob('products/balance_front.png'),
+        lifestyleImage: blob('glasses/reset-balance-glass.png'),
         accentColor: '#8B9A6B',
         patternColor: '#A8B88D'
     },
     {
         id: 'intense',
         href: '/reset/intense',
-        productImage: '/product/intense_front.png',
-        lifestyleImage: '/main/reset/reset-intense-glass.png',
+        productImage: blob('products/intense_front.png'),
+        lifestyleImage: blob('glasses/reset-intense-glass.png'),
         accentColor: '#7A8B65',
         patternColor: '#96A67E'
     }
@@ -152,7 +153,7 @@ export default function ResetSpotlight() {
                 <div className={styles.sectionHeader}>
                     <div className={styles.logoWrapper}>
                         <Image
-                            src="/logos/reset_stage_logo_reset_org_color.png"
+                            src={blob('logos/reset_stage_logo_reset_org_color.png')}
                             alt="Reset"
                             width={400}
                             height={140}

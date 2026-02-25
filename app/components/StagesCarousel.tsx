@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './StagesCarousel.module.css';
 import { useLanguage } from '@/lib/LanguageContext';
+import { blob } from '@/lib/blob';
 
 interface StageProduct {
     id: string;
@@ -25,24 +26,24 @@ const PRODUCT_DATA = [
     {
         id: 'kidgrow',
         href: '/stages/kidgrow',
-        productImage: '/product/kid-grow.png',
-        lifestyleImage: '/main/stages/kid-grow-glass.png',
+        productImage: blob('products/kid-grow.png'),
+        lifestyleImage: blob('glasses/kid-grow-glass.png'),
         accentColor: '#D67030',
         patternColor: '#E8A06A'
     },
     {
         id: 'kidrise',
         href: '/stages/kidrise',
-        productImage: '/product/kid-rise.png',
-        lifestyleImage: '/main/stages/kid-rise-glass.png',
+        productImage: blob('products/kid-rise.png'),
+        lifestyleImage: blob('glasses/kid-rise-glass.png'),
         accentColor: '#C89010',
         patternColor: '#E0B850'
     },
     {
         id: 'teenfocus',
         href: '/stages/teenfocus',
-        productImage: '/product/teen-focus.png',
-        lifestyleImage: '/main/stages/teen-focus-glass.png',
+        productImage: blob('products/teen-focus.png'),
+        lifestyleImage: blob('glasses/teen-focus-glass.png'),
         accentColor: '#4A9C8C',
         patternColor: '#7CBFB2'
     }
@@ -159,7 +160,7 @@ export default function StagesCarousel() {
                 <div className={styles.sectionHeader}>
                     <div className={styles.logoWrapper}>
                         <Image
-                            src="/logos/reset_stage_logo_stages_org_color.png"
+                            src={blob('logos/reset_stage_logo_stages_org_color.png')}
                             alt="Stages"
                             width={400}
                             height={140}

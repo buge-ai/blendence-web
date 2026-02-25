@@ -1,45 +1,18 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
 import VideoHero from '@/app/components/VideoHero';
-import LiquidHero from '@/app/components/LiquidHero';
 import ResetSpotlight from '@/app/components/ResetSpotlight';
 import StagesCarousel from '@/app/components/StagesCarousel';
 import ProductGroups from '@/app/components/ProductGroups';
 import { useLanguage } from '@/lib/LanguageContext';
-
-const backgrounds = [
-  '/hero/v4/kid-grow-v4.png',
-  '/hero/v4/kid-rise-v4.png',
-  '/hero/v4/teen-focus-v4.png',
-];
-
-const products = [
-  '/hero/v3/kid-grow-transparent.svg',
-  '/hero/v3/kid-rise-transparent.svg',
-  '/hero/v3/teen-focus-transparent.svg',
-];
+import { blob } from '@/lib/blob';
 
 export default function V2Home() {
-  const [[page, direction], setPage] = useState([0, 0]);
   const { t, language } = useLanguage();
-
-  const paginate = (newDirection: number) => {
-    setPage([page + newDirection, newDirection]);
-  };
-
-  const handleSlideChange = (index: number) => {
-    setPage([index, index > page ? 1 : -1]);
-  };
-
-  const getIndex = (p: number) => {
-    return Math.abs(p % backgrounds.length);
-  };
-
-  const currentIndex = getIndex(page);
 
   return (
     <div className="v2-app">
@@ -50,19 +23,6 @@ export default function V2Home() {
         <section className="video-hero-section-wrapper">
           <VideoHero />
         </section>
-
-        {/* HERO SECTION - Liquid Animation (hidden for now) */}
-        {/* <section className="hero-section-wrapper">
-          <LiquidHero
-            backgrounds={backgrounds}
-            products={products}
-            activeIndex={currentIndex}
-            direction={direction}
-            onSlideChange={handleSlideChange}
-            onNext={() => paginate(1)}
-            onPrev={() => paginate(-1)}
-          />
-        </section> */}
 
         {/* SECTION 2 & 3: INTRO / MANIFESTO */}
         {/* Ramp Style: Large typography, airy spacing, clean white background */}
@@ -130,19 +90,6 @@ export default function V2Home() {
             height: 100vh;
             height: 100dvh;
             overflow: hidden;
-        }
-
-        .hero-section-wrapper {
-            position: relative;
-            width: 100%;
-            background: #ffffff;
-            padding: 2rem 2.5rem 2.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero-section-wrapper {
-                padding: 1.5rem 1rem 1.5rem;
-            }
         }
 
         .container {
@@ -223,11 +170,11 @@ export default function V2Home() {
         }
 
         .visual-designed {
-            background-image: url('/main/design-not-improvised.png');
+            background-image: url('${blob('main/design-not-improvised.png')}');
         }
 
         .visual-adapts {
-            background-image: url('/main/nutrition-that-adapts.png');
+            background-image: url('${blob('main/nutrition-that-adapts.png')}');
         }
 
         @media (max-width: 1024px) {

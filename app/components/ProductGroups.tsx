@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '@/lib/LanguageContext';
+import { blob } from '@/lib/blob';
 
 export default function ProductGroups() {
     const { t, language } = useLanguage();
@@ -14,7 +15,7 @@ export default function ProductGroups() {
                 <div className="group-content">
                     <div className="group-logo">
                         <Image
-                            src="/logos/reset_stage_logo_stages_org_color.png"
+                            src={blob('logos/reset_stage_logo_stages_org_color.png')}
                             alt="Stages"
                             width={320}
                             height={120}
@@ -33,7 +34,7 @@ export default function ProductGroups() {
                 <div className="group-content">
                     <div className="group-logo">
                         <Image
-                            src="/logos/reset_stage_logo_reset_org_color.png"
+                            src={blob('logos/reset_stage_logo_reset_org_color.png')}
                             alt="Reset"
                             width={320}
                             height={120}
@@ -143,11 +144,11 @@ export default function ProductGroups() {
         }
 
         .gradient-stages {
-            background: url('/main/stages-teaser.png') no-repeat center center/cover;
+            background: url('${blob('main/stages-teaser.png')}') no-repeat center center/cover;
         }
 
         .gradient-reset {
-             background: url('/main/reset-spotlight.png') no-repeat center center/cover;
+             background: url('${blob('main/reset-spotlight.png')}') no-repeat center center/cover;
         }
 
         @media (max-width: 768px) {
