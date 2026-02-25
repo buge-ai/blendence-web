@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useLanguage } from '@/lib/LanguageContext';
 
 // Product categories and items
 const categories = [
@@ -67,6 +68,7 @@ const categories = [
 ];
 
 export default function HeroSection() {
+    const { t, language } = useLanguage();
     return (
         <div className="hero-container">
             {/* Left Side - Brand Message */}
@@ -83,7 +85,7 @@ export default function HeroSection() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3, duration: 0.6 }}
                     >
-                        Naturally powerful, perfectly balanced.
+                        {t.hero.tagline}
                     </motion.span>
 
                     <motion.h1
@@ -92,10 +94,10 @@ export default function HeroSection() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5, duration: 0.7 }}
                     >
-                        DESIGNED<br />
-                        NUTRITION<br />
-                        FOR EVERYDAY<br />
-                        <span className="highlight">BALANCE</span>
+                        {t.hero.title1}<br />
+                        {t.hero.title2}<br />
+                        {t.hero.title3}<br />
+                        <span className="highlight">{t.hero.titleHighlight}</span>
                     </motion.h1>
 
                     <motion.p
@@ -104,8 +106,8 @@ export default function HeroSection() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.7, duration: 0.6 }}
                     >
-                        At Blendence, nutrition doesn't happen by chance.<br />
-                        Every blend is designed through a deliberate process.
+                        {t.hero.description1}<br />
+                        {t.hero.description2}
                     </motion.p>
 
                     <motion.div
@@ -113,8 +115,8 @@ export default function HeroSection() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.9, duration: 0.6 }}
                     >
-                        <Link href="/approach" className="cta-button">
-                            Explore our approach
+                        <Link href={`/${language}/approach`} className="cta-button">
+                            {t.hero.cta}
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>

@@ -111,7 +111,7 @@ export default function StagesCategoryPage() {
                 <section className="carousel-section">
                     <div className="container">
                         <h2 className="section-title">
-                            {language === 'tr' ? 'Ürünlerimiz' : 'Our Products'}
+                            {t.categoryPages.ourProducts}
                         </h2>
 
                         <div className="carousel-wrapper" ref={carouselRef}>
@@ -142,7 +142,7 @@ export default function StagesCategoryPage() {
 
                                     <div className="product-info">
                                         <div className="age-badge">
-                                            <span className="age-label">{language === 'tr' ? 'Yaş' : 'Ages'}</span>
+                                            <span className="age-label">{t.categoryPages.ages}</span>
                                             <span className="age-range">{currentProduct.ageRange}</span>
                                         </div>
                                         <span className="product-tag">{productData.tag}</span>
@@ -153,7 +153,7 @@ export default function StagesCategoryPage() {
                                             href={`/${language}${currentProduct.link}`}
                                             className="product-cta"
                                         >
-                                            {language === 'tr' ? 'Detayları Gör' : 'View Details'}
+                                            {t.categoryPages.viewDetails}
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                 <path d="M5 12h14M12 5l7 7-7 7" />
                                             </svg>
@@ -191,43 +191,29 @@ export default function StagesCategoryPage() {
                 <section className="stages-overview">
                     <div className="container">
                         <span className="section-label">
-                            {language === 'tr' ? 'Yaşam Aşamaları' : 'Life Stages'}
+                            {t.categoryPages.lifeStages}
                         </span>
                         <h2 className="overview-title">
-                            {language === 'tr'
-                                ? 'Her yaşam aşaması için özel beslenme'
-                                : 'Specialized nutrition for every life stage'}
+                            {t.categoryPages.specializedNutrition}
                         </h2>
 
                         <div className="stages-grid">
                             <div className="stage-card" onClick={() => goToSlide(0)}>
                                 <div className="stage-age">4-7</div>
-                                <h3>{language === 'tr' ? 'Erken Büyüme' : 'Early Growth'}</h3>
-                                <p>
-                                    {language === 'tr'
-                                        ? 'Aktif oyun için temel vitaminler ve doğal enerji ile temeli oluşturmak.'
-                                        : 'Building the foundation with essential vitamins and natural energy for active play.'}
-                                </p>
+                                <h3>{t.categoryPages.earlyGrowth}</h3>
+                                <p>{t.categoryPages.earlyGrowthDesc}</p>
                             </div>
 
                             <div className="stage-card" onClick={() => goToSlide(1)}>
                                 <div className="stage-age">8-12</div>
-                                <h3>{language === 'tr' ? 'Aktif Okul Çağı' : 'Active Schooling'}</h3>
-                                <p>
-                                    {language === 'tr'
-                                        ? 'Yoğun okul günlerinde bilişsel gelişimi ve fiziksel tutarlılığı desteklemek.'
-                                        : 'Supporting cognitive development and physical consistency during busy school days.'}
-                                </p>
+                                <h3>{t.categoryPages.activeSchooling}</h3>
+                                <p>{t.categoryPages.activeSchoolingDesc}</p>
                             </div>
 
                             <div className="stage-card" onClick={() => goToSlide(2)}>
                                 <div className="stage-age">13-16</div>
-                                <h3>{language === 'tr' ? 'Odak Dönemi' : 'Mental Focus'}</h3>
-                                <p>
-                                    {language === 'tr'
-                                        ? 'Zorlu akademik dönemler ve hormonal geçişler için tasarlandı.'
-                                        : 'Designed for demanding academic periods and hormonal transitions.'}
-                                </p>
+                                <h3>{t.categoryPages.mentalFocus}</h3>
+                                <p>{t.categoryPages.mentalFocusDesc}</p>
                             </div>
                         </div>
                     </div>
@@ -238,17 +224,13 @@ export default function StagesCategoryPage() {
                     <div className="container">
                         <div className="philosophy-content">
                             <span className="philosophy-label">
-                                {language === 'tr' ? 'Felsefe' : 'Philosophy'}
+                                {t.categoryPages.philosophy}
                             </span>
                             <h2>
-                                {language === 'tr'
-                                    ? 'Yaşamın geçişleri için tasarlanmış beslenme.'
-                                    : 'Nutrition designed for the transitions of life.'}
+                                {t.categoryPages.stagesPhilosophyTitle}
                             </h2>
                             <p>
-                                {language === 'tr'
-                                    ? 'Vücudun ihtiyaçları değiştikçe, karışımlarımız büyümeyi, odaklanmayı ve günlük tutarlılığı desteklemek için uyum sağlar.'
-                                    : 'As the body\'s needs shift, our blends adapt to support growth, focus, and everyday consistency.'}
+                                {t.categoryPages.stagesPhilosophyDesc}
                             </p>
                         </div>
                     </div>

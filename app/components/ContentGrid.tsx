@@ -3,68 +3,71 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useLanguage } from '@/lib/LanguageContext';
 
-// Product categories and items
-const categories = [
-    {
-        id: 'stages',
-        name: 'Stages',
-        href: '/stages',
-        description: 'Nutrition designed for life stages',
-        products: [
-            {
-                id: 'kidgrow',
-                name: 'KidGrow',
-                ageRange: '4-7',
-                href: '/stages/kidgrow',
-                gradient: 'linear-gradient(145deg, #7ed957 0%, #4caf50 50%, #2e7d32 100%)',
-                accentColor: '#7ed957',
-            },
-            {
-                id: 'kidrise',
-                name: 'KidRise',
-                ageRange: '8-12',
-                href: '/stages/kidrise',
-                gradient: 'linear-gradient(145deg, #ffb347 0%, #ff9800 50%, #e65100 100%)',
-                accentColor: '#ffb347',
-            },
-            {
-                id: 'teenfocus',
-                name: 'TeenFocus',
-                ageRange: '13-16',
-                href: '/stages/teenfocus',
-                gradient: 'linear-gradient(145deg, #87ceeb 0%, #42a5f5 50%, #1565c0 100%)',
-                accentColor: '#87ceeb',
-            },
-        ],
-    },
-    {
-        id: 'reset',
-        name: 'Reset',
-        href: '/reset',
-        description: 'Moments of balance',
-        products: [
-            {
-                id: 'reset-balance',
-                name: 'Reset Balance',
-                tagline: 'Everyday',
-                href: '/reset/balance',
-                gradient: 'linear-gradient(145deg, #e8d5b7 0%, #c9b896 50%, #a89b7c 100%)',
-                accentColor: '#e8d5b7',
-            },
-            {
-                id: 'reset-intense',
-                name: 'Reset Intense',
-                tagline: 'Targeted',
-                href: '/reset/intense',
-                gradient: 'linear-gradient(145deg, #6b4e71 0%, #4a3550 50%, #2d1f30 100%)',
-                accentColor: '#9b7a9e',
-            },
-        ],
-    },
-];
 
 export default function ContentGrid() {
+    const { t, language } = useLanguage();
+
+    const categories = [
+        {
+            id: 'stages',
+            name: t.contentGrid.stages,
+            href: `/${language}/stages`,
+            description: t.contentGrid.stagesDescription,
+            products: [
+                {
+                    id: 'kidgrow',
+                    name: 'KidGrow',
+                    ageRange: '4-7',
+                    href: `/${language}/stages/kidgrow`,
+                    gradient: 'linear-gradient(145deg, #7ed957 0%, #4caf50 50%, #2e7d32 100%)',
+                    accentColor: '#7ed957',
+                },
+                {
+                    id: 'kidrise',
+                    name: 'KidRise',
+                    ageRange: '8-12',
+                    href: `/${language}/stages/kidrise`,
+                    gradient: 'linear-gradient(145deg, #ffb347 0%, #ff9800 50%, #e65100 100%)',
+                    accentColor: '#ffb347',
+                },
+                {
+                    id: 'teenfocus',
+                    name: 'TeenFocus',
+                    ageRange: '13-16',
+                    href: `/${language}/stages/teenfocus`,
+                    gradient: 'linear-gradient(145deg, #87ceeb 0%, #42a5f5 50%, #1565c0 100%)',
+                    accentColor: '#87ceeb',
+                },
+            ],
+        },
+        {
+            id: 'reset',
+            name: t.contentGrid.reset,
+            href: `/${language}/reset`,
+            description: t.contentGrid.resetDescription,
+            products: [
+                {
+                    id: 'reset-balance',
+                    name: 'Reset Balance',
+                    tagline: t.contentGrid.everyday,
+                    href: `/${language}/reset/balance`,
+                    gradient: 'linear-gradient(145deg, #e8d5b7 0%, #c9b896 50%, #a89b7c 100%)',
+                    accentColor: '#e8d5b7',
+                },
+                {
+                    id: 'reset-intense',
+                    name: 'Reset Intense',
+                    tagline: t.contentGrid.targeted,
+                    href: `/${language}/reset/intense`,
+                    gradient: 'linear-gradient(145deg, #6b4e71 0%, #4a3550 50%, #2d1f30 100%)',
+                    accentColor: '#9b7a9e',
+                },
+            ],
+        },
+    ];
+
     return (
         <section className="content-grid-section">
             <div className="container">
@@ -85,7 +88,7 @@ export default function ContentGrid() {
                                     <span className="category-desc">{category.description}</span>
                                 </div>
                                 <div className="explore-link">
-                                    Explore {category.name} <span className="arrow">→</span>
+                                    {t.contentGrid.explore} {category.name} <span className="arrow">→</span>
                                 </div>
                             </Link>
 
@@ -104,7 +107,7 @@ export default function ContentGrid() {
                                         <div className="product-info">
                                             <span className="product-name">{product.name}</span>
                                             {'ageRange' in product && (
-                                                <span className="product-meta">Age {product.ageRange}</span>
+                                                <span className="product-meta">{t.contentGrid.age} {product.ageRange}</span>
                                             )}
                                             {'tagline' in product && (
                                                 <span className="product-meta">{product.tagline}</span>

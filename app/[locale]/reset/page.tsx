@@ -92,7 +92,7 @@ export default function ResetCategoryPage() {
                 <section className="carousel-section">
                     <div className="container">
                         <h2 className="section-title">
-                            {language === 'tr' ? 'Ürünlerimiz' : 'Our Products'}
+                            {t.categoryPages.ourProducts}
                         </h2>
 
                         <div className="carousel-wrapper" ref={carouselRef}>
@@ -130,7 +130,7 @@ export default function ResetCategoryPage() {
                                             href={`/${language}${currentProduct.link}`}
                                             className="product-cta"
                                         >
-                                            {language === 'tr' ? 'Detayları Gör' : 'View Details'}
+                                            {t.categoryPages.viewDetails}
                                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                 <path d="M5 12h14M12 5l7 7-7 7" />
                                             </svg>
@@ -169,17 +169,13 @@ export default function ResetCategoryPage() {
                     <div className="container">
                         <div className="philosophy-content">
                             <span className="philosophy-label">
-                                {language === 'tr' ? 'Felsefe' : 'Philosophy'}
+                                {t.categoryPages.philosophy}
                             </span>
                             <h2>
-                                {language === 'tr'
-                                    ? 'Denge anları için tasarlandı.'
-                                    : 'Designed for moments of balance.'}
+                                {t.categoryPages.resetPhilosophyTitle}
                             </h2>
                             <p>
-                                {language === 'tr'
-                                    ? 'Reset, vücudun normalden daha ağır hissedildiği anlar için tasarlandı. Bitki bazlı, lif destekli formülasyonu sindirim hafifliğini ve denge hissini desteklemek için tasarlandı.'
-                                    : 'Reset is designed for moments when the body feels heavier than usual. Its plant-based, fiber-supported formulation is designed to support digestive lightness and a sense of balance.'}
+                                {t.categoryPages.resetPhilosophyDesc}
                             </p>
                         </div>
                     </div>

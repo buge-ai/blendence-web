@@ -5,6 +5,7 @@ import Navigation from './Navigation';
 import Footer from './Footer';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/lib/LanguageContext';
 
 interface ProductLayoutProps {
     title: string;
@@ -33,6 +34,7 @@ export default function ProductLayout({
     features,
     specs
 }: ProductLayoutProps) {
+    const { t } = useLanguage();
     return (
         <div className="product-page">
             <Navigation />
@@ -79,11 +81,11 @@ export default function ProductLayout({
                 <section className="composition-section">
                     <div className="container">
                         <div className="composition-box">
-                            <h3>Clean Formulation</h3>
+                            <h3>{t.productLayout.cleanFormulation}</h3>
                             <div className="check-list">
-                                <div className="check-item">No artificial colors</div>
-                                <div className="check-item">No artificial flavors</div>
-                                <div className="check-item">No unnecessary additives</div>
+                                <div className="check-item">{t.productLayout.noArtificialColors}</div>
+                                <div className="check-item">{t.productLayout.noArtificialFlavors}</div>
+                                <div className="check-item">{t.productLayout.noUnnecessaryAdditives}</div>
                             </div>
                         </div>
                         {specs && (

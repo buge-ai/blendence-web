@@ -960,6 +960,50 @@
         "success": "Thank you! Your message has been sent successfully.",
         "error": "Something went wrong. Please try again."
       }
+    },
+    "productLayout": {
+      "cleanFormulation": "Clean Formulation",
+      "noArtificialColors": "No artificial colors",
+      "noArtificialFlavors": "No artificial flavors",
+      "noUnnecessaryAdditives": "No unnecessary additives"
+    },
+    "hero": {
+      "tagline": "Naturally powerful, perfectly balanced.",
+      "title1": "DESIGNED",
+      "title2": "NUTRITION",
+      "title3": "FOR EVERYDAY",
+      "titleHighlight": "BALANCE",
+      "description1": "At Blendence, nutrition doesn't happen by chance.",
+      "description2": "Every blend is designed through a deliberate process.",
+      "cta": "Explore our approach"
+    },
+    "contentGrid": {
+      "explore": "Explore",
+      "age": "Age",
+      "stages": "Stages",
+      "stagesDescription": "Nutrition designed for life stages",
+      "reset": "Reset",
+      "resetDescription": "Moments of balance",
+      "everyday": "Everyday",
+      "targeted": "Targeted"
+    },
+    "categoryPages": {
+      "ourProducts": "Our Products",
+      "viewDetails": "View Details",
+      "philosophy": "Philosophy",
+      "ages": "Ages",
+      "lifeStages": "Life Stages",
+      "specializedNutrition": "Specialized nutrition for every life stage",
+      "earlyGrowth": "Early Growth",
+      "earlyGrowthDesc": "Building the foundation with essential vitamins and natural energy for active play.",
+      "activeSchooling": "Active Schooling",
+      "activeSchoolingDesc": "Supporting cognitive development and physical consistency during busy school days.",
+      "mentalFocus": "Mental Focus",
+      "mentalFocusDesc": "Designed for demanding academic periods and hormonal transitions.",
+      "stagesPhilosophyTitle": "Nutrition designed for the transitions of life.",
+      "stagesPhilosophyDesc": "As the body's needs shift, our blends adapt to support growth, focus, and everyday consistency.",
+      "resetPhilosophyTitle": "Designed for moments of balance.",
+      "resetPhilosophyDesc": "Reset is designed for moments when the body feels heavier than usual. Its plant-based, fiber-supported formulation is designed to support digestive lightness and a sense of balance."
     }
   },
   "tr": {
@@ -1923,6 +1967,50 @@
         "success": "Teşekkürler! Mesajınız başarıyla gönderildi.",
         "error": "Bir şeyler yanlış gitti. Lütfen tekrar deneyin."
       }
+    },
+    "productLayout": {
+      "cleanFormulation": "Temiz Formülasyon",
+      "noArtificialColors": "Yapay renklendirici içermez",
+      "noArtificialFlavors": "Yapay aroma içermez",
+      "noUnnecessaryAdditives": "Gereksiz katkı maddesi içermez"
+    },
+    "hero": {
+      "tagline": "Doğal güç, mükemmel denge.",
+      "title1": "GÜNLÜK",
+      "title2": "DENGE",
+      "title3": "İÇİN TASARLANMIŞ",
+      "titleHighlight": "BESLENME",
+      "description1": "Blendence'da beslenme tesadüfe bırakılmaz.",
+      "description2": "Her karışım bilinçli bir süreçle tasarlanır.",
+      "cta": "Yaklaşımımızı keşfedin"
+    },
+    "contentGrid": {
+      "explore": "Keşfet",
+      "age": "Yaş",
+      "stages": "Stages",
+      "stagesDescription": "Yaşam dönemleri için tasarlanmış beslenme",
+      "reset": "Reset",
+      "resetDescription": "Denge anları",
+      "everyday": "Günlük",
+      "targeted": "Hedefli"
+    },
+    "categoryPages": {
+      "ourProducts": "Ürünlerimiz",
+      "viewDetails": "Detayları Gör",
+      "philosophy": "Felsefe",
+      "ages": "Yaş",
+      "lifeStages": "Yaşam Aşamaları",
+      "specializedNutrition": "Her yaşam aşaması için özel beslenme",
+      "earlyGrowth": "Erken Büyüme",
+      "earlyGrowthDesc": "Aktif oyun için temel vitaminler ve doğal enerji ile temeli oluşturmak.",
+      "activeSchooling": "Aktif Okul Çağı",
+      "activeSchoolingDesc": "Yoğun okul günlerinde bilişsel gelişimi ve fiziksel tutarlılığı desteklemek.",
+      "mentalFocus": "Odak Dönemi",
+      "mentalFocusDesc": "Zorlu akademik dönemler ve hormonal geçişler için tasarlandı.",
+      "stagesPhilosophyTitle": "Yaşamın geçişleri için tasarlanmış beslenme.",
+      "stagesPhilosophyDesc": "Vücudun ihtiyaçları değiştikçe, karışımlarımız büyümeyi, odaklanmayı ve günlük tutarlılığı desteklemek için uyum sağlar.",
+      "resetPhilosophyTitle": "Denge anları için tasarlandı.",
+      "resetPhilosophyDesc": "Reset, vücudun normalden daha ağır hissedildiği anlar için tasarlandı. Bitki bazlı, lif destekli formülasyonu sindirim hafifliğini ve denge hissini desteklemek için tasarlandı."
     }
   }
 }
