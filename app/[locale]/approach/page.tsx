@@ -5,11 +5,33 @@ import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
 import Link from 'next/link';
 import { useLanguage } from '@/lib/LanguageContext';
-import { blob } from '@/lib/blob';
+import { motion, useReducedMotion } from 'framer-motion';
+import { Reveal, Stagger, StaggerItem, WordReveal, EASE } from '@/lib/motion';
+
+function ArrowIcon() {
+    return (
+        <svg
+            className="policy-arrow"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+        >
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+        </svg>
+    );
+}
 
 export default function ApproachPage() {
     const { t, language } = useLanguage();
     const p = t.approachPage;
+    const reduce = useReducedMotion();
 
     return (
         <div className="approach-page">
@@ -18,23 +40,46 @@ export default function ApproachPage() {
             <main>
                 {/* Hero Section */}
                 <section className="approach-hero">
-                    <div className="container">
-                        <h1>{p.title}</h1>
-                        <h2 className="subtitle">{p.subtitle}</h2>
-                        <p className="lead">
-                            {p.lead}
-                        </p>
+                    <motion.div
+                        className="hero-bg"
+                        initial={reduce ? {} : { scale: 1.08 }}
+                        animate={reduce ? {} : { scale: 1 }}
+                        transition={{ duration: 1.6, ease: EASE }}
+                    />
+                    <div className="hero-scrim" />
+                    <div className="container hero-inner">
+                        <Reveal y={18}>
+                            <span
+                                className="eyebrow hero-eyebrow"
+                                style={{ '--eyebrow-accent': 'var(--turquoise)' } as React.CSSProperties}
+                            >
+                                {t.nav.ourApproach}
+                            </span>
+                        </Reveal>
+                        <WordReveal as="h1" className="font-display hero-title" text={p.title} delay={0.1} />
+                        <Reveal delay={0.2} y={18}>
+                            <p className="hero-sub">{p.subtitle}</p>
+                        </Reveal>
+                        <Reveal delay={0.3} y={18}>
+                            <p className="hero-lead">{p.lead}</p>
+                        </Reveal>
                     </div>
                 </section>
 
                 {/* Needs First Section */}
                 <section className="section">
                     <div className="container">
-                        <div className="section-divider"></div>
-                        <h2>{p.needsFirst.title}</h2>
+                        <Reveal y={18}>
+                            <div className="section-head">
+                                <span className="rule" />
+                                <h2>{p.needsFirst.title}</h2>
+                            </div>
+                        </Reveal>
                         <div className="content-block">
                             {p.needsFirst.content.map((paragraph, index) => (
-                                <p key={index}>{paragraph}</p>
+                                <Reveal key={index} delay={index * 0.05} y={18}>
+                                    <p>{paragraph}</p>
+                                </Reveal>
                             ))}
                         </div>
                     </div>
@@ -43,45 +88,59 @@ export default function ApproachPage() {
                 {/* How Blends Are Designed */}
                 <section className="section steps-section">
                     <div className="container">
-                        <div className="section-divider"></div>
-                        <h2>{p.howDesigned.title}</h2>
-                        <div className="steps-grid">
+                        <Reveal y={18}>
+                            <div className="section-head">
+                                <span className="rule" />
+                                <h2>{p.howDesigned.title}</h2>
+                            </div>
+                        </Reveal>
+                        <Stagger className="steps-grid" delay={0.1}>
                             {p.howDesigned.steps.map((step, index) => (
-                                <div className="step" key={index}>
+                                <StaggerItem className="step" key={index}>
                                     <span className="step-number">{index + 1}</span>
                                     <h3>{step.title}</h3>
                                     <p>{step.content}</p>
-                                </div>
+                                </StaggerItem>
                             ))}
-                        </div>
+                        </Stagger>
                     </div>
                 </section>
 
                 {/* Two Ways Section */}
                 <section className="section two-ways-section">
                     <div className="container">
-                        <div className="section-divider"></div>
-                        <h2>{p.twoWays.title}</h2>
-                        <div className="two-ways-grid">
-                            <div className="way-card">
+                        <Reveal y={18}>
+                            <div className="section-head">
+                                <span className="rule" />
+                                <h2>{p.twoWays.title}</h2>
+                            </div>
+                        </Reveal>
+                        <Stagger className="two-ways-grid" delay={0.1}>
+                            <StaggerItem className="way-card">
                                 <h3>{p.twoWays.stages.title}</h3>
                                 <p>{p.twoWays.stages.content}</p>
-                            </div>
-                            <div className="way-card">
+                            </StaggerItem>
+                            <StaggerItem className="way-card">
                                 <h3>{p.twoWays.reset.title}</h3>
                                 <p>{p.twoWays.reset.content}</p>
-                            </div>
-                        </div>
+                            </StaggerItem>
+                        </Stagger>
                     </div>
                 </section>
 
                 {/* Technology Section */}
                 <section className="section">
                     <div className="container">
-                        <div className="section-divider"></div>
-                        <h2>{p.technology.title}</h2>
+                        <Reveal y={18}>
+                            <div className="section-head">
+                                <span className="rule" />
+                                <h2>{p.technology.title}</h2>
+                            </div>
+                        </Reveal>
                         <div className="content-block">
-                            <p>{p.technology.content}</p>
+                            <Reveal y={18}>
+                                <p>{p.technology.content}</p>
+                            </Reveal>
                         </div>
                     </div>
                 </section>
@@ -89,21 +148,31 @@ export default function ApproachPage() {
                 {/* Quality & Responsibility */}
                 <section className="section quality-section">
                     <div className="container">
-                        <div className="section-divider"></div>
-                        <h2>{p.quality.title}</h2>
-                        <div className="content-block">
-                            <p>{p.quality.content}</p>
-                            <p className="learn-more">{p.quality.learnMore}</p>
-                            <div className="policy-links">
-                                <Link href={`/${language}/food-safety`} className="policy-link">
-                                    {p.quality.foodSafetyLink}
-                                    <span className="arrow">→</span>
-                                </Link>
-                                <Link href={`/${language}/gender-equality`} className="policy-link">
-                                    {p.quality.genderEqualityLink}
-                                    <span className="arrow">→</span>
-                                </Link>
+                        <Reveal y={18}>
+                            <div className="section-head">
+                                <span className="rule" />
+                                <h2>{p.quality.title}</h2>
                             </div>
+                        </Reveal>
+                        <div className="content-block">
+                            <Reveal y={18}>
+                                <p>{p.quality.content}</p>
+                            </Reveal>
+                            <Reveal delay={0.05} y={18}>
+                                <p className="learn-more">{p.quality.learnMore}</p>
+                            </Reveal>
+                            <Reveal delay={0.1} y={18}>
+                                <div className="policy-links">
+                                    <Link href={`/${language}/food-safety`} className="policy-link">
+                                        <span>{p.quality.foodSafetyLink}</span>
+                                        <ArrowIcon />
+                                    </Link>
+                                    <Link href={`/${language}/gender-equality`} className="policy-link">
+                                        <span>{p.quality.genderEqualityLink}</span>
+                                        <ArrowIcon />
+                                    </Link>
+                                </div>
+                            </Reveal>
                         </div>
                     </div>
                 </section>
@@ -113,205 +182,217 @@ export default function ApproachPage() {
 
             <style jsx>{`
                 .approach-page {
-                    background: #fff;
-                    color: #111;
+                    background: var(--surface);
+                    color: var(--text-body);
                 }
                 .container {
                     max-width: 900px;
                     margin: 0 auto;
                     padding: 0 2rem;
                 }
-                
+
                 /* Hero */
                 .approach-hero {
-                    padding: 10rem 0 4rem;
-                    background: url('${blob('main/approach-background.png')}') no-repeat center center;
+                    position: relative;
+                    padding: 12rem 0 6rem;
+                    overflow: hidden;
+                    isolation: isolate;
+                }
+                .approach-hero :global(.hero-bg) {
+                    position: absolute;
+                    inset: 0;
+                    background: url('/images/main/approach-hero.jpg') no-repeat center center;
                     background-size: cover;
+                    background-color: var(--petrol-deep);
+                    z-index: -2;
+                    will-change: transform;
+                }
+                /* Darker on the left where the type sits; the process
+                   arrangement stays readable on the right. */
+                .hero-scrim {
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(105deg, rgba(16, 51, 61, 0.68) 0%, rgba(16, 51, 61, 0.38) 55%, rgba(16, 51, 61, 0.12) 100%);
+                    z-index: -1;
+                }
+                .hero-inner {
                     position: relative;
                 }
-                h1 {
-                    font-size: 4.5rem;
-                    font-weight: 300;
-                    margin-bottom: 1rem;
-                    letter-spacing: -0.03em;
-                    line-height: 1.1;
-                    color: #111;
+                .hero-eyebrow {
+                    color: rgba(234, 242, 243, 0.82);
+                    margin-bottom: 1.25rem;
                 }
-                .subtitle {
-                    font-size: 1.5rem;
+                .approach-hero :global(.hero-title) {
+                    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+                    color: #fff;
+                    max-width: 16ch;
+                    margin-bottom: 1.5rem;
+                }
+                .hero-sub {
+                    font-size: clamp(1.15rem, 1.6vw, 1.4rem);
                     font-weight: 400;
-                    color: #666;
-                    margin-bottom: 2rem;
+                    line-height: 1.5;
+                    color: var(--text-on-dark);
+                    max-width: 34ch;
+                    margin-bottom: 1.75rem;
                 }
-                .lead {
-                    font-size: 1.35rem;
+                .hero-lead {
+                    font-size: 1.15rem;
                     line-height: 1.7;
-                    color: #444;
-                    max-width: 700px;
+                    color: rgba(234, 242, 243, 0.92);
+                    max-width: 60ch;
                 }
 
                 /* Sections */
                 .section {
-                    padding: 4rem 0;
+                    padding: var(--section-pad) 0;
+                    border-top: 1px solid var(--hairline);
                 }
-                .section-divider {
-                    width: 100%;
-                    height: 1px;
-                    background: #e5e5e5;
-                    margin-bottom: 3rem;
+                .section-head {
+                    margin-bottom: 2.5rem;
+                }
+                .rule {
+                    display: block;
+                    width: 24px;
+                    height: 2px;
+                    border-radius: 2px;
+                    background: var(--turquoise-deep);
+                    margin-bottom: 1.25rem;
                 }
                 h2 {
-                    font-size: 2.25rem;
-                    font-weight: 400;
-                    margin-bottom: 1.5rem;
-                    letter-spacing: -0.02em;
-                    color: #111;
-                    position: relative;
-                    display: inline-block;
-                }
-                h2::after {
-                    content: '';
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 12px;
-                    background: linear-gradient(90deg, rgba(166, 198, 169, 0.4) 0%, rgba(200, 220, 195, 0.3) 50%, rgba(166, 198, 169, 0.15) 100%);
-                    border-radius: 4px;
-                    z-index: -1;
-                    transform: skewX(-3deg);
+                    font-size: clamp(1.7rem, 3vw, 2.2rem);
+                    font-weight: 600;
+                    letter-spacing: -0.01em;
+                    color: var(--text-heading);
                 }
                 .content-block p {
                     font-size: 1.2rem;
                     line-height: 1.8;
-                    color: #444;
+                    color: var(--text-body);
                     margin-bottom: 1rem;
                 }
-                .content-block p:last-child {
-                    margin-bottom: 0;
-                }
-
                 /* Steps */
-                .steps-grid {
+                .steps-section :global(.steps-grid) {
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
                     gap: 3rem;
-                    margin-top: 2rem;
-                }
-                .step {
-                    position: relative;
+                    margin-top: 0.5rem;
                 }
                 .step-number {
                     display: inline-flex;
                     align-items: center;
                     justify-content: center;
-                    width: 40px;
-                    height: 40px;
+                    width: 52px;
+                    height: 52px;
                     border-radius: 50%;
-                    background: #f5f5f5;
-                    font-size: 1rem;
+                    border: 1px solid var(--hairline);
+                    background: transparent;
+                    font-family: var(--font-display-family);
+                    font-size: 1.5rem;
                     font-weight: 500;
                     margin-bottom: 1.5rem;
-                    color: #111;
+                    color: var(--petrol);
                 }
-                .step h3 {
+                .steps-section :global(.step h3) {
                     font-size: 1.25rem;
-                    font-weight: 500;
+                    font-weight: 600;
                     margin-bottom: 0.75rem;
-                    color: #111;
+                    color: var(--text-heading);
                 }
-                .step p {
+                .steps-section :global(.step p) {
                     font-size: 1.05rem;
                     line-height: 1.7;
-                    color: #666;
+                    color: var(--text-body);
                 }
 
                 /* Two Ways */
-                .two-ways-grid {
+                .two-ways-section :global(.two-ways-grid) {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
                     gap: 2rem;
-                    margin-top: 2rem;
+                    margin-top: 0.5rem;
                 }
-                .way-card {
+                .two-ways-section :global(.way-card) {
                     padding: 2.5rem;
-                    background: #fafafa;
-                    border-radius: 16px;
+                    background: var(--surface-mist);
+                    border-radius: var(--radius-lg);
+                    border: 1px solid var(--hairline);
+                    transition: transform var(--dur-fast) var(--ease),
+                        box-shadow var(--dur-fast) var(--ease);
                 }
-                .way-card h3 {
+                .two-ways-section :global(.way-card:hover) {
+                    transform: translateY(-4px);
+                    box-shadow: var(--shadow-lift);
+                }
+                .two-ways-section :global(.way-card h3) {
                     font-size: 1.5rem;
-                    font-weight: 500;
+                    font-weight: 600;
                     margin-bottom: 0.75rem;
-                    color: #111;
+                    color: var(--text-heading);
                 }
-                .way-card p {
+                .two-ways-section :global(.way-card p) {
                     font-size: 1.1rem;
                     line-height: 1.7;
-                    color: #555;
+                    color: var(--text-body);
                 }
 
                 /* Quality */
-                .quality-section {
-                    padding-bottom: 6rem;
-                }
                 .learn-more {
                     margin-top: 1.5rem;
-                    color: #888;
+                    color: var(--text-muted);
                     font-size: 1rem !important;
                 }
                 .policy-links {
                     display: flex;
                     flex-direction: column;
-                    gap: 1rem;
                     margin-top: 1rem;
                 }
-                .policy-link {
-                    display: inline-flex;
+                .policy-links :global(.policy-link) {
+                    display: flex;
                     align-items: center;
+                    justify-content: space-between;
                     gap: 0.75rem;
+                    padding: 1.15rem 0;
                     font-size: 1.1rem;
-                    color: #111;
+                    font-weight: 500;
+                    color: var(--text-heading);
                     text-decoration: none;
-                    transition: all 0.3s ease;
+                    border-top: 1px solid var(--hairline);
+                    transition: color var(--dur-fast) var(--ease);
                 }
-                .policy-link:hover {
-                    gap: 1rem;
+                .policy-links :global(.policy-link:last-child) {
+                    border-bottom: 1px solid var(--hairline);
                 }
-                .arrow {
-                    transition: transform 0.3s ease;
+                .policy-links :global(.policy-link .policy-arrow) {
+                    color: var(--turquoise-deep);
+                    transition: transform var(--dur-fast) var(--ease);
                 }
-                .policy-link:hover .arrow {
-                    transform: translateX(4px);
+                .policy-links :global(.policy-link:hover) {
+                    color: var(--turquoise-deep);
+                }
+                .policy-links :global(.policy-link:hover .policy-arrow) {
+                    transform: translateX(3px);
                 }
 
                 @media (max-width: 768px) {
                     .approach-hero {
-                        padding: 7rem 0 3rem;
+                        padding: 9rem 0 4rem;
                     }
-                    h1 {
-                        font-size: 2.75rem;
+                    .hero-lead {
+                        font-size: 1.05rem;
                     }
-                    .subtitle {
-                        font-size: 1.2rem;
-                    }
-                    .lead {
-                        font-size: 1.15rem;
-                    }
-                    .section {
-                        padding: 3rem 0;
-                    }
-                    h2 {
-                        font-size: 1.75rem;
-                    }
-                    .steps-grid {
+                    .steps-section :global(.steps-grid) {
                         grid-template-columns: 1fr;
-                        gap: 2rem;
+                        gap: 2.5rem;
                     }
-                    .two-ways-grid {
+                    .two-ways-section :global(.two-ways-grid) {
                         grid-template-columns: 1fr;
                     }
-                    .way-card {
-                        padding: 1.5rem;
+                    .two-ways-section :global(.way-card) {
+                        padding: 1.75rem;
+                    }
+                    .content-block p {
+                        font-size: 1.1rem;
                     }
                 }
             `}</style>

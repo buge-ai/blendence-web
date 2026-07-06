@@ -1,13 +1,12 @@
 .stagesSection {
-    padding: 6rem 0;
-    background: #ffffff;
-    min-height: 100vh;
+    padding: var(--section-pad) 0;
+    background: var(--surface);
     display: flex;
     align-items: center;
 }
 
 .container {
-    max-width: 1400px;
+    max-width: var(--container-wide);
     margin: 0 auto;
     padding: 0 2rem;
     width: 100%;
@@ -22,29 +21,25 @@
     margin-bottom: 1.5rem;
 }
 
-.heading {
-    font-size: 3.5rem;
-    line-height: 1.1;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    margin-bottom: 1.5rem;
-    color: #111111;
-}
-
 .subheading {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    color: #666666;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text-body);
     max-width: 600px;
 }
 
 /* Bento Grid Layout */
+.bentoViewport {
+    position: relative;
+    min-height: 600px;
+}
+
 .bentoGrid {
     display: grid;
     grid-template-columns: 1fr 380px;
     gap: 1.5rem;
+    width: 100%;
     min-height: 600px;
-    perspective: 1200px;
 }
 
 .leftColumn {
@@ -60,10 +55,28 @@
     flex: 1;
 }
 
-/* Title Box - Top Left */
+/* ---- Shared card behaviour ---- */
+.titleBox,
+.productBox,
+.ingredientsBox,
+.lifestyleBox {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--dur-fast) var(--ease),
+        box-shadow var(--dur-fast) var(--ease);
+}
+
+.titleBox:hover,
+.productBox:hover,
+.ingredientsBox:hover,
+.lifestyleBox:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift);
+}
+
+/* Title Box — soft product tint */
 .titleBox {
-    background: var(--accent-color, #8BC34A);
-    border-radius: 24px;
+    background: var(--tint, var(--stages-tint));
     padding: 2rem 2.5rem;
     position: relative;
     overflow: hidden;
@@ -71,15 +84,13 @@
     align-items: flex-start;
     justify-content: flex-start;
     min-height: 220px;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
 }
 
 .patternBg {
     position: absolute;
     inset: 0;
-    opacity: 0.4;
-    color: #1a1a1a;
+    opacity: 0.5;
+    color: var(--accent, var(--stages-accent));
 }
 
 .patternSvg {
@@ -107,48 +118,47 @@
 }
 
 .productTitle {
-    font-size: 4rem;
-    font-weight: 700;
-    color: #1a3a3a;
-    letter-spacing: -0.03em;
+    font-family: var(--font-display-family);
+    font-size: clamp(2.6rem, 4vw, 3.75rem);
+    font-weight: 500;
+    color: var(--accent, var(--stages-accent));
+    letter-spacing: -0.02em;
     line-height: 1;
     margin: 0;
 }
 
 .trademark {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 400;
-    color: #1a3a3a;
-    opacity: 0.8;
+    color: var(--accent, var(--stages-accent));
+    opacity: 0.75;
     margin-top: 0.25rem;
 }
 
 .productDesc {
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: #1a3a3a;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-heading);
     margin: 1rem 0 0.5rem 0;
     line-height: 1.3;
 }
 
 .productFullDesc {
     font-size: 0.95rem;
-    color: rgba(26, 58, 58, 0.75);
+    color: var(--text-body);
     margin: 0;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-/* Product Box - Bottom Left */
+/* Product Box — white card */
 .productBox {
-    background: var(--accent-color, #1a3a3a);
-    border-radius: 24px;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
     padding: 1.5rem;
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
 }
 
 .productImageWrapper {
@@ -165,20 +175,18 @@
 
 .taglineLabel {
     font-size: 0.9rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    color: var(--accent, var(--stages-accent));
     line-height: 1.4;
 }
 
-/* Ingredients Box - Bottom Center/Right */
+/* Why This Blend Box — white card */
 .ingredientsBox {
-    background: #f5f0e8;
-    border-radius: 24px;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
 }
 
 .ingredientsHeader {
@@ -190,37 +198,7 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: #666;
-}
-
-.ingredientsList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    flex: 1;
-}
-
-.ingredientItem {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.5rem 0;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #1a3a3a;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-.ingredientItem:last-child {
-    border-bottom: none;
-}
-
-.ingredientDot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent-color, #0d4f4f);
-    flex-shrink: 0;
+    color: var(--accent, var(--stages-accent));
 }
 
 /* Why This Blend Content */
@@ -235,11 +213,11 @@
 
 .whyBlendParagraph {
     font-size: 0.9rem;
-    color: #2a2a2a;
-    line-height: 1.6;
+    color: var(--text-body);
+    line-height: 1.65;
     margin: 0;
     padding-bottom: 0.75rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid var(--hairline);
 }
 
 .whyBlendParagraph:last-child {
@@ -252,26 +230,26 @@
     padding-top: 1rem;
     font-size: 0.875rem;
     font-weight: 600;
-    color: var(--accent-color, #0d4f4f);
+    color: var(--accent, var(--stages-accent));
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 0.25rem;
-    transition: gap 0.3s ease;
+    gap: 0.4rem;
 }
 
-.learnMore:hover {
-    gap: 0.5rem;
+.learnMore svg {
+    transition: transform var(--dur-fast) var(--ease);
 }
 
-/* Lifestyle Box - Right (9:16 aspect ratio) */
+.learnMore:hover svg {
+    transform: translateX(3px);
+}
+
+/* Lifestyle Box — right column image */
 .lifestyleBox {
-    border-radius: 24px;
     overflow: hidden;
     position: relative;
-    background: #1a3a3a;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
+    background: var(--surface-mist);
 }
 
 .lifestyleImageWrapper {
@@ -281,31 +259,43 @@
     min-height: 600px;
 }
 
+.lifestyleImageWrapper :global(img) {
+    transition: transform 1.2s var(--ease);
+}
+
+.lifestyleBox:hover .lifestyleImageWrapper :global(img) {
+    transform: scale(1.03);
+}
+
 /* Carousel Controls */
 .carouselControls {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
 }
 
 .playBtn {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    border: 2px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--hairline);
     background: transparent;
-    color: #333;
+    color: var(--petrol);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    flex-shrink: 0;
+    transition: transform var(--dur-fast) var(--ease),
+        background var(--dur-fast) var(--ease),
+        border-color var(--dur-fast) var(--ease);
 }
 
 .playBtn:hover {
-    background: rgba(0, 0, 0, 0.05);
-    border-color: rgba(0, 0, 0, 0.4);
+    background: var(--surface-mist);
+    border-color: var(--petrol);
+    transform: translateY(-2px);
 }
 
 .progressBar {
@@ -317,19 +307,19 @@
 
 .progressSegment {
     flex: 1;
-    height: 4px;
-    background: rgba(0, 0, 0, 0.1);
+    height: 2px;
+    background: var(--hairline);
     border: none;
     padding: 0;
     cursor: pointer;
     border-radius: 2px;
     overflow: hidden;
     position: relative;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s var(--ease);
 }
 
 .progressSegment:hover {
-    transform: scaleY(1.5);
+    transform: scaleY(2);
 }
 
 .progressFill {
@@ -338,7 +328,7 @@
     top: 0;
     height: 100%;
     width: 0;
-    background: #f06292;
+    background: var(--petrol);
     border-radius: 2px;
 }
 
@@ -356,61 +346,11 @@
     }
 }
 
-/* Animation Classes */
-.animateIn {
-    animation: flipIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.animateOut {
-    animation: flipOut 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.animateOutReverse {
-    animation: flipOutReverse 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-@keyframes flipIn {
-    0% {
-        opacity: 0;
-        transform: rotateY(-90deg) scale(0.95);
+@media (prefers-reduced-motion: reduce) {
+    .progressSegment.active .progressFill {
+        animation: none;
+        width: 100%;
     }
-
-    100% {
-        opacity: 1;
-        transform: rotateY(0deg) scale(1);
-    }
-}
-
-@keyframes flipOut {
-    0% {
-        opacity: 1;
-        transform: rotateY(0deg) scale(1);
-    }
-
-    100% {
-        opacity: 0;
-        transform: rotateY(90deg) scale(0.95);
-    }
-}
-
-@keyframes flipOutReverse {
-    0% {
-        opacity: 1;
-        transform: rotateY(0deg) scale(1);
-    }
-
-    100% {
-        opacity: 0;
-        transform: rotateY(-90deg) scale(0.95);
-    }
-}
-
-/* Box rotation animation on transition */
-.titleBox,
-.productBox,
-.ingredientsBox,
-.lifestyleBox {
-    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Responsive Design */
@@ -418,16 +358,16 @@
     .bentoGrid {
         grid-template-columns: 1fr 320px;
     }
-
-    .productTitle {
-        font-size: 4rem;
-    }
 }
 
 @media (max-width: 1024px) {
     .bentoGrid {
         grid-template-columns: 1fr;
         gap: 1rem;
+    }
+
+    .bentoViewport {
+        min-height: 0;
     }
 
     .lifestyleBox {
@@ -442,23 +382,11 @@
     .bottomRow {
         grid-template-columns: 1fr 1fr;
     }
-
-    .productTitle {
-        font-size: 3.5rem;
-    }
-
-    .heading {
-        font-size: 2.5rem;
-    }
 }
 
 @media (max-width: 768px) {
     .lifestyleBox {
         display: none;
-    }
-
-    .stagesSection {
-        padding: 4rem 0;
     }
 
     .container {
@@ -478,10 +406,6 @@
         padding: 1.5rem;
     }
 
-    .productTitle {
-        font-size: 2.5rem;
-    }
-
     .productBox,
     .ingredientsBox {
         padding: 1.25rem;
@@ -489,10 +413,6 @@
 
     .productImageWrapper {
         min-height: 180px;
-    }
-
-    .heading {
-        font-size: 2rem;
     }
 
     .subheading {

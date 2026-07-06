@@ -16,7 +16,8 @@ export default function ResetIntensePage() {
             description={p.description}
             tag={p.tag}
             heroImage={blob('products/intense_front.png')}
-            themeColor="#6b4e71"
+            themeColor="#6E5678" /* canonical: var(--intense) */
+            themeTint="#F1EDF3"  /* canonical: var(--intense-tint) */
             features={[
                 {
                     title: p.features.what.title,

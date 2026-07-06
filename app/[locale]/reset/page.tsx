@@ -3,8 +3,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
+import WaveDivider from '@/app/components/WaveDivider';
+import CategoryHeroMedia from '@/app/components/CategoryHeroMedia';
+import { Reveal, WordReveal, ImageReveal, Parallax, EASE } from '@/lib/motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import { blob } from '@/lib/blob';
 
@@ -29,35 +33,50 @@ const products: Product[] = [
 
 export default function ResetCategoryPage() {
     const { t, language } = useLanguage();
+    const reduce = useReducedMotion();
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [direction, setDirection] = useState(1);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+    const [isHovered, setIsHovered] = useState(false);
     const carouselRef = useRef<HTMLDivElement>(null);
 
-    // Auto-play carousel
+    // Auto-play carousel — paused on hover
     useEffect(() => {
-        if (!isAutoPlaying) return;
+        if (!isAutoPlaying || isHovered) return;
         const interval = setInterval(() => {
+            setDirection(1);
             setCurrentIndex((prev) => (prev + 1) % products.length);
-        }, 4000);
+        }, 5000);
         return () => clearInterval(interval);
-    }, [isAutoPlaying]);
+    }, [isAutoPlaying, isHovered]);
 
-    const goToSlide = (index: number) => {
-        setCurrentIndex(index);
+    const pauseAutoplay = () => {
         setIsAutoPlaying(false);
         setTimeout(() => setIsAutoPlaying(true), 10000);
+    };
+
+    const goToSlide = (index: number) => {
+        setDirection(index > currentIndex ? 1 : -1);
+        setCurrentIndex(index);
+        pauseAutoplay();
     };
 
     const goToPrev = () => {
+        setDirection(-1);
         setCurrentIndex((prev) => (prev - 1 + products.length) % products.length);
-        setIsAutoPlaying(false);
-        setTimeout(() => setIsAutoPlaying(true), 10000);
+        pauseAutoplay();
     };
 
     const goToNext = () => {
+        setDirection(1);
         setCurrentIndex((prev) => (prev + 1) % products.length);
-        setIsAutoPlaying(false);
-        setTimeout(() => setIsAutoPlaying(true), 10000);
+        pauseAutoplay();
+    };
+
+    const slideVariants = {
+        enter: (dir: number) => ({ opacity: 0, x: reduce ? 0 : dir > 0 ? 24 : -24 }),
+        center: { opacity: 1, x: 0 },
+        exit: (dir: number) => ({ opacity: 0, x: reduce ? 0 : dir > 0 ? -24 : 24 }),
     };
 
     const currentProduct = products[currentIndex];
@@ -70,32 +89,55 @@ export default function ResetCategoryPage() {
             <Navigation />
 
             <main>
-                {/* Hero Section with Logo */}
+                {/* Hero Section with Logo — living watercolor botanicals */}
                 <section className="category-hero">
+                    <CategoryHeroMedia
+                        video="/videos/reset-hero.mp4"
+                        poster="/images/main/reset-hero-poster.jpg"
+                    />
                     <div className="container">
-                        <div className="logo-wrapper">
-                            <Image
-                                src={blob('logos/reset_stage_logo_reset_org_color.png')}
-                                alt="Reset Logo"
-                                width={280}
-                                height={100}
-                                className="category-logo"
-                                priority
-                            />
-                        </div>
-                        <p className="tagline">{t.products.reset.tagline}</p>
-                        <p className="description">{t.products.reset.description}</p>
+                        <Reveal>
+                            <span className="eyebrow" style={{ '--eyebrow-accent': 'var(--reset-accent)' } as React.CSSProperties}>
+                                {t.nav.products}
+                            </span>
+                        </Reveal>
+                        <Reveal delay={0.08}>
+                            <div className="logo-wrapper">
+                                <Image
+                                    src={blob('logos/reset_stage_logo_reset_org_color.png')}
+                                    alt="Reset Logo"
+                                    width={280}
+                                    height={100}
+                                    className="category-logo"
+                                    priority
+                                />
+                            </div>
+                        </Reveal>
+                        <WordReveal
+                            as="h1"
+                            className="font-display hero-title"
+                            text={t.products.reset.tagline}
+                            delay={0.12}
+                        />
+                        <Reveal delay={0.2}>
+                            <p className="description">{t.products.reset.description}</p>
+                        </Reveal>
                     </div>
                 </section>
 
                 {/* Product Carousel Section */}
                 <section className="carousel-section">
                     <div className="container">
-                        <h2 className="section-title">
-                            {t.categoryPages.ourProducts}
-                        </h2>
+                        <Reveal>
+                            <h2 className="section-title">{t.categoryPages.ourProducts}</h2>
+                        </Reveal>
 
-                        <div className="carousel-wrapper" ref={carouselRef}>
+                        <div
+                            className="carousel-wrapper"
+                            ref={carouselRef}
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}
+                        >
                             <button
                                 className="carousel-nav prev"
                                 onClick={goToPrev}
@@ -107,36 +149,54 @@ export default function ResetCategoryPage() {
                             </button>
 
                             <div className="carousel-content">
-                                <div className="product-display">
-                                    <Link href={`/${language}${currentProduct.link}`} className="product-image-link">
-                                        <div className="product-image-container">
-                                            <Image
-                                                src={currentProduct.image}
-                                                alt={productData.title}
-                                                width={400}
-                                                height={520}
-                                                className="product-image"
-                                                priority
-                                            />
-                                        </div>
-                                    </Link>
-
-                                    <div className="product-info">
-                                        <span className="product-tag">{productData.tag}</span>
-                                        <h3 className="product-title">{productData.title}</h3>
-                                        <p className="product-subtitle">{productData.subtitle}</p>
-                                        <p className="product-description">{productData.description}</p>
-                                        <Link
-                                            href={`/${language}${currentProduct.link}`}
-                                            className="product-cta"
-                                        >
-                                            {t.categoryPages.viewDetails}
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                <path d="M5 12h14M12 5l7 7-7 7" />
-                                            </svg>
+                                <AnimatePresence mode="wait" custom={direction}>
+                                    <motion.div
+                                        key={currentIndex}
+                                        className="product-display"
+                                        custom={direction}
+                                        variants={slideVariants}
+                                        initial="enter"
+                                        animate="center"
+                                        exit="exit"
+                                        transition={{ duration: 0.55, ease: EASE }}
+                                    >
+                                        <Link href={`/${language}${currentProduct.link}`} className="product-image-link">
+                                            <motion.div
+                                                className="product-image-settle"
+                                                initial={reduce ? false : { scale: 1.06 }}
+                                                animate={{ scale: 1 }}
+                                                transition={{ duration: 0.9, ease: EASE }}
+                                            >
+                                                <div className="product-image-container">
+                                                    <Image
+                                                        src={currentProduct.image}
+                                                        alt={productData.title}
+                                                        width={400}
+                                                        height={520}
+                                                        className="product-image"
+                                                        priority
+                                                    />
+                                                </div>
+                                            </motion.div>
                                         </Link>
-                                    </div>
-                                </div>
+
+                                        <div className="product-info">
+                                            <span className="product-tag">{productData.tag}</span>
+                                            <h3 className="product-title">{productData.title}</h3>
+                                            <p className="product-subtitle">{productData.subtitle}</p>
+                                            <p className="product-description">{productData.description}</p>
+                                            <Link
+                                                href={`/${language}${currentProduct.link}`}
+                                                className="product-cta"
+                                            >
+                                                {t.categoryPages.viewDetails}
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                                </svg>
+                                            </Link>
+                                        </div>
+                                    </motion.div>
+                                </AnimatePresence>
                             </div>
 
                             <button
@@ -150,7 +210,7 @@ export default function ResetCategoryPage() {
                             </button>
                         </div>
 
-                        {/* Dots indicator */}
+                        {/* Pill indicators */}
                         <div className="carousel-dots">
                             {products.map((_, index) => (
                                 <button
@@ -158,25 +218,57 @@ export default function ResetCategoryPage() {
                                     className={`dot ${index === currentIndex ? 'active' : ''}`}
                                     onClick={() => goToSlide(index)}
                                     aria-label={`Go to product ${index + 1}`}
-                                />
+                                >
+                                    {index === currentIndex && (
+                                        <motion.span
+                                            className="dot-fill"
+                                            key={currentIndex}
+                                            initial={{ scaleX: reduce ? 1 : 0 }}
+                                            animate={{ scaleX: 1 }}
+                                            transition={{ duration: 0.55, ease: EASE }}
+                                        />
+                                    )}
+                                </button>
                             ))}
                         </div>
                     </div>
                 </section>
 
-                {/* Philosophy Section */}
+                <WaveDivider tone="reset" />
+
+                {/* Philosophy Section — editorial close */}
                 <section className="philosophy-section">
                     <div className="container">
-                        <div className="philosophy-content">
-                            <span className="philosophy-label">
-                                {t.categoryPages.philosophy}
-                            </span>
-                            <h2>
-                                {t.categoryPages.resetPhilosophyTitle}
-                            </h2>
-                            <p>
-                                {t.categoryPages.resetPhilosophyDesc}
-                            </p>
+                        <div className="philosophy-grid">
+                            <div className="philosophy-content">
+                                <Reveal>
+                                    <span className="eyebrow philosophy-eyebrow" style={{ '--eyebrow-accent': 'var(--reset-accent)' } as React.CSSProperties}>
+                                        {t.categoryPages.philosophy}
+                                    </span>
+                                </Reveal>
+                                <WordReveal
+                                    as="h2"
+                                    className="font-display philosophy-title"
+                                    text={t.categoryPages.resetPhilosophyTitle}
+                                    delay={0.08}
+                                />
+                                <Reveal delay={0.16}>
+                                    <p className="philosophy-desc">{t.categoryPages.resetPhilosophyDesc}</p>
+                                </Reveal>
+                                <Reveal delay={0.24}>
+                                    <Link href={`/${language}/approach`} className="btn-primary philosophy-cta">
+                                        {t.common.learnMore}
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <path d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </Link>
+                                </Reveal>
+                            </div>
+                            <Parallax distance={20} className="philosophy-media">
+                                <ImageReveal className="philosophy-frame">
+                                    <div className="philosophy-img philosophy-img-reset" />
+                                </ImageReveal>
+                            </Parallax>
                         </div>
                     </div>
                 </section>
@@ -186,28 +278,40 @@ export default function ResetCategoryPage() {
 
             <style jsx>{`
                 .reset-page {
-                    background: #ffffff;
-                    color: #1a1a1a;
+                    background: var(--surface);
+                    color: var(--text-body);
                     min-height: 100vh;
                 }
 
                 .container {
-                    max-width: 1200px;
+                    max-width: var(--container);
                     margin: 0 auto;
                     padding: 0 2rem;
                 }
 
-                /* Hero Section */
+                /* Hero Section — media layer behind, content above */
                 .category-hero {
-                    padding: 10rem 0 5rem;
+                    position: relative;
+                    isolation: isolate;
+                    overflow: hidden;
+                    padding: 11rem 0 6.5rem;
                     text-align: center;
-                    background: linear-gradient(180deg, #f8fdf8 0%, #ffffff 100%);
+                    background: linear-gradient(180deg, var(--reset-tint) 0%, var(--surface) 100%);
+                }
+
+                .category-hero .container {
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .category-hero .eyebrow {
+                    margin-bottom: 1.5rem;
                 }
 
                 .logo-wrapper {
                     display: flex;
                     justify-content: center;
-                    margin-bottom: 2rem;
+                    margin-bottom: 1.75rem;
                 }
 
                 .category-hero :global(.category-logo) {
@@ -215,33 +319,30 @@ export default function ResetCategoryPage() {
                     max-width: 280px;
                 }
 
-                .tagline {
-                    font-size: 1.25rem;
-                    color: #4a9c6d;
-                    font-weight: 500;
+                .category-hero :global(.hero-title) {
+                    font-size: clamp(2.6rem, 5vw, 4.2rem);
                     margin-bottom: 1.5rem;
-                    letter-spacing: 0.02em;
                 }
 
                 .description {
                     font-size: 1.1rem;
                     line-height: 1.7;
-                    color: #666;
+                    color: var(--text-body);
                     max-width: 700px;
                     margin: 0 auto;
                 }
 
                 /* Carousel Section */
                 .carousel-section {
-                    padding: 5rem 0;
-                    background: #ffffff;
+                    padding: var(--section-pad) 0;
+                    background: var(--surface);
                 }
 
                 .section-title {
                     text-align: center;
                     font-size: 2rem;
                     font-weight: 600;
-                    color: #1A4D5C;
+                    color: var(--text-heading);
                     margin-bottom: 3rem;
                     letter-spacing: -0.02em;
                 }
@@ -256,22 +357,25 @@ export default function ResetCategoryPage() {
                 .carousel-nav {
                     width: 48px;
                     height: 48px;
-                    border-radius: 50%;
-                    border: 1px solid #e0e0e0;
-                    background: #ffffff;
+                    border-radius: var(--radius-pill);
+                    border: 1px solid var(--hairline);
+                    background: var(--surface);
                     cursor: pointer;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    transition: all 0.2s ease;
-                    color: #666;
+                    transition: transform var(--dur-fast) var(--ease),
+                        background var(--dur-fast) var(--ease),
+                        border-color var(--dur-fast) var(--ease),
+                        color var(--dur-fast) var(--ease);
+                    color: var(--text-muted);
                     flex-shrink: 0;
                 }
 
                 .carousel-nav:hover {
-                    background: #f8fdf8;
-                    border-color: #4a9c6d;
-                    color: #4a9c6d;
+                    background: var(--reset-tint);
+                    border-color: var(--reset-accent);
+                    color: var(--reset-accent-deep);
                 }
 
                 .carousel-content {
@@ -279,33 +383,35 @@ export default function ResetCategoryPage() {
                     overflow: hidden;
                 }
 
-                .product-display {
+                .carousel-content :global(.product-display) {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
                     gap: 4rem;
                     align-items: center;
                 }
 
-                .product-image-link {
+                .carousel-content :global(.product-image-link) {
                     text-decoration: none;
                 }
 
                 .product-image-container {
-                    background: linear-gradient(135deg, #f8fdf8 0%, #e8f5e8 100%);
-                    border-radius: 24px;
+                    background: linear-gradient(160deg, var(--reset-tint) 0%, var(--surface) 100%);
+                    border: 1px solid var(--hairline);
+                    border-radius: var(--radius-lg);
                     padding: 2rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    transition: transform var(--dur-fast) var(--ease),
+                        box-shadow var(--dur-fast) var(--ease);
                 }
 
                 .product-image-container:hover {
                     transform: translateY(-4px);
-                    box-shadow: 0 20px 40px rgba(74, 156, 109, 0.1);
+                    box-shadow: var(--shadow-lift);
                 }
 
-                .product-display :global(.product-image) {
+                .carousel-content :global(.product-image) {
                     max-width: 100%;
                     height: auto;
                     object-fit: contain;
@@ -318,9 +424,9 @@ export default function ResetCategoryPage() {
                 .product-tag {
                     display: inline-block;
                     padding: 0.5rem 1rem;
-                    background: #f0f9f3;
-                    color: #4a9c6d;
-                    border-radius: 100px;
+                    background: var(--reset-tint);
+                    color: var(--reset-accent-deep);
+                    border-radius: var(--radius-pill);
                     font-size: 0.85rem;
                     font-weight: 500;
                     margin-bottom: 1.5rem;
@@ -329,14 +435,14 @@ export default function ResetCategoryPage() {
                 .product-title {
                     font-size: 2.5rem;
                     font-weight: 600;
-                    color: #1A4D5C;
+                    color: var(--text-heading);
                     margin-bottom: 1rem;
                     letter-spacing: -0.02em;
                 }
 
                 .product-subtitle {
                     font-size: 1.1rem;
-                    color: #4a9c6d;
+                    color: var(--reset-accent-deep);
                     margin-bottom: 1rem;
                     font-weight: 500;
                 }
@@ -344,94 +450,136 @@ export default function ResetCategoryPage() {
                 .product-description {
                     font-size: 1rem;
                     line-height: 1.6;
-                    color: #666;
+                    color: var(--text-body);
                     margin-bottom: 2rem;
                 }
 
-                .product-cta {
+                .product-info :global(.product-cta) {
                     display: inline-flex;
                     align-items: center;
                     gap: 0.5rem;
-                    padding: 0.875rem 1.5rem;
-                    background: linear-gradient(135deg, #4a9c6d 0%, #3d8a5e 100%);
-                    color: white;
+                    padding: 0.85rem 1.75rem;
+                    background: var(--reset-accent);
+                    color: #fff;
                     text-decoration: none;
-                    border-radius: 100px;
-                    font-weight: 500;
-                    font-size: 0.95rem;
-                    transition: all 0.2s ease;
+                    border-radius: var(--radius-pill);
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    letter-spacing: 0.02em;
+                    box-shadow: var(--shadow-soft);
+                    transition: transform var(--dur-fast) var(--ease),
+                        box-shadow var(--dur-fast) var(--ease),
+                        background var(--dur-fast) var(--ease);
                 }
 
-                .product-cta:hover {
+                .product-info :global(.product-cta:hover) {
+                    background: var(--reset-accent-deep);
                     transform: translateY(-2px);
-                    box-shadow: 0 8px 20px rgba(74, 156, 109, 0.3);
+                    box-shadow: var(--shadow-lift);
+                }
+
+                .product-info :global(.product-cta svg) {
+                    transition: transform var(--dur-fast) var(--ease);
+                }
+
+                .product-info :global(.product-cta:hover svg) {
+                    transform: translateX(3px);
                 }
 
                 .carousel-dots {
                     display: flex;
                     justify-content: center;
-                    gap: 0.75rem;
+                    gap: 0.6rem;
                     margin-top: 3rem;
                 }
 
                 .dot {
-                    width: 10px;
-                    height: 10px;
-                    border-radius: 50%;
+                    width: 30px;
+                    height: 4px;
+                    border-radius: var(--radius-pill);
                     border: none;
-                    background: #e0e0e0;
+                    padding: 0;
+                    background: var(--hairline);
                     cursor: pointer;
-                    transition: all 0.2s ease;
-                }
-
-                .dot.active {
-                    background: #4a9c6d;
-                    transform: scale(1.2);
+                    overflow: hidden;
+                    transition: background var(--dur-fast) var(--ease);
                 }
 
                 .dot:hover:not(.active) {
-                    background: #c0c0c0;
+                    background: rgba(16, 51, 61, 0.2);
                 }
 
-                /* Philosophy Section */
+                .dot :global(.dot-fill) {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background: var(--reset-accent);
+                    border-radius: var(--radius-pill);
+                    transform-origin: left center;
+                }
+
+                /* Philosophy Section — split editorial layout, image right.
+                   Parallax/ImageReveal are imported components, so their
+                   classes are styled as :global() descendants of the
+                   scoped .philosophy-grid parent. */
                 .philosophy-section {
-                    padding: 6rem 0;
-                    background: #f8fdf8;
+                    padding: var(--section-pad) 0;
+                    background: var(--surface);
+                }
+
+                .philosophy-grid {
+                    display: grid;
+                    grid-template-columns: 6fr 5fr;
+                    gap: clamp(2.5rem, 6vw, 5rem);
+                    align-items: center;
+                    max-width: 1080px;
+                    margin: 0 auto;
+                }
+
+                .philosophy-grid :global(.philosophy-media) {
+                    position: relative;
+                }
+
+                .philosophy-grid :global(.philosophy-frame) {
+                    aspect-ratio: 4 / 5;
+                    border-radius: var(--radius-lg);
+                    box-shadow: var(--shadow-soft);
+                    background: var(--reset-tint);
+                }
+
+                .philosophy-img {
+                    width: 100%;
+                    height: 100%;
+                    background-size: cover;
+                    background-position: center;
+                }
+
+                .philosophy-img-reset {
+                    background-image: url('/images/main/reset-philosophy.jpg');
                 }
 
                 .philosophy-content {
-                    max-width: 700px;
-                    margin: 0 auto;
-                    text-align: center;
+                    text-align: left;
                 }
 
-                .philosophy-label {
-                    display: inline-block;
-                    font-size: 0.8rem;
-                    text-transform: uppercase;
-                    letter-spacing: 0.15em;
-                    color: #4a9c6d;
-                    font-weight: 600;
+                .philosophy-eyebrow {
                     margin-bottom: 1.5rem;
                 }
 
-                .philosophy-content h2 {
-                    font-size: 2.25rem;
-                    font-weight: 600;
-                    color: #1A4D5C;
+                .philosophy-content :global(.philosophy-title) {
+                    font-size: clamp(2rem, 4vw, 2.75rem);
                     margin-bottom: 1.5rem;
-                    letter-spacing: -0.02em;
-                    line-height: 1.3;
                 }
 
-                .philosophy-content p {
+                .philosophy-desc {
                     font-size: 1.1rem;
                     line-height: 1.7;
-                    color: #666;
+                    color: var(--text-body);
+                    margin-bottom: 2.25rem;
                 }
 
                 @media (max-width: 900px) {
-                    .product-display {
+                    .carousel-content :global(.product-display) {
                         grid-template-columns: 1fr;
                         gap: 2rem;
                         text-align: center;
@@ -444,6 +592,26 @@ export default function ResetCategoryPage() {
                     .carousel-nav {
                         display: none;
                     }
+
+                    .philosophy-grid {
+                        grid-template-columns: 1fr;
+                        gap: 2.5rem;
+                    }
+
+                    .philosophy-grid :global(.philosophy-media) {
+                        order: -1;
+                        max-width: 420px;
+                        margin: 0 auto;
+                        width: 100%;
+                    }
+
+                    .philosophy-content {
+                        text-align: center;
+                    }
+
+                    .philosophy-content :global(.philosophy-cta) {
+                        margin: 0 auto;
+                    }
                 }
 
                 @media (max-width: 768px) {
@@ -453,10 +621,6 @@ export default function ResetCategoryPage() {
 
                     .category-hero :global(.category-logo) {
                         max-width: 200px;
-                    }
-
-                    .tagline {
-                        font-size: 1.1rem;
                     }
 
                     .description {
@@ -469,10 +633,6 @@ export default function ResetCategoryPage() {
 
                     .product-title {
                         font-size: 2rem;
-                    }
-
-                    .philosophy-content h2 {
-                        font-size: 1.75rem;
                     }
                 }
             `}</style>

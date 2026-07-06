@@ -16,7 +16,8 @@ export default function TeenFocusPage() {
             description={p.description}
             tag={p.tag}
             heroImage={blob('products/teen-focus.png')}
-            themeColor="#87ceeb"
+            themeColor="#5B9BB5" /* canonical: var(--teenfocus) */
+            themeTint="#EBF3F7"  /* canonical: var(--teenfocus-tint) */
             features={[
                 {
                     title: p.features.why.title,

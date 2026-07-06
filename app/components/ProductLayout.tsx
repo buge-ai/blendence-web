@@ -3,8 +3,8 @@
 import React from 'react';
 import Navigation from './Navigation';
 import Footer from './Footer';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
+import { Reveal, Stagger, StaggerItem, WordReveal, Parallax, EASE, DUR } from '@/lib/motion';
 import { useLanguage } from '@/lib/LanguageContext';
 
 interface ProductLayoutProps {
@@ -13,7 +13,8 @@ interface ProductLayoutProps {
     description: string;
     tag: string;
     heroImage: string;
-    themeColor: string; // Hex for gradient/accent
+    themeColor: string; // Canonical product hex — string-interpolated (e.g. `${themeColor}18`), keep as hex literal
+    themeTint?: string;  // Canonical product tint hex — soft hero wash, keep as hex literal
     features: {
         title: string;
         content: string | React.ReactNode;
@@ -31,12 +32,19 @@ export default function ProductLayout({
     tag,
     heroImage,
     themeColor,
+    themeTint,
     features,
     specs
 }: ProductLayoutProps) {
     const { t } = useLanguage();
+    const reduce = useReducedMotion();
+    const washColor = themeTint ?? `${themeColor}18`;
+
     return (
-        <div className="product-page">
+        <div
+            className="product-page"
+            style={{ '--theme': themeColor, '--theme-wash': washColor } as React.CSSProperties}
+        >
             <Navigation />
 
             <main>
@@ -44,21 +52,42 @@ export default function ProductLayout({
                 <section className="product-hero">
                     <div className="container">
                         <div className="hero-content">
-                            <span className="hero-tag" style={{ color: themeColor }}>{tag}</span>
-                            <h1 className="hero-title">{title}</h1>
-                            <p className="hero-subtitle">{subtitle}</p>
-                            <p className="hero-desc">{description}</p>
+                            <Reveal>
+                                <span className="eyebrow" style={{ '--eyebrow-accent': 'var(--theme)' } as React.CSSProperties}>
+                                    {tag}
+                                </span>
+                            </Reveal>
+                            <WordReveal
+                                as="h1"
+                                className="font-display hero-title"
+                                text={title}
+                                delay={0.08}
+                            />
+                            <Reveal delay={0.16}>
+                                <p className="hero-subtitle">{subtitle}</p>
+                            </Reveal>
+                            <Reveal delay={0.24}>
+                                <p className="hero-desc">{description}</p>
+                            </Reveal>
                         </div>
                         <div className="hero-visual">
-                            <div className="visual-backdrop" style={{ background: `radial-gradient(circle, ${themeColor}20 0%, transparent 70%)` }}></div>
-                            <motion.div
-                                className="visual-img-container"
-                                initial={{ y: 50, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ duration: 0.8 }}
-                            >
-                                <img src={heroImage} alt={title} className="product-img" />
-                            </motion.div>
+                            <div className="visual-backdrop" />
+                            <Parallax distance={20} className="visual-parallax">
+                                <motion.div
+                                    className="visual-img-container"
+                                    initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 1.08 }}
+                                    animate={reduce ? { opacity: 1 } : { opacity: 1, scale: 1 }}
+                                    transition={{ duration: DUR.slow, ease: EASE }}
+                                >
+                                    <motion.img
+                                        src={heroImage}
+                                        alt={title}
+                                        className="product-img"
+                                        animate={reduce ? undefined : { y: [-8, 8, -8] }}
+                                        transition={reduce ? undefined : { duration: 6, ease: 'easeInOut', repeat: Infinity }}
+                                    />
+                                </motion.div>
+                            </Parallax>
                         </div>
                     </div>
                 </section>
@@ -66,14 +95,19 @@ export default function ProductLayout({
                 {/* FEATURES GRID */}
                 <section className="features-section">
                     <div className="container">
-                        <div className="features-grid">
-                            {features.map((feature, idx) => (
-                                <div key={idx} className={`feature-card ${idx % 3 === 0 ? 'full-width' : ''}`}>
-                                    <h3>{feature.title}</h3>
-                                    <div className="feature-body">{feature.content}</div>
-                                </div>
-                            ))}
-                        </div>
+                        <Stagger className="features-grid">
+                            {features.map((feature, idx) => {
+                                const isFull = idx % 3 === 0;
+                                return (
+                                    <StaggerItem key={idx} className={`feature-cell${isFull ? ' full-width' : ''}`}>
+                                        <div className={`feature-card${isFull ? ' full-width' : ''}`}>
+                                            <h3>{feature.title}</h3>
+                                            <div className="feature-body">{feature.content}</div>
+                                        </div>
+                                    </StaggerItem>
+                                );
+                            })}
+                        </Stagger>
                     </div>
                 </section>
 
@@ -81,22 +115,41 @@ export default function ProductLayout({
                 <section className="composition-section">
                     <div className="container">
                         <div className="composition-box">
-                            <h3>{t.productLayout.cleanFormulation}</h3>
-                            <div className="check-list">
-                                <div className="check-item">{t.productLayout.noArtificialColors}</div>
-                                <div className="check-item">{t.productLayout.noArtificialFlavors}</div>
-                                <div className="check-item">{t.productLayout.noUnnecessaryAdditives}</div>
-                            </div>
+                            <Reveal>
+                                <h3>{t.productLayout.cleanFormulation}</h3>
+                            </Reveal>
+                            <Stagger className="check-list" delay={0.08}>
+                                <StaggerItem className="check-item">
+                                    <svg className="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M20 6L9 17l-5-5" />
+                                    </svg>
+                                    <span>{t.productLayout.noArtificialColors}</span>
+                                </StaggerItem>
+                                <StaggerItem className="check-item">
+                                    <svg className="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M20 6L9 17l-5-5" />
+                                    </svg>
+                                    <span>{t.productLayout.noArtificialFlavors}</span>
+                                </StaggerItem>
+                                <StaggerItem className="check-item">
+                                    <svg className="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M20 6L9 17l-5-5" />
+                                    </svg>
+                                    <span>{t.productLayout.noUnnecessaryAdditives}</span>
+                                </StaggerItem>
+                            </Stagger>
                         </div>
                         {specs && (
-                            <div className="specs-box">
-                                {specs.map((s, i) => (
-                                    <div key={i} className="spec-row">
-                                        <span className="spec-label">{s.label}</span>
-                                        <span className="spec-val">{s.value}</span>
-                                    </div>
-                                ))}
-                            </div>
+                            <Reveal delay={0.1}>
+                                <div className="specs-box">
+                                    {specs.map((s, i) => (
+                                        <div key={i} className="spec-row">
+                                            <span className="spec-label">{s.label}</span>
+                                            <span className="spec-val">{s.value}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </Reveal>
                         )}
                     </div>
                 </section>
@@ -106,13 +159,13 @@ export default function ProductLayout({
 
             <style jsx>{`
         .product-page {
-            background: #ffffff;
-            color: #111;
-            font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+            background: var(--surface);
+            color: var(--text-body);
+            font-family: var(--font-body-family);
         }
 
         .container {
-            max-width: 1200px;
+            max-width: var(--container);
             margin: 0 auto;
             padding: 0 2rem;
         }
@@ -124,7 +177,7 @@ export default function ProductLayout({
             display: flex;
             align-items: center;
         }
-        
+
         .product-hero .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -133,26 +186,18 @@ export default function ProductLayout({
             width: 100%;
         }
 
-        .hero-tag {
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            display: block;
+        .hero-content .eyebrow {
+            margin-bottom: 1.25rem;
         }
 
-        .hero-title {
-            font-size: 4.5rem;
-            line-height: 1;
-            font-weight: 600;
-            letter-spacing: -0.02em;
+        .hero-content :global(.hero-title) {
+            font-size: clamp(2.8rem, 5.5vw, 4.5rem);
             margin-bottom: 1.5rem;
         }
 
         .hero-subtitle {
             font-size: 1.5rem;
-            color: #444;
+            color: var(--text-heading);
             margin-bottom: 1rem;
             font-weight: 500;
         }
@@ -160,7 +205,7 @@ export default function ProductLayout({
         .hero-desc {
             font-size: 1.125rem;
             line-height: 1.6;
-            color: #666;
+            color: var(--text-body);
             max-width: 90%;
         }
 
@@ -169,7 +214,9 @@ export default function ProductLayout({
             inset: -20%;
             z-index: 0;
             border-radius: 50%;
-            filter: blur(60px);
+            background: radial-gradient(circle, var(--theme-wash) 0%, transparent 70%);
+            filter: blur(50px);
+            opacity: 0.7;
         }
 
         .hero-visual {
@@ -179,105 +226,182 @@ export default function ProductLayout({
             align-items: center;
             min-height: 400px;
         }
-        
-        .product-img {
+
+        .hero-visual :global(.visual-parallax) {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-visual :global(.visual-img-container) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-visual :global(.product-img) {
             position: relative;
             z-index: 1;
             max-width: 100%;
             height: auto;
             max-height: 500px;
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
+            filter: drop-shadow(0 24px 48px rgba(16, 51, 61, 0.14));
         }
 
         /* FEATURES */
         .features-section {
-            padding: 6rem 0;
-            background: #fdfdfc;
+            padding: var(--section-pad) 0;
+            background: var(--surface);
         }
 
-        .features-grid {
+        .features-section :global(.features-grid) {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
         }
 
+        .features-section :global(.feature-cell) {
+            display: flex;
+        }
+
+        .features-section :global(.feature-cell.full-width) {
+            grid-column: span 2;
+        }
+
         .feature-card {
-            background: #ffffff;
+            background: var(--surface);
             padding: 3rem;
-            border-radius: 24px;
-            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--hairline);
+            box-shadow: var(--shadow-soft);
+            width: 100%;
+            transition: transform var(--dur-fast) var(--ease),
+                box-shadow var(--dur-fast) var(--ease);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lift);
         }
 
         .feature-card.full-width {
-            grid-column: span 2;
-            background: #f4f4f2;
-            border: none;
+            background: var(--surface-mist);
+            border-color: transparent;
         }
 
         .feature-card h3 {
             font-size: 1.75rem;
             margin-bottom: 1.5rem;
-            font-weight: 500;
+            font-weight: 600;
+            color: var(--text-heading);
         }
 
         .feature-body {
             font-size: 1.125rem;
             line-height: 1.6;
-            color: #555;
+            color: var(--text-body);
         }
-        
+
+        .feature-body :global(p) {
+            margin-bottom: 1rem;
+        }
+
+        .feature-body :global(p:last-child) {
+            margin-bottom: 0;
+        }
+
         /* Lists in features */
-        .feature-body ul {
+        .feature-body :global(ul) {
             list-style: none;
             padding: 0;
         }
-        .feature-body li {
+
+        .feature-body :global(li) {
             margin-bottom: 0.75rem;
             padding-left: 1.5rem;
             position: relative;
         }
-        .feature-body li::before {
-            content: '•';
+
+        .feature-body :global(li::before) {
+            content: '';
             position: absolute;
             left: 0;
-            color: #888;
+            top: 0.65em;
+            width: 12px;
+            height: 2px;
+            border-radius: 2px;
+            background: var(--theme);
         }
 
         /* COMPOSITION */
         .composition-section {
-            padding: 6rem 0;
+            padding: var(--section-pad) 0;
         }
-        
+
         .composition-box {
             text-align: center;
             margin-bottom: 4rem;
         }
-        
+
         .composition-box h3 {
             font-size: 2rem;
             margin-bottom: 2rem;
+            color: var(--text-heading);
+            font-weight: 600;
         }
-        
-        .check-list {
+
+        .composition-box :global(.check-list) {
             display: flex;
             justify-content: center;
             gap: 3rem;
             flex-wrap: wrap;
         }
-        
-        .check-item {
+
+        .composition-box :global(.check-item) {
             font-size: 1.125rem;
-            color: #444;
+            color: var(--text-body);
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
         }
-        .check-item::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: #111;
-            border-radius: 50%;
+
+        .check-icon {
+            color: var(--theme);
+            flex-shrink: 0;
+        }
+
+        /* SPECS */
+        .specs-box {
+            max-width: 640px;
+            margin: 0 auto;
+            border: 1px solid var(--hairline);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        .spec-row:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            color: var(--text-muted);
+        }
+
+        .spec-val {
+            color: var(--text-heading);
+            font-weight: 600;
         }
 
         @media (max-width: 1024px) {
@@ -285,14 +409,31 @@ export default function ProductLayout({
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-            .hero-title {
-                font-size: 3.5rem;
+            .hero-content .eyebrow {
+                justify-content: center;
             }
-            .features-grid {
+            .hero-desc {
+                max-width: 100%;
+            }
+            .features-section :global(.features-grid) {
                 grid-template-columns: 1fr;
             }
-            .feature-card.full-width {
+            .features-section :global(.feature-cell.full-width) {
                 grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-hero {
+                padding: 8rem 0 4rem;
+            }
+            .feature-card {
+                padding: 2.25rem;
+            }
+            .composition-box :global(.check-list) {
+                gap: 1.25rem;
+                flex-direction: column;
+                align-items: center;
             }
         }
       `}</style>

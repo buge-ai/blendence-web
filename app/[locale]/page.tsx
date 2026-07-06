@@ -8,8 +8,10 @@ import VideoHero from '@/app/components/VideoHero';
 import ResetSpotlight from '@/app/components/ResetSpotlight';
 import StagesCarousel from '@/app/components/StagesCarousel';
 import ProductGroups from '@/app/components/ProductGroups';
+import WaveDivider from '@/app/components/WaveDivider';
+import AdaptiveScenes from '@/app/components/AdaptiveScenes';
+import { Reveal, WordReveal, ImageReveal, Parallax, Stagger, StaggerItem } from '@/lib/motion';
 import { useLanguage } from '@/lib/LanguageContext';
-import { blob } from '@/lib/blob';
 
 export default function V2Home() {
   const { t, language } = useLanguage();
@@ -24,52 +26,112 @@ export default function V2Home() {
           <VideoHero />
         </section>
 
-        {/* SECTION 2 & 3: INTRO / MANIFESTO */}
-        {/* Ramp Style: Large typography, airy spacing, clean white background */}
         {/* SECTION 2: DESIGNED, NOT IMPROVISED */}
-        <section className="section-grid intro-grid">
-          <div className="grid-content-left centered">
-            <span className="section-label">{t.mainPage.philosophy.label}</span>
-            <h2 className="display-text" dangerouslySetInnerHTML={{ __html: t.mainPage.philosophy.title.replace(/\n/g, '<br/>') }} />
-            <div className="section-text">
-              <h3>{t.mainPage.philosophy.heading}</h3>
-              <p>{t.mainPage.philosophy.description}</p>
+        <section className="section-band">
+          <div className="section-grid intro-grid">
+            <div className="grid-content">
+              <Reveal className="eyebrow-row">
+                <span className="eyebrow">{t.mainPage.philosophy.label}</span>
+              </Reveal>
+              <WordReveal
+                as="h2"
+                className="display-text font-display"
+                text={t.mainPage.philosophy.title}
+              />
+              <Reveal delay={0.12} className="section-text">
+                <h3>{t.mainPage.philosophy.heading}</h3>
+                <p>{t.mainPage.philosophy.description}</p>
+              </Reveal>
             </div>
+            <Parallax distance={24} className="grid-visual">
+              <ImageReveal className="visual-frame">
+                <div className="visual-bg visual-designed" />
+              </ImageReveal>
+              {/* Spec chips — the "designed" claim backed by process facts */}
+              <div className="spec-layer" aria-hidden="true">
+                <Stagger delay={0.35} className="spec-stagger">
+                  {t.mainPage.philosophy.specs.map((spec, i) => (
+                    <StaggerItem key={spec} className={`spec-chip chip-${i + 1}`}>
+                      {spec}
+                    </StaggerItem>
+                  ))}
+                </Stagger>
+              </div>
+            </Parallax>
           </div>
-          <div className="grid-visual-right visual-designed"></div>
         </section>
 
         {/* SECTION 3: NUTRITION THAT ADAPTS */}
-        <section className="section-grid adaptation-grid reverse-mobile">
-          <div className="grid-visual-left visual-adapts"></div>
-          <div className="grid-content-right centered">
-            <span className="section-label">{t.mainPage.adaptability.label}</span>
-            <h2 className="display-text" dangerouslySetInnerHTML={{ __html: t.mainPage.adaptability.title.replace(/\n/g, '<br/>') }} />
-            <div className="section-text">
-              <h3>{t.mainPage.adaptability.heading}</h3>
-              <p>{t.mainPage.adaptability.description}</p>
+        <section className="section-band mist">
+          <div className="section-grid adaptation-grid reverse-mobile">
+            <Parallax distance={24} className="grid-visual">
+              <Reveal>
+                <AdaptiveScenes
+                  scenes={t.mainPage.adaptability.scenes.map((s, i) => ({
+                    ...s,
+                    src: `/images/adapt/${['scene-morning', 'scene-desk', 'scene-evening'][i]}.jpg`,
+                  }))}
+                />
+              </Reveal>
+            </Parallax>
+            <div className="grid-content">
+              <Reveal className="eyebrow-row">
+                <span className="eyebrow" style={{ '--eyebrow-accent': 'var(--green-deep)' } as React.CSSProperties}>
+                  {t.mainPage.adaptability.label}
+                </span>
+              </Reveal>
+              <WordReveal
+                as="h2"
+                className="display-text font-display"
+                text={t.mainPage.adaptability.title}
+              />
+              <Reveal delay={0.12} className="section-text">
+                <h3>{t.mainPage.adaptability.heading}</h3>
+                <p>{t.mainPage.adaptability.description}</p>
+              </Reveal>
             </div>
           </div>
         </section>
+
+        {/* WAVE DIVIDER — manifesto region → product ranges */}
+        <WaveDivider tone="brand" />
 
         {/* SECTION 4: PRODUCT GROUPS (Stages & Reset Selection) */}
         <ProductGroups />
 
-        {/* SECTION 5: NEW STAGES CAROUSEL */}
+        {/* SECTION 5: STAGES CAROUSEL */}
         <StagesCarousel />
 
-        {/* SECTION 6: RESET SPOTLIGHT (Bento Grid Design) */}
+        {/* SECTION 6: RESET SPOTLIGHT */}
         <ResetSpotlight />
 
+        {/* WAVE DIVIDER — ranges → approach */}
+        <WaveDivider tone="reset" />
+
         {/* SECTION 7: OUR APPROACH */}
-        <section className="approach-teaser centered-block">
-          <div className="container">
-            <h2 className="section-title">{t.mainPage.approach.title}</h2>
-            <div className="approach-message">
-              <p className="big-statement" dangerouslySetInnerHTML={{ __html: t.mainPage.approach.bigStatement.replace(/\n/g, '<br/>') }} />
-              <p className="approach-desc">{t.mainPage.approach.description}</p>
+        <section className="section-band mist approach-band">
+          <div className="approach-teaser">
+            <div className="container">
+              <Reveal className="eyebrow-row">
+                <span className="eyebrow">{t.mainPage.approach.title}</span>
+              </Reveal>
+              <WordReveal
+                as="h2"
+                className="big-statement font-display"
+                text={t.mainPage.approach.bigStatement}
+              />
+              <Reveal delay={0.12}>
+                <p className="approach-desc">{t.mainPage.approach.description}</p>
+              </Reveal>
+              <Reveal delay={0.2}>
+                <Link href={`/${language}/approach`} className="btn-ghost">
+                  {t.mainPage.approach.button}
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </Reveal>
             </div>
-            <Link href={`/${language}/approach`} className="btn-outline">{t.mainPage.approach.button}</Link>
           </div>
         </section>
 
@@ -78,9 +140,9 @@ export default function V2Home() {
 
       <style jsx>{`
         .v2-app {
-            background-color: #ffffff;
-            color: #111;
-            font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+            background-color: var(--surface);
+            color: var(--text-body);
+            font-family: var(--font-body-family);
             overflow-x: hidden;
         }
 
@@ -93,160 +155,216 @@ export default function V2Home() {
         }
 
         .container {
-            max-width: 1200px;
+            max-width: var(--container);
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        /* GRID LAYOUTS */
+        /* ---- SECTION BANDS (full-bleed alternating washes) ---- */
+        .section-band {
+            width: 100%;
+            background: var(--surface);
+        }
+
+        .section-band.mist {
+            background: var(--surface-mist);
+        }
+
+        /* ---- EDITORIAL GRID ---- */
         .section-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            min-height: auto;
-            background: #fff;
-            max-width: 1400px;
+            max-width: var(--container-wide);
             margin: 0 auto;
-            padding: 4rem 3rem;
-            gap: 3rem;
+            padding: var(--section-pad) 3rem;
+            gap: clamp(2.5rem, 6vw, 6rem);
             align-items: center;
         }
 
-        .grid-content-left, .grid-content-right {
-            padding: 3rem 2rem;
+        .grid-content {
             display: flex;
             flex-direction: column;
             justify-content: center;
+            gap: 1.35rem;
         }
 
-        .section-label {
+        /* NOTE: classes passed to imported motion components (Reveal,
+           WordReveal, Parallax, ImageReveal) never receive the styled-jsx
+           scope hash, so they are styled as :global() descendants of a
+           scoped plain-DOM parent. Never use bare top-level :global(). */
+
+        .grid-content :global(.eyebrow-row) {
             display: block;
-            text-transform: none;
-            font-size: 0.9rem;
-            color: #888;
-            margin-bottom: 1rem;
-            font-weight: 500;
-            letter-spacing: 0.03em;
         }
 
-        .display-text {
-            font-size: 2.8rem;
-            font-weight: 700;
-            line-height: 1.1;
-            color: #1A4D5C;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.03em;
+        .grid-content :global(.display-text) {
+            font-size: clamp(2.4rem, 4.6vw, 3.7rem);
+            color: var(--text-heading);
+            margin: 0;
         }
 
-        .section-text {
-            margin-top: 0.5rem;
-            max-width: 520px;
+        .grid-content :global(.section-text) {
+            max-width: 34em;
         }
 
-        .section-text h3 {
-             font-size: 1.6rem;
-             margin-bottom: 1rem;
+        .grid-content :global(.section-text h3) {
+             font-size: clamp(1.25rem, 2vw, 1.5rem);
+             margin-bottom: 0.85rem;
              font-weight: 600;
-             color: #1A4D5C;
+             color: var(--text-heading);
              letter-spacing: -0.01em;
-             line-height: 1.2;
+             line-height: 1.25;
         }
 
-        .section-text p {
+        .grid-content :global(.section-text p) {
              font-size: 1.05rem;
-             color: #555;
-             line-height: 1.6;
-             max-width: 480px;
+             color: var(--text-body);
+             line-height: 1.7;
+             max-width: 34em;
         }
 
-        .grid-visual-right, .grid-visual-left {
+        /* ---- EDITORIAL IMAGE FRAMES ---- */
+        .section-grid :global(.grid-visual) {
             width: 100%;
+            position: relative;
+        }
+
+        .section-grid :global(.visual-frame) {
+            border-radius: var(--radius-lg);
             aspect-ratio: 3 / 4;
+            box-shadow: var(--shadow-soft);
+            background: var(--surface-mist);
+        }
+
+        .visual-bg {
+            width: 100%;
+            height: 100%;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-color: #f5f5f5;
-            border-radius: 1.25rem;
-            overflow: hidden;
+            background-color: var(--surface-mist);
         }
 
         .visual-designed {
-            background-image: url('${blob('main/design-not-improvised.png')}');
+            background-image: url('/images/main/designed-grid.jpg');
         }
 
-        .visual-adapts {
-            background-image: url('${blob('main/nutrition-that-adapts.png')}');
+        /* ---- SPEC CHIPS (over the "designed" frame) ---- */
+        .spec-layer {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
         }
 
-        @media (max-width: 1024px) {
-            .section-grid {
-                grid-template-columns: 1fr;
-                padding: 2rem 1.5rem;
-                gap: 2rem;
-            }
-            .grid-visual-right, .grid-visual-left {
-                width: 100%;
-                aspect-ratio: 3 / 4;
-            }
-            .grid-content-left, .grid-content-right {
-                padding: 2rem 1rem;
-            }
-            .reverse-mobile .grid-visual-left {
-                order: 1;
-            }
-            .display-text { font-size: 2.2rem; }
+        .spec-layer :global(.spec-stagger) {
+            position: absolute;
+            inset: 0;
         }
 
+        .spec-layer :global(.spec-chip) {
+            position: absolute;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.55rem 1.05rem;
+            background: rgba(255, 255, 255, 0.86);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            border-radius: var(--radius-pill);
+            box-shadow: var(--shadow-lift);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: var(--petrol);
+            white-space: nowrap;
+        }
 
-        /* APPROACH TEASER */
+        .spec-layer :global(.spec-chip)::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--turquoise-deep);
+            flex-shrink: 0;
+        }
+
+        .spec-layer :global(.chip-1) {
+            top: 9%;
+            left: -1rem;
+        }
+
+        .spec-layer :global(.chip-2) {
+            top: 46%;
+            right: -1.25rem;
+        }
+
+        .spec-layer :global(.chip-3) {
+            bottom: 9%;
+            left: 9%;
+        }
+
+        /* ---- APPROACH TEASER ---- */
+        .approach-band {
+            border-top: 1px solid var(--hairline);
+        }
+
         .approach-teaser {
-            padding: 10rem 0;
+            padding: var(--section-pad) 0;
             text-align: center;
-            background: #ffffff;
-            border-top: 1px solid rgba(0,0,0,0.05);
         }
 
-        .section-title {
-            font-size: 3rem;
-            font-weight: 500;
-            margin-bottom: 3rem;
+        .approach-teaser :global(.eyebrow-row) {
+            display: flex;
+            justify-content: center;
         }
 
-        .big-statement {
-            font-size: 2.5rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            color: #111;
+        .approach-teaser :global(.big-statement) {
+            font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+            margin: 1.5rem auto 1.75rem;
+            color: var(--text-heading);
+            max-width: 16em;
         }
 
         .approach-desc {
-            max-width: 600px;
-            margin: 0 auto 3rem;
+            max-width: 34em;
+            margin: 0 auto 2.5rem;
             font-size: 1.125rem;
-            color: #666;
+            line-height: 1.7;
+            color: var(--text-body);
         }
 
-        .btn-outline {
-            display: inline-block;
-            border: 1px solid #e0e0e0;
-            color: #111;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.2s;
-            background: white;
-        }
-        .btn-outline:hover {
-            border-color: #000;
-            background: #000;
-            color: white;
-        }
-
-        /* RESPONSIVE */
+        /* ---- RESPONSIVE ---- */
         @media (max-width: 1024px) {
-            .manifesto-grid { grid-template-columns: 1fr; }
-            .manifesto-card { padding: 3rem; min-height: auto; }
+            .section-grid {
+                grid-template-columns: 1fr;
+                padding: var(--section-pad) 1.5rem;
+                gap: 2.5rem;
+            }
+            .reverse-mobile :global(.grid-visual) {
+                order: 1;
+            }
+            .section-grid :global(.visual-frame) {
+                max-width: 520px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1.25rem;
+            }
+            .spec-layer :global(.spec-chip) {
+                font-size: 0.7rem;
+                padding: 0.45rem 0.85rem;
+            }
+            .spec-layer :global(.chip-1) {
+                left: 0.6rem;
+            }
+            .spec-layer :global(.chip-2) {
+                right: 0.6rem;
+            }
         }
       `}</style>
     </div>

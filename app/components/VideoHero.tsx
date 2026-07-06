@@ -2,8 +2,15 @@
 
 import React, { useRef, useState, useCallback, useEffect } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useTransform,
+  useReducedMotion,
+} from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
+import { WordReveal, EASE } from '@/lib/motion';
 import { blob } from '@/lib/blob';
 import styles from './VideoHero.module.css';
 
@@ -19,9 +26,21 @@ export default function VideoHero() {
   const [showOverlay, setShowOverlay] = useState(false);
   const [mobileProductIndex, setMobileProductIndex] = useState(0);
   const triggered = useRef(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const reduce = useReducedMotion();
   const { t } = useLanguage();
 
-  // Mobile product carousel — cycle every 1.5s once overlay is shown
+  // Scroll-away choreography — as the hero scrolls out, the video gently
+  // scales up while the overlay content drifts up and fades.
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start start', 'end start'],
+  });
+  const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.06]);
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, -40]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
+
+  // Mobile product carousel — cycle every 2s once overlay is shown
   useEffect(() => {
     if (!showOverlay) return;
     const timer = setInterval(() => {
@@ -66,9 +85,9 @@ export default function VideoHero() {
   };
 
   return (
-    <div className={styles.container}>
+    <div ref={containerRef} className={styles.container}>
       {/* Desktop video */}
-      <video
+      <motion.video
         className={`${styles.video} ${styles.videoDesktop}`}
         src={blob('videos/0224.mp4')}
         autoPlay
@@ -76,9 +95,10 @@ export default function VideoHero() {
         playsInline
         onTimeUpdate={handleTimeUpdate}
         onEnded={handleEnded}
+        style={reduce ? undefined : { scale: videoScale }}
       />
       {/* Mobile video (9:16) — trigger 0.5s before end */}
-      <video
+      <motion.video
         className={`${styles.video} ${styles.videoMobile}`}
         src={blob('videos/0224-mobile.mp4')}
         autoPlay
@@ -86,30 +106,33 @@ export default function VideoHero() {
         playsInline
         onTimeUpdate={handleMobileTimeUpdate}
         onEnded={handleEnded}
+        style={reduce ? undefined : { scale: videoScale }}
       />
 
       <AnimatePresence>
         {showOverlay && (
-          <div className={styles.overlay}>
+          <motion.div
+            key="hero-overlay"
+            className={styles.overlay}
+            style={reduce ? undefined : { y: contentY, opacity: contentOpacity }}
+          >
             <div className={styles.scrim} />
 
             <div className={styles.topContent}>
-              {/* Tagline */}
-              <motion.p
-                className={styles.tagline}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
-              >
-                {t.mainPage.videoHero?.tagline}
-              </motion.p>
+              {/* Tagline — masked word-by-word rise */}
+              <WordReveal
+                as="p"
+                className={`${styles.tagline} font-display`}
+                text={t.mainPage.videoHero?.tagline ?? ''}
+                delay={0.1}
+              />
 
               {/* Subtitle */}
               <motion.p
                 className={styles.subtitle}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
+                transition={{ duration: 0.8, delay: 0.6, ease: EASE }}
               >
                 {t.mainPage.videoHero?.subtitle}
               </motion.p>
@@ -120,14 +143,14 @@ export default function VideoHero() {
                 className={styles.ctaButton}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.7, ease: 'easeOut' }}
+                transition={{ duration: 0.8, delay: 0.75, ease: EASE }}
                 onClick={(e) => {
                   e.preventDefault();
                   document.getElementById('stages-section')?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
                 {t.mainPage.videoHero?.cta}
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </motion.a>
@@ -139,17 +162,23 @@ export default function VideoHero() {
                 <motion.div
                   key={product.name}
                   className={`${styles.productItem} ${i === 2 ? styles.productCenter : ''}`}
-                  style={{
-                    rotate: product.rotate,
-                    translateY: product.y,
-                  }}
-                  initial={{ opacity: 0, y: 60 }}
-                  animate={{ opacity: 1, y: product.y }}
+                  style={{ rotate: product.rotate }}
+                  initial={{ opacity: 0, y: 60, scale: 0.94 }}
+                  animate={{ opacity: 1, y: product.y, scale: 1 }}
                   transition={{
-                    duration: 0.5,
-                    delay: 0.6 + i * 0.12,
-                    ease: 'easeOut',
+                    duration: 0.8,
+                    delay: 0.45 + i * 0.09,
+                    ease: EASE,
                   }}
+                  whileHover={
+                    reduce
+                      ? undefined
+                      : {
+                          y: product.y - 10,
+                          scale: 1.03,
+                          transition: { duration: 0.45, ease: EASE },
+                        }
+                  }
                 >
                   <Image
                     src={product.src}
@@ -190,7 +219,7 @@ export default function VideoHero() {
                         opacity,
                         zIndex,
                       }}
-                      transition={{ duration: 0.5, ease: 'easeInOut' }}
+                      transition={{ duration: 0.6, ease: EASE }}
                       onClick={() => setMobileProductIndex(i)}
                     >
                       <div className={styles.mobileProductImageWrap}>
@@ -213,15 +242,15 @@ export default function VideoHero() {
               className={styles.scrollIndicator}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 1.6 }}
+              transition={{ duration: 0.6, delay: 1.6, ease: EASE }}
               onClick={handleScroll}
             >
               <span className={styles.scrollText}>
                 {t.mainPage.videoHero?.scrollCta}
               </span>
-              <div className={styles.scrollArrow} />
+              <div className={styles.scrollLine} />
             </motion.div>
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>

@@ -2,59 +2,67 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { Stagger, StaggerItem } from '@/lib/motion';
 import { useLanguage } from '@/lib/LanguageContext';
-import { blob } from '@/lib/blob';
 
 export default function ProductGroups() {
     const { t, language } = useLanguage();
 
     return (
-        <section className="product-groups">
-            <div className="group-card stages-group">
+        <section className="product-groups-section">
+        <Stagger className="product-groups">
+            <StaggerItem className="group-card stages-group">
                 <div className="group-bg-overlay gradient-stages"></div>
+                <div className="group-tint"></div>
                 <Link href={`/${language}/stages`} className="group-content-link">
                     <div className="group-content">
                         <span className="group-label">BLENDENCE</span>
-                        <h2 className="group-title">Stages</h2>
+                        <h2 className="group-title font-display">{t.mainPage.productGroups.stagesTitle}</h2>
                         <div className="group-divider"></div>
                         <p className="group-desc">{t.mainPage.productGroups.stagesDescription}</p>
                         <span className="group-link">
                             {t.mainPage.productGroups.exploreRange}
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </span>
                     </div>
                 </Link>
-            </div>
+            </StaggerItem>
 
-            <div className="group-card reset-group">
+            <StaggerItem className="group-card reset-group">
                 <div className="group-bg-overlay gradient-reset"></div>
+                <div className="group-tint"></div>
                 <Link href={`/${language}/reset`} className="group-content-link">
                     <div className="group-content">
                         <span className="group-label">BLENDENCE</span>
-                        <h2 className="group-title">Reset</h2>
+                        <h2 className="group-title font-display">{t.mainPage.productGroups.resetTitle}</h2>
                         <div className="group-divider"></div>
                         <p className="group-desc">{t.mainPage.productGroups.resetDescription}</p>
                         <span className="group-link">
                             {t.mainPage.productGroups.exploreRange}
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </span>
                     </div>
                 </Link>
-            </div>
+            </StaggerItem>
+        </Stagger>
 
-            <style jsx>{`
-        .product-groups {
+        {/* NOTE: Stagger / StaggerItem / Link are imported components, so
+           classes passed to them never receive the styled-jsx scope hash.
+           All rules below are therefore :global() descendants of the plain
+           .product-groups-section wrapper — still page-scoped, no leakage. */}
+        <style jsx>{`
+        .product-groups-section :global(.product-groups) {
             display: grid;
             grid-template-columns: 1fr 1fr;
             min-height: 80vh;
-            background: #fff;
+            background: var(--surface);
         }
 
-        .group-card {
+        .product-groups-section :global(.group-card) {
             position: relative;
             display: flex;
             align-items: center;
@@ -62,115 +70,126 @@ export default function ProductGroups() {
             padding: 4rem;
             overflow: hidden;
             text-align: center;
-            color: #1a1a1a;
-            transition: all 0.4s ease;
-            cursor: pointer;
-            background: #f5f5f5;
+            background: var(--surface-mist);
         }
 
-        .group-card:hover .group-bg-overlay {
-            transform: scale(1.05);
-            opacity: 0.75;
+        .product-groups-section :global(.stages-group) {
+            --card-accent: var(--stages-accent);
         }
 
-        .group-card:hover .group-content {
-            background: rgba(255, 255, 255, 0.85);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+        .product-groups-section :global(.reset-group) {
+            --card-accent: var(--reset-accent);
+        }
+
+        .product-groups-section :global(.group-content-link) {
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .product-groups-section :global(.group-card:hover .group-bg-overlay) {
+            transform: scale(1.04);
+        }
+
+        .product-groups-section :global(.group-card:hover .group-content) {
             transform: translateY(-4px);
+            box-shadow: var(--shadow-lift);
         }
 
-        .group-card:hover .group-link {
-            gap: 1rem;
+        .product-groups-section :global(.group-card:hover .group-link svg) {
+            transform: translateX(3px);
         }
 
-        .group-content {
+        .product-groups-section :global(.group-content) {
             position: relative;
             z-index: 2;
-            max-width: 420px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.75);
+            background: rgba(255, 255, 255, 0.78);
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             padding: 3rem 2.5rem;
             border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
-            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            box-shadow: var(--shadow-soft);
+            transition: transform var(--dur-fast) var(--ease),
+                box-shadow var(--dur-fast) var(--ease);
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        .group-label {
+        .product-groups-section :global(.group-label) {
             display: inline-block;
-            font-size: 0.7rem;
-            font-weight: 700;
+            font-size: 0.72rem;
+            font-weight: 600;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: #999;
-            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 0.85rem;
         }
 
-        .group-title {
-            font-size: 3rem;
-            font-weight: 700;
-            letter-spacing: -0.03em;
+        .product-groups-section :global(.group-title) {
+            font-size: clamp(2.4rem, 4vw, 3.2rem);
             margin: 0;
             line-height: 1;
+            color: var(--text-heading);
         }
 
-        .stages-group .group-title {
-            color: #2C5F6F;
-        }
-
-        .reset-group .group-title {
-            color: #1A4D5C;
-        }
-
-        .group-divider {
-            width: 40px;
-            height: 3px;
+        .product-groups-section :global(.group-divider) {
+            width: 44px;
+            height: 2px;
             border-radius: 2px;
             margin: 1.25rem auto;
+            background: var(--card-accent);
         }
 
-        .stages-group .group-divider {
-            background: linear-gradient(90deg, #7CB342, #00BCD4);
-        }
-
-        .reset-group .group-divider {
-            background: linear-gradient(90deg, #00BCD4, #1A4D5C);
-        }
-
-        .group-desc {
+        .product-groups-section :global(.group-desc) {
             font-size: 1rem;
-            line-height: 1.65;
+            line-height: 1.7;
             margin-bottom: 1.75rem;
-            color: #555;
+            color: var(--text-body);
         }
 
-        .group-link {
+        .product-groups-section :global(.group-link) {
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
-            font-size: 0.85rem;
+            gap: 0.55rem;
+            font-size: 0.82rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: #1A4D5C;
-            transition: gap 0.3s ease;
+            color: var(--card-accent);
+        }
+
+        .product-groups-section :global(.group-link svg) {
+            transition: transform var(--dur-fast) var(--ease);
         }
 
         /* Backgrounds */
-        .group-bg-overlay {
+        .product-groups-section :global(.group-bg-overlay) {
             position: absolute;
             inset: 0;
             z-index: 0;
-            opacity: 0.55;
-            transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s ease;
+            transition: transform 1.2s var(--ease);
         }
 
-        .group-card::after {
+        /* Category tint wash — makes each half unmistakably Stages amber /
+           Reset sage even before the imagery is read. */
+        .product-groups-section :global(.group-tint) {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(
+                165deg,
+                color-mix(in srgb, var(--card-accent) 26%, transparent) 0%,
+                transparent 52%,
+                color-mix(in srgb, var(--card-accent) 12%, transparent) 100%
+            );
+            pointer-events: none;
+        }
+
+        .product-groups-section :global(.group-card::after) {
             content: '';
             position: absolute;
             inset: 0;
@@ -179,26 +198,23 @@ export default function ProductGroups() {
             pointer-events: none;
         }
 
-        .gradient-stages {
-            background: url('${blob('main/stages-teaser.png')}') no-repeat center center/cover;
+        .product-groups-section :global(.gradient-stages) {
+            background: url('/images/main/stages-field.jpg') no-repeat center center/cover;
         }
 
-        .gradient-reset {
-             background: url('${blob('main/reset-spotlight.png')}') no-repeat center center/cover;
+        .product-groups-section :global(.gradient-reset) {
+             background: url('/images/main/reset-field.jpg') no-repeat center center/cover;
         }
 
         @media (max-width: 768px) {
-            .product-groups {
+            .product-groups-section :global(.product-groups) {
                 grid-template-columns: 1fr;
                 min-height: auto;
             }
-            .group-card {
+            .product-groups-section :global(.group-card) {
                 padding: 5rem 2rem;
             }
-            .group-title {
-                font-size: 2.5rem;
-            }
-            .group-content {
+            .product-groups-section :global(.group-content) {
                 padding: 2.5rem 2rem;
             }
         }

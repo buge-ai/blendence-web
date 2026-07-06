@@ -16,7 +16,8 @@ export default function KidRisePage() {
             description={p.description}
             tag={p.tag}
             heroImage={blob('products/kid-rise.png')}
-            themeColor="#ffb347"
+            themeColor="#D9964E" /* canonical: var(--kidrise) */
+            themeTint="#FAF1E6"  /* canonical: var(--kidrise-tint) */
             features={[
                 {
                     title: p.features.why.title,

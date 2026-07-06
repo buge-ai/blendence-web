@@ -16,7 +16,8 @@ export default function ResetBalancePage() {
             description={p.description}
             tag={p.tag}
             heroImage={blob('products/balance_front.png')}
-            themeColor="#a89b7c"
+            themeColor="#9C8F72" /* canonical: var(--balance) */
+            themeTint="#F4F1EA"  /* canonical: var(--balance-tint) */
             features={[
                 {
                     title: p.features.what.title,

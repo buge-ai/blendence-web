@@ -95,13 +95,19 @@
         "label": "Philosophy",
         "title": "Designed, not improvised.",
         "heading": "Deliberate Process",
-        "description": "At Blendence, nutrition doesn't happen by chance. Every blend is designed through a deliberate process that aligns nutritional science with real-life use."
+        "description": "At Blendence, nutrition doesn't happen by chance. Every blend is designed through a deliberate process that aligns nutritional science with real-life use.",
+        "specs": ["−40°C lyophilization", "100% fruit & vegetable", "0 additives"]
       },
       "adaptability": {
         "label": "Adaptability",
         "title": "Nutrition that adapts to real life.",
         "heading": "Real Life Adaptation",
-        "description": "From home to school, from work to demanding periods, daily routines are rarely the same. Blendence is designed to fit into real life — without rituals, complexity, or extremes."
+        "description": "From home to school, from work to demanding periods, daily routines are rarely the same. Blendence is designed to fit into real life — without rituals, complexity, or extremes.",
+        "scenes": [
+          { "time": "07:30", "label": "Breakfast at home" },
+          { "time": "13:00", "label": "At the desk" },
+          { "time": "18:30", "label": "After training" }
+        ]
       },
       "productGroups": {
         "title": "Two ranges, one philosophy.",
@@ -1102,13 +1108,19 @@
         "label": "Felsefe",
         "title": "Tasarlandı, doğaçlama değil.",
         "heading": "Bilinçli Süreç",
-        "description": "Blendence'de beslenme tesadüfe bırakılmaz. Her karışım, beslenme bilimini gerçek yaşam kullanımıyla uyumlu hale getiren bilinçli bir süreçle tasarlanır."
+        "description": "Blendence'de beslenme tesadüfe bırakılmaz. Her karışım, beslenme bilimini gerçek yaşam kullanımıyla uyumlu hale getiren bilinçli bir süreçle tasarlanır.",
+        "specs": ["−40°C liyofilizasyon", "%100 meyve & sebze", "0 katkı maddesi"]
       },
       "adaptability": {
         "label": "Uyum",
         "title": "Gerçek hayata uyum sağlayan beslenme.",
         "heading": "Gerçek Hayat Uyumu",
-        "description": "Evden okula, işten zorlu dönemlere, günlük rutinler nadiren aynı kalır. Blendence, gerçek hayata sığacak şekilde tasarlandı — ritüeller, karmaşıklık veya aşırılıklar olmadan."
+        "description": "Evden okula, işten zorlu dönemlere, günlük rutinler nadiren aynı kalır. Blendence, gerçek hayata sığacak şekilde tasarlandı — ritüeller, karmaşıklık veya aşırılıklar olmadan.",
+        "scenes": [
+          { "time": "07:30", "label": "Evde kahvaltı" },
+          { "time": "13:00", "label": "Masa başında" },
+          { "time": "18:30", "label": "Antrenman sonrası" }
+        ]
       },
       "productGroups": {
         "title": "İki seri, tek felsefe.",

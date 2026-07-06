@@ -4,15 +4,40 @@ import React, { useState } from 'react';
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
 import { useLanguage } from '@/lib/LanguageContext';
+import { motion, useReducedMotion } from 'framer-motion';
+import { Reveal, Stagger, StaggerItem, WordReveal, EASE } from '@/lib/motion';
 import {
     IconMapPin,
     IconBuildingFactory2,
     IconBrandWhatsapp,
     IconMail,
     IconSend,
-    IconCheck,
     IconAlertCircle
 } from '@tabler/icons-react';
+
+function SuccessCheck() {
+    const reduce = useReducedMotion();
+    return (
+        <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+        >
+            <motion.path
+                d="M4 12.5 L10 18.5 L20 6"
+                initial={reduce ? { pathLength: 1 } : { pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 0.55, ease: EASE }}
+            />
+        </svg>
+    );
+}
 
 export default function ContactPage() {
     const { t } = useLanguage();
@@ -40,9 +65,14 @@ export default function ContactPage() {
 
             <main>
                 <section className="contact-hero">
-                    <div className="container">
-                        <h1>{p.title}</h1>
-                        <p className="subtitle">{p.subtitle}</p>
+                    <div className="container hero-inner">
+                        <Reveal y={18}>
+                            <span className="eyebrow">{t.nav.contact}</span>
+                        </Reveal>
+                        <WordReveal as="h1" className="font-display hero-title" text={p.title} delay={0.1} />
+                        <Reveal delay={0.2} y={18}>
+                            <p className="subtitle">{p.subtitle}</p>
+                        </Reveal>
                     </div>
                 </section>
 
@@ -50,8 +80,8 @@ export default function ContactPage() {
                     <div className="container">
                         <div className="contact-grid">
                             {/* Left Column: Contact Info */}
-                            <div className="contact-info">
-                                <div className="info-card">
+                            <Stagger className="contact-info">
+                                <StaggerItem className="info-card">
                                     <div className="info-icon">
                                         <IconMapPin size={24} />
                                     </div>
@@ -59,9 +89,9 @@ export default function ContactPage() {
                                         <h3>{p.headquarters.label}</h3>
                                         <p>{p.headquarters.address}</p>
                                     </div>
-                                </div>
+                                </StaggerItem>
 
-                                <div className="info-card">
+                                <StaggerItem className="info-card">
                                     <div className="info-icon">
                                         <IconBuildingFactory2 size={24} />
                                     </div>
@@ -69,10 +99,10 @@ export default function ContactPage() {
                                         <h3>{p.production.label}</h3>
                                         <p>{p.production.address}</p>
                                     </div>
-                                </div>
+                                </StaggerItem>
 
-                                <div className="info-card">
-                                    <div className="info-icon whatsapp">
+                                <StaggerItem className="info-card">
+                                    <div className="info-icon">
                                         <IconBrandWhatsapp size={24} />
                                     </div>
                                     <div className="info-content">
@@ -81,10 +111,10 @@ export default function ContactPage() {
                                             {p.phone.number}
                                         </a>
                                     </div>
-                                </div>
+                                </StaggerItem>
 
-                                <div className="info-card">
-                                    <div className="info-icon email">
+                                <StaggerItem className="info-card">
+                                    <div className="info-icon">
                                         <IconMail size={24} />
                                     </div>
                                     <div className="info-content">
@@ -93,12 +123,15 @@ export default function ContactPage() {
                                             {p.email.address}
                                         </a>
                                     </div>
-                                </div>
-                            </div>
+                                </StaggerItem>
+                            </Stagger>
 
                             {/* Right Column: Contact Form */}
-                            <div className="contact-form-wrapper">
-                                <h2>{p.form.title}</h2>
+                            <Reveal className="contact-form-wrapper" delay={0.1} y={18}>
+                                <div className="section-head">
+                                    <span className="rule" />
+                                    <h2>{p.form.title}</h2>
+                                </div>
                                 <form onSubmit={handleSubmit} className="contact-form">
                                     <div className="form-group">
                                         <label htmlFor="name">{p.form.name}</label>
@@ -148,14 +181,14 @@ export default function ContactPage() {
                                         />
                                     </div>
 
-                                    <button type="submit" className="submit-btn">
+                                    <button type="submit" className="btn-primary submit-btn">
                                         <IconSend size={18} />
                                         {p.form.submit}
                                     </button>
 
                                     {status === 'success' && (
                                         <div className="form-status success">
-                                            <IconCheck size={18} />
+                                            <SuccessCheck />
                                             {p.form.success}
                                         </div>
                                     )}
@@ -167,24 +200,31 @@ export default function ContactPage() {
                                         </div>
                                     )}
                                 </form>
-                            </div>
+                            </Reveal>
                         </div>
 
                         {/* Map Section */}
                         <div className="map-section">
-                            <h2>{p.map.title}</h2>
-                            <div className="map-container">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1500!2d26.57508!3d41.66797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDQwJzA0LjciTiAyNsKwMzQnMzAuMyJF!5e0!3m2!1sen!2str!4v1705693647000!5m2!1sen!2str"
-                                    width="100%"
-                                    height="400"
-                                    style={{ border: 0, borderRadius: '16px' }}
-                                    allowFullScreen
-                                    loading="lazy"
-                                    referrerPolicy="no-referrer-when-downgrade"
-                                    title="Buge Foods Location"
-                                />
-                            </div>
+                            <Reveal y={18}>
+                                <div className="section-head">
+                                    <span className="rule" />
+                                    <h2>{p.map.title}</h2>
+                                </div>
+                            </Reveal>
+                            <Reveal delay={0.05} y={18}>
+                                <div className="map-container">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1500!2d26.57508!3d41.66797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDQwJzA0LjciTiAyNsKwMzQnMzAuMyJF!5e0!3m2!1sen!2str!4v1705693647000!5m2!1sen!2str"
+                                        width="100%"
+                                        height="400"
+                                        style={{ border: 0 }}
+                                        allowFullScreen
+                                        loading="lazy"
+                                        referrerPolicy="no-referrer-when-downgrade"
+                                        title="Buge Foods Location"
+                                    />
+                                </div>
+                            </Reveal>
                         </div>
                     </div>
                 </section>
@@ -194,118 +234,131 @@ export default function ContactPage() {
 
             <style jsx>{`
                 .contact-page {
-                    background: #fff;
-                    color: #111;
+                    background: var(--surface);
+                    color: var(--text-body);
                     min-height: 100vh;
                 }
                 .container {
-                    max-width: 1200px;
+                    max-width: var(--container);
                     margin: 0 auto;
                     padding: 0 2rem;
                 }
                 .contact-hero {
                     padding: 12rem 0 4rem;
-                    background: linear-gradient(180deg, #f9f9fa 0%, #fff 100%);
-                    text-align: center;
+                    background: linear-gradient(180deg, var(--surface-mist) 0%, var(--surface) 100%);
                 }
-                h1 {
-                    font-size: 4rem;
-                    font-weight: 300;
-                    letter-spacing: -0.02em;
-                    color: #111;
-                    margin-bottom: 1rem;
+                .hero-inner {
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .contact-hero :global(.hero-title) {
+                    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+                    margin: 1.25rem 0 1rem;
                 }
                 .subtitle {
-                    font-size: 1.25rem;
-                    color: #666;
-                    max-width: 500px;
-                    margin: 0 auto;
+                    font-size: 1.2rem;
+                    line-height: 1.6;
+                    color: var(--text-body);
+                    max-width: 34ch;
                 }
+
                 .contact-content {
-                    padding: 4rem 0 8rem;
+                    padding: var(--section-pad) 0;
                 }
                 .contact-grid {
                     display: grid;
                     grid-template-columns: 1fr 1.2fr;
-                    gap: 4rem;
-                    margin-bottom: 6rem;
+                    gap: 3.5rem;
+                    margin-bottom: 5rem;
                 }
-                
+
+                /* Shared H2 treatment */
+                .section-head {
+                    margin-bottom: 1.75rem;
+                }
+                .rule {
+                    display: block;
+                    width: 24px;
+                    height: 2px;
+                    border-radius: 2px;
+                    background: var(--turquoise-deep);
+                    margin-bottom: 1rem;
+                }
+                h2 {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    color: var(--text-heading);
+                }
+
                 /* Contact Info Cards */
-                .contact-info {
+                .contact-grid :global(.contact-info) {
                     display: flex;
                     flex-direction: column;
-                    gap: 1.5rem;
+                    gap: 1.25rem;
                 }
-                .info-card {
+                .contact-grid :global(.info-card) {
                     display: flex;
                     gap: 1.25rem;
                     padding: 1.5rem;
-                    background: #f9f9fa;
-                    border-radius: 16px;
-                    transition: all 0.3s ease;
+                    background: var(--surface);
+                    border: 1px solid var(--hairline);
+                    border-radius: var(--radius-lg);
+                    box-shadow: var(--shadow-soft);
+                    transition: transform var(--dur-fast) var(--ease),
+                        box-shadow var(--dur-fast) var(--ease);
                 }
-                .info-card:hover {
-                    background: #f5f5f5;
-                    transform: translateY(-2px);
+                .contact-grid :global(.info-card:hover) {
+                    transform: translateY(-4px);
+                    box-shadow: var(--shadow-lift);
                 }
                 .info-icon {
                     width: 48px;
                     height: 48px;
-                    border-radius: 12px;
-                    background: #1A4D5C;
-                    color: white;
+                    border-radius: var(--radius-md);
+                    background: var(--surface-mist);
+                    color: var(--petrol);
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     flex-shrink: 0;
                 }
-                .info-icon.whatsapp {
-                    background: #25D366;
-                }
-                .info-icon.email {
-                    background: #EA4335;
-                }
                 .info-content h3 {
-                    font-size: 0.9rem;
+                    font-size: 0.78rem;
                     font-weight: 600;
-                    color: #666;
+                    color: var(--text-muted);
                     margin-bottom: 0.5rem;
                     text-transform: uppercase;
-                    letter-spacing: 0.05em;
+                    letter-spacing: 0.12em;
                 }
                 .info-content p {
                     font-size: 1rem;
-                    color: #111;
+                    color: var(--text-heading);
                     line-height: 1.5;
                 }
                 .info-link {
                     font-size: 1rem;
-                    color: #1A4D5C;
+                    color: var(--petrol);
                     text-decoration: none;
                     font-weight: 500;
-                    transition: color 0.2s ease;
+                    transition: color var(--dur-fast) var(--ease);
                 }
                 .info-link:hover {
-                    color: #2C5F6F;
+                    color: var(--turquoise-deep);
                 }
 
                 /* Contact Form */
-                .contact-form-wrapper {
-                    background: #f9f9fa;
+                .contact-grid :global(.contact-form-wrapper) {
+                    background: var(--surface-mist);
                     padding: 2.5rem;
-                    border-radius: 24px;
-                }
-                .contact-form-wrapper h2 {
-                    font-size: 1.5rem;
-                    font-weight: 600;
-                    color: #111;
-                    margin-bottom: 2rem;
+                    border-radius: var(--radius-lg);
+                    border: 1px solid var(--hairline);
                 }
                 .contact-form {
                     display: flex;
                     flex-direction: column;
-                    gap: 1.5rem;
+                    gap: 1.35rem;
                 }
                 .form-group {
                     display: flex;
@@ -313,82 +366,74 @@ export default function ContactPage() {
                     gap: 0.5rem;
                 }
                 .form-group label {
-                    font-size: 0.9rem;
+                    font-size: 0.8rem;
                     font-weight: 500;
-                    color: #333;
+                    color: var(--text-muted);
+                    letter-spacing: 0.01em;
                 }
                 .form-group input,
                 .form-group textarea {
-                    padding: 1rem 1.25rem;
-                    border: 1px solid #e0e0e0;
-                    border-radius: 12px;
+                    padding: 0.9rem 1.1rem;
+                    border: 1px solid var(--hairline);
+                    border-radius: var(--radius-sm);
                     font-size: 1rem;
                     font-family: inherit;
-                    background: white;
-                    transition: all 0.2s ease;
+                    color: var(--text-heading);
+                    background: var(--surface);
+                    transition: border-color var(--dur-fast) var(--ease),
+                        box-shadow var(--dur-fast) var(--ease);
                     outline: none;
                 }
                 .form-group input:focus,
                 .form-group textarea:focus {
-                    border-color: #1A4D5C;
-                    box-shadow: 0 0 0 3px rgba(26, 77, 92, 0.1);
+                    border-color: var(--turquoise-deep);
+                    box-shadow: 0 0 0 3px rgba(24, 151, 169, 0.18);
+                }
+                .form-group input::placeholder,
+                .form-group textarea::placeholder {
+                    color: var(--text-muted);
                 }
                 .form-group textarea {
                     resize: vertical;
                     min-height: 120px;
                 }
                 .submit-btn {
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 0.5rem;
-                    padding: 1rem 2rem;
-                    background: #1A4D5C;
-                    color: white;
-                    border: none;
-                    border-radius: 50px;
-                    font-size: 1rem;
-                    font-weight: 600;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
                     margin-top: 0.5rem;
-                }
-                .submit-btn:hover {
-                    background: #2C5F6F;
-                    transform: translateY(-2px);
+                    align-self: flex-start;
+                    justify-content: center;
+                    border: none;
                 }
                 .form-status {
                     display: flex;
                     align-items: center;
-                    gap: 0.5rem;
-                    padding: 1rem 1.25rem;
-                    border-radius: 12px;
+                    gap: 0.6rem;
+                    padding: 0.9rem 1.1rem;
+                    border-radius: var(--radius-sm);
                     font-size: 0.95rem;
+                    font-weight: 500;
                 }
                 .form-status.success {
-                    background: #E8F5E9;
-                    color: #2E7D32;
+                    background: var(--reset-tint);
+                    color: var(--green-deep);
                 }
                 .form-status.error {
-                    background: #FFEBEE;
-                    color: #C62828;
+                    background: rgba(229, 57, 53, 0.08);
+                    color: var(--red);
                 }
 
                 /* Map Section */
                 .map-section {
                     margin-top: 2rem;
                 }
-                .map-section h2 {
-                    font-size: 1.75rem;
-                    font-weight: 500;
-                    color: #111;
-                    margin-bottom: 1.5rem;
-                    text-align: center;
-                }
                 .map-container {
-                    border-radius: 16px;
+                    border-radius: var(--radius-lg);
                     overflow: hidden;
-                    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+                    box-shadow: var(--shadow-soft);
+                    border: 1px solid var(--hairline);
+                }
+                .map-container :global(iframe) {
+                    display: block;
+                    filter: grayscale(0.15);
                 }
 
                 /* Responsive */
@@ -400,15 +445,12 @@ export default function ContactPage() {
                 }
                 @media (max-width: 768px) {
                     .contact-hero {
-                        padding: 8rem 0 3rem;
-                    }
-                    h1 {
-                        font-size: 2.5rem;
+                        padding: 9rem 0 3rem;
                     }
                     .subtitle {
                         font-size: 1.1rem;
                     }
-                    .contact-form-wrapper {
+                    .contact-grid :global(.contact-form-wrapper) {
                         padding: 1.5rem;
                     }
                 }

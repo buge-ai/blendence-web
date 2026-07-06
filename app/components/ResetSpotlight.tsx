@@ -3,7 +3,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, AnimatePresence, useReducedMotion, type Variants } from 'framer-motion';
 import styles from './ResetSpotlight.module.css';
+import { Reveal, EASE } from '@/lib/motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import { blob } from '@/lib/blob';
 
@@ -17,36 +19,35 @@ interface ResetProduct {
     productImage: string;
     lifestyleImage: string;
     whyBlend: string[];
-    accentColor: string;
-    patternColor: string;
+    accent: string;
+    tint: string;
 }
 
-// Static product data (images and colors)
+// Static product data — canonical product tokens (globals.css)
 const PRODUCT_DATA = [
     {
         id: 'balance',
-        href: '/reset/balance',
         productImage: blob('products/balance_front.png'),
         lifestyleImage: blob('glasses/reset-balance-glass.png'),
-        accentColor: '#8B9A6B',
-        patternColor: '#A8B88D'
+        accent: 'var(--balance)',
+        tint: 'var(--balance-tint)'
     },
     {
         id: 'intense',
-        href: '/reset/intense',
         productImage: blob('products/intense_front.png'),
         lifestyleImage: blob('glasses/reset-intense-glass.png'),
-        accentColor: '#7A8B65',
-        patternColor: '#96A67E'
+        accent: 'var(--intense)',
+        tint: 'var(--intense-tint)'
     }
 ];
+
+const AUTOPLAY_MS = 6000;
 
 export default function ResetSpotlight() {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
-    const [animationPhase, setAnimationPhase] = useState<'idle' | 'out' | 'in'>('idle');
     const [direction, setDirection] = useState<'next' | 'prev'>('next');
-    const animationPhaseRef = React.useRef(animationPhase);
+    const reduce = useReducedMotion();
     const { t, language } = useLanguage();
 
     // Combine static data with translations
@@ -65,92 +66,44 @@ export default function ResetSpotlight() {
         };
     });
 
-    // Keep ref in sync with state
-    React.useEffect(() => {
-        animationPhaseRef.current = animationPhase;
-    }, [animationPhase]);
-
     const goToNext = useCallback(() => {
-        if (animationPhaseRef.current !== 'idle') return;
         setDirection('next');
-        setAnimationPhase('out');
-
-        // Swap content at midpoint when boxes are rotated away
-        setTimeout(() => {
-            setActiveIndex((prev) => (prev + 1) % resetProducts.length);
-            setAnimationPhase('in');
-        }, 350);
-
-        // Animation complete
-        setTimeout(() => {
-            setAnimationPhase('idle');
-        }, 700);
-    }, [resetProducts.length]);
-
-    const goToPrev = useCallback(() => {
-        if (animationPhaseRef.current !== 'idle') return;
-        setDirection('prev');
-        setAnimationPhase('out');
-
-        // Swap content at midpoint when boxes are rotated away
-        setTimeout(() => {
-            setActiveIndex((prev) => (prev - 1 + resetProducts.length) % resetProducts.length);
-            setAnimationPhase('in');
-        }, 350);
-
-        // Animation complete
-        setTimeout(() => {
-            setAnimationPhase('idle');
-        }, 700);
-    }, [resetProducts.length]);
+        setActiveIndex((prev) => (prev + 1) % PRODUCT_DATA.length);
+    }, []);
 
     const goToSlide = useCallback((index: number) => {
-        if (animationPhaseRef.current !== 'idle') return;
-        setActiveIndex((currentActiveIndex) => {
-            if (index === currentActiveIndex) return currentActiveIndex;
-            setDirection(index > currentActiveIndex ? 'next' : 'prev');
-            setAnimationPhase('out');
-
-            // Swap content at midpoint when boxes are rotated away
-            setTimeout(() => {
-                setActiveIndex(index);
-                setAnimationPhase('in');
-            }, 350);
-
-            // Animation complete
-            setTimeout(() => {
-                setAnimationPhase('idle');
-            }, 700);
-
-            return currentActiveIndex; // Don't change yet, let the timeout do it
+        setActiveIndex((current) => {
+            if (index === current) return current;
+            setDirection(index > current ? 'next' : 'prev');
+            return index;
         });
     }, []);
 
     useEffect(() => {
         if (isPaused) return;
-        const interval = setInterval(goToNext, 6000);
+        const interval = setInterval(goToNext, AUTOPLAY_MS);
         return () => clearInterval(interval);
     }, [isPaused, goToNext]);
 
     const currentProduct = resetProducts[activeIndex];
 
-    // Determine animation class based on phase
-    let animClass = '';
-    if (animationPhase === 'out') {
-        animClass = direction === 'next' ? styles.animateOut : styles.animateOutReverse;
-    } else if (animationPhase === 'in') {
-        animClass = styles.animateIn;
-    }
-
+    const slideVariants: Variants = reduce
+        ? {
+            enter: { opacity: 0 },
+            center: { opacity: 1 },
+            exit: { opacity: 0 },
+        }
+        : {
+            enter: (dir: 'next' | 'prev') => ({ opacity: 0, x: dir === 'next' ? 24 : -24 }),
+            center: { opacity: 1, x: 0 },
+            exit: (dir: 'next' | 'prev') => ({ opacity: 0, x: dir === 'next' ? -24 : 24 }),
+        };
 
     return (
-        <section
-            id="reset-section"
-            className={styles.resetSection}
-        >
+        <section id="reset-section" className={styles.resetSection}>
             <div className={styles.container}>
                 {/* Section Header */}
-                <div className={styles.sectionHeader}>
+                <Reveal className={styles.sectionHeader}>
                     <div className={styles.logoWrapper}>
                         <Image
                             src={blob('logos/reset_stage_logo_reset_org_color.png')}
@@ -163,110 +116,114 @@ export default function ResetSpotlight() {
                     <p className={styles.subheading}>
                         {t.mainPage.resetSpotlight.subheading}
                     </p>
-                </div>
+                </Reveal>
 
                 {/* Bento Grid Layout */}
-                <div className={styles.bentoGrid}>
-                    {/* Left Column */}
-                    <div className={styles.leftColumn}>
-                        {/* Top Left - Title Box */}
-                        <div
-                            className={`${styles.titleBox} ${animClass}`}
+                <Reveal className={styles.bentoViewport} delay={0.1}>
+                    <AnimatePresence mode="popLayout" custom={direction} initial={false}>
+                        <motion.div
+                            key={activeIndex}
+                            className={styles.bentoGrid}
                             style={{
-                                '--accent-color': currentProduct.accentColor,
-                                '--pattern-color': currentProduct.patternColor
+                                '--accent': currentProduct.accent,
+                                '--tint': currentProduct.tint
                             } as React.CSSProperties}
+                            custom={direction}
+                            variants={slideVariants}
+                            initial="enter"
+                            animate="center"
+                            exit="exit"
+                            transition={{ duration: 0.45, ease: EASE }}
                         >
-                            <div className={styles.patternBg}>
-                                <svg viewBox="0 0 400 200" className={styles.patternSvg}>
-                                    <defs>
-                                        <pattern id="resetOrganicPattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
-                                            <path
-                                                d="M40 0C20 10 10 30 10 50C10 70 20 90 40 80C60 70 70 50 70 30C70 10 60 0 40 0Z"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                strokeWidth="1.5"
-                                                opacity="0.3"
-                                            />
-                                        </pattern>
-                                    </defs>
-                                    <rect width="100%" height="100%" fill="url(#resetOrganicPattern)" />
-                                </svg>
-                            </div>
-                            <div className={styles.titleContent}>
-                                <Link href={currentProduct.href} className={styles.productLink}>
-                                    <div className={styles.titleRow}>
-                                        <h3 className={styles.productTitle}>{currentProduct.title}</h3>
-                                        <span className={styles.trademark}>™</span>
+                            {/* Left Column */}
+                            <div className={styles.leftColumn}>
+                                {/* Top Left - Title Box */}
+                                <div className={styles.titleBox}>
+                                    <div className={styles.patternBg}>
+                                        <svg viewBox="0 0 400 200" className={styles.patternSvg}>
+                                            <defs>
+                                                <pattern id="resetOrganicPattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                                                    <path
+                                                        d="M40 0C20 10 10 30 10 50C10 70 20 90 40 80C60 70 70 50 70 30C70 10 60 0 40 0Z"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        strokeWidth="1.5"
+                                                        opacity="0.3"
+                                                    />
+                                                </pattern>
+                                            </defs>
+                                            <rect width="100%" height="100%" fill="url(#resetOrganicPattern)" />
+                                        </svg>
                                     </div>
-                                </Link>
-                                <p className={styles.productDesc}>{currentProduct.desc}</p>
-                                <p className={styles.productFullDesc}>{currentProduct.fullDesc}</p>
-                            </div>
-                        </div>
+                                    <div className={styles.titleContent}>
+                                        <Link href={currentProduct.href} className={styles.productLink}>
+                                            <div className={styles.titleRow}>
+                                                <h3 className={styles.productTitle}>{currentProduct.title}</h3>
+                                                <span className={styles.trademark}>™</span>
+                                            </div>
+                                        </Link>
+                                        <p className={styles.productDesc}>{currentProduct.desc}</p>
+                                        <p className={styles.productFullDesc}>{currentProduct.fullDesc}</p>
+                                    </div>
+                                </div>
 
-                        {/* Bottom Row */}
-                        <div className={styles.bottomRow}>
-                            {/* Product Image Box */}
-                            <div
-                                className={`${styles.productBox} ${animClass}`}
-                                style={{
-                                    '--accent-color': currentProduct.accentColor
-                                } as React.CSSProperties}
-                            >
-                                <div className={styles.productImageWrapper}>
+                                {/* Bottom Row */}
+                                <div className={styles.bottomRow}>
+                                    {/* Product Image Box */}
+                                    <div className={styles.productBox}>
+                                        <div className={styles.productImageWrapper}>
+                                            <Image
+                                                src={currentProduct.productImage}
+                                                alt={currentProduct.title}
+                                                fill
+                                                style={{ objectFit: 'contain' }}
+                                                sizes="(max-width: 768px) 100vw, 300px"
+                                                priority
+                                            />
+                                        </div>
+                                        <div className={styles.productInfo}>
+                                            <span className={styles.taglineLabel}>{currentProduct.tagline}</span>
+                                        </div>
+                                    </div>
+
+                                    {/* Why This Blend Box */}
+                                    <div className={styles.ingredientsBox}>
+                                        <div className={styles.ingredientsHeader}>
+                                            <span className={styles.ingredientsLabel}>{t.mainPage.resetSpotlight.whyBlendLabel}</span>
+                                        </div>
+                                        <div className={styles.whyBlendContent}>
+                                            {currentProduct.whyBlend.map((paragraph: string, idx: number) => (
+                                                <p key={idx} className={styles.whyBlendParagraph}>
+                                                    {paragraph}
+                                                </p>
+                                            ))}
+                                        </div>
+                                        <Link href={currentProduct.href} className={styles.learnMore}>
+                                            {t.mainPage.resetSpotlight.learnMore}
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                                                <path d="M5 12h14M12 5l7 7-7 7" />
+                                            </svg>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Right Column - Lifestyle Image */}
+                            <div className={styles.lifestyleBox}>
+                                <div className={styles.lifestyleImageWrapper}>
                                     <Image
-                                        src={currentProduct.productImage}
-                                        alt={currentProduct.title}
+                                        src={currentProduct.lifestyleImage}
+                                        alt={`${currentProduct.title}`}
                                         fill
-                                        style={{ objectFit: 'contain' }}
-                                        sizes="(max-width: 768px) 100vw, 300px"
+                                        style={{ objectFit: 'cover' }}
+                                        sizes="(max-width: 768px) 100vw, 400px"
                                         priority
                                     />
                                 </div>
-                                <div className={styles.productInfo}>
-                                    <span className={styles.taglineLabel}>{currentProduct.tagline}</span>
-                                </div>
                             </div>
-
-                            {/* Why This Blend Box */}
-                            <div
-                                className={`${styles.ingredientsBox} ${animClass}`}
-                                style={{
-                                    '--accent-color': currentProduct.accentColor
-                                } as React.CSSProperties}
-                            >
-                                <div className={styles.ingredientsHeader}>
-                                    <span className={styles.ingredientsLabel}>{t.mainPage.resetSpotlight.whyBlendLabel}</span>
-                                </div>
-                                <div className={styles.whyBlendContent}>
-                                    {currentProduct.whyBlend.map((paragraph: string, idx: number) => (
-                                        <p key={idx} className={styles.whyBlendParagraph}>
-                                            {paragraph}
-                                        </p>
-                                    ))}
-                                </div>
-                                <Link href={currentProduct.href} className={styles.learnMore}>
-                                    {t.mainPage.resetSpotlight.learnMore}
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Right Column - Product Image */}
-                    <div className={`${styles.lifestyleBox} ${animClass}`}>
-                        <div className={styles.lifestyleImageWrapper}>
-                            <Image
-                                src={currentProduct.lifestyleImage}
-                                alt={`${currentProduct.title}`}
-                                fill
-                                style={{ objectFit: 'cover' }}
-                                sizes="(max-width: 768px) 100vw, 400px"
-                                priority
-                            />
-                        </div>
-                    </div>
-                </div>
+                        </motion.div>
+                    </AnimatePresence>
+                </Reveal>
 
                 {/* Carousel Controls */}
                 <div className={styles.carouselControls}>
@@ -276,11 +233,11 @@ export default function ResetSpotlight() {
                         aria-label={isPaused ? 'Play' : 'Pause'}
                     >
                         {isPaused ? (
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
                                 <path d="M8 5v14l11-7z" />
                             </svg>
                         ) : (
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
                                 <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
                             </svg>
                         )}
@@ -298,16 +255,16 @@ export default function ResetSpotlight() {
                                     className={styles.progressFill}
                                     style={{
                                         animationPlayState: idx === activeIndex && !isPaused ? 'running' : 'paused',
-                                        backgroundColor: idx === activeIndex ? product.accentColor : undefined
+                                        background: idx === activeIndex ? product.accent : undefined
                                     }}
                                 />
                             </button>
                         ))}
                     </div>
 
-                    <Link href={`/${language}${t.mainPage.resetSpotlight.ctaLink}`} className={styles.ctaButton}>
+                    <Link href={`/${language}${t.mainPage.resetSpotlight.ctaLink}`} className={`btn-primary ${styles.ctaButton}`}>
                         {t.mainPage.resetSpotlight.cta}
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </Link>

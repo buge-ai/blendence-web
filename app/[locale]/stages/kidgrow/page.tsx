@@ -16,7 +16,8 @@ export default function KidGrowPage() {
             description={p.description}
             tag={p.tag}
             heroImage={blob('products/kid-grow.png')}
-            themeColor="#7ed957"
+            themeColor="#5FA352" /* canonical: var(--kidgrow) */
+            themeTint="#EEF6EC"  /* canonical: var(--kidgrow-tint) */
             features={[
                 {
                     title: p.features.why.title,
