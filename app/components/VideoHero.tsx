@@ -23,7 +23,10 @@ const products = [
   { src: blob('products/kid-rise.png'), name: 'KidRise', rotate: -2.5, y: 1, peak: 0.317 },
   { src: blob('products/teen-focus.png'), name: 'TeenFocus', rotate: 0, y: 0, peak: 0.497 },
   { src: blob('products/balance_front.png'), name: 'Balance', rotate: 2.5, y: 1, peak: 0.68 },
-  { src: blob('products/intense_front.png'), name: 'Intense', rotate: 5, y: 4, peak: 0.863 },
+  // Intense uses the redesigned (bright green) sachet from the July 2026
+  // client delivery, isolated from the composed box render — the blob
+  // products/intense_front.png is the outdated dark design.
+  { src: '/images/products/reset-intense-sachet.png', name: 'Intense', rotate: 5, y: 4, peak: 0.863 },
 ];
 
 // The end still is object-fit: cover, horizontally centered. Its displayed
