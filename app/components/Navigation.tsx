@@ -36,6 +36,7 @@ export default function Navigation() {
     { name: t.nav.stages, link: `/${language}/stages` },
     { name: t.nav.reset, link: `/${language}/reset` },
     { name: t.nav.ourApproach, link: `/${language}/approach` },
+    { name: t.nav.contact, link: `/${language}/contact` },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

@@ -2,76 +2,57 @@
 
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
+import { useLanguage } from '@/lib/LanguageContext';
+
+type PolicySection = {
+  title: string;
+  subheading?: string;
+  content: string[];
+  bullets?: string[];
+  contentAfter?: string[];
+  email?: string;
+};
 
 export default function TermsPage() {
+  const { t } = useLanguage();
+  const p = t.termsPage;
+
   return (
     <div className="policy-page">
       <Navigation />
 
       <main className="content-wrapper">
         <div className="container">
-          <h1 className="page-title">Terms of Use</h1>
-          <p className="last-updated">Last updated: 05.01.2026</p>
+          <h1 className="page-title">{p.title}</h1>
+          <p className="last-updated">{p.lastUpdated}</p>
 
-          <section className="content-section">
-            <h2 className="section-title">1. Acceptance of Terms</h2>
-            <p>By accessing and using the Blendence website ("Website"), you agree to be bound by these Terms of Use.</p>
-            <p>If you do not agree with these terms, please do not use the Website.</p>
-          </section>
-
-          <section className="content-section">
-            <h2 className="section-title">2. Use of the Website</h2>
-            <p>The Website is provided for informational purposes only.</p>
-            <p>You may use the Website for personal, non-commercial use, provided that you do not violate these Terms or applicable laws.</p>
-            <p>You agree not to:</p>
-            <ul className="bullet-list">
-              <li>Misuse or interfere with the Website's operation</li>
-              <li>Attempt to gain unauthorized access to any part of the Website</li>
-              <li>Use the content for unlawful or misleading purposes</li>
-            </ul>
-          </section>
-
-          <section className="content-section">
-            <h2 className="section-title">3. Content Disclaimer</h2>
-            <p>The information provided on this Website is not intended as medical advice, diagnosis, or treatment.</p>
-            <p>Blendence products are food products and are not medicines.</p>
-            <p>Always consult a qualified professional for individual dietary or health-related questions.</p>
-          </section>
-
-          <section className="content-section">
-            <h2 className="section-title">4. Intellectual Property</h2>
-            <p>All content on this Website, including text, visuals, logos, and design elements, is the property of Blendence or its licensors and is protected by applicable intellectual property laws.</p>
-            <p>You may not reproduce, distribute, or modify any content without prior written permission.</p>
-          </section>
-
-          <section className="content-section">
-            <h2 className="section-title">5. Third-Party Links</h2>
-            <p>The Website may contain links to third-party websites for informational purposes.</p>
-            <p>Blendence is not responsible for the content, accuracy, or practices of such third-party websites.</p>
-          </section>
-
-          <section className="content-section">
-            <h2 className="section-title">6. Limitation of Liability</h2>
-            <p>Blendence shall not be liable for any direct or indirect damages arising from the use of, or inability to use, the Website or its content.</p>
-            <p>Use of the Website is at your own risk.</p>
-          </section>
-
-          <section className="content-section">
-            <h2 className="section-title">7. Changes to These Terms</h2>
-            <p>Blendence reserves the right to update or modify these Terms of Use at any time.</p>
-            <p>Changes will become effective upon publication on the Website.</p>
-          </section>
-
-          <section className="content-section">
-            <h2 className="section-title">8. Governing Law</h2>
-            <p>These Terms of Use shall be governed by and construed in accordance with the laws of the Republic of Türkiye, without regard to conflict of law principles.</p>
-          </section>
-
-          <section className="content-section">
-            <h2 className="section-title">9. Contact</h2>
-            <p>For questions regarding these Terms of Use, please contact us at:</p>
-            <p className="contact-email">contact@bugefoods.com</p>
-          </section>
+          {(p.sections as PolicySection[]).map((section, i) => (
+            <div key={i}>
+              {section.subheading && (
+                <>
+                  <div className="divider" />
+                  <h2 className="page-subtitle">{section.subheading}</h2>
+                </>
+              )}
+              <section className="content-section">
+                <h2 className="section-title">{section.title}</h2>
+                {section.content.map((para, j) => (
+                  <p key={j}>{para}</p>
+                ))}
+                {section.bullets && (
+                  <ul className="bullet-list">
+                    {section.bullets.map((item, j) => (
+                      <li key={j}>{item}</li>
+                    ))}
+                  </ul>
+                )}
+                {section.contentAfter?.map((para, j) => (
+                  <p key={j}>{para}</p>
+                ))}
+                {section.email && <p className="contact-email">{section.email}</p>}
+              </section>
+            </div>
+          ))}
         </div>
       </main>
 

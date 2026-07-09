@@ -47,14 +47,22 @@ export default function AboutPage() {
                 <section className="about-content">
                     <div className="container">
                         <div className="content-block">
-                            <WordReveal
-                                as="p"
-                                className="font-display intro-statement"
-                                text={p.intro}
-                                delay={0.05}
-                            />
+                            <Reveal delay={0.05} y={18}>
+                                <p className="font-display intro-statement">{p.intro}</p>
+                            </Reveal>
+
                             <Reveal delay={0.1} y={18}>
-                                <p className="body-copy">{p.description}</p>
+                                <div className="about-section">
+                                    <h2 className="section-heading">{p.technology.title}</h2>
+                                    <p className="body-copy">{p.technology.content}</p>
+                                </div>
+                            </Reveal>
+
+                            <Reveal delay={0.1} y={18}>
+                                <div className="about-section">
+                                    <h2 className="section-heading">{p.assurance.title}</h2>
+                                    <p className="body-copy">{p.assurance.content}</p>
+                                </div>
                             </Reveal>
 
                             <Reveal delay={0.1} y={18}>
@@ -112,6 +120,16 @@ export default function AboutPage() {
                     font-size: 1.25rem;
                     line-height: 1.75;
                     color: var(--text-body);
+                }
+                .about-section {
+                    margin-top: 3rem;
+                }
+                .section-heading {
+                    font-size: clamp(1.35rem, 2.4vw, 1.7rem);
+                    font-weight: 600;
+                    letter-spacing: -0.01em;
+                    color: var(--text-heading);
+                    margin-bottom: 1rem;
                 }
                 .company-note {
                     margin-top: 3.5rem;
