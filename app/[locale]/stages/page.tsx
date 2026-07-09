@@ -19,22 +19,23 @@ interface Product {
     ageRange: string;
 }
 
+// Composed client renders — carton with its sachets standing beside it
 const products: Product[] = [
     {
         id: 'kidgrow',
-        image: blob('products/kid-grow.png'),
+        image: '/images/boxes/kidgrow-box.png',
         link: '/stages/kidgrow',
         ageRange: '4-7',
     },
     {
         id: 'kidrise',
-        image: blob('products/kid-rise.png'),
+        image: '/images/boxes/kidrise-box.png',
         link: '/stages/kidrise',
         ageRange: '8-12',
     },
     {
         id: 'teenfocus',
-        image: blob('products/teen-focus.png'),
+        image: '/images/boxes/teenfocus-box.png',
         link: '/stages/teenfocus',
         ageRange: '13-16',
     },
@@ -190,8 +191,8 @@ export default function StagesCategoryPage() {
                                                     <Image
                                                         src={currentProduct.image}
                                                         alt={productData.title}
-                                                        width={350}
-                                                        height={500}
+                                                        width={800}
+                                                        height={565}
                                                         className="product-image"
                                                         priority
                                                     />

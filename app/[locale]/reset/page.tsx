@@ -18,15 +18,16 @@ interface Product {
     link: string;
 }
 
+// Composed client renders — carton with its sachets standing beside it
 const products: Product[] = [
     {
         id: 'balance',
-        image: blob('products/balance_front.png'),
+        image: '/images/boxes/reset-balance-box.png',
         link: '/reset/balance',
     },
     {
         id: 'intense',
-        image: blob('products/intense_front.png'),
+        image: '/images/boxes/reset-intense-box.png',
         link: '/reset/intense',
     },
 ];
@@ -171,8 +172,8 @@ export default function ResetCategoryPage() {
                                                     <Image
                                                         src={currentProduct.image}
                                                         alt={productData.title}
-                                                        width={400}
-                                                        height={520}
+                                                        width={800}
+                                                        height={532}
                                                         className="product-image"
                                                         priority
                                                     />

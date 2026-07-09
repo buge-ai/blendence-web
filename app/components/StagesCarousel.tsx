@@ -37,7 +37,7 @@ const PRODUCT_DATA = [
         id: 'kidrise',
         href: '/stages/kidrise',
         productImage: blob('products/kid-rise.png'),
-        lifestyleImage: blob('glasses/kid-rise-glass.png'),
+        lifestyleImage: '/images/glasses/kid-rise-glass-v2.jpg',
         accent: 'var(--kidrise)',
         tint: 'var(--kidrise-tint)'
     },
@@ -45,7 +45,7 @@ const PRODUCT_DATA = [
         id: 'teenfocus',
         href: '/stages/teenfocus',
         productImage: blob('products/teen-focus.png'),
-        lifestyleImage: blob('glasses/teen-focus-glass.png'),
+        lifestyleImage: '/images/glasses/teen-focus-glass-v2.jpg',
         accent: 'var(--teenfocus)',
         tint: 'var(--teenfocus-tint)'
     }
@@ -58,7 +58,7 @@ export default function StagesCarousel() {
     const [isPaused, setIsPaused] = useState(false);
     const [direction, setDirection] = useState<'next' | 'prev'>('next');
     const reduce = useReducedMotion();
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
 
     // Combine static data with translations
     const productKeys = ['kidgrow', 'kidrise', 'teenfocus'] as const;
@@ -67,6 +67,7 @@ export default function StagesCarousel() {
         const translations = t.mainPage.stagesCarousel.products[key];
         return {
             ...product,
+            href: `/${language}${product.href}`,
             title: translations.title,
             tagline: translations.tagline,
             desc: translations.desc,
@@ -119,7 +120,7 @@ export default function StagesCarousel() {
                             alt="Stages"
                             width={400}
                             height={140}
-                            style={{ objectFit: 'contain' }}
+                            style={{ objectFit: 'contain', height: 'auto' }}
                         />
                     </div>
                     <p className={styles.subheading}>

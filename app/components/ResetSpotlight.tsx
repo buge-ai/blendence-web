@@ -28,14 +28,14 @@ const PRODUCT_DATA = [
     {
         id: 'balance',
         productImage: blob('products/balance_front.png'),
-        lifestyleImage: blob('glasses/reset-balance-glass.png'),
+        lifestyleImage: '/images/glasses/reset-balance-glass-v2.jpg',
         accent: 'var(--balance)',
         tint: 'var(--balance-tint)'
     },
     {
         id: 'intense',
         productImage: blob('products/intense_front.png'),
-        lifestyleImage: blob('glasses/reset-intense-glass.png'),
+        lifestyleImage: '/images/glasses/reset-intense-glass-v2.jpg',
         accent: 'var(--intense)',
         tint: 'var(--intense-tint)'
     }
@@ -110,7 +110,7 @@ export default function ResetSpotlight() {
                             alt="Reset"
                             width={400}
                             height={140}
-                            style={{ objectFit: 'contain' }}
+                            style={{ objectFit: 'contain', height: 'auto' }}
                         />
                     </div>
                     <p className={styles.subheading}>
