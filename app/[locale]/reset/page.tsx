@@ -173,7 +173,7 @@ export default function ResetCategoryPage() {
                                                         src={currentProduct.image}
                                                         alt={productData.title}
                                                         width={800}
-                                                        height={532}
+                                                        height={467}
                                                         className="product-image"
                                                         priority
                                                     />

@@ -27,14 +27,14 @@ interface ResetProduct {
 const PRODUCT_DATA = [
     {
         id: 'balance',
-        productImage: blob('products/balance_front.png'),
+        productImage: '/images/boxes/reset-balance-box.png',
         lifestyleImage: '/images/glasses/reset-balance-glass-v2.jpg',
         accent: 'var(--balance)',
         tint: 'var(--balance-tint)'
     },
     {
         id: 'intense',
-        productImage: blob('products/intense_front.png'),
+        productImage: '/images/boxes/reset-intense-box.png',
         lifestyleImage: '/images/glasses/reset-intense-glass-v2.jpg',
         accent: 'var(--intense)',
         tint: 'var(--intense-tint)'

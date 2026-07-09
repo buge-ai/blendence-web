@@ -192,7 +192,7 @@ export default function StagesCategoryPage() {
                                                         src={currentProduct.image}
                                                         alt={productData.title}
                                                         width={800}
-                                                        height={565}
+                                                        height={556}
                                                         className="product-image"
                                                         priority
                                                     />

@@ -28,7 +28,7 @@ const PRODUCT_DATA = [
     {
         id: 'kidgrow',
         href: '/stages/kidgrow',
-        productImage: blob('products/kid-grow.png'),
+        productImage: '/images/boxes/kidgrow-box.png',
         lifestyleImage: blob('glasses/kid-grow-glass.png'),
         accent: 'var(--kidgrow)',
         tint: 'var(--kidgrow-tint)'
@@ -36,7 +36,7 @@ const PRODUCT_DATA = [
     {
         id: 'kidrise',
         href: '/stages/kidrise',
-        productImage: blob('products/kid-rise.png'),
+        productImage: '/images/boxes/kidrise-box.png',
         lifestyleImage: '/images/glasses/kid-rise-glass-v2.jpg',
         accent: 'var(--kidrise)',
         tint: 'var(--kidrise-tint)'
@@ -44,7 +44,7 @@ const PRODUCT_DATA = [
     {
         id: 'teenfocus',
         href: '/stages/teenfocus',
-        productImage: blob('products/teen-focus.png'),
+        productImage: '/images/boxes/teenfocus-box.png',
         lifestyleImage: '/images/glasses/teen-focus-glass-v2.jpg',
         accent: 'var(--teenfocus)',
         tint: 'var(--teenfocus-tint)'
