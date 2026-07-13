@@ -20,40 +20,22 @@ export default function ResetBalancePage() {
             themeTint="#F4F1EA"  /* canonical: var(--balance-tint) */
             features={[
                 {
-                    title: p.features.what.title,
-                    content: (
-                        <>
-                            {p.features.what.content.map((text, i) => (
-                                <p key={i}>{text}</p>
-                            ))}
-                        </>
-                    )
+                    title: p.features.why.title,
+                    content: <p>{p.features.why.content}</p>,
                 },
                 {
-                    title: p.features.when.title,
+                    title: p.features.whoFor.title,
+                    full: true,
                     content: (
                         <ul>
-                            {p.features.when.list.map((item, i) => (
+                            {p.features.whoFor.list.map((item, i) => (
                                 <li key={i}>{item}</li>
                             ))}
                         </ul>
-                    )
+                    ),
                 },
-                {
-                    title: p.features.supports.title,
-                    content: (
-                        <ul>
-                            {p.features.supports.list.map((item, i) => (
-                                <li key={i}>{item}</li>
-                            ))}
-                        </ul>
-                    )
-                },
-                {
-                    title: p.features.how.title,
-                    content: p.features.how.content
-                }
             ]}
+            cleanFormulation={p.cleanFormulation.items}
         />
     );
 }

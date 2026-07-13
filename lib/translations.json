@@ -40,17 +40,18 @@
       "copyright": "BLENDENCE, a brand of <a href='https://bugefoods.com' target='_blank' rel='noopener noreferrer'>Buge Foods</a>. All rights reserved."
     },
     "hero": {
-      "subtitle": "100% Freeze-Dried Nutritional Mix Brand",
-      "title": "Naturally Powerful, Perfectly Balanced",
-      "natural": "100% Natural",
-      "vegan": "100% Vegan",
-      "noSugar": "No Added Sugar",
-      "description": "Dedicated to providing natural, functional, and safe products for consumers of all ages. Our mission is to deliver wholesome nutrition, ensuring that everyone can enjoy the health benefits of high-quality ingredients without any additives or preservatives.",
-      "cta": "Discover Our Products"
+      "tagline": "Naturally powerful, perfectly balanced.",
+      "title1": "DESIGNED",
+      "title2": "NUTRITION",
+      "title3": "FOR EVERYDAY",
+      "titleHighlight": "BALANCE",
+      "description1": "At Blendence, nutrition doesn't happen by chance.",
+      "description2": "Every blend is designed through a deliberate process.",
+      "cta": "Explore our approach"
     },
     "mainPage": {
       "videoHero": {
-        "tagline": "Naturally Powerful, Perfectly Balanced.",
+        "tagline": "Naturally powerful, perfectly balanced.",
         "subtitle": "Five freeze-dried blends designed for every stage of life — from childhood growth to peak performance.",
         "scrollCta": "Discover",
         "cta": "Explore Our Products"
@@ -96,7 +97,11 @@
         "title": "Designed, not improvised.",
         "heading": "Deliberate Process",
         "description": "At Blendence, nutrition doesn't happen by chance. Every blend is designed through a deliberate process that aligns nutritional science with real-life use.",
-        "specs": ["−40°C lyophilization", "100% fruit & vegetable", "0 additives"]
+        "specs": [
+          "−40°C lyophilization",
+          "100% fruit & vegetable",
+          "0 additives"
+        ]
       },
       "adaptability": {
         "label": "Adaptability",
@@ -104,9 +109,18 @@
         "heading": "Real Life Adaptation",
         "description": "From home to school, from work to demanding periods, daily routines are rarely the same. Blendence is designed to fit into real life — without rituals, complexity, or extremes.",
         "scenes": [
-          { "time": "07:30", "label": "Breakfast at home" },
-          { "time": "13:00", "label": "At the desk" },
-          { "time": "18:30", "label": "After training" }
+          {
+            "time": "07:30",
+            "label": "Breakfast at home"
+          },
+          {
+            "time": "13:00",
+            "label": "At the desk"
+          },
+          {
+            "time": "18:30",
+            "label": "After training"
+          }
         ]
       },
       "productGroups": {
@@ -206,171 +220,154 @@
     "productPages": {
       "kidgrow": {
         "title": "KidGrow",
-        "subtitle": "Optimized nutrition for early growth stages (4–7).",
-        "description": "Practical support for everyday routines during early childhood.",
+        "subtitle": "A natural, no-added-sugar blend designed for the everyday needs of early childhood (ages 4–7).",
+        "description": "",
         "tag": "Stages — 4–7",
         "features": {
           "why": {
             "title": "Why KidGrow?",
-            "content": [
-              "Early childhood is about building habits as much as it is about growth.",
-              "KidGrow is designed as a healthier alternative to sugary drinks and snacks — offering a practical, nourishing option that fits naturally between meals and daily routines."
-            ]
+            "content": "Children aged 4–7 move fast, skip meals often and eat selectively — and usually go most of the day without any fruit. KidGrow contains green grape, orange, pear and banana, and that selection is no accident. Our team of food engineers and dietitians designed this formulation around the typical daily needs of the 4–7 age group. Each fruit is processed by lyophilization (freeze-drying), a technology that preserves natural nutritional value far better than conventional drying methods. You can add it to the daily routine easily — stirred into a glass of water or mixed into a recipe your child loves (homemade desserts, milkshakes, smoothies, milk and so on)."
           },
-          "when": {
-            "title": "When is it relevant?",
-            "intro": "Ages 4–7 mark a foundational stage. During this period, children experience:",
+          "whoFor": {
+            "title": "Who is it for?",
             "list": [
-              "Rapid physical development",
-              "Evolving daily routines",
-              "Changing nutritional needs"
-            ],
-            "outro": "KidGrow is optimized for this stage, where consistency and balance matter more than intensity."
-          },
-          "how": {
-            "title": "How it fits into daily life",
-            "list": [
-              "Easy to prepare and consume",
-              "Suitable for regular use",
-              "Especially suited for morning or daytime routines",
-              "Integrates naturally into everyday life without complexity"
+              "Parents who want to build a habit for their child with a clean, thoughtfully designed formulation",
+              "Families looking for a quick, no-prep routine at breakfast or before school",
+              "Anyone wanting a practical solution for children who are selective about fruit",
+              "Those looking for a portable option that needs no cold chain and travels easily in a bag"
             ]
           },
           "note": {
             "title": "A note for parents",
-            "content": "KidGrow is a food product, not a medicine. While optimized for early growth stages, it can be consumed by individuals of different ages. The formulation is designed to be most relevant during this stage."
+            "content": "The age range is a starting point; while the formulation is optimized for this age group, KidGrow can also be enjoyed by other ages or by adults within the family."
           }
+        },
+        "cleanFormulation": {
+          "items": [
+            "Fruits inside: green grape, orange, pear, banana",
+            "No added sugar",
+            "No artificial colors or flavors"
+          ]
         }
       },
       "kidrise": {
         "title": "KidRise",
-        "subtitle": "Optimized nutrition for learning and active routines (8–12).",
-        "description": "Designed to support consistency throughout school days.",
+        "subtitle": "A blend made from natural fruits, with no added flavor, taste or coloring agents (ages 8–12).",
+        "description": "",
         "tag": "Stages — 8–12",
         "features": {
           "why": {
             "title": "Why KidRise?",
-            "content": [
-              "As school routines begin, daily demands increase.",
-              "KidRise is designed as a practical alternative to sugary drinks and snacks — supporting steady energy during longer, more structured days."
-            ]
+            "content": "Ages 8–12 are among the most active, fast-growing years — yet in the daily rush, fruit and vegetable intake is often the first habit to be skipped. KidRise contains red apple, carrot, orange, lemon and banana. The blend is based on a formulation our food engineers and dietitians built around the typical daily pace of this age group. You can add it to the day easily — stirred into a glass of water or mixed into a recipe your child loves (smoothies, milkshakes, milk and so on)."
           },
-          "when": {
-            "title": "When is it relevant?",
-            "content": [
-              "Ages 8–12 represent a transition. Learning becomes more structured, days become longer, and routines more demanding.",
-              "KidRise is optimized for this stage, where steady energy and routine compatibility matter more than intensity."
-            ]
-          },
-          "how": {
-            "title": "How it fits into daily life",
+          "whoFor": {
+            "title": "Who is it for?",
             "list": [
-              "Easy to prepare and consume",
-              "Suitable for regular use",
-              "Designed to fit into busy school-day schedules",
-              "No strict timing or cycles required"
+              "Families looking for a regular habit across the school week",
+              "Anyone wanting a practical, no-prep option after sports or activity",
+              "Parents looking for a light, easy-to-carry product for a child's daily bag",
+              "Those who want to trust a clean, expertly designed formulation"
             ]
           },
           "note": {
             "title": "A note for parents",
-            "content": "KidRise is a food product, not a medicine. While optimized for school-age routines, it can be consumed by individuals of different ages. The formulation is designed to be most relevant during this stage."
+            "content": "While the formulation is optimized for this age range, KidRise can be enjoyed by any age."
           }
+        },
+        "cleanFormulation": {
+          "items": [
+            "Vegetables and fruits inside: red apple, carrot, orange, lemon, banana",
+            "No added sugar",
+            "No artificial colors or flavors"
+          ]
         }
       },
       "teenfocus": {
         "title": "TeenFocus",
-        "subtitle": "Optimized nutrition for focus-intensive stages (13–16).",
-        "description": "Designed to support consistency during mentally demanding school years.",
+        "subtitle": "A natural fruit and flaxseed blend with no added sugar, optimized for a period that combines intense school life with a physical pace (ages 13–16).",
+        "description": "",
         "tag": "Stages — 13–16",
         "features": {
           "why": {
             "title": "Why TeenFocus?",
-            "content": [
-              "As school years progress, mental demands increase. Longer study periods, more information, and sustained attention become part of daily routines.",
-              "TeenFocus is designed to support focus during these periods — without turning nutrition into pressure or shortcuts."
-            ]
+            "content": "Exam periods, long study hours, irregular sleep — the teenage years are demanding, and regular fruit intake is often one of the first habits to slip. Mindful of the physical and academic intensity of this stage, our food engineers and dietitians brought together kiwi, green grape, banana, lemon and flaxseed. The selection is not random — every ingredient is part of the formulation logic our team defined for this age group."
           },
-          "when": {
-            "title": "When is it relevant?",
-            "content": "Ages 13–16 are often mentally intensive. TeenFocus is optimized for stages where clarity and consistency matter more than stimulation."
-          },
-          "how": {
-            "title": "How it fits into daily life",
+          "whoFor": {
+            "title": "Who is it for?",
             "list": [
-              "Fits naturally into study routines and longer school days",
-              "Easy to prepare",
-              "Suitable for regular use",
-              "No strict timing required"
+              "Teenagers going through intense study and exam periods",
+              "Teenagers who want to build a regular habit but are short on time",
+              "Teenagers looking for a practical alternative to sugary energy drinks",
+              "Anyone who wants a no-prep option they can carry in their bag and have whenever they like"
             ]
           },
           "note": {
-            "title": "A note on use",
-            "content": "TeenFocus is a food product, not a medicine. While optimized for focus-intensive teenage years, it can be consumed by individuals of different ages."
+            "title": "A note for parents",
+            "content": "While the formulation is optimized for this age range, TeenFocus can be enjoyed by any age."
           }
+        },
+        "cleanFormulation": {
+          "items": [
+            "Fruits and seed inside: kiwi, green grape, banana, lemon, flaxseed",
+            "No added sugar",
+            "No artificial colors or flavors"
+          ]
         }
       },
       "resetBalance": {
         "title": "Reset Balance",
-        "subtitle": "Designed to support lightness and balance in everyday routines.",
-        "description": "Designed for periods when daily routines continue, but a lighter, more balanced option feels more appropriate.",
-        "tag": "Reset — Everyday",
+        "subtitle": "A balance blend made from 100% vegetables and fruits, designed for the daily routine.",
+        "description": "",
+        "tag": "Reset",
         "features": {
-          "what": {
-            "title": "What is it about?",
-            "content": [
-              "Reset Balance focuses on continuity, not intensity.",
-              "It is designed for moments when you want to support balance and digestive lightness without disrupting your everyday flow. Rather than adding more, Reset Balance is about reducing unnecessary load."
-            ]
+          "why": {
+            "title": "Why Reset Balance?",
+            "content": "Even when daily life looks orderly, nutrition is usually the first habit to be sacrificed. Reset Balance contains cucumber, green apple, parsley, lemon, ginger, spinach and plant fiber — seven ingredients that come together in the same balanced ratio every day. It is a practical, no-prep step added to a morning or midday routine — stirred into a glass of water or mixed into a recipe you prefer, such as a smoothie, yogurt or oatmeal. Tip: having it at the same time each day helps the habit settle in much faster."
           },
-          "when": {
-            "title": "When is it relevant?",
+          "whoFor": {
+            "title": "Who is it for?",
             "list": [
-              "When meals feel heavier than usual",
-              "When a lighter, plant-based option is preferred between meals",
-              "When digestive comfort and simplicity become daily priorities",
-              "When maintaining balance matters more than stimulation"
+              "Adults who want to add a small but consistent step to their daily routine",
+              "Anyone without the time to prepare fresh vegetables and fruit every day",
+              "Anyone who wants to carry their blend in a bag and have it whenever they like during the day",
+              "Those looking for a light, practical daily habit that needs no cold chain"
             ]
-          },
-          "supports": {
-            "title": "What it supports",
-            "list": [
-              "Fluid balance and digestive lightness",
-              "Digestive-friendly routines (fiber-supported)",
-              "Satiety between meals"
-            ]
-          },
-          "how": {
-            "title": "How it fits into daily life",
-            "content": "Suitable for regular, ongoing routines. Works well as a lighter alternative between meals. No strict timing. No cycles."
           }
+        },
+        "cleanFormulation": {
+          "items": [
+            "Vegetables and fruits inside: cucumber, green apple, parsley, lemon, ginger, spinach, plant fiber",
+            "No added sugar",
+            "No artificial colors or flavors"
+          ]
         }
       },
       "resetIntense": {
         "title": "Reset Intense",
-        "subtitle": "Designed for moments when a more pronounced sense of lightness is preferred.",
-        "description": "Designed for periods when everyday balance feels harder to maintain and a more concentrated approach becomes relevant.",
-        "tag": "Reset — Targeted",
+        "subtitle": "A more concentrated vegetable and fruit blend, designed for high-tempo days.",
+        "description": "",
+        "tag": "Reset",
         "features": {
-          "what": {
-            "title": "What is it about?",
-            "content": [
-              "Reset Intense focuses on intensity of formulation, not intensity of use.",
-              "It is designed for moments when you want to support digestive lightness and balance in a shorter, more focused way. Intended for intermittent use, rather than continuous routines."
-            ]
+          "why": {
+            "title": "Why Reset Intense?",
+            "content": "Some days fall outside your standard routine — travel, long working hours, irregular schedules, or holiday and festive days when the table runs a little heavier. Reset Intense focuses not on frequency of use but on formulation intensity: it uses the same seven ingredients as Reset Balance, but the proportion of lemon, ginger and plant fiber rises noticeably. The naturally refreshing profile of cucumber, parsley and ginger comes into play on days when a more pronounced sense of lightness is wanted — not every day, but when you need it."
           },
-          "when": {
-            "title": "When is it relevant?",
+          "whoFor": {
+            "title": "Who is it for?",
             "list": [
-              "When a stronger sense of lightness is preferred",
-              "When meals or routines feel noticeably heavier than usual",
-              "When a more concentrated, plant-based option feels appropriate",
-              "When digestive comfort and simplicity become immediate priorities"
+              "Anyone looking for a more pronounced sense of lightness within a limited time",
+              "Anyone who does not want to bother preparing fresh ginger, parsley and lemon every morning",
+              "Anyone who wants to carry their blend easily to work, sport or travel and have it practically",
+              "Anyone who wants to benefit from lyophilization's advantage of preserving the nutritional value of fresh vegetables and fruit with minimal loss"
             ]
-          },
-          "how": {
-            "title": "How it fits into daily life",
-            "content": "Designed to be used when needed, not as a permanent part of daily routines. Practical for specific moments. Flexible use without rigid timing or cycles."
           }
+        },
+        "cleanFormulation": {
+          "items": [
+            "Vegetables and fruits inside: cucumber, green apple, parsley, lemon, ginger, spinach, plant fiber (in higher proportion)",
+            "No added sugar",
+            "No artificial colors or flavors"
+          ]
         }
       }
     },
@@ -995,12 +992,49 @@
       "stages": {
         "title": "STAGES",
         "tagline": "Optimized for every life phase",
-        "description": "Designed to support the natural needs of different life phases — from childhood growth to adolescence focus, and even future scenarios such as pregnancy or periods of intense adult routines. Each product is thoughtfully optimized for the specific physiological priorities of its intended audience. The aim is to offer tailored nourishment that grows and adapts alongside the body’s evolving stages of life."
+        "description": "Designed to support the natural needs of different life phases — from childhood growth to adolescence focus, and even future scenarios such as pregnancy or periods of intense adult routines. Each product is thoughtfully optimized for the specific physiological priorities of its intended audience. The aim is to offer tailored nourishment that grows and adapts alongside the body’s evolving stages of life.",
+        "cards": {
+          "kidgrow": {
+            "lines": [
+              "Optimized nutrition for early growth stages.",
+              "Practical support for everyday routines in early childhood.",
+              "A fruit-based, practical alternative to sugary snacks."
+            ]
+          },
+          "kidrise": {
+            "lines": [
+              "Optimized nutrition for learning and active routines.",
+              "Designed to support consistency throughout school days.",
+              "Fills the gap in fruit and vegetable intake missed during busy school days."
+            ]
+          },
+          "teenfocus": {
+            "lines": [
+              "Optimized nutrition for focus-intensive stages.",
+              "Designed to support consistency during mentally demanding school years.",
+              "A practical daily habit for exam periods and heavy study schedules."
+            ]
+          }
+        }
       },
       "reset": {
         "title": "RESET",
         "tagline": "Restore your natural balance",
-        "description": "Created for moments when the body benefits from refreshing its internal rhythm and returning to a lighter sense of balance. Each blend supports the feeling of clarity and renewal that helps reset daily routines. The category embraces a simple idea: giving the body space to restore its own natural equilibrium."
+        "description": "Created for moments when the body benefits from refreshing its internal rhythm and returning to a lighter sense of balance. Each blend supports the feeling of clarity and renewal that helps reset daily routines. The category embraces a simple idea: giving the body space to restore its own natural equilibrium.",
+        "cards": {
+          "balance": {
+            "lines": [
+              "Designed to support lightness and balance in everyday routines.",
+              "Designed for periods when daily routines continue, but a lighter, more balanced option feels more suitable."
+            ]
+          },
+          "intense": {
+            "lines": [
+              "Designed for moments when a more pronounced sense of lightness is preferred.",
+              "Prepared for periods when maintaining everyday balance becomes harder and a more intensive approach becomes suitable."
+            ]
+          }
+        }
       },
       "shield": {
         "title": "SHIELD",
@@ -1169,16 +1203,6 @@
       "noArtificialFlavors": "No artificial flavors",
       "noUnnecessaryAdditives": "No unnecessary additives"
     },
-    "hero": {
-      "tagline": "Naturally powerful, perfectly balanced.",
-      "title1": "DESIGNED",
-      "title2": "NUTRITION",
-      "title3": "FOR EVERYDAY",
-      "titleHighlight": "BALANCE",
-      "description1": "At Blendence, nutrition doesn't happen by chance.",
-      "description2": "Every blend is designed through a deliberate process.",
-      "cta": "Explore our approach"
-    },
     "contentGrid": {
       "explore": "Explore",
       "age": "Age",
@@ -1232,7 +1256,7 @@
       "intense": "Intense"
     },
     "footer": {
-      "description": "Gerçek yaşama uyum sağlayan beslenme tasarlıyoruz. Doğal güç, mükemmel denge.",
+      "description": "Gerçek yaşama uyum sağlayan karışımlar tasarlıyoruz. Doğal güç, mükemmel denge.",
       "stages": "Stages",
       "reset": "Reset",
       "company": "Şirket",
@@ -1249,24 +1273,25 @@
       "copyright": "BLENDENCE, <a href='https://bugefoods.com' target='_blank' rel='noopener noreferrer'>Buge Foods</a> markasıdır. Tüm hakları saklıdır."
     },
     "hero": {
-      "subtitle": "%100 Dondurarak Kurutulmuş Beslenme Karışımı Markası",
-      "title": "Doğal Gücü, Mükemmel Dengede",
-      "natural": "%100 Doğal",
-      "vegan": "%100 Vegan",
-      "noSugar": "Şeker Katkısız",
-      "description": "Her yaştan tüketici için doğal, fonksiyonel ve güvenli ürünler sunmaya kendini adamış. Misyonumuz, herkesin katkı maddesi ve koruyucu içermeyen yüksek kaliteli içeriklerin sağlık faydalarından yararlanabilmesini sağlamaktır.",
-      "cta": "Ürünlerimizi Keşfedin"
+      "tagline": "Doğal güç, mükemmel denge.",
+      "title1": "GÜNLÜK",
+      "title2": "DENGE",
+      "title3": "İÇİN TASARLANMIŞ",
+      "titleHighlight": "BESLENME",
+      "description1": "Blendence'da beslenme tesadüfe bırakılmaz.",
+      "description2": "Her karışım bilinçli bir süreçle tasarlanır.",
+      "cta": "Yaklaşımımızı keşfedin"
     },
     "mainPage": {
       "videoHero": {
-        "tagline": "Doğal Olarak Güçlü, Mükemmel Dengeli.",
-        "subtitle": "Çocukluktan zirve performansa — hayatın her aşaması için tasarlanmış beş dondurularak kurutulmuş karışım.",
+        "tagline": "Naturally powerful, perfectly balanced.",
+        "subtitle": "Hayatın pek çok farklı aşaması için özel tasarlanmış, dondurarak kurutulmuş, katkısız karışımlar",
         "scrollCta": "Keşfet",
         "cta": "Ürünlerimizi Keşfedin"
       },
       "hero": {
         "staticTitle": "Günlük denge için tasarlanmış beslenme",
-        "staticSubtitle": "Doğal olarak güçlü, mükemmel dengeli.",
+        "staticSubtitle": "Naturally powerful, perfectly balanced.",
         "slides": {
           "kidgrow": {
             "title": "KidGrow",
@@ -1302,10 +1327,14 @@
       },
       "philosophy": {
         "label": "Felsefe",
-        "title": "Tasarlandı, doğaçlama değil.",
+        "title": "Rastgele Değil, Tasarlanmış.",
         "heading": "Bilinçli Süreç",
-        "description": "Blendence'de beslenme tesadüfe bırakılmaz. Her karışım, beslenme bilimini gerçek yaşam kullanımıyla uyumlu hale getiren bilinçli bir süreçle tasarlanır.",
-        "specs": ["−40°C liyofilizasyon", "%100 meyve & sebze", "0 katkı maddesi"]
+        "description": "Her karışım, gıda mühendisleri ve diyetisyenlerden oluşan bir ekibin elinden geçer; doğanın sunduğu besin değerini en az kayıpla korumak için liyofilizasyon teknolojisiyle işlenir.",
+        "specs": [
+          "−40°C liyofilizasyon",
+          "%100 meyve & sebze",
+          "0 katkı maddesi"
+        ]
       },
       "adaptability": {
         "label": "Uyum",
@@ -1313,9 +1342,18 @@
         "heading": "Gerçek Hayat Uyumu",
         "description": "Evden okula, işten zorlu dönemlere, günlük rutinler nadiren aynı kalır. Blendence, gerçek hayata sığacak şekilde tasarlandı — ritüeller, karmaşıklık veya aşırılıklar olmadan.",
         "scenes": [
-          { "time": "07:30", "label": "Evde kahvaltı" },
-          { "time": "13:00", "label": "Masa başında" },
-          { "time": "18:30", "label": "Antrenman sonrası" }
+          {
+            "time": "07:30",
+            "label": "Evde kahvaltı"
+          },
+          {
+            "time": "13:00",
+            "label": "Masa başında"
+          },
+          {
+            "time": "18:30",
+            "label": "Antrenman sonrası"
+          }
         ]
       },
       "productGroups": {
@@ -1323,10 +1361,10 @@
         "subtitle": "İster günlük aşamalarla başa çıkın, ister taze bir sıfırlama arayın, Blendence gerçek yaşam için tasarlanmış temiz, bitki bazlı beslenme sunar.",
         "stagesTitle": "Stages",
         "stagesTagline": "Büyüyen ihtiyaçlar için beslenme",
-        "stagesDescription": "Farklı yaşam aşamaları için özenle tasarlanmış karışımlar. Erken büyümeden ergenliğe, her formülasyon gelişen beslenme ihtiyaçlarına uyum sağlar.",
+        "stagesDescription": "Çocukluktan yaşlılığa, yaşamın her evresinin kendine özgü ihtiyaçları vardır. Stages serisi, çocukluğun üç evresine göre optimize edilmiş ürünlerle başlıyor.",
         "resetTitle": "Reset",
         "resetTagline": "İhtiyacınız olduğunda denge",
-        "resetDescription": "Vücudun hafiflik ve dengeye ihtiyaç duyduğu anlar için temiz, bitki bazlı formülasyonlar. Taşınabilirlik ve günlük kullanım için tasarlandı.",
+        "resetDescription": "Günlük temponuz değişse de dengeniz değişmesin. Reset serisi, yetişkinlerin günlük rutinine pratik bir alternatif sunar.",
         "viewRange": "Seriyi görüntüle",
         "exploreRange": "Seriyi keşfet"
       },
@@ -1415,171 +1453,154 @@
     "productPages": {
       "kidgrow": {
         "title": "KidGrow",
-        "subtitle": "Erken büyüme aşamaları için optimize edilmiş beslenme (4–7).",
-        "description": "Erken çocukluk döneminde günlük rutinler için pratik destek.",
-        "tag": "Aşamalar — 4–7",
+        "subtitle": "Erken çocukluk döneminin günlük ihtiyaçlarına göre tasarlanmış, ilave şeker içermeyen doğal bir karışım (4–7 yaş).",
+        "description": "",
+        "tag": "Stages — 4–7",
         "features": {
           "why": {
             "title": "Neden KidGrow?",
-            "content": [
-              "Erken çocukluk dönemi, büyüme kadar alışkanlık oluşturmakla da ilgilidir.",
-              "KidGrow, şekerli içeceklere ve atıştırmalıklara daha sağlıklı bir alternatif olarak tasarlandı — öğün aralarında ve günlük rutinlere doğal olarak uyan pratik, besleyici bir seçenek sunuyor."
-            ]
+            "content": "4-7 yaş arası çocuklar hızlı hareket eder, sık öğün atlar, seçici beslenir — ve genelde günün büyük kısmını meyve tüketmeden geçirir. KidGrow içinde yeşil üzüm, portakal, armut ve muz bulunur; bu seçim rastgele değildir. Gıda mühendisleri ve diyetisyenlerden oluşan ekibimiz, 4-7 yaş grubunun tipik günlük ihtiyaçlarını gözeterek bu formülasyonu tasarladı. Her meyveyi liyofilizasyonla (dondurarak kurutma) işliyoruz; bu teknoloji doğal besin değerini geleneksel kurutma yöntemlerine göre çok daha yüksek oranda koruyor. Bir bardak suya karıştırarak ya da çocuğunuzun sevdiği bir tarife katarak (ev yapımı tatlı, milkshake, smoothie, süt vb.) günlük rutine kolayca ekleyebilirsiniz."
           },
-          "when": {
-            "title": "Ne zaman uygundur?",
-            "intro": "4–7 yaş, temel bir aşamadır. Bu dönemde çocuklar:",
+          "whoFor": {
+            "title": "Kimler İçindir?",
             "list": [
-              "Hızlı fiziksel gelişim",
-              "Gelişen günlük rutinler",
-              "Değişen beslenme ihtiyaçları"
-            ],
-            "outro": "KidGrow, tutarlılık ve dengenin yoğunluktan daha önemli olduğu bu aşama için optimize edilmiştir."
-          },
-          "how": {
-            "title": "Günlük hayata nasıl uyar",
-            "list": [
-              "Hazırlaması ve tüketmesi kolay",
-              "Düzenli kullanıma uygun",
-              "Özellikle sabah veya gündüz rutinleri için ideal",
-              "Karmaşıklık olmadan günlük yaşama doğal olarak entegre olur"
+              "Çocuğuna katkı maddesiz, bilinçli bir formülasyonla hazırlanmış bir alışkanlık kazandırmak isteyen ebeveynler",
+              "Kahvaltıda veya okul öncesinde hızlı, hazırlık gerektirmeyen bir rutin arayan aileler",
+              "Meyve tüketiminde seçici olan çocuklar için pratik bir çözüm isteyenler",
+              "Soğuk zincir gerektirmeyen, çantada kolayca taşınabilen bir seçenek arayanlar"
             ]
           },
           "note": {
             "title": "Ebeveynler için not",
-            "content": "KidGrow bir gıda ürünüdür, ilaç değildir. Erken büyüme aşamaları için optimize edilmiş olsa da, farklı yaştaki bireyler tarafından tüketilebilir. Formülasyon, bu aşamada en uygun olacak şekilde tasarlanmıştır."
+            "content": "Yaş aralığı bir başlangıç noktasıdır; her ne kadar bu yaş grubu için optimize edilmiş bir içerik olsa da, KidGrow aile içinde farklı yaş gruplarınca ya da yetişkinlerce de tüketilebilir."
           }
+        },
+        "cleanFormulation": {
+          "items": [
+            "İçindeki meyveler: yeşil üzüm, portakal, armut, muz",
+            "Eklenmiş şeker yok",
+            "Yapay renklendirici veya aroma yok"
+          ]
         }
       },
       "kidrise": {
         "title": "KidRise",
-        "subtitle": "Öğrenme ve aktif rutinler için optimize edilmiş beslenme (8–12).",
-        "description": "Okul günleri boyunca tutarlılığı desteklemek için tasarlandı.",
-        "tag": "Aşamalar — 8–12",
+        "subtitle": "Doğal meyvelerden oluşan, aroma, tat veya renk verici madde içermeyen karışım (8–12 yaş).",
+        "description": "",
+        "tag": "Stages — 8–12",
         "features": {
           "why": {
             "title": "Neden KidRise?",
-            "content": [
-              "Okul rutinleri başladığında, günlük talepler artar.",
-              "KidRise, şekerli içeceklere ve atıştırmalıklara pratik bir alternatif olarak tasarlandı — daha uzun, daha yapılandırılmış günlerde sürekli enerjiyi destekliyor."
-            ]
+            "content": "8-12 yaş, hareketliliğin ve büyümenin en yoğun sürdüğü dönemlerden biri — ama günlük tempoda sebze-meyve tüketimi genelde ilk atlanan alışkanlık olur. KidRise içinde kırmızı elma, havuç, portakal, limon ve muz bulunur. Karışım, gıda mühendisleri ve diyetisyenlerin bu yaş grubunun tipik günlük temposunu gözeterek oluşturduğu bir formülasyona dayanır. Bir bardak suya karıştırarak ya da çocuğunuzun sevdiği bir tarife katarak (smoothie, milkshake, süt vb.) güne kolayca ekleyebilirsiniz."
           },
-          "when": {
-            "title": "Ne zaman uygundur?",
-            "content": [
-              "8–12 yaş bir geçiş dönemini temsil eder. Öğrenme daha yapılandırılmış hale gelir, günler uzar ve rutinler daha talepkar olur.",
-              "KidRise, sürekli enerji ve rutin uyumluluğunun yoğunluktan daha önemli olduğu bu aşama için optimize edilmiştir."
-            ]
-          },
-          "how": {
-            "title": "Günlük hayata nasıl uyar",
+          "whoFor": {
+            "title": "Kimler İçindir?",
             "list": [
-              "Hazırlaması ve tüketmesi kolay",
-              "Düzenli kullanıma uygun",
-              "Yoğun okul günü programlarına uyacak şekilde tasarlandı",
-              "Katı zamanlama veya döngü gerektirmez"
+              "Okul haftası boyunca düzenli bir alışkanlık arayan aileler",
+              "Spor veya aktivite sonrası pratik, hazırlık gerektirmeyen bir seçenek isteyenler",
+              "Çocuğunun günlük çantasına kolayca ekleyebileceği, taşıması hafif bir ürün arayan ebeveynler",
+              "Katkı maddesiz, uzmanlarca tasarlanmış bir formülasyona güvenmek isteyenler"
             ]
           },
           "note": {
             "title": "Ebeveynler için not",
-            "content": "KidRise bir gıda ürünüdür, ilaç değildir. Okul çağı rutinleri için optimize edilmiş olsa da, farklı yaştaki bireyler tarafından tüketilebilir. Formülasyon, bu aşamada en uygun olacak şekilde tasarlanmıştır."
+            "content": "Her ne kadar bu yaş aralığı için optimize edilmiş bir içerik olsa da, KidRise her yaş tarafından tüketilebilir."
           }
+        },
+        "cleanFormulation": {
+          "items": [
+            "İçindeki sebze ve meyveler: kırmızı elma, havuç, portakal, limon, muz",
+            "Eklenmiş şeker yok",
+            "Yapay renklendirici veya aroma yok"
+          ]
         }
       },
       "teenfocus": {
         "title": "TeenFocus",
-        "subtitle": "Odak yoğunluklu aşamalar için optimize edilmiş beslenme (13–16).",
-        "description": "Zihinsel olarak zorlu okul yıllarında tutarlılığı desteklemek için tasarlandı.",
-        "tag": "Aşamalar — 13–16",
+        "subtitle": "Yoğun okul hayatına ilaveten fiziksel tempoyu da barındıran bu dönem için optimize edilmiş, ilave şekersiz, doğal meyve ve keten tohumu karışımı (13–16 yaş).",
+        "description": "",
+        "tag": "Stages — 13–16",
         "features": {
           "why": {
             "title": "Neden TeenFocus?",
-            "content": [
-              "Okul yılları ilerledikçe, zihinsel talepler artar. Daha uzun çalışma dönemleri, daha fazla bilgi ve sürekli dikkat günlük rutinlerin bir parçası haline gelir.",
-              "TeenFocus, bu dönemlerde odaklanmayı desteklemek için tasarlandı — beslenmeyi baskıya veya kısayollara dönüştürmeden."
-            ]
+            "content": "Sınav dönemleri, uzun ders saatleri, düzensiz uyku — gençlik yılları yoğun geçer ve bu dönemde düzenli meyve tüketimi genelde ilk atlanan alışkanlıklardan biri olur. Bu dönemin fiziksel ve akademik yoğunluğu gözetilerek, gıda mühendislerimiz ve diyetisyenlerimiz kivi, yeşil üzüm, muz, limon ve keten tohumunu bir araya getirdi. Seçim rastgele değil — her bileşen, ekibimizin bu yaş grubu için belirlediği formülasyon mantığının bir parçası."
           },
-          "when": {
-            "title": "Ne zaman uygundur?",
-            "content": "13–16 yaş genellikle zihinsel olarak yoğun bir dönemdir. TeenFocus, berraklık ve tutarlılığın uyarımdan daha önemli olduğu aşamalar için optimize edilmiştir."
-          },
-          "how": {
-            "title": "Günlük hayata nasıl uyar",
+          "whoFor": {
+            "title": "Kimler İçindir?",
             "list": [
-              "Çalışma rutinlerine ve daha uzun okul günlerine doğal olarak uyar",
-              "Hazırlaması kolay",
-              "Düzenli kullanıma uygun",
-              "Katı zamanlama gerektirmez"
+              "Yoğun ders/sınav dönemi geçiren gençler",
+              "Düzenli bir alışkanlık kurmak isteyen, ama zaman kısıtı olan gençler",
+              "Şekerli enerji içeceklerine pratik bir alternatif arayan gençler",
+              "Çantasında taşıyıp gün içinde istediği an tüketebileceği, hazırlık gerektirmeyen bir seçenek isteyenler"
             ]
           },
           "note": {
-            "title": "Kullanım hakkında not",
-            "content": "TeenFocus bir gıda ürünüdür, ilaç değildir. Odak yoğunluklu ergenlik yılları için optimize edilmiş olsa da, farklı yaştaki bireyler tarafından tüketilebilir."
+            "title": "Ebeveynler için not",
+            "content": "Her ne kadar bu yaş aralığı için optimize edilmiş bir içerik olsa da, TeenFocus her yaş tarafından tüketilebilir."
           }
+        },
+        "cleanFormulation": {
+          "items": [
+            "İçindeki meyveler ve tohum: kivi, yeşil üzüm, muz, limon, keten tohumu",
+            "Eklenmiş şeker yok",
+            "Yapay renklendirici veya aroma yok"
+          ]
         }
       },
       "resetBalance": {
         "title": "Reset Balance",
-        "subtitle": "Günlük rutinlerde hafiflik ve dengeyi desteklemek için tasarlandı.",
-        "description": "Günlük rutinlerin devam ettiği ancak daha hafif, daha dengeli bir seçeneğin daha uygun hissedildiği dönemler için tasarlandı.",
-        "tag": "Reset — Günlük",
+        "subtitle": "Günlük rutin için tasarlanmış, %100 sebze ve meyve içerikli denge karışımı.",
+        "description": "",
+        "tag": "Reset",
         "features": {
-          "what": {
-            "title": "Ne hakkında?",
-            "content": [
-              "Reset Balance yoğunluğa değil, sürekliliğe odaklanır.",
-              "Günlük akışınızı bozmadan denge ve sindirim hafifliğini desteklemek istediğiniz anlar için tasarlandı. Daha fazla eklemek yerine, Reset Balance gereksiz yükü azaltmakla ilgilidir."
-            ]
+          "why": {
+            "title": "Neden Reset Balance?",
+            "content": "Günlük hayat düzenli görünse de, beslenme genelde ilk feda edilen alışkanlıktır. Reset Balance içinde salatalık, yeşil elma, maydanoz, limon, zencefil, ıspanak ve bitkisel lif bulunur; yedi bileşen her gün aynı dengeli oranla bir araya gelir. Sabah veya öğlen rutinine eklenen, hazırlık gerektirmeyen pratik bir adımdır — bir bardak suya karıştırarak ya da smoothie, yoğurt veya yulaf ezmesi gibi tercih ettiğiniz bir tarife katarak tüketilir. İpucu: her gün aynı saatte tüketmek, alışkanlığı çok daha hızlı oturtur."
           },
-          "when": {
-            "title": "Ne zaman uygundur?",
+          "whoFor": {
+            "title": "Kimler İçindir?",
             "list": [
-              "Yemekler normalden daha ağır hissedildiğinde",
-              "Öğün aralarında daha hafif, bitki bazlı bir seçenek tercih edildiğinde",
-              "Sindirim konforu ve sadelik günlük öncelik haline geldiğinde",
-              "Uyarımdan çok denge korumanın önemli olduğunda"
+              "Günlük rutinine küçük ama tutarlı bir adım eklemek isteyen yetişkinler",
+              "Her gün taze sebze-meyve hazırlamaya vakti olmayanlar",
+              "Karışımını çantasında taşıyıp gün içinde istediği an tüketmek isteyenler",
+              "Soğuk zincir gerektirmeyen, hafif ve pratik bir günlük alışkanlık arayanlar"
             ]
-          },
-          "supports": {
-            "title": "Neyi destekler",
-            "list": [
-              "Sıvı dengesi ve sindirim hafifliği",
-              "Sindirimi destekleyen rutinler (lif destekli)",
-              "Öğün arası tokluk hissi"
-            ]
-          },
-          "how": {
-            "title": "Günlük hayata nasıl uyar",
-            "content": "Düzenli, devam eden rutinler için uygundur. Öğün aralarında daha hafif bir alternatif olarak iyi çalışır. Katı zamanlama yok. Döngü yok."
           }
+        },
+        "cleanFormulation": {
+          "items": [
+            "İçindeki sebze ve meyveler: salatalık, yeşil elma, maydanoz, limon, zencefil, ıspanak, bitkisel lif",
+            "Eklenmiş şeker yok",
+            "Yapay renklendirici veya aroma yok"
+          ]
         }
       },
       "resetIntense": {
         "title": "Reset Intense",
-        "subtitle": "Daha belirgin bir hafiflik hissinin tercih edildiği anlar için tasarlandı.",
-        "description": "Günlük dengenin korunmasının zorlaştığı ve daha yoğun bir yaklaşımın uygun hale geldiği dönemler için tasarlandı.",
-        "tag": "Reset — Hedefli",
+        "subtitle": "Yoğun tempolu günler için tasarlanmış, daha konsantre bir sebze ve meyve karışımı.",
+        "description": "",
+        "tag": "Reset",
         "features": {
-          "what": {
-            "title": "Ne hakkında?",
-            "content": [
-              "Reset Intense kullanım yoğunluğuna değil, formülasyon yoğunluğuna odaklanır.",
-              "Sindirim hafifliğini ve dengeyi daha kısa, daha odaklı bir şekilde desteklemek istediğiniz anlar için tasarlandı. Sürekli rutinler yerine aralıklı kullanım için tasarlandı."
-            ]
+          "why": {
+            "title": "Neden Reset Intense?",
+            "content": "Bazı günler standart rutininizin dışına çıkar — seyahat, uzun mesai, düzensiz programlar ya da sofranın biraz fazla kaçtığı bayram ve tatil günleri gibi. Reset Intense kullanım sıklığına değil, formülasyon yoğunluğuna odaklanır: Reset Balance ile aynı yedi bileşeni kullanır, ancak limon, zencefil ve bitkisel lif oranı belirgin şekilde yükselir. Salatalık, maydanoz ve zencefilin doğal ferahlık veren profili, daha belirgin bir hafiflik hissi arandığı günlerde devreye girer — her gün değil, ihtiyaç duyduğunuz zamanlarda."
           },
-          "when": {
-            "title": "Ne zaman uygundur?",
+          "whoFor": {
+            "title": "Kimler İçindir?",
             "list": [
-              "Daha güçlü bir hafiflik hissi tercih edildiğinde",
-              "Yemekler veya rutinler normalden belirgin şekilde daha ağır hissedildiğinde",
-              "Daha yoğun, bitki bazlı bir seçenek uygun hissedildiğinde",
-              "Sindirim konforu ve sadelik acil öncelik haline geldiğinde"
+              "Sınırlı sürede daha belirgin bir hafiflik hissi arayanlar",
+              "Her sabah taze zencefil, maydanoz ve limon hazırlamakla uğraşmak istemeyenler",
+              "Karışımını işe, spora ya da yolculuğa kolayca taşıyıp pratikçe tüketmek isteyenler",
+              "Liyofilizasyonun sunduğu, taze sebze-meyvedeki besin değerini minimum kayıpla koruma avantajından faydalanmak isteyenler"
             ]
-          },
-          "how": {
-            "title": "Günlük hayata nasıl uyar",
-            "content": "Günlük rutinlerin kalıcı bir parçası olarak değil, ihtiyaç duyulduğunda kullanılmak üzere tasarlandı. Belirli anlar için pratik. Katı zamanlama veya döngüler olmadan esnek kullanım."
           }
+        },
+        "cleanFormulation": {
+          "items": [
+            "İçindeki sebze ve meyveler: salatalık, yeşil elma, maydanoz, limon, zencefil, ıspanak, bitkisel lif (daha yüksek oranda)",
+            "Eklenmiş şeker yok",
+            "Yapay renklendirici veya aroma yok"
+          ]
         }
       }
     },
@@ -2204,12 +2225,49 @@
       "stages": {
         "title": "Stages",
         "tagline": "Her yaşam evresi için optimize edildi",
-        "description": "Çocukluktaki büyüme döneminden ergenlikteki odaklanma ihtiyacına, hatta hamilelik veya yoğun yetişkin rutinleri gibi gelecekteki senaryolara kadar farklı yaşam evrelerinin doğal ihtiyaçlarını desteklemek için tasarlanmıştır. Her ürün, hedef kitlesinin fizyolojik öncelikleri için özenle optimize edilmiştir. Amaç, vücudun değişen yaşam evreleriyle birlikte büyüyen ve uyum sağlayan özel bir beslenme sunmaktır."
+        "description": "Stages, insan ömrünün farklı evrelerinin kendine özgü fizyolojik ihtiyaçları olduğu fikrinden yola çıkar. Her ürün, alanında uzman gıda mühendisleri ve diyetisyenlerle birlikte, o yaş grubunun günlük rutinine göre tasarlanır. Şu an çocukluğun üç evresine göre optimize edilmiş ürünlerle karşınızdayız — yakın gelecekte farklı fizyolojik dönemler için önceliklendirilmiş yeni ürünlerle de yanınızda olacağız.",
+        "cards": {
+          "kidgrow": {
+            "lines": [
+              "Erken büyüme aşamaları için optimize edilmiş beslenme.",
+              "Erken çocukluk döneminde günlük rutinler için pratik destek.",
+              "Şekerli atıştırmalıklara, meyveden oluşan pratik bir alternatif."
+            ]
+          },
+          "kidrise": {
+            "lines": [
+              "Öğrenme ve aktif rutinler için optimize edilmiş beslenme.",
+              "Okul günleri boyunca tutarlılığı desteklemek için tasarlandı.",
+              "Yoğun okul temposunda gözden kaçan sebze-meyve tüketimini tamamlar."
+            ]
+          },
+          "teenfocus": {
+            "lines": [
+              "Odak yoğunluklu aşamalar için optimize edilmiş beslenme.",
+              "Zihinsel olarak zorlu okul yıllarında tutarlılığı desteklemek için tasarlandı.",
+              "Sınav dönemleri ve yoğun ders programlarında pratik bir günlük alışkanlık."
+            ]
+          }
+        }
       },
       "reset": {
         "title": "Reset",
         "tagline": "Doğal dengenizi yeniden kazanın",
-        "description": "Vücudun iç ritmini tazelemesinden ve daha hafif bir denge hissine dönmesinden fayda sağladığı anlar için yaratılmıştır. Her karışım, günlük rutinleri sıfırlamaya yardımcı olan berraklık ve yenilenme hissini destekler. Bu kategori basit bir fikri benimser: vücuda kendi doğal dengesini yeniden kurması için alan tanımak."
+        "description": "Reset, vücudunuzun iç ritmini tazelemesine ve daha hafif bir denge hissine dönmesine yardımcı olduğu anlar için yaratılmıştır. Her karışım, günlük rutinleri sıfırlamaya yardımcı olan berraklık ve yenilenme hissini destekler. Bu kategori basit bir fikri benimser: vücuda kendi doğal dengesini yeniden kurması için alan tanımak.",
+        "cards": {
+          "balance": {
+            "lines": [
+              "Günlük rutinlerde hafiflik ve dengeyi desteklemek için tasarlandı.",
+              "Günlük rutinlerin devam ettiği ancak daha hafif, daha dengeli bir seçeneğin daha uygun hissedildiği dönemler için tasarlandı."
+            ]
+          },
+          "intense": {
+            "lines": [
+              "Daha belirgin bir hafiflik hissinin tercih edildiği anlar için tasarlandı.",
+              "Günlük dengenin korunmasının zorlaştığı ve daha yoğun bir yaklaşımın uygun hale geldiği dönemler için hazırlandı."
+            ]
+          }
+        }
       },
       "shield": {
         "title": "Shield",
@@ -2378,16 +2436,6 @@
       "noArtificialFlavors": "Yapay aroma içermez",
       "noUnnecessaryAdditives": "Gereksiz katkı maddesi içermez"
     },
-    "hero": {
-      "tagline": "Doğal güç, mükemmel denge.",
-      "title1": "GÜNLÜK",
-      "title2": "DENGE",
-      "title3": "İÇİN TASARLANMIŞ",
-      "titleHighlight": "BESLENME",
-      "description1": "Blendence'da beslenme tesadüfe bırakılmaz.",
-      "description2": "Her karışım bilinçli bir süreçle tasarlanır.",
-      "cta": "Yaklaşımımızı keşfedin"
-    },
     "contentGrid": {
       "explore": "Keşfet",
       "age": "Yaş",
@@ -2404,13 +2452,13 @@
       "philosophy": "Felsefe",
       "ages": "Yaş",
       "lifeStages": "Yaşam Aşamaları",
-      "specializedNutrition": "Her yaşam aşaması için özel beslenme",
-      "earlyGrowth": "Erken Büyüme",
-      "earlyGrowthDesc": "Aktif oyun için temel vitaminler ve doğal enerji ile temeli oluşturmak.",
+      "specializedNutrition": "Evreye Özel Ürünler",
+      "earlyGrowth": "Erken Çocukluk Dönemi",
+      "earlyGrowthDesc": "Meyveyle tanışmanın ve günlük küçük alışkanlıklar kazanmanın dönemi.",
       "activeSchooling": "Aktif Okul Çağı",
-      "activeSchoolingDesc": "Yoğun okul günlerinde bilişsel gelişimi ve fiziksel tutarlılığı desteklemek.",
+      "activeSchoolingDesc": "Okul, oyun ve enerjinin aynı güne sığdığı dönem.",
       "mentalFocus": "Odak Dönemi",
-      "mentalFocusDesc": "Zorlu akademik dönemler ve hormonal geçişler için tasarlandı.",
+      "mentalFocusDesc": "Ders yükünün ve sorumluluğun arttığı, kendi rutinini kurma dönemi.",
       "stagesPhilosophyTitle": "Yaşamın geçişleri için tasarlanmış beslenme.",
       "stagesPhilosophyDesc": "Vücudun ihtiyaçları değiştikçe, karışımlarımız büyümeyi, odaklanmayı ve günlük tutarlılığı desteklemek için uyum sağlar.",
       "resetPhilosophyTitle": "Denge anları için tasarlandı.",

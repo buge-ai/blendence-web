@@ -21,43 +21,24 @@ export default function KidGrowPage() {
             features={[
                 {
                     title: p.features.why.title,
-                    content: (
-                        <>
-                            {p.features.why.content.map((text, i) => (
-                                <p key={i}>{text}</p>
-                            ))}
-                        </>
-                    )
+                    content: <p>{p.features.why.content}</p>,
                 },
                 {
-                    title: p.features.when.title,
-                    content: (
-                        <>
-                            <p>{p.features.when.intro}</p>
-                            <ul>
-                                {p.features.when.list.map((item, i) => (
-                                    <li key={i}>{item}</li>
-                                ))}
-                            </ul>
-                            <p>{p.features.when.outro}</p>
-                        </>
-                    )
-                },
-                {
-                    title: p.features.how.title,
+                    title: p.features.whoFor.title,
                     content: (
                         <ul>
-                            {p.features.how.list.map((item, i) => (
+                            {p.features.whoFor.list.map((item, i) => (
                                 <li key={i}>{item}</li>
                             ))}
                         </ul>
-                    )
+                    ),
                 },
                 {
                     title: p.features.note.title,
-                    content: p.features.note.content
-                }
+                    content: p.features.note.content,
+                },
             ]}
+            cleanFormulation={p.cleanFormulation.items}
         />
     );
 }

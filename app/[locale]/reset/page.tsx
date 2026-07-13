@@ -84,6 +84,8 @@ export default function ResetCategoryPage() {
     const productData = currentProduct.id === 'balance'
         ? t.productPages.resetBalance
         : t.productPages.resetIntense;
+    const resetCards = t.products.reset.cards as Record<string, { lines: string[] }>;
+    const cardLines = resetCards[currentProduct.id]?.lines ?? [];
 
     return (
         <div className="reset-page">
@@ -184,8 +186,11 @@ export default function ResetCategoryPage() {
                                         <div className="product-info">
                                             <span className="product-tag">{productData.tag}</span>
                                             <h3 className="product-title">{productData.title}</h3>
-                                            <p className="product-subtitle">{productData.subtitle}</p>
-                                            <p className="product-description">{productData.description}</p>
+                                            <ul className="product-points">
+                                                {cardLines.map((line, i) => (
+                                                    <li key={i}>{line}</li>
+                                                ))}
+                                            </ul>
                                             <Link
                                                 href={`/${language}${currentProduct.link}`}
                                                 className="product-cta"
@@ -455,6 +460,34 @@ export default function ResetCategoryPage() {
                     margin-bottom: 2rem;
                 }
 
+                .product-points {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0 0 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.85rem;
+                }
+
+                .product-points li {
+                    position: relative;
+                    padding-left: 1.4rem;
+                    font-size: 1.02rem;
+                    line-height: 1.6;
+                    color: var(--text-body);
+                }
+
+                .product-points li::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0.62em;
+                    width: 12px;
+                    height: 2px;
+                    border-radius: 2px;
+                    background: var(--reset-accent);
+                }
+
                 .product-info :global(.product-cta) {
                     display: inline-flex;
                     align-items: center;
@@ -588,6 +621,13 @@ export default function ResetCategoryPage() {
 
                     .product-info {
                         order: 2;
+                    }
+
+                    .product-points {
+                        text-align: left;
+                        max-width: 24rem;
+                        margin-left: auto;
+                        margin-right: auto;
                     }
 
                     .carousel-nav {

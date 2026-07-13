@@ -103,6 +103,8 @@ export default function StagesCategoryPage() {
         }
     };
     const productData = getProductData(currentProduct.id);
+    const stageCards = t.products.stages.cards as Record<string, { lines: string[] }>;
+    const cardLines = stageCards[currentProduct.id]?.lines ?? [];
 
     return (
         <div className="stages-page">
@@ -207,8 +209,11 @@ export default function StagesCategoryPage() {
                                             </div>
                                             <span className="product-tag">{productData.tag}</span>
                                             <h3 className="product-title">{productData.title}</h3>
-                                            <p className="product-subtitle">{productData.subtitle}</p>
-                                            <p className="product-description">{productData.description}</p>
+                                            <ul className="product-points">
+                                                {cardLines.map((line, i) => (
+                                                    <li key={i}>{line}</li>
+                                                ))}
+                                            </ul>
                                             <Link
                                                 href={`/${language}${currentProduct.link}`}
                                                 className="product-cta"
@@ -277,11 +282,7 @@ export default function StagesCategoryPage() {
                             <StaggerItem>
                                 <div className="stage-card" onClick={() => goToSlide(0)}>
                                     <div className="stage-icon">
-                                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="M12 20V10" />
-                                            <path d="M12 10c0-3 2-5 5-5-.5 3-2.5 5-5 5Z" />
-                                            <path d="M12 12c0-2.5-1.8-4.2-4.2-4.2C8.1 10 9.8 12 12 12Z" />
-                                        </svg>
+                                        <Image src="/images/stages/stage-sprout.png" alt="" width={72} height={72} className="stage-icon-img" />
                                     </div>
                                     <div className="stage-age">4-7</div>
                                     <h3>{t.categoryPages.earlyGrowth}</h3>
@@ -292,11 +293,7 @@ export default function StagesCategoryPage() {
                             <StaggerItem>
                                 <div className="stage-card" onClick={() => goToSlide(1)}>
                                     <div className="stage-icon">
-                                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="M3 8l9-4 9 4-9 4-9-4Z" />
-                                            <path d="M7 10.5V15c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5v-4.5" />
-                                            <path d="M21 8v5" />
-                                        </svg>
+                                        <Image src="/images/stages/stage-sapling.png" alt="" width={72} height={72} className="stage-icon-img" />
                                     </div>
                                     <div className="stage-age">8-12</div>
                                     <h3>{t.categoryPages.activeSchooling}</h3>
@@ -307,10 +304,7 @@ export default function StagesCategoryPage() {
                             <StaggerItem>
                                 <div className="stage-card" onClick={() => goToSlide(2)}>
                                     <div className="stage-icon">
-                                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="M9.5 21h5" />
-                                            <path d="M12 17c-3.3 0-6-2.7-6-6a6 6 0 0 1 12 0c0 2.4-1.3 3.9-2.4 5-.5.5-.6.7-.6 1.3v.4H9v-.4c0-.6-.1-.8-.6-1.3" />
-                                        </svg>
+                                        <Image src="/images/stages/stage-branch.png" alt="" width={72} height={72} className="stage-icon-img" />
                                     </div>
                                     <div className="stage-age">13-16</div>
                                     <h3>{t.categoryPages.mentalFocus}</h3>
@@ -564,6 +558,34 @@ export default function StagesCategoryPage() {
                     margin-bottom: 2rem;
                 }
 
+                .product-points {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0 0 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.75rem;
+                }
+
+                .product-points li {
+                    position: relative;
+                    padding-left: 1.4rem;
+                    font-size: 1.02rem;
+                    line-height: 1.6;
+                    color: var(--text-body);
+                }
+
+                .product-points li::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0.62em;
+                    width: 12px;
+                    height: 2px;
+                    border-radius: 2px;
+                    background: var(--stages-accent);
+                }
+
                 .product-info :global(.product-cta) {
                     display: inline-flex;
                     align-items: center;
@@ -678,12 +700,17 @@ export default function StagesCategoryPage() {
                     display: inline-flex;
                     align-items: center;
                     justify-content: center;
-                    width: 52px;
-                    height: 52px;
+                    width: 96px;
+                    height: 96px;
                     border-radius: var(--radius-pill);
                     background: var(--stages-tint);
-                    color: var(--stages-accent-deep);
                     margin-bottom: 1.25rem;
+                }
+
+                .stage-icon :global(.stage-icon-img) {
+                    width: 72px;
+                    height: 72px;
+                    object-fit: contain;
                 }
 
                 .stage-age {
@@ -782,6 +809,13 @@ export default function StagesCategoryPage() {
 
                     .product-info {
                         order: 2;
+                    }
+
+                    .product-points {
+                        text-align: left;
+                        max-width: 22rem;
+                        margin-left: auto;
+                        margin-right: auto;
                     }
 
                     .carousel-nav {

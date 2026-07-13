@@ -18,7 +18,11 @@ interface ProductLayoutProps {
     features: {
         title: string;
         content: string | React.ReactNode;
+        full?: boolean; // force full-width; defaults to the every-third heuristic
     }[];
+    /* Per-product "Clean Formulation" bullets (ingredients + no-added-sugar, etc.).
+       When provided, these replace the generic default checklist. */
+    cleanFormulation?: string[];
     specs?: {
         label: string;
         value: string;
@@ -34,6 +38,7 @@ export default function ProductLayout({
     themeColor,
     themeTint,
     features,
+    cleanFormulation,
     specs
 }: ProductLayoutProps) {
     const { t } = useLanguage();
@@ -66,9 +71,11 @@ export default function ProductLayout({
                             <Reveal delay={0.16}>
                                 <p className="hero-subtitle">{subtitle}</p>
                             </Reveal>
-                            <Reveal delay={0.24}>
-                                <p className="hero-desc">{description}</p>
-                            </Reveal>
+                            {description && (
+                                <Reveal delay={0.24}>
+                                    <p className="hero-desc">{description}</p>
+                                </Reveal>
+                            )}
                         </div>
                         <div className="hero-visual">
                             <div className="visual-backdrop" />
@@ -97,7 +104,7 @@ export default function ProductLayout({
                     <div className="container">
                         <Stagger className="features-grid">
                             {features.map((feature, idx) => {
-                                const isFull = idx % 3 === 0;
+                                const isFull = feature.full ?? idx % 3 === 0;
                                 return (
                                     <StaggerItem key={idx} className={`feature-cell${isFull ? ' full-width' : ''}`}>
                                         <div className={`feature-card${isFull ? ' full-width' : ''}`}>
@@ -119,24 +126,18 @@ export default function ProductLayout({
                                 <h3>{t.productLayout.cleanFormulation}</h3>
                             </Reveal>
                             <Stagger className="check-list" delay={0.08}>
-                                <StaggerItem className="check-item">
-                                    <svg className="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M20 6L9 17l-5-5" />
-                                    </svg>
-                                    <span>{t.productLayout.noArtificialColors}</span>
-                                </StaggerItem>
-                                <StaggerItem className="check-item">
-                                    <svg className="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M20 6L9 17l-5-5" />
-                                    </svg>
-                                    <span>{t.productLayout.noArtificialFlavors}</span>
-                                </StaggerItem>
-                                <StaggerItem className="check-item">
-                                    <svg className="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M20 6L9 17l-5-5" />
-                                    </svg>
-                                    <span>{t.productLayout.noUnnecessaryAdditives}</span>
-                                </StaggerItem>
+                                {(cleanFormulation ?? [
+                                    t.productLayout.noArtificialColors,
+                                    t.productLayout.noArtificialFlavors,
+                                    t.productLayout.noUnnecessaryAdditives,
+                                ]).map((item, i) => (
+                                    <StaggerItem key={i} className="check-item">
+                                        <svg className="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                            <path d="M20 6L9 17l-5-5" />
+                                        </svg>
+                                        <span>{item}</span>
+                                    </StaggerItem>
+                                ))}
                             </Stagger>
                         </div>
                         {specs && (
@@ -356,22 +357,27 @@ export default function ProductLayout({
 
         .composition-box :global(.check-list) {
             display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+            max-width: 620px;
+            margin: 0 auto;
+            text-align: left;
         }
 
         .composition-box :global(.check-item) {
             font-size: 1.125rem;
             color: var(--text-body);
             display: flex;
-            align-items: center;
-            gap: 0.6rem;
+            align-items: flex-start;
+            gap: 0.7rem;
+            line-height: 1.5;
         }
 
         .check-icon {
             color: var(--theme);
             flex-shrink: 0;
+            margin-top: 0.15em;
         }
 
         /* SPECS */
@@ -431,9 +437,7 @@ export default function ProductLayout({
                 padding: 2.25rem;
             }
             .composition-box :global(.check-list) {
-                gap: 1.25rem;
-                flex-direction: column;
-                align-items: center;
+                padding: 0 0.5rem;
             }
         }
       `}</style>
