@@ -8,7 +8,8 @@ import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
 import WaveDivider from '@/app/components/WaveDivider';
 import CategoryHeroMedia from '@/app/components/CategoryHeroMedia';
-import { Reveal, Stagger, StaggerItem, WordReveal, ImageReveal, Parallax, EASE } from '@/lib/motion';
+import StageGrowth from '@/app/components/StageGrowth';
+import { Reveal, WordReveal, ImageReveal, Parallax, EASE } from '@/lib/motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import { blob } from '@/lib/blob';
 
@@ -278,41 +279,12 @@ export default function StagesCategoryPage() {
                             delay={0.08}
                         />
 
-                        <Stagger className="stages-grid" delay={0.1}>
-                            <StaggerItem>
-                                <div className="stage-card" onClick={() => goToSlide(0)}>
-                                    <div className="stage-icon">
-                                        <Image src="/images/stages/stage-sprout.png" alt="" width={72} height={72} className="stage-icon-img" />
-                                    </div>
-                                    <div className="stage-age">4-7</div>
-                                    <h3>{t.categoryPages.earlyGrowth}</h3>
-                                    <p>{t.categoryPages.earlyGrowthDesc}</p>
-                                </div>
-                            </StaggerItem>
-
-                            <StaggerItem>
-                                <div className="stage-card" onClick={() => goToSlide(1)}>
-                                    <div className="stage-icon">
-                                        <Image src="/images/stages/stage-sapling.png" alt="" width={72} height={72} className="stage-icon-img" />
-                                    </div>
-                                    <div className="stage-age">8-12</div>
-                                    <h3>{t.categoryPages.activeSchooling}</h3>
-                                    <p>{t.categoryPages.activeSchoolingDesc}</p>
-                                </div>
-                            </StaggerItem>
-
-                            <StaggerItem>
-                                <div className="stage-card" onClick={() => goToSlide(2)}>
-                                    <div className="stage-icon">
-                                        <Image src="/images/stages/stage-branch.png" alt="" width={72} height={72} className="stage-icon-img" />
-                                    </div>
-                                    <div className="stage-age">13-16</div>
-                                    <h3>{t.categoryPages.mentalFocus}</h3>
-                                    <p>{t.categoryPages.mentalFocusDesc}</p>
-                                </div>
-                            </StaggerItem>
-                        </Stagger>
                     </div>
+
+                    {/* Scroll-scrubbed growth animation (sprout → sapling →
+                        branch) with the three age-stage cards — full-bleed
+                        so the sticky stage owns the viewport. */}
+                    <StageGrowth />
                 </section>
 
                 <WaveDivider tone="stages" />
@@ -475,21 +447,21 @@ export default function StagesCategoryPage() {
                     text-decoration: none;
                 }
 
+                /* The renders are transparent PNGs, so they float free —
+                   no card frame, just a soft drop shadow (client, Aug 2026). */
                 .product-image-container {
-                    background: linear-gradient(160deg, var(--stages-tint) 0%, var(--surface) 100%);
-                    border: 1px solid var(--hairline);
-                    border-radius: var(--radius-lg);
-                    padding: 2rem;
+                    padding: 1rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     transition: transform var(--dur-fast) var(--ease),
-                        box-shadow var(--dur-fast) var(--ease);
+                        filter var(--dur-fast) var(--ease);
+                    filter: drop-shadow(0 24px 48px rgba(26, 77, 92, 0.16));
                 }
 
                 .product-image-container:hover {
                     transform: translateY(-4px);
-                    box-shadow: var(--shadow-lift);
+                    filter: drop-shadow(0 30px 56px rgba(26, 77, 92, 0.26));
                 }
 
                 .carousel-content :global(.product-image) {
@@ -669,77 +641,6 @@ export default function StagesCategoryPage() {
                     letter-spacing: -0.02em;
                 }
 
-                .stages-overview :global(.stages-grid) {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    gap: 2rem;
-                    max-width: 1000px;
-                    margin: 0 auto;
-                }
-
-                .stage-card {
-                    background: var(--surface);
-                    border-radius: var(--radius-lg);
-                    padding: 2.5rem 2rem;
-                    text-align: center;
-                    cursor: pointer;
-                    height: 100%;
-                    transition: transform var(--dur-fast) var(--ease),
-                        box-shadow var(--dur-fast) var(--ease),
-                        border-color var(--dur-fast) var(--ease);
-                    border: 1px solid var(--hairline);
-                }
-
-                .stage-card:hover {
-                    transform: translateY(-4px);
-                    box-shadow: var(--shadow-lift);
-                    border-color: var(--stages-accent);
-                }
-
-                .stage-icon {
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 96px;
-                    height: 96px;
-                    border-radius: var(--radius-pill);
-                    background: var(--stages-tint);
-                    margin-bottom: 1.25rem;
-                }
-
-                .stage-icon :global(.stage-icon-img) {
-                    width: 72px;
-                    height: 72px;
-                    object-fit: contain;
-                }
-
-                .stage-age {
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    padding: 0.35rem 1rem;
-                    background: var(--stages-accent);
-                    color: #fff;
-                    border-radius: var(--radius-pill);
-                    font-size: 0.95rem;
-                    font-weight: 700;
-                    letter-spacing: 0.02em;
-                    margin-bottom: 1.25rem;
-                }
-
-                .stage-card h3 {
-                    font-size: 1.25rem;
-                    font-weight: 600;
-                    color: var(--text-heading);
-                    margin-bottom: 0.75rem;
-                }
-
-                .stage-card p {
-                    font-size: 0.95rem;
-                    line-height: 1.6;
-                    color: var(--text-body);
-                }
-
                 /* Philosophy Section — split editorial layout.
                    Parallax/ImageReveal are imported components, so their
                    classes are styled as :global() descendants of the
@@ -820,11 +721,6 @@ export default function StagesCategoryPage() {
 
                     .carousel-nav {
                         display: none;
-                    }
-
-                    .stages-overview :global(.stages-grid) {
-                        grid-template-columns: 1fr;
-                        max-width: 400px;
                     }
 
                     .philosophy-grid {

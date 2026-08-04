@@ -6,7 +6,7 @@ import Footer from '@/app/components/Footer';
 import Link from 'next/link';
 import { useLanguage } from '@/lib/LanguageContext';
 import { motion, useReducedMotion } from 'framer-motion';
-import { Reveal, Stagger, StaggerItem, WordReveal, EASE } from '@/lib/motion';
+import { Reveal, Stagger, StaggerItem, WordReveal, ImageReveal, Parallax, EASE } from '@/lib/motion';
 
 function ArrowIcon() {
     return (
@@ -63,6 +63,43 @@ export default function ApproachPage() {
                         <Reveal delay={0.3} y={18}>
                             <p className="hero-lead">{p.lead}</p>
                         </Reveal>
+                    </div>
+                </section>
+
+                {/* Designed, not improvised — the visual argument for the
+                    process, moved here from the homepage. Copy stays on the
+                    existing t.mainPage.philosophy keys. */}
+                <section className="designed-band" aria-label={t.mainPage.philosophy.label}>
+                    <div className="designed-grid">
+                        <div className="designed-content">
+                            <Reveal className="eyebrow-row">
+                                <span className="eyebrow">{t.mainPage.philosophy.label}</span>
+                            </Reveal>
+                            <WordReveal
+                                as="h2"
+                                className="designed-title font-display"
+                                text={t.mainPage.philosophy.title}
+                            />
+                            <Reveal delay={0.12} className="designed-text">
+                                <h3>{t.mainPage.philosophy.heading}</h3>
+                                <p>{t.mainPage.philosophy.description}</p>
+                            </Reveal>
+                        </div>
+                        <Parallax distance={24} className="designed-visual">
+                            <ImageReveal className="visual-frame">
+                                <div className="visual-bg visual-designed" />
+                            </ImageReveal>
+                            {/* Spec chips — the "designed" claim backed by process facts */}
+                            <div className="spec-layer" aria-hidden="true">
+                                <Stagger delay={0.35} className="spec-stagger">
+                                    {t.mainPage.philosophy.specs.map((spec, i) => (
+                                        <StaggerItem key={spec} className={`spec-chip chip-${i + 1}`}>
+                                            {spec}
+                                        </StaggerItem>
+                                    ))}
+                                </Stagger>
+                            </div>
+                        </Parallax>
                     </div>
                 </section>
 
@@ -243,6 +280,130 @@ export default function ApproachPage() {
                     max-width: 60ch;
                 }
 
+                /* ---- DESIGNED, NOT IMPROVISED ----
+                   Ported from the homepage. Uses its own wide grid rather
+                   than this page's 900px .container so the image frame has
+                   room for the floating spec chips.
+
+                   NOTE: classes passed to imported motion components
+                   (Reveal, WordReveal, Parallax, ImageReveal, Stagger,
+                   StaggerItem) never receive the styled-jsx scope hash, so
+                   they are styled as :global() descendants of a scoped
+                   plain-DOM parent. Never use bare top-level :global(). */
+                .designed-band {
+                    background: var(--surface);
+                }
+                .designed-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    max-width: var(--container-wide);
+                    margin: 0 auto;
+                    padding: var(--section-pad) 3rem;
+                    gap: clamp(2.5rem, 6vw, 6rem);
+                    align-items: center;
+                }
+                .designed-content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 1.35rem;
+                }
+                .designed-content :global(.eyebrow-row) {
+                    display: block;
+                }
+                .designed-content :global(.designed-title) {
+                    font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+                    color: var(--text-heading);
+                    margin: 0;
+                }
+                .designed-content :global(.designed-text) {
+                    max-width: 34em;
+                }
+                .designed-content :global(.designed-text h3) {
+                    font-size: clamp(1.25rem, 2vw, 1.5rem);
+                    margin-bottom: 0.85rem;
+                    font-weight: 600;
+                    color: var(--text-heading);
+                    letter-spacing: -0.01em;
+                    line-height: 1.25;
+                }
+                .designed-content :global(.designed-text p) {
+                    font-size: 1.05rem;
+                    color: var(--text-body);
+                    line-height: 1.7;
+                }
+                .designed-grid :global(.designed-visual) {
+                    width: 100%;
+                    position: relative;
+                }
+                .designed-grid :global(.visual-frame) {
+                    border-radius: var(--radius-lg);
+                    aspect-ratio: 3 / 4;
+                    box-shadow: var(--shadow-soft);
+                    background: var(--surface-mist);
+                }
+                .visual-bg {
+                    width: 100%;
+                    height: 100%;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-color: var(--surface-mist);
+                }
+                .visual-designed {
+                    background-image: url('/images/main/designed-grid.jpg');
+                }
+
+                /* Spec chips floating over the frame */
+                .spec-layer {
+                    position: absolute;
+                    inset: 0;
+                    z-index: 2;
+                    pointer-events: none;
+                }
+                .spec-layer :global(.spec-stagger) {
+                    position: absolute;
+                    inset: 0;
+                }
+                .spec-layer :global(.spec-chip) {
+                    position: absolute;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.55rem;
+                    padding: 0.55rem 1.05rem;
+                    background: rgba(255, 255, 255, 0.86);
+                    backdrop-filter: blur(14px);
+                    -webkit-backdrop-filter: blur(14px);
+                    border: 1px solid rgba(255, 255, 255, 0.65);
+                    border-radius: var(--radius-pill);
+                    box-shadow: var(--shadow-lift);
+                    font-size: 0.8rem;
+                    font-weight: 600;
+                    letter-spacing: 0.02em;
+                    color: var(--petrol);
+                    white-space: nowrap;
+                }
+                .spec-layer :global(.spec-chip)::before {
+                    content: '';
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 50%;
+                    background: var(--turquoise-deep);
+                    flex-shrink: 0;
+                }
+                .spec-layer :global(.chip-1) {
+                    top: 9%;
+                    left: -1rem;
+                }
+                .spec-layer :global(.chip-2) {
+                    top: 46%;
+                    right: -1.25rem;
+                }
+                .spec-layer :global(.chip-3) {
+                    bottom: 9%;
+                    left: 9%;
+                }
+
                 /* Sections */
                 .section {
                     padding: var(--section-pad) 0;
@@ -374,6 +535,18 @@ export default function ApproachPage() {
                     transform: translateX(3px);
                 }
 
+                @media (max-width: 1024px) {
+                    .designed-grid {
+                        grid-template-columns: 1fr;
+                        padding: var(--section-pad) 1.5rem;
+                        gap: 2.5rem;
+                    }
+                    .designed-grid :global(.visual-frame) {
+                        max-width: 520px;
+                        margin: 0 auto;
+                    }
+                }
+
                 @media (max-width: 768px) {
                     .approach-hero {
                         padding: 9rem 0 4rem;
@@ -393,6 +566,19 @@ export default function ApproachPage() {
                     }
                     .content-block p {
                         font-size: 1.1rem;
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .spec-layer :global(.spec-chip) {
+                        font-size: 0.7rem;
+                        padding: 0.45rem 0.85rem;
+                    }
+                    .spec-layer :global(.chip-1) {
+                        left: 0.6rem;
+                    }
+                    .spec-layer :global(.chip-2) {
+                        right: 0.6rem;
                     }
                 }
             `}</style>

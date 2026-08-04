@@ -2,6 +2,7 @@
 
 import React, { useRef, useState, useCallback, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   motion,
   AnimatePresence,
@@ -11,43 +12,115 @@ import {
 } from 'framer-motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import { WordReveal, EASE } from '@/lib/motion';
-import { blob } from '@/lib/blob';
 import styles from './VideoHero.module.css';
 
-// `peak` is each mound's peak x-position as a fraction of the end-still's
-// width (measured from /images/hero/hero-end-desktop.jpg, 2560x1429). The
-// desktop fan positions every sachet dead-center over its own mound using
-// these fractions — see the productRow map + `.productSlot` below.
-const products = [
-  { src: blob('products/kid-grow.png'), name: 'KidGrow', rotate: -5, y: 4, peak: 0.133 },
-  { src: blob('products/kid-rise.png'), name: 'KidRise', rotate: -2.5, y: 1, peak: 0.317 },
-  { src: blob('products/teen-focus.png'), name: 'TeenFocus', rotate: 0, y: 0, peak: 0.497 },
-  { src: blob('products/balance_front.png'), name: 'Balance', rotate: 2.5, y: 1, peak: 0.68 },
-  // Intense uses the redesigned (bright green) sachet from the July 2026
-  // client delivery, isolated from the composed box render — the blob
-  // products/intense_front.png is the outdated dark design.
-  { src: '/images/products/reset-intense-sachet.png', name: 'Intense', rotate: 5, y: 4, peak: 0.863 },
+/* ------------------------------------------------------------------ */
+/* Post-video showcase                                                 */
+/* ------------------------------------------------------------------ */
+
+type Slide = { src: string; name: string; path: string };
+
+/* The five real client packaging renders (transparent PNGs — box plus
+   standing sachets, correct pack copy), so the hero answers "what we
+   make" the second the film ends. Each slide links to its product page. */
+const SLIDES: readonly Slide[] = [
+  { src: '/images/boxes/kidgrow-box.png', name: 'Stages KidGrow', path: 'stages/kidgrow' },
+  { src: '/images/boxes/kidrise-box.png', name: 'Stages KidRise', path: 'stages/kidrise' },
+  { src: '/images/boxes/teenfocus-box.png', name: 'Stages TeenFocus', path: 'stages/teenfocus' },
+  { src: '/images/boxes/reset-balance-box.png', name: 'Reset Balance', path: 'reset/balance' },
+  { src: '/images/boxes/reset-intense-box.png', name: 'Reset Intense', path: 'reset/intense' },
 ];
 
-// The end still is object-fit: cover, horizontally centered. Its displayed
-// width is therefore max(viewport width, imageAspect * viewport height), and
-// a point at image fraction `f` lands at screen-x = 50% + (f - 0.5) * that
-// displayed width. Positioning each sachet with this exact expression makes it
-// track its mound at every aspect ratio (16:9, 16:10, 3:2), not just one.
-const STILL_ASPECT = 2560 / 1429; // ~1.7915
-const moundLeft = (peak: number) => {
-  const d = peak - 0.5;
-  const sign = d < 0 ? '-' : '+';
-  return `calc(50% ${sign} ${Math.abs(d).toFixed(4)} * max(100vw, ${(STILL_ASPECT * 100).toFixed(2)}vh))`;
-};
+const SLIDE_MS = 3500;
+
+function HeroShowcase() {
+  const { language } = useLanguage();
+  const reduce = useReducedMotion();
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  // Auto-advance. The effect is keyed on `index`, so jumping via a dot
+  // restarts the full dwell instead of inheriting the remainder of the
+  // previous slide's timer. Reduced motion holds on the first slide (the
+  // dots still work), and hovering pauses the rotation.
+  useEffect(() => {
+    if (reduce || paused) return;
+    const id = window.setTimeout(
+      () => setIndex((i) => (i + 1) % SLIDES.length),
+      SLIDE_MS,
+    );
+    return () => window.clearTimeout(id);
+  }, [index, paused, reduce]);
+
+  const slide = SLIDES[index];
+
+  return (
+    <motion.div
+      className={styles.showcase}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: reduce ? 0.5 : 0.9, delay: 0.5, ease: EASE }}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <div className={styles.showcaseStage}>
+        <AnimatePresence>
+          <motion.div
+            key={index}
+            className={styles.slide}
+            initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 0.985 }}
+            animate={reduce ? { opacity: 1 } : { opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: reduce ? 0.35 : 0.8, ease: EASE }}
+          >
+            <Link
+              href={`/${language}/${slide.path}`}
+              className={styles.productLink}
+              aria-label={slide.name}
+            >
+              <Image
+                src={slide.src}
+                alt={slide.name}
+                fill
+                sizes="(max-width: 768px) 88vw, 45vw"
+                className={styles.productShot}
+                /* The showcase only mounts once the video ends, so a
+                   `priority` preload would be flagged as unused; eager
+                   just fetches the opening slide the moment it mounts. */
+                loading={index === 0 ? 'eager' : 'lazy'}
+              />
+            </Link>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      <div className={styles.dots}>
+        {SLIDES.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            className={`${styles.dot} ${i === index ? styles.dotActive : ''}`}
+            aria-label={`Slide ${i + 1}`}
+            aria-current={i === index}
+            onClick={() => setIndex(i)}
+          />
+        ))}
+      </div>
+    </motion.div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Hero                                                                */
+/* ------------------------------------------------------------------ */
 
 export default function VideoHero() {
   const [showOverlay, setShowOverlay] = useState(false);
-  // Once the intro video truly finishes, we crossfade a color-corrected
-  // still of the powder mounds in over it (and keep it there). This is
+  // Once the intro video truly finishes, a single studio backdrop
+  // crossfades in over it (and stays), the scrim fades out, and the split
+  // copy/showcase layout is left standing on a clean plate. This is
   // separate from `showOverlay`, which triggers early (see below).
   const [videoEnded, setVideoEnded] = useState(false);
-  const [mobileProductIndex, setMobileProductIndex] = useState(0);
   const triggered = useRef(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
@@ -63,22 +136,12 @@ export default function VideoHero() {
   const contentY = useTransform(scrollYProgress, [0, 1], [0, -40]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
 
-  // Mobile product carousel — cycle every 2s once overlay is shown
-  useEffect(() => {
-    if (!showOverlay) return;
-    const timer = setInterval(() => {
-      setMobileProductIndex((prev) => (prev + 1) % products.length);
-    }, 2000);
-    return () => clearInterval(timer);
-  }, [showOverlay]);
-
-  // Both intro videos are now trimmed to end just before the powder mounds
-  // form (the mounds materialize during the still crossfade instead). The
-  // tail of each trimmed clip is the explosion softly settling, so we bring
-  // the overlay in only a fraction (~0.5s) before the video ends — right as
-  // the corrected-mounds still begins its 0.9s crossfade. Content and still
-  // then resolve together as one intentional beat, rather than 2s early over
-  // unrelated footage. Same lead for desktop and mobile.
+  // Both intro videos are trimmed to end while the powder explosion is
+  // still softly settling, so we bring the overlay in only a fraction
+  // (~0.5s) before the video ends — right as the backdrop begins its 0.9s
+  // crossfade. Copy, showcase and backdrop then resolve together as one
+  // intentional beat, rather than 2s early over unrelated footage. Same
+  // lead for desktop and mobile.
   const handleTimeUpdate = useCallback(
     (e: React.SyntheticEvent<HTMLVideoElement>) => {
       if (triggered.current) return;
@@ -94,9 +157,10 @@ export default function VideoHero() {
   const handleEnded = useCallback(
     (e: React.SyntheticEvent<HTMLVideoElement>) => {
       // Only the video the user is actually watching should hand off to
-      // the still. The off-breakpoint video (display:none) reports a null
-      // offsetParent, so it can't trigger an early swap over a video that
-      // is still playing. Unlike showOverlay, this fires ONLY at true end.
+      // the backdrop. The off-breakpoint video (display:none) reports a
+      // null offsetParent, so it can't trigger an early swap over a video
+      // that is still playing. Unlike showOverlay, this fires ONLY at
+      // true end.
       if (e.currentTarget.offsetParent !== null) {
         setVideoEnded(true);
       }
@@ -114,7 +178,7 @@ export default function VideoHero() {
 
   return (
     <div ref={containerRef} className={styles.container}>
-      {/* Desktop video (16:9) — trimmed local clip, ends just before mounds form */}
+      {/* Desktop video (16:9) — trimmed local clip, ends mid-settle */}
       <motion.video
         className={`${styles.video} ${styles.videoDesktop}`}
         src="/videos/hero-intro.mp4"
@@ -125,7 +189,7 @@ export default function VideoHero() {
         onEnded={handleEnded}
         style={reduce ? undefined : { scale: videoScale }}
       />
-      {/* Mobile video (9:16) — trimmed local clip, ends just before mounds form */}
+      {/* Mobile video (9:16) — trimmed local clip, ends mid-settle */}
       <motion.video
         className={`${styles.video} ${styles.videoMobile}`}
         src="/videos/hero-intro-mobile.mp4"
@@ -137,29 +201,19 @@ export default function VideoHero() {
         style={reduce ? undefined : { scale: videoScale }}
       />
 
-      {/* Color-corrected end stills — the mounds in the video read too
-          vivid, so once the video finishes we fade a corrected still in
-          over it (and leave it there). Same responsive show/hide + cover
-          fit + scroll-scale as the videos, painted UNDER the overlay. */}
+      {/* Post-video backdrop — a minimal studio plate that crossfades in
+          over the last frame and stays, so the split copy/showcase layout
+          reads on a calm surface instead of a frozen powder cloud. One
+          image serves desktop and mobile (cover, centered), painted UNDER
+          the overlay and sharing the videos' scroll-scale so the handoff
+          stays spatially seamless. */}
       <motion.img
-        src="/images/hero/hero-end-desktop.jpg"
+        src="/images/hero/hero-bg.jpg"
         alt=""
         aria-hidden="true"
         loading="eager"
         decoding="async"
-        className={`${styles.still} ${styles.videoDesktop}`}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: videoEnded ? 1 : 0 }}
-        transition={{ duration: reduce ? 0.4 : 0.9, ease: EASE }}
-        style={reduce ? undefined : { scale: videoScale }}
-      />
-      <motion.img
-        src="/images/hero/hero-end-mobile.jpg"
-        alt=""
-        aria-hidden="true"
-        loading="eager"
-        decoding="async"
-        className={`${styles.still} ${styles.videoMobile}`}
+        className={styles.heroBg}
         initial={{ opacity: 0 }}
         animate={{ opacity: videoEnded ? 1 : 0 }}
         transition={{ duration: reduce ? 0.4 : 0.9, ease: EASE }}
@@ -173,133 +227,56 @@ export default function VideoHero() {
             className={styles.overlay}
             style={reduce ? undefined : { y: contentY, opacity: contentOpacity }}
           >
-            <div className={styles.scrim} />
+            {/* Scrim only earns its keep over the video tail; once the
+                backdrop lands it would only muddy it, so it fades out. */}
+            <motion.div
+              className={styles.scrim}
+              initial={{ opacity: 1 }}
+              animate={{ opacity: videoEnded ? 0 : 1 }}
+              transition={{ duration: reduce ? 0.4 : 0.9, ease: EASE }}
+            />
 
-            <div className={styles.topContent}>
-              {/* Tagline — masked word-by-word rise */}
-              <WordReveal
-                as="p"
-                className={`${styles.tagline} font-display`}
-                text={t.mainPage.videoHero?.tagline ?? ''}
-                delay={0.1}
-              />
+            <div className={styles.grid}>
+              <div className={styles.textCol}>
+                {/* Tagline — masked word-by-word rise */}
+                <WordReveal
+                  as="p"
+                  className={`${styles.tagline} font-display`}
+                  text={t.mainPage.videoHero?.tagline ?? ''}
+                  delay={0.1}
+                />
 
-              {/* Subtitle */}
-              <motion.p
-                className={styles.subtitle}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6, ease: EASE }}
-              >
-                {t.mainPage.videoHero?.subtitle}
-              </motion.p>
-
-              {/* CTA Button */}
-              <motion.a
-                href="#stages-section"
-                className={styles.ctaButton}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.75, ease: EASE }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('stages-section')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
-                {t.mainPage.videoHero?.cta}
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </motion.a>
-            </div>
-
-            {/* Desktop — each sachet stands in front of its own powder mound.
-                The slot is absolutely positioned at the mound's peak x; the
-                inner motion.div keeps the stagger entrance, per-item tilt and
-                hover lift. */}
-            <div className={styles.productRow}>
-              {products.map((product, i) => (
-                <div
-                  key={product.name}
-                  className={styles.productSlot}
-                  style={{ left: moundLeft(product.peak), zIndex: 2 }}
+                {/* Subtitle */}
+                <motion.p
+                  className={styles.subtitle}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6, ease: EASE }}
                 >
-                  <motion.div
-                    className={styles.productItem}
-                    style={{ rotate: product.rotate }}
-                    initial={{ opacity: 0, y: 60, scale: 0.94 }}
-                    animate={{ opacity: 1, y: product.y, scale: 1 }}
-                    transition={{
-                      duration: 0.8,
-                      delay: 0.45 + i * 0.09,
-                      ease: EASE,
-                    }}
-                    whileHover={
-                      reduce
-                        ? undefined
-                        : {
-                            y: product.y - 12,
-                            scale: 1.04,
-                            transition: { duration: 0.45, ease: EASE },
-                          }
-                    }
-                  >
-                    <Image
-                      src={product.src}
-                      alt={product.name}
-                      width={270}
-                      height={420}
-                      className={styles.productImage}
-                    />
-                  </motion.div>
-                </div>
-              ))}
-            </div>
+                  {t.mainPage.videoHero?.subtitle}
+                </motion.p>
 
-            {/* Mobile — fan carousel (all products visible, active one centered) */}
-            <div className={styles.mobileCarousel}>
-              <div className={styles.mobileFan}>
-                {products.map((product, i) => {
-                  // Position relative to active index (-2 to +2)
-                  let offset = i - mobileProductIndex;
-                  // Wrap around for circular carousel
-                  if (offset > 2) offset -= products.length;
-                  if (offset < -2) offset += products.length;
-
-                  const isActive = offset === 0;
-                  const scale = isActive ? 1 : 0.75 - Math.abs(offset) * 0.08;
-                  const translateX = offset * 100;
-                  const rotate = offset * 7;
-                  const zIndex = 5 - Math.abs(offset);
-                  const opacity = Math.abs(offset) <= 2 ? 1 - Math.abs(offset) * 0.25 : 0;
-
-                  return (
-                    <motion.div
-                      key={product.name}
-                      className={`${styles.mobileFanItem} ${isActive ? styles.mobileFanActive : ''}`}
-                      animate={{
-                        x: translateX,
-                        scale,
-                        rotate,
-                        opacity,
-                        zIndex,
-                      }}
-                      transition={{ duration: 0.6, ease: EASE }}
-                      onClick={() => setMobileProductIndex(i)}
-                    >
-                      <div className={styles.mobileProductImageWrap}>
-                        <Image
-                          src={product.src}
-                          alt={product.name}
-                          fill
-                          sizes="280px"
-                          style={{ objectFit: 'contain' }}
-                        />
-                      </div>
-                    </motion.div>
-                  );
-                })}
+                {/* CTA Button */}
+                <motion.a
+                  href="#stages-section"
+                  className={styles.ctaButton}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.75, ease: EASE }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('stages-section')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  {t.mainPage.videoHero?.cta}
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </motion.a>
               </div>
+
+              {/* Right column — packaging carousel */}
+              <HeroShowcase />
             </div>
 
             {/* Scroll indicator */}

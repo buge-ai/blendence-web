@@ -73,7 +73,7 @@
     /* ---- Layout rhythm ---- */
     --container: 1200px;
     --container-wide: 1400px;
-    --section-pad: clamp(5rem, 10vw, 8.5rem);
+    --section-pad: clamp(3.5rem, 7vw, 5.5rem);
 
     /* Legacy aliases (older components reference these) */
     --dark-blue: #1A4D5C;

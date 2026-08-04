@@ -1,0 +1,13 @@
+[     182ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/979b6_next_dist_2a67324b._.js:2297
+[     244ms] [LOG] [Fast Refresh] done in 164ms @ http://localhost:3000/_next/static/chunks/979b6_next_dist_2a67324b._.js:2297
+[     487ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/979b6_next_dist_2a67324b._.js:2297
+[     497ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/979b6_next_dist_2a67324b._.js:2297
+[     605ms] [WARNING] Image with src "/images/glasses/kidgrow-glass-cut.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:3000/_next/static/chunks/979b6_next_dist_2a67324b._.js:2297
+[     652ms] [WARNING] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. @ http://localhost:3000/_next/static/chunks/979b6_next_dist_2a67324b._.js:2297
+[     683ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/979b6_next_dist_2a67324b._.js:2297
+[     710ms] [LOG] [Fast Refresh] done in 131ms @ http://localhost:3000/_next/static/chunks/979b6_next_dist_2a67324b._.js:2297
+[    7139ms] [WARNING] Image with src "/images/boxes/kidrise-box.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:3000/_next/static/chunks/979b6_next_dist_2a67324b._.js:2297
+[  901804ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/979b6_next_dist_2a67324b._.js:2297
+[  901837ms] [LOG] [Fast Refresh] done in 136ms @ http://localhost:3000/_next/static/chunks/979b6_next_dist_2a67324b._.js:2297

@@ -112,7 +112,7 @@ export default function Footer() {
 
                 .footer-v2-inner {
                     position: relative;
-                    padding: clamp(3.5rem, 7vw, 6rem) 0 3rem;
+                    padding: clamp(2.5rem, 5vw, 4.25rem) 0 2.5rem;
                 }
 
                 .footer-v2-inner::before {
@@ -146,14 +146,14 @@ export default function Footer() {
                     letter-spacing: -0.015em;
                     color: #fff;
                     max-width: 900px;
-                    margin-bottom: clamp(3rem, 6vw, 5rem);
+                    margin-bottom: clamp(2.25rem, 4.5vw, 3.5rem);
                 }
 
                 .footer-v2-container :global(.footer-v2-grid) {
                     display: grid;
                     grid-template-columns: 1.8fr 1fr 1fr 1fr 1.5fr;
                     gap: 3rem;
-                    margin-bottom: clamp(3rem, 6vw, 5rem);
+                    margin-bottom: clamp(2.25rem, 4.5vw, 3.5rem);
                 }
 
                 .footer-v2-container :global(.footer-v2-main) {

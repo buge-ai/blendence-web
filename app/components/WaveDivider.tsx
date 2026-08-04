@@ -74,7 +74,7 @@ export default function WaveDivider({
         viewBox="0 0 1440 108"
         fill="none"
         preserveAspectRatio="none"
-        style={{ width: '100%', height: 'clamp(56px, 8vw, 108px)', display: 'block' }}
+        style={{ width: '100%', height: 'clamp(42px, 6vw, 80px)', display: 'block' }}
       >
         {PATHS.map((d, i) => (
           <motion.path

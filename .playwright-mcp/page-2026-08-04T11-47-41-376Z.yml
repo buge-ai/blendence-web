@@ -1,0 +1,157 @@
+- generic [active] [ref=f37e1]:
+  - generic [ref=f37e2]:
+    - generic [ref=f37e5]:
+      - link [ref=f37e6] [cursor=pointer]:
+        - /url: /en
+        - img "logo" [ref=f37e7]
+      - button "Open menu" [ref=f37e8]
+    - main [ref=f37e10]:
+      - generic [ref=f37e12]:
+        - generic [ref=f37e13]: Products
+        - img "Stages Logo" [ref=f37e17]
+        - heading "Optimized for every life phase" [level=1] [ref=f37e18]:
+          - generic [ref=f37e19]:
+            - generic [ref=f37e20]: Optimized
+            - generic [ref=f37e22]: for
+            - generic [ref=f37e24]: every
+            - generic [ref=f37e26]: life
+            - generic [ref=f37e28]: phase
+        - paragraph [ref=f37e31]: Designed to support the natural needs of different life phases, from childhood growth to adolescence focus, and even future scenarios such as pregnancy or periods of intense adult routines. Each product is thoughtfully optimized for the specific physiological priorities of its intended audience. The aim is to offer tailored nourishment that grows and adapts alongside the body’s evolving stages of life.
+      - generic [ref=f37e33]:
+        - heading "Our Products" [level=2] [ref=f37e35]
+        - generic [ref=f37e38]:
+          - link [ref=f37e39] [cursor=pointer]:
+            - /url: /en/stages/kidgrow
+            - img "KidGrow" [ref=f37e42]
+          - generic [ref=f37e43]:
+            - generic [ref=f37e44]: Ages4-7
+            - generic [ref=f37e45]: "Stages: 4–7"
+            - heading "KidGrow" [level=3] [ref=f37e46]
+            - list [ref=f37e47]:
+              - listitem [ref=f37e48]: Optimized nutrition for early growth stages.
+              - listitem [ref=f37e49]: Practical support for everyday routines in early childhood.
+              - listitem [ref=f37e50]: A fruit-based, practical alternative to sugary snacks.
+            - link "View Details" [ref=f37e51] [cursor=pointer]:
+              - /url: /en/stages/kidgrow
+        - generic [ref=f37e54]:
+          - button "Go to kidgrow" [ref=f37e55] [cursor=pointer]
+          - button "Go to kidrise" [ref=f37e56] [cursor=pointer]
+          - button "Go to teenfocus" [ref=f37e57] [cursor=pointer]
+      - generic [ref=f37e58]:
+        - generic [ref=f37e59]:
+          - generic [ref=f37e60]: Life Stages
+          - heading "Specialized nutrition for every life stage" [level=2] [ref=f37e62]:
+            - generic [ref=f37e63]:
+              - generic [ref=f37e64]: Specialized
+              - generic [ref=f37e66]: nutrition
+              - generic [ref=f37e68]: for
+              - generic [ref=f37e70]: every
+              - generic [ref=f37e72]: life
+              - generic [ref=f37e74]: stage
+        - generic [ref=f37e81]:
+          - button "4-7 Early Growth Building the foundation with essential vitamins and natural energy for active play." [ref=f37e82] [cursor=pointer]:
+            - generic [ref=f37e83]: 4-7
+            - heading "Early Growth" [level=3] [ref=f37e85]
+            - paragraph [ref=f37e86]: Building the foundation with essential vitamins and natural energy for active play.
+          - button "8-12 Active Schooling Supporting cognitive development and physical consistency during busy school days." [ref=f37e87] [cursor=pointer]:
+            - generic [ref=f37e88]: 8-12
+            - heading "Active Schooling" [level=3] [ref=f37e90]
+            - paragraph [ref=f37e91]: Supporting cognitive development and physical consistency during busy school days.
+          - button "13-16 Mental Focus Designed for demanding academic periods and hormonal transitions." [ref=f37e92] [cursor=pointer]:
+            - generic [ref=f37e93]: 13-16
+            - heading "Mental Focus" [level=3] [ref=f37e95]
+            - paragraph [ref=f37e96]: Designed for demanding academic periods and hormonal transitions.
+      - generic [ref=f37e110]:
+        - generic [ref=f37e111]: Philosophy
+        - heading "Nutrition designed for the transitions of life." [level=2] [ref=f37e113]:
+          - generic [ref=f37e114]:
+            - generic [ref=f37e115]: Nutrition
+            - generic [ref=f37e117]: designed
+            - generic [ref=f37e119]: for
+            - generic [ref=f37e121]: the
+            - generic [ref=f37e123]: transitions
+            - generic [ref=f37e125]: of
+            - generic [ref=f37e127]: life.
+        - paragraph [ref=f37e130]: As the body's needs shift, our blends adapt to support growth, focus, and everyday consistency.
+        - link "Learn more" [ref=f37e132] [cursor=pointer]:
+          - /url: /en/approach
+    - contentinfo [ref=f37e135]:
+      - generic [ref=f37e143]:
+        - paragraph [ref=f37e144]:
+          - generic [ref=f37e145]:
+            - generic [ref=f37e146]: We
+            - generic [ref=f37e148]: design
+            - generic [ref=f37e150]: nutrition
+            - generic [ref=f37e152]: that
+            - generic [ref=f37e154]: adapts
+            - generic [ref=f37e156]: to
+            - generic [ref=f37e158]: real
+            - generic [ref=f37e160]: life.
+            - generic [ref=f37e162]: Naturally
+            - generic [ref=f37e164]: powerful,
+            - generic [ref=f37e166]: perfectly
+            - generic [ref=f37e168]: balanced
+            - generic [ref=f37e170]: and
+            - generic [ref=f37e172]: scientifically
+            - generic [ref=f37e174]: formulated
+            - generic [ref=f37e176]: for
+            - generic [ref=f37e178]: consistency.
+        - generic [ref=f37e180]:
+          - generic [ref=f37e181]:
+            - link [ref=f37e182] [cursor=pointer]:
+              - /url: /en
+              - img "Blendence" [ref=f37e183]
+            - generic [ref=f37e184]:
+              - link "Instagram" [ref=f37e185] [cursor=pointer]:
+                - /url: "#"
+              - link "LinkedIn" [ref=f37e189] [cursor=pointer]:
+                - /url: "#"
+              - link "Facebook" [ref=f37e193] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f37e196]:
+            - heading "Stages" [level=4] [ref=f37e197]
+            - navigation [ref=f37e198]:
+              - link "KidGrow" [ref=f37e199] [cursor=pointer]:
+                - /url: /en/stages/kidgrow
+              - link "KidRise" [ref=f37e200] [cursor=pointer]:
+                - /url: /en/stages/kidrise
+              - link "TeenFocus" [ref=f37e201] [cursor=pointer]:
+                - /url: /en/stages/teenfocus
+          - generic [ref=f37e202]:
+            - heading "Reset" [level=4] [ref=f37e203]
+            - navigation [ref=f37e204]:
+              - link "Balance" [ref=f37e205] [cursor=pointer]:
+                - /url: /en/reset/balance
+              - link "Intense" [ref=f37e206] [cursor=pointer]:
+                - /url: /en/reset/intense
+          - generic [ref=f37e207]:
+            - heading "Company" [level=4] [ref=f37e208]
+            - navigation [ref=f37e209]:
+              - link "Our Approach" [ref=f37e210] [cursor=pointer]:
+                - /url: /en/approach
+              - link "About Us" [ref=f37e211] [cursor=pointer]:
+                - /url: /en/about
+              - link "Contact" [ref=f37e212] [cursor=pointer]:
+                - /url: /en/contact
+          - generic [ref=f37e213]:
+            - heading "Newsletter" [level=4] [ref=f37e214]
+            - paragraph [ref=f37e215]: Subscribe to receive updates on new blends and nutritional insights.
+            - generic [ref=f37e216]:
+              - textbox "Email address" [ref=f37e217]
+              - button "Subscribe" [ref=f37e218] [cursor=pointer]
+        - generic [ref=f37e222]:
+          - generic [ref=f37e223]:
+            - link "Privacy Policy" [ref=f37e224] [cursor=pointer]:
+              - /url: /en/privacy
+            - link "Terms of Use" [ref=f37e225] [cursor=pointer]:
+              - /url: /en/terms
+            - link "Food Safety" [ref=f37e226] [cursor=pointer]:
+              - /url: /en/food-safety
+            - link "Gender Equality" [ref=f37e227] [cursor=pointer]:
+              - /url: /en/gender-equality
+          - paragraph [ref=f37e228]:
+            - text: © 2026 BLENDENCE, a brand of
+            - link "Buge Foods" [ref=f37e229] [cursor=pointer]:
+              - /url: https://bugefoods.com
+            - text: . All rights reserved.
+  - button "Open Next.js Dev Tools" [ref=f37e235] [cursor=pointer]

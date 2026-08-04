@@ -58,7 +58,7 @@ export default function ProductGroups() {
         .product-groups-section :global(.product-groups) {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            min-height: 80vh;
+            min-height: 58vh;
             background: var(--surface);
         }
 
@@ -67,7 +67,7 @@ export default function ProductGroups() {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 4rem;
+            padding: 3rem;
             overflow: hidden;
             text-align: center;
             background: var(--surface-mist);
@@ -109,7 +109,7 @@ export default function ProductGroups() {
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
             border-radius: var(--radius-lg);
-            padding: 3rem 2.5rem;
+            padding: 2.25rem 2.25rem;
             border: 1px solid rgba(255, 255, 255, 0.6);
             box-shadow: var(--shadow-soft);
             transition: transform var(--dur-fast) var(--ease),
@@ -212,10 +212,10 @@ export default function ProductGroups() {
                 min-height: auto;
             }
             .product-groups-section :global(.group-card) {
-                padding: 5rem 2rem;
+                padding: 3.5rem 1.75rem;
             }
             .product-groups-section :global(.group-content) {
-                padding: 2.5rem 2rem;
+                padding: 2rem 1.75rem;
             }
         }
       `}</style>

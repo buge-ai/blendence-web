@@ -42,14 +42,14 @@ const PAGES: Record<PageKey, PageDef> = {
   home: {
     path: '',
     en: {
-      title: 'BLENDENCE — Naturally Powerful, Perfectly Balanced',
+      title: 'BLENDENCE: Naturally Powerful, Perfectly Balanced',
       description:
-        'BLENDENCE crafts 100% freeze-dried nutrition mixes from natural fruits and vegetables — designed to fit real life across every stage and reset moment.',
+        'BLENDENCE crafts 100% freeze-dried nutrition mixes from natural fruits and vegetables, designed to fit real life across every stage and reset moment.',
     },
     tr: {
-      title: 'BLENDENCE — Doğal Güç, Mükemmel Denge',
+      title: 'BLENDENCE: Doğal Güç, Mükemmel Denge',
       description:
-        'BLENDENCE, doğal meyve ve sebzelerden %100 liyofilize beslenme karışımları üretir — her yaşam evresine ve yenilenme anına uyum sağlayacak şekilde tasarlandı.',
+        'BLENDENCE, doğal meyve ve sebzelerden %100 liyofilize beslenme karışımları üretir, her yaşam evresine ve yenilenme anına uyum sağlayacak şekilde tasarlandı.',
     },
   },
   about: {
@@ -57,12 +57,12 @@ const PAGES: Record<PageKey, PageDef> = {
     en: {
       title: 'About | BLENDENCE',
       description:
-        'Blendence is a functional nutrition brand by BUGE Foods, built on freeze-drying technology — additive-free, 100% fruit-and-vegetable, FSSC 22000 certified.',
+        'Blendence is a functional nutrition brand by BUGE Foods, built on freeze-drying technology: additive-free, 100% fruit-and-vegetable, FSSC 22000 certified.',
     },
     tr: {
       title: 'Hakkımızda | BLENDENCE',
       description:
-        "Blendence, BUGE Foods'un liyofilizasyon teknolojisi üzerine kurduğu fonksiyonel beslenme markasıdır — katkısız, %100 meyve-sebze, FSSC 22000 sertifikalı.",
+        "Blendence, BUGE Foods'un liyofilizasyon teknolojisi üzerine kurduğu fonksiyonel beslenme markasıdır: katkısız, %100 meyve-sebze, FSSC 22000 sertifikalı.",
     },
   },
   approach: {
@@ -70,7 +70,7 @@ const PAGES: Record<PageKey, PageDef> = {
     en: {
       title: 'Our Approach | BLENDENCE',
       description:
-        'The Blendence method starts with real-life needs, not ingredients — bringing food engineering and nutritional insight together to design blends for daily life.',
+        'The Blendence method starts with real-life needs, not ingredients, bringing food engineering and nutritional insight together to design blends for daily life.',
     },
     tr: {
       title: 'Yaklaşımımız | BLENDENCE',
@@ -83,7 +83,7 @@ const PAGES: Record<PageKey, PageDef> = {
     en: {
       title: 'Contact | BLENDENCE',
       description:
-        "Get in touch with Blendence. Reach the BUGE Foods team in Edirne, Türkiye by phone, WhatsApp or email — we'd love to hear from you about our freeze-dried mixes.",
+        "Get in touch with Blendence. Reach the BUGE Foods team in Edirne, Türkiye by phone, WhatsApp or email. We'd love to hear from you about our freeze-dried mixes.",
     },
     tr: {
       title: 'İletişim | BLENDENCE',
@@ -161,7 +161,7 @@ const PAGES: Record<PageKey, PageDef> = {
     en: {
       title: 'Reset Balance | BLENDENCE',
       description:
-        'Reset Balance is a light, plant-based freeze-dried blend designed to support everyday digestive lightness and balance — for ongoing routines, no strict timing.',
+        'Reset Balance is a light, plant-based freeze-dried blend designed to support everyday digestive lightness and balance: for ongoing routines, no strict timing.',
     },
     tr: {
       title: 'Reset Balance | BLENDENCE',
@@ -200,7 +200,7 @@ const PAGES: Record<PageKey, PageDef> = {
     en: {
       title: 'KidGrow | BLENDENCE',
       description:
-        'KidGrow is a freeze-dried nutrition mix optimized for early growth stages (ages 4–7) — a natural, practical alternative to sugary drinks and snacks.',
+        'KidGrow is a freeze-dried nutrition mix optimized for early growth stages (ages 4–7), a natural, practical alternative to sugary drinks and snacks.',
     },
     tr: {
       title: 'KidGrow | BLENDENCE',

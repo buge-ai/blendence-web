@@ -400,21 +400,21 @@ export default function ResetCategoryPage() {
                     text-decoration: none;
                 }
 
+                /* The renders are transparent PNGs, so they float free —
+                   no card frame, just a soft drop shadow (client, Aug 2026). */
                 .product-image-container {
-                    background: linear-gradient(160deg, var(--reset-tint) 0%, var(--surface) 100%);
-                    border: 1px solid var(--hairline);
-                    border-radius: var(--radius-lg);
-                    padding: 2rem;
+                    padding: 1rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     transition: transform var(--dur-fast) var(--ease),
-                        box-shadow var(--dur-fast) var(--ease);
+                        filter var(--dur-fast) var(--ease);
+                    filter: drop-shadow(0 24px 48px rgba(26, 77, 92, 0.16));
                 }
 
                 .product-image-container:hover {
                     transform: translateY(-4px);
-                    box-shadow: var(--shadow-lift);
+                    filter: drop-shadow(0 30px 56px rgba(26, 77, 92, 0.26));
                 }
 
                 .carousel-content :global(.product-image) {

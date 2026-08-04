@@ -1,0 +1,296 @@
+- generic [active] [ref=f27e1]:
+  - generic [ref=f27e2]:
+    - generic [ref=f27e4]:
+      - link [ref=f27e5] [cursor=pointer]:
+        - /url: /en
+        - img "logo" [ref=f27e6]
+      - generic [ref=f27e7]:
+        - link "Stages" [ref=f27e8] [cursor=pointer]:
+          - /url: /en/stages
+        - link "Reset" [ref=f27e9] [cursor=pointer]:
+          - /url: /en/reset
+        - link "Our Approach" [ref=f27e10] [cursor=pointer]:
+          - /url: /en/approach
+        - link "Contact" [ref=f27e11] [cursor=pointer]:
+          - /url: /en/contact
+      - link "TR" [ref=f27e13] [cursor=pointer]:
+        - /url: /tr
+    - main [ref=f27e15]:
+      - region "A day with Blendence" [ref=f27e19]:
+        - generic [ref=f27e21]:
+          - generic [ref=f27e22]:
+            - generic [ref=f27e23]: A day with Blendence
+            - heading "Made for the days you actually live." [level=2] [ref=f27e25]:
+              - generic [ref=f27e26]:
+                - generic [ref=f27e27]: Made
+                - generic [ref=f27e29]: for
+                - generic [ref=f27e31]: the
+                - generic [ref=f27e33]: days
+                - generic [ref=f27e35]: you
+                - generic [ref=f27e37]: actually
+                - generic [ref=f27e39]: live.
+            - paragraph [ref=f27e42]: "From a six-year-old's breakfast to a grown-up's evening run, five blends built around one idea: real food that fits the moment."
+          - generic [ref=f27e43]:
+            - button "Previous moment" [disabled] [ref=f27e58]
+            - button "Next moment" [ref=f27e61] [cursor=pointer]
+        - region "Made for the days you actually live." [ref=f27e65]:
+          - link "Growing mornings 07:15 STAGES · KIDGROW Growing mornings Grape, orange and banana for ages 4–7, a full glass before a full day." [ref=f27e66] [cursor=pointer]:
+            - /url: /en/stages/kidgrow
+            - generic [ref=f27e67]:
+              - img "Growing mornings" [ref=f27e68]
+              - generic [ref=f27e69]: 07:15
+            - generic [ref=f27e70]:
+              - generic [ref=f27e71]: STAGES · KIDGROW
+              - heading "Growing mornings" [level=3] [ref=f27e72]
+              - paragraph [ref=f27e73]: Grape, orange and banana for ages 4–7, a full glass before a full day.
+          - link "Out the door, ready 07:45 STAGES · KIDRISE Out the door, ready Apple, carrot and lemon for ages 8–12, a bright start on school mornings." [ref=f27e74] [cursor=pointer]:
+            - /url: /en/stages/kidrise
+            - generic [ref=f27e75]:
+              - img "Out the door, ready" [ref=f27e76]
+              - generic [ref=f27e77]: 07:45
+            - generic [ref=f27e78]:
+              - generic [ref=f27e79]: STAGES · KIDRISE
+              - heading "Out the door, ready" [level=3] [ref=f27e80]
+              - paragraph [ref=f27e81]: Apple, carrot and lemon for ages 8–12, a bright start on school mornings.
+          - link "The daily reset 08:30 RESET · BALANCE The daily reset 100% fruit and vegetables for the routine you actually keep." [ref=f27e82] [cursor=pointer]:
+            - /url: /en/reset/balance
+            - generic [ref=f27e83]:
+              - img "The daily reset" [ref=f27e84]
+              - generic [ref=f27e85]: 08:30
+            - generic [ref=f27e86]:
+              - generic [ref=f27e87]: RESET · BALANCE
+              - heading "The daily reset" [level=3] [ref=f27e88]
+              - paragraph [ref=f27e89]: 100% fruit and vegetables for the routine you actually keep.
+          - link "The midday regroup 12:30 RESET · BALANCE The midday regroup A green glass on the lunch table, lighter afternoons for the whole team." [ref=f27e90] [cursor=pointer]:
+            - /url: /en/reset/balance
+            - generic [ref=f27e91]:
+              - img "The midday regroup" [ref=f27e92]
+              - generic [ref=f27e93]: 12:30
+            - generic [ref=f27e94]:
+              - generic [ref=f27e95]: RESET · BALANCE
+              - heading "The midday regroup" [level=3] [ref=f27e96]
+              - paragraph [ref=f27e97]: A green glass on the lunch table, lighter afternoons for the whole team.
+          - link "After the last bell 16:30 STAGES · TEENFOCUS After the last bell Strawberry, kiwi and flaxseed for ages 13–16, steady fuel for school and sport." [ref=f27e98] [cursor=pointer]:
+            - /url: /en/stages/teenfocus
+            - generic [ref=f27e99]:
+              - img "After the last bell" [ref=f27e100]
+              - generic [ref=f27e101]: 16:30
+            - generic [ref=f27e102]:
+              - generic [ref=f27e103]: STAGES · TEENFOCUS
+              - heading "After the last bell" [level=3] [ref=f27e104]
+              - paragraph [ref=f27e105]: Strawberry, kiwi and flaxseed for ages 13–16, steady fuel for school and sport.
+          - link "High-tempo days 18:30 RESET · INTENSE High-tempo days A concentrated green blend for training days and long afternoons." [ref=f27e106] [cursor=pointer]:
+            - /url: /en/reset/intense
+            - generic [ref=f27e107]:
+              - img "High-tempo days" [ref=f27e108]
+              - generic [ref=f27e109]: 18:30
+            - generic [ref=f27e110]:
+              - generic [ref=f27e111]: RESET · INTENSE
+              - heading "High-tempo days" [level=3] [ref=f27e112]
+              - paragraph [ref=f27e113]: A concentrated green blend for training days and long afternoons.
+          - link "Miles from the routine Weekend RESET · INTENSE Miles from the routine The concentrated green blend, poured from a thermos far from the desk." [ref=f27e114] [cursor=pointer]:
+            - /url: /en/reset/intense
+            - generic [ref=f27e115]:
+              - img "Miles from the routine" [ref=f27e116]
+              - generic [ref=f27e117]: Weekend
+            - generic [ref=f27e118]:
+              - generic [ref=f27e119]: RESET · INTENSE
+              - heading "Miles from the routine" [level=3] [ref=f27e120]
+              - paragraph [ref=f27e121]: The concentrated green blend, poured from a thermos far from the desk.
+      - region "Adaptability" [ref=f27e123]:
+        - generic [ref=f27e125]:
+          - generic [ref=f27e126]:
+            - generic [ref=f27e127]: Adaptability
+            - heading "Nutrition that adapts to real life." [level=2] [ref=f27e129]:
+              - generic [ref=f27e130]:
+                - generic [ref=f27e131]: Nutrition
+                - generic [ref=f27e133]: that
+                - generic [ref=f27e135]: adapts
+                - generic [ref=f27e137]: to
+                - generic [ref=f27e139]: real
+                - generic [ref=f27e141]: life.
+            - paragraph [ref=f27e144]: From home to school, from work to demanding periods, daily routines are rarely the same. Blendence is designed to fit into real life, without rituals, complexity, or extremes.
+          - generic [ref=f27e145]:
+            - generic [ref=f27e146]:
+              - 'img "Picked ripe: Whole fruit & vegetables, harvested in season" [ref=f27e148]'
+              - generic [ref=f27e149]:
+                - generic [ref=f27e150]: "01"
+                - heading "Picked ripe" [level=3] [ref=f27e151]
+            - generic [ref=f27e152]:
+              - 'img "Freeze-dried at −40°C: The water leaves. Nutrients, colour and taste stay" [ref=f27e154]'
+              - generic [ref=f27e155]:
+                - generic [ref=f27e156]: "02"
+                - heading "Freeze-dried at −40°C" [level=3] [ref=f27e157]
+            - generic [ref=f27e158]:
+              - 'img "Alive in the glass: Stir into water, ready in seconds" [ref=f27e160]'
+              - generic [ref=f27e161]:
+                - generic [ref=f27e162]: "03"
+                - heading "Alive in the glass" [level=3] [ref=f27e163]
+      - generic [ref=f27e170]:
+        - link "BLENDENCE Stages Thoughtfully designed blends for different life stages. From early growth to teenage years, each formulation adapts to evolving nutritional needs. Explore range" [ref=f27e173] [cursor=pointer]:
+          - /url: /en/stages
+          - generic [ref=f27e174]:
+            - generic [ref=f27e175]: BLENDENCE
+            - heading "Stages" [level=2] [ref=f27e176]
+            - paragraph [ref=f27e178]: Thoughtfully designed blends for different life stages. From early growth to teenage years, each formulation adapts to evolving nutritional needs.
+            - generic [ref=f27e179]: Explore range
+        - link "BLENDENCE Reset Clean, plant-based formulations for moments when the body needs lightness and balance. Designed for portability and everyday use. Explore range" [ref=f27e184] [cursor=pointer]:
+          - /url: /en/reset
+          - generic [ref=f27e185]:
+            - generic [ref=f27e186]: BLENDENCE
+            - heading "Reset" [level=2] [ref=f27e187]
+            - paragraph [ref=f27e189]: Clean, plant-based formulations for moments when the body needs lightness and balance. Designed for portability and everyday use.
+            - generic [ref=f27e190]: Explore range
+      - region "Nutrition designed for the stages of life." [ref=f27e193]:
+        - generic [ref=f27e195]:
+          - img "Stages" [ref=f27e197]
+          - paragraph [ref=f27e198]: As the body's needs shift across different stages of life, nutrition should adapt accordingly.
+        - generic [ref=f27e201]:
+          - generic [ref=f27e202]:
+            - generic "Nutrition designed for the stages of life." [ref=f27e203]:
+              - button "KidGrow" [ref=f27e204] [cursor=pointer]
+              - button "KidRise" [ref=f27e207] [cursor=pointer]
+              - button "TeenFocus" [ref=f27e210] [cursor=pointer]
+            - generic [ref=f27e214]:
+              - generic [ref=f27e215]:
+                - heading "KidGrow™" [level=3] [ref=f27e216]
+                - paragraph [ref=f27e217]: Designed for early growth stages, suitable for all ages.
+                - paragraph [ref=f27e218]: Optimized nutrition for early growth stages.
+                - link "Learn more" [ref=f27e219] [cursor=pointer]:
+                  - /url: /en/stages/kidgrow
+              - img "KidGrow" [ref=f27e223]
+          - generic [ref=f27e224]:
+            - button "KidGrow" [ref=f27e225] [cursor=pointer]
+            - button "KidRise" [ref=f27e227] [cursor=pointer]
+            - button "TeenFocus" [ref=f27e229] [cursor=pointer]
+      - generic [ref=f27e232]:
+        - generic [ref=f27e233]:
+          - img "Reset" [ref=f27e235]
+          - paragraph [ref=f27e236]: Reset is designed for moments when the body feels heavier than usual. Its plant-based, fiber-supported formulation is designed to support digestive lightness and a sense of balance.
+        - generic [ref=f27e238]:
+          - generic [ref=f27e239]:
+            - generic [ref=f27e244]:
+              - link "Reset Balance ™" [ref=f27e245] [cursor=pointer]:
+                - /url: /en/reset/balance
+                - generic [ref=f27e246]:
+                  - heading "Reset Balance" [level=3] [ref=f27e247]
+                  - generic [ref=f27e248]: ™
+              - paragraph [ref=f27e249]: Supporting lightness and balance.
+              - paragraph [ref=f27e250]: Designed for periods when daily routines continue, but a lighter, more balanced option feels more appropriate.
+            - generic [ref=f27e251]:
+              - generic [ref=f27e252]:
+                - img "Reset Balance" [ref=f27e254]
+                - generic [ref=f27e255]: "Everyday: Designed for ongoing routines"
+              - generic [ref=f27e257]:
+                - generic [ref=f27e258]: Why this blend
+                - generic [ref=f27e259]:
+                  - paragraph [ref=f27e260]: Reset Balance focuses on continuity, not intensity.
+                  - paragraph [ref=f27e261]: It is designed for moments when you want to support balance and digestive lightness without disrupting your everyday flow.
+                  - paragraph [ref=f27e262]: Rather than adding more, Reset Balance is about reducing unnecessary load, supporting fluid balance, digestive-friendly routines, and satiety between meals.
+                - link "Learn more →" [ref=f27e263] [cursor=pointer]:
+                  - /url: /en/reset/balance
+          - img "Reset Balance" [ref=f27e268]
+        - generic [ref=f27e269]:
+          - button "Pause" [ref=f27e270] [cursor=pointer]
+          - generic [ref=f27e273]:
+            - button "Go to slide 1" [ref=f27e274] [cursor=pointer]
+            - button "Go to slide 2" [ref=f27e276] [cursor=pointer]
+          - link "Explore Reset Range" [ref=f27e277] [cursor=pointer]:
+            - /url: /en/reset/balance
+      - generic [ref=f27e287]:
+        - generic [ref=f27e288]: How we design nutrition.
+        - heading "We don't start with ingredients. We start with needs." [level=2] [ref=f27e290]:
+          - generic [ref=f27e291]:
+            - generic [ref=f27e292]: We
+            - generic [ref=f27e294]: don't
+            - generic [ref=f27e296]: start
+            - generic [ref=f27e298]: with
+            - generic [ref=f27e300]: ingredients.
+            - generic [ref=f27e302]: We
+            - generic [ref=f27e304]: start
+            - generic [ref=f27e306]: with
+            - generic [ref=f27e308]: needs.
+        - paragraph [ref=f27e311]: Our approach brings together nutritional science, food engineering, and real-life use to create blends that are relevant, consistent, and clean.
+        - link "Our approach" [ref=f27e313] [cursor=pointer]:
+          - /url: /en/approach
+    - contentinfo [ref=f27e316]:
+      - generic [ref=f27e324]:
+        - paragraph [ref=f27e325]:
+          - generic [ref=f27e326]:
+            - generic [ref=f27e327]: We
+            - generic [ref=f27e329]: design
+            - generic [ref=f27e331]: nutrition
+            - generic [ref=f27e333]: that
+            - generic [ref=f27e335]: adapts
+            - generic [ref=f27e337]: to
+            - generic [ref=f27e339]: real
+            - generic [ref=f27e341]: life.
+            - generic [ref=f27e343]: Naturally
+            - generic [ref=f27e345]: powerful,
+            - generic [ref=f27e347]: perfectly
+            - generic [ref=f27e349]: balanced
+            - generic [ref=f27e351]: and
+            - generic [ref=f27e353]: scientifically
+            - generic [ref=f27e355]: formulated
+            - generic [ref=f27e357]: for
+            - generic [ref=f27e359]: consistency.
+        - generic [ref=f27e361]:
+          - generic [ref=f27e362]:
+            - link [ref=f27e363] [cursor=pointer]:
+              - /url: /en
+              - img "Blendence" [ref=f27e364]
+            - generic [ref=f27e365]:
+              - link "Instagram" [ref=f27e366] [cursor=pointer]:
+                - /url: "#"
+              - link "LinkedIn" [ref=f27e370] [cursor=pointer]:
+                - /url: "#"
+              - link "Facebook" [ref=f27e374] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f27e377]:
+            - heading "Stages" [level=4] [ref=f27e378]
+            - navigation [ref=f27e379]:
+              - link "KidGrow" [ref=f27e380] [cursor=pointer]:
+                - /url: /en/stages/kidgrow
+              - link "KidRise" [ref=f27e381] [cursor=pointer]:
+                - /url: /en/stages/kidrise
+              - link "TeenFocus" [ref=f27e382] [cursor=pointer]:
+                - /url: /en/stages/teenfocus
+          - generic [ref=f27e383]:
+            - heading "Reset" [level=4] [ref=f27e384]
+            - navigation [ref=f27e385]:
+              - link "Balance" [ref=f27e386] [cursor=pointer]:
+                - /url: /en/reset/balance
+              - link "Intense" [ref=f27e387] [cursor=pointer]:
+                - /url: /en/reset/intense
+          - generic [ref=f27e388]:
+            - heading "Company" [level=4] [ref=f27e389]
+            - navigation [ref=f27e390]:
+              - link "Our Approach" [ref=f27e391] [cursor=pointer]:
+                - /url: /en/approach
+              - link "About Us" [ref=f27e392] [cursor=pointer]:
+                - /url: /en/about
+              - link "Contact" [ref=f27e393] [cursor=pointer]:
+                - /url: /en/contact
+          - generic [ref=f27e394]:
+            - heading "Newsletter" [level=4] [ref=f27e395]
+            - paragraph [ref=f27e396]: Subscribe to receive updates on new blends and nutritional insights.
+            - generic [ref=f27e397]:
+              - textbox "Email address" [ref=f27e398]
+              - button "Subscribe" [ref=f27e399] [cursor=pointer]
+        - generic [ref=f27e403]:
+          - generic [ref=f27e404]:
+            - link "Privacy Policy" [ref=f27e405] [cursor=pointer]:
+              - /url: /en/privacy
+            - link "Terms of Use" [ref=f27e406] [cursor=pointer]:
+              - /url: /en/terms
+            - link "Food Safety" [ref=f27e407] [cursor=pointer]:
+              - /url: /en/food-safety
+            - link "Gender Equality" [ref=f27e408] [cursor=pointer]:
+              - /url: /en/gender-equality
+          - paragraph [ref=f27e409]:
+            - text: © 2026 BLENDENCE, a brand of
+            - link "Buge Foods" [ref=f27e410] [cursor=pointer]:
+              - /url: https://bugefoods.com
+            - text: . All rights reserved.
+  - button "Open Next.js Dev Tools" [ref=f27e416] [cursor=pointer]
+  - alert [ref=f27e420]

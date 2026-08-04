@@ -97,7 +97,7 @@ export default function AdaptiveScenes({ scenes }: { scenes: AdaptiveScene[] }) 
             <button
               key={s.src}
               type="button"
-              aria-label={`${s.time} — ${s.label}`}
+              aria-label={`${s.time}: ${s.label}`}
               aria-current={i === index}
               className={`scene-bar${i === index ? ' active' : ''}`}
               onClick={() => setIndex(i)}

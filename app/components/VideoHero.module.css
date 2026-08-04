@@ -24,17 +24,17 @@
   display: none;
 }
 
-/* Color-corrected still that crossfades in when the video ends.
-   Mirrors .video exactly so the handoff is spatially seamless, and
-   shares .videoDesktop / .videoMobile for the responsive swap plus the
-   .videoMobile object-position override in the mobile media query. */
-.still {
+/* Studio backdrop that crossfades in when the video ends and stays.
+   Mirrors .video's box so the handoff is spatially seamless; one image
+   serves both breakpoints, so it is NOT paired with
+   .videoDesktop / .videoMobile. */
+.heroBg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center bottom;
+  object-position: center center;
   will-change: opacity;
   pointer-events: none;
 }
@@ -43,8 +43,8 @@
   position: absolute;
   inset: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
   pointer-events: none;
 }
 
@@ -63,14 +63,26 @@
   pointer-events: none;
 }
 
-/* Text content — centered in upper portion */
-.topContent {
+/* Split hero — copy in the left column, packaging carousel in
+   the right. Vertically centered, with top padding that clears the fixed
+   nav so the tagline never tucks under it. */
+.grid {
   position: relative;
   z-index: 2;
+  width: 100%;
+  max-width: var(--container-wide);
+  padding: 90px 3rem 0;
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.textCol {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding-top: 22vh;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .tagline {
@@ -78,20 +90,22 @@
   font-weight: 500;
   color: var(--petrol);
   letter-spacing: -0.015em;
-  text-align: center;
+  text-align: left;
   line-height: 1.08;
+  max-width: 12em;
 }
 
 .subtitle {
   font-size: 1.15rem;
   color: var(--text-body);
   margin-top: 1rem;
-  max-width: 520px;
-  text-align: center;
+  max-width: 30em;
+  text-align: left;
   line-height: 1.5;
 }
 
 .ctaButton {
+  align-self: flex-start;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -126,83 +140,91 @@
   transform: translateX(3px);
 }
 
-/* Products — each sachet planted in front of its own powder mound.
-   The row spans the whole hero; each slot is absolutely placed at its
-   mound's peak x (set inline) and horizontally centered on that point. */
-.productRow {
-  position: absolute;
-  inset: 0;
+/* ---- Showcase carousel (right column) ---- */
+.showcase {
+  position: relative;
   z-index: 2;
-  pointer-events: none;
-}
-
-.productSlot {
-  position: absolute;
-  bottom: 22%;
-  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
   pointer-events: auto;
 }
 
-.productItem {
-  cursor: pointer;
-  transform-origin: center bottom;
-}
-
-.productItem:hover {
-  z-index: 5;
-}
-
-.productImage {
-  /* Scale with the mound imagery, not a fixed px, so each sachet keeps the
-     same proportion to its mound at every viewport/aspect. The mound art
-     scales with max(100vw, 179.15vh) (the object-fit: cover displayed width),
-     so the sachet tracks the same basis: ~12.5% of it — roughly 2/3 of the
-     18.35% peak-to-peak spacing, so sachets read large without touching. */
-  width: clamp(150px, max(12.5vw, 22.39vh), 320px);
-  /* The slot is absolutely positioned near the viewport edge, so its
-     shrink-to-fit width can be tiny; without this, the global
-     img { max-width: 100% } reset squashes the right-edge sachet. */
-  max-width: none;
-  height: auto;
-  filter: drop-shadow(0 12px 26px rgba(16, 51, 61, 0.2));
-  transition: filter var(--dur-fast) var(--ease);
-}
-
-.productItem:hover .productImage {
-  filter: drop-shadow(0 20px 36px rgba(16, 51, 61, 0.32));
-}
-
-/* Mobile fan carousel — hidden on desktop */
-.mobileCarousel {
-  display: none;
-}
-
-.mobileFan {
+.showcaseStage {
   position: relative;
   width: 100%;
-  height: 45vh;
+  height: clamp(300px, 46vh, 460px);
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  will-change: opacity, transform;
 }
 
-.mobileFanItem {
-  position: absolute;
-  cursor: pointer;
-  transform-origin: center bottom;
-}
-
-.mobileFanActive {
-  z-index: 5;
-}
-
-.mobileProductImageWrap {
+/* Packaging renders float straight over the backdrop — no card frame. */
+.productLink {
   position: relative;
-  width: 55vw;
-  aspect-ratio: 3 / 5;
-  filter: drop-shadow(0 6px 18px rgba(16, 51, 61, 0.22));
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
+.productShot {
+  object-fit: contain;
+  filter: drop-shadow(0 24px 48px rgba(26, 77, 92, 0.16));
+  transition: filter var(--dur-fast) var(--ease),
+    transform var(--dur-fast) var(--ease);
+}
+
+.productLink:hover .productShot {
+  filter: drop-shadow(0 30px 56px rgba(26, 77, 92, 0.26));
+  transform: translateY(-4px);
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  pointer-events: auto;
+}
+
+.dot {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.dot::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(16, 51, 61, 0.2);
+  transition: background var(--dur-fast) var(--ease),
+    transform var(--dur-fast) var(--ease);
+}
+
+.dot:hover::after {
+  background: rgba(16, 51, 61, 0.4);
+}
+
+.dotActive::after {
+  background: var(--petrol);
+  transform: scale(1.3);
+}
 
 /* Scroll indicator — pinned to bottom */
 .scrollIndicator {
@@ -272,19 +294,22 @@
     height: 55%;
   }
 
-  .topContent {
-    padding-top: 32vh;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  /* Stack: copy (still left-aligned) over the showcase. */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: calc(90px + 2vh) 1.5rem 3.5rem;
   }
 
   .tagline {
     font-size: 2rem;
+    max-width: none;
   }
 
   .subtitle {
     font-size: 0.85rem;
     margin-top: 0.6rem;
+    max-width: none;
   }
 
   .ctaButton {
@@ -293,18 +318,17 @@
     font-size: 0.85rem;
   }
 
-  .productRow {
-    display: none;
+  .showcase {
+    gap: 0.85rem;
   }
 
-  .mobileCarousel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-    margin-top: 1vh;
-    pointer-events: auto;
+  .showcaseStage {
+    height: clamp(240px, 38vh, 340px);
+  }
+
+  .dot {
+    width: 22px;
+    height: 22px;
   }
 
   .scrollIndicator {
@@ -321,8 +345,9 @@
 }
 
 @media (max-width: 480px) {
-  .topContent {
-    padding-top: 18vh;
+  .grid {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .tagline {
@@ -331,9 +356,5 @@
 
   .subtitle {
     font-size: 0.78rem;
-  }
-
-  .mobileProductImageWrap {
-    width: 50vw;
   }
 }
