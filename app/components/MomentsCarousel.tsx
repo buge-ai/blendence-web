@@ -224,11 +224,11 @@ export default function MomentsCarousel() {
                   />
                   <span className="card-scrim" aria-hidden="true" />
                   <span className="time-chip">{card.time}</span>
-                </div>
-                <div className="card-body">
-                  <span className="card-tag">{card.tag}</span>
-                  <h3 className="card-title">{card.title}</h3>
-                  <p className="card-text">{card.text}</p>
+                  <div className="card-body">
+                    <span className="card-tag">{card.tag}</span>
+                    <h3 className="card-title">{card.title}</h3>
+                    <p className="card-text">{card.text}</p>
+                  </div>
                 </div>
               </Link>
             );
@@ -493,23 +493,27 @@ export default function MomentsCarousel() {
           transform: scale(1.04);
         }
 
+        /* Deep petrol fade rising from the bottom edge — carries the
+           overlaid copy without a solid panel. */
         .card-scrim {
           position: absolute;
           inset: 0;
           background: linear-gradient(
             to top,
-            rgba(16, 51, 61, 0.28) 0%,
-            rgba(16, 51, 61, 0) 42%
+            rgba(11, 36, 43, 0.86) 0%,
+            rgba(11, 36, 43, 0.52) 32%,
+            rgba(11, 36, 43, 0) 62%
           );
           pointer-events: none;
         }
 
         /* Time chip — filled with the card's accent (the same color its
-           dial pin takes), white type on top. */
+           dial pin takes), white type on top. Lives in the top corner now
+           that the copy owns the bottom of the image. */
         .time-chip {
           position: absolute;
           left: 1rem;
-          bottom: 1rem;
+          top: 1rem;
           z-index: 2;
           display: inline-flex;
           align-items: center;
@@ -526,12 +530,17 @@ export default function MomentsCarousel() {
           font-variant-numeric: tabular-nums;
         }
 
+        /* Copy overlays the bottom of the photo, inside the same box. */
         .card-body {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 2;
           display: flex;
           flex-direction: column;
-          gap: 0.55rem;
-          padding: 1.5rem 1.6rem 1.75rem;
-          flex: 1;
+          gap: 0.45rem;
+          padding: 0 1.5rem 1.4rem;
         }
 
         .card-tag {
@@ -539,7 +548,7 @@ export default function MomentsCarousel() {
           font-weight: 600;
           letter-spacing: 0.14em;
           text-transform: uppercase;
-          color: var(--text-muted);
+          color: rgba(255, 255, 255, 0.72);
         }
 
         .card-title {
@@ -547,14 +556,14 @@ export default function MomentsCarousel() {
           font-weight: 600;
           letter-spacing: -0.01em;
           line-height: 1.25;
-          color: var(--text-heading);
+          color: #fff;
           margin: 0;
         }
 
         .card-text {
-          font-size: 0.95rem;
-          line-height: 1.65;
-          color: var(--text-body);
+          font-size: 0.9rem;
+          line-height: 1.55;
+          color: rgba(255, 255, 255, 0.86);
           margin: 0;
         }
 
@@ -591,7 +600,7 @@ export default function MomentsCarousel() {
           }
 
           .card-body {
-            padding: 1.25rem 1.35rem 1.5rem;
+            padding: 0 1.25rem 1.2rem;
           }
         }
       `}</style>

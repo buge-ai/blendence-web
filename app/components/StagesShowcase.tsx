@@ -185,7 +185,9 @@ export default function StagesShowcase() {
                     }
                 >
                     {/* Logo lives INSIDE the pinned scene (client request) —
-                        floats top-left, visible through all three products. */}
+                        floats top-left, visible through all three products.
+                        Logo only: a subheading here collided with the copy
+                        card on shorter viewports, so the client cut it. */}
                     <div className="ss-pin-head">
                         <span className="ss-logo">
                             <Image
@@ -196,7 +198,6 @@ export default function StagesShowcase() {
                                 style={{ objectFit: 'contain', height: 'auto', maxWidth: '100%' }}
                             />
                         </span>
-                        <p className="ss-sub">{copy.subheading}</p>
                     </div>
 
                     <div className="ss-stage">
@@ -309,15 +310,6 @@ export default function StagesShowcase() {
                 .ss-logo {
                     display: block;
                     width: min(210px, 30vw);
-                    margin-bottom: 0.6rem;
-                }
-
-                .ss-sub {
-                    font-size: 0.98rem;
-                    line-height: 1.6;
-                    color: var(--text-body);
-                    max-width: 520px;
-                    margin: 0;
                 }
 
                 /* ---- Scroll track: one viewport per product ---- */
@@ -626,13 +618,6 @@ export default function StagesShowcase() {
 
                     .ss-logo {
                         width: min(170px, 44vw);
-                        margin-bottom: 0;
-                    }
-
-                    /* The subheading doesn't fit the vertical budget of small
-                       phones — the logo alone carries the header. */
-                    .ss-sub {
-                        display: none;
                     }
 
                     .ss-stage {
