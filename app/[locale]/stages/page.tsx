@@ -8,7 +8,6 @@ import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
 import WaveDivider from '@/app/components/WaveDivider';
 import CategoryHeroMedia from '@/app/components/CategoryHeroMedia';
-import StageGrowth from '@/app/components/StageGrowth';
 import { Reveal, WordReveal, ImageReveal, Parallax, EASE } from '@/lib/motion';
 import { useLanguage } from '@/lib/LanguageContext';
 import { blob } from '@/lib/blob';
@@ -40,6 +39,13 @@ const products: Product[] = [
         link: '/stages/teenfocus',
         ageRange: '13-16',
     },
+];
+
+// Life-stage overview cards — one per product, client stage icons
+const lifeStages = [
+    { icon: '/images/stages/stage-sprout.png', age: '4-7', accent: 'var(--kidgrow)' },
+    { icon: '/images/stages/stage-sapling.png', age: '8-12', accent: 'var(--kidrise)' },
+    { icon: '/images/stages/stage-branch.png', age: '13-16', accent: 'var(--teenfocus)' },
 ];
 
 export default function StagesCategoryPage() {
@@ -106,6 +112,11 @@ export default function StagesCategoryPage() {
     const productData = getProductData(currentProduct.id);
     const stageCards = t.products.stages.cards as Record<string, { lines: string[] }>;
     const cardLines = stageCards[currentProduct.id]?.lines ?? [];
+    const overviewCards = [
+        { title: t.categoryPages.earlyGrowth, desc: t.categoryPages.earlyGrowthDesc },
+        { title: t.categoryPages.activeSchooling, desc: t.categoryPages.activeSchoolingDesc },
+        { title: t.categoryPages.mentalFocus, desc: t.categoryPages.mentalFocusDesc },
+    ];
 
     return (
         <div className="stages-page">
@@ -208,7 +219,6 @@ export default function StagesCategoryPage() {
                                                 <span className="age-label">{t.categoryPages.ages}</span>
                                                 <span className="age-range">{currentProduct.ageRange}</span>
                                             </div>
-                                            <span className="product-tag">{productData.tag}</span>
                                             <h3 className="product-title">{productData.title}</h3>
                                             <ul className="product-points">
                                                 {cardLines.map((line, i) => (
@@ -279,12 +289,32 @@ export default function StagesCategoryPage() {
                             delay={0.08}
                         />
 
+                        {/* Three age-stage cards side by side — client
+                            dropped the seed-growth scrollytelling (Aug 2026). */}
+                        <div className="stage-cards">
+                            {overviewCards.map((card, i) => (
+                                <Reveal key={i} delay={0.1 + i * 0.08} className="stage-card-reveal">
+                                    <div
+                                        className="stage-card"
+                                        style={{ '--stage-accent': lifeStages[i].accent } as React.CSSProperties}
+                                    >
+                                        <span className="card-top">
+                                            <Image
+                                                src={lifeStages[i].icon}
+                                                alt=""
+                                                width={44}
+                                                height={44}
+                                                className="card-icon"
+                                            />
+                                            <span className="card-age">{lifeStages[i].age}</span>
+                                        </span>
+                                        <h3>{card.title}</h3>
+                                        <p>{card.desc}</p>
+                                    </div>
+                                </Reveal>
+                            ))}
+                        </div>
                     </div>
-
-                    {/* Scroll-scrubbed growth animation (sprout → sapling →
-                        branch) with the three age-stage cards — full-bleed
-                        so the sticky stage owns the viewport. */}
-                    <StageGrowth />
                 </section>
 
                 <WaveDivider tone="stages" />
@@ -496,18 +526,6 @@ export default function StagesCategoryPage() {
                     font-weight: 700;
                 }
 
-                .product-tag {
-                    display: inline-block;
-                    padding: 0.5rem 1rem;
-                    background: var(--stages-tint);
-                    color: var(--stages-accent-deep);
-                    border-radius: var(--radius-pill);
-                    font-size: 0.85rem;
-                    font-weight: 500;
-                    margin-bottom: 1rem;
-                    margin-left: 0.5rem;
-                }
-
                 .product-title {
                     font-size: 2.5rem;
                     font-weight: 600;
@@ -641,6 +659,62 @@ export default function StagesCategoryPage() {
                     letter-spacing: -0.02em;
                 }
 
+                .stage-cards {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 1.5rem;
+                    text-align: left;
+                    align-items: stretch;
+                }
+
+                .stage-cards :global(.stage-card-reveal) {
+                    height: 100%;
+                }
+
+                .stage-card {
+                    height: 100%;
+                    border: 1px solid var(--hairline);
+                    border-top: 3px solid var(--stage-accent);
+                    border-radius: var(--radius-lg);
+                    background: var(--surface);
+                    padding: 1.5rem 1.6rem 1.65rem;
+                    box-shadow: var(--shadow-soft);
+                }
+
+                .card-top {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 0.75rem;
+                }
+
+                .stage-card :global(.card-icon) {
+                    object-fit: contain;
+                }
+
+                .card-age {
+                    font-family: var(--font-display-family);
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    color: var(--stage-accent);
+                    font-variant-numeric: tabular-nums;
+                }
+
+                .stage-card h3 {
+                    margin: 0 0 0.4rem;
+                    font-size: 1.15rem;
+                    font-weight: 600;
+                    letter-spacing: -0.01em;
+                    color: var(--text-heading);
+                }
+
+                .stage-card p {
+                    margin: 0;
+                    font-size: 0.95rem;
+                    line-height: 1.6;
+                    color: var(--text-body);
+                }
+
                 /* Philosophy Section — split editorial layout.
                    Parallax/ImageReveal are imported components, so their
                    classes are styled as :global() descendants of the
@@ -708,6 +782,13 @@ export default function StagesCategoryPage() {
                         text-align: center;
                     }
 
+                    .stage-cards {
+                        grid-template-columns: 1fr;
+                        gap: 1rem;
+                        max-width: 480px;
+                        margin: 0 auto;
+                    }
+
                     .product-info {
                         order: 2;
                     }
@@ -765,8 +846,7 @@ export default function StagesCategoryPage() {
                         font-size: 2rem;
                     }
 
-                    .age-badge,
-                    .product-tag {
+                    .age-badge {
                         display: block;
                         margin-left: auto;
                         margin-right: auto;

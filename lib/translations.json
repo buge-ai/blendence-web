@@ -105,9 +105,9 @@
       },
       "adaptability": {
         "label": "Adaptability",
-        "title": "Nutrition that adapts to real life.",
+        "title": "Blends that adapt to real life.",
         "heading": "Real Life Adaptation",
-        "description": "From home to school, from work to demanding periods, daily routines are rarely the same. Blendence is designed to fit into real life, without rituals, complexity, or extremes.",
+        "description": "From home to school, from a calm week to a busy stretch, daily routines are rarely the same. Blendence is designed to fit this changing pace with ease — no complexity, no preparation required.",
         "scenes": [
           {
             "time": "07:30",
@@ -131,12 +131,12 @@
         "stages": [
           {
             "step": "01",
-            "title": "Picked ripe",
+            "title": "Picked at its freshest",
             "caption": "Whole fruit & vegetables, harvested in season"
           },
           {
             "step": "02",
-            "title": "Freeze-dried at −40°C",
+            "title": "The water goes, the essence stays",
             "caption": "The water leaves. Nutrients, colour and taste stay"
           },
           {
@@ -155,7 +155,7 @@
             "key": "kidgrow",
             "time": "07:15",
             "tag": "STAGES · KIDGROW",
-            "title": "Growing mornings",
+            "title": "The morning's first glass",
             "text": "Grape, orange and banana for ages 4–7, a full glass before a full day."
           },
           {
@@ -184,7 +184,7 @@
             "time": "16:30",
             "tag": "STAGES · TEENFOCUS",
             "title": "After the last bell",
-            "text": "Strawberry, kiwi and flaxseed for ages 13–16, steady fuel for school and sport."
+            "text": "Kiwi, banana and flaxseed for ages 13–16, steady fuel for school and sport."
           },
           {
             "key": "intense",
@@ -226,9 +226,9 @@
             "desc": "Optimized nutrition for early growth stages.",
             "fullDesc": "Designed to fit naturally into everyday routines, supporting early development with essential nutrients.",
             "whyBlend": [
-              "During early growth stages, the body requires a variety of nutritional building blocks as part of normal development.",
-              "Many of these components are naturally present in fruits and vegetables commonly included in balanced diets.",
-              "KidGrow is designed by identifying these everyday needs first, then selecting plant-based ingredients where they naturally occur, combined into a blend that fits easily into daily routines."
+              "KidGrow contains green grape, orange, pear and banana — and that selection is no accident.",
+              "Our team of food engineers and dietitians designed this formulation around the everyday needs of the 4–7 age group.",
+              "Fruits processed by lyophilization (freeze-drying) retain their natural nutritional value far better than conventional drying methods."
             ]
           },
           "kidrise": {
@@ -257,7 +257,7 @@
       },
       "resetSpotlight": {
         "heading": "Moments of balance.",
-        "subheading": "Reset is designed for moments when the body feels heavier than usual. Its plant-based, fiber-supported formulation is designed to support digestive lightness and a sense of balance.",
+        "subheading": "Reset is created for moments when the body benefits from refreshing its internal rhythm and returning to a lighter sense of balance. Its plant-based, fiber-supported formulation supports a feeling of clarity and renewal.",
         "whyBlendLabel": "Why this blend",
         "learnMore": "Learn more →",
         "products": {
@@ -1056,7 +1056,7 @@
         "benefit2": "Cognitive support with omega-3",
         "benefit3": "Long-lasting energy",
         "benefit4": "Balanced mix for independent nutrition habits",
-        "ingredients": "Strawberry • Grape • Kiwi • Lemon • Banana • Flaxseed",
+        "ingredients": "Kiwi • Green Grape • Banana • Lemon • Flaxseed",
         "usage": "Mix sachet with water or sports drinks"
       },
       "additionalTitle": "Additional Product Lines",
@@ -1305,10 +1305,10 @@
       "activeSchoolingDesc": "Supporting cognitive development and physical consistency during busy school days.",
       "mentalFocus": "Mental Focus",
       "mentalFocusDesc": "Designed for demanding academic periods and hormonal transitions.",
-      "stagesPhilosophyTitle": "Nutrition designed for the transitions of life.",
-      "stagesPhilosophyDesc": "As the body's needs shift, our blends adapt to support growth, focus, and everyday consistency.",
+      "stagesPhilosophyTitle": "Products that accompany life's transitions.",
+      "stagesPhilosophyDesc": "The body's needs change with each stage of life. Our blends accompany that change while preserving everyday consistency.",
       "resetPhilosophyTitle": "Designed for moments of balance.",
-      "resetPhilosophyDesc": "Reset is designed for moments when the body feels heavier than usual. Its plant-based, fiber-supported formulation is designed to support digestive lightness and a sense of balance."
+      "resetPhilosophyDesc": "Reset is created for moments when the body benefits from refreshing its internal rhythm and returning to a lighter sense of balance. Its plant-based, fiber-supported formulation supports a feeling of clarity and renewal."
     }
   },
   "tr": {
@@ -1417,9 +1417,9 @@
       },
       "adaptability": {
         "label": "Uyum",
-        "title": "Gerçek hayata uyum sağlayan beslenme.",
+        "title": "Gerçek hayata uyum sağlayan karışımlar.",
         "heading": "Gerçek Hayat Uyumu",
-        "description": "Evden okula, işten zorlu dönemlere, günlük rutinler nadiren aynı kalır. Blendence, gerçek hayata sığacak şekilde tasarlandı, ritüeller, karmaşıklık veya aşırılıklar olmadan.",
+        "description": "Evden okula, sakin bir haftadan yoğun bir döneme, günlük rutinler nadiren aynı kalır. Blendence, bu değişen tempoya kolayca uyacak şekilde tasarlandı — karmaşıklık ya da hazırlık gerektirmeden.",
         "scenes": [
           {
             "time": "07:30",
@@ -1443,12 +1443,12 @@
         "stages": [
           {
             "step": "01",
-            "title": "Dalında olgun",
+            "title": "En taze halinde toplanır",
             "caption": "Mevsiminde toplanan bütün meyve ve sebzeler"
           },
           {
             "step": "02",
-            "title": "−40°C'de kurutulur",
+            "title": "Suyunu bırakır, özünü korur",
             "caption": "Su gider; besin, renk ve tat kalır"
           },
           {
@@ -1467,7 +1467,7 @@
             "key": "kidgrow",
             "time": "07:15",
             "tag": "STAGES · KIDGROW",
-            "title": "Büyüyen sabahlar",
+            "title": "Sabahın ilk bardağı",
             "text": "4–7 yaş için üzüm, portakal ve muz, dolu bir günden önce dolu bir bardak."
           },
           {
@@ -1496,7 +1496,7 @@
             "time": "16:30",
             "tag": "STAGES · TEENFOCUS",
             "title": "Son zilin ardından",
-            "text": "13–16 yaş için çilek, kivi ve keten tohumu, okul ve spor temposuna destek."
+            "text": "13–16 yaş için kivi, muz ve keten tohumu, okul ve spor temposuna destek."
           },
           {
             "key": "intense",
@@ -1538,9 +1538,9 @@
             "desc": "Erken büyüme aşamaları için optimize edilmiş beslenme.",
             "fullDesc": "Günlük rutinlere doğal olarak uyum sağlamak için tasarlandı, temel besinlerle erken gelişimi destekler.",
             "whyBlend": [
-              "Erken büyüme aşamalarında vücut, normal gelişimin bir parçası olarak çeşitli beslenme yapı taşları gerektirir.",
-              "Bu bileşenlerin çoğu, dengeli diyetlerde yaygın olarak bulunan meyve ve sebzelerde doğal olarak mevcuttur.",
-              "KidGrow, önce bu günlük ihtiyaçları belirleyerek, ardından doğal olarak bulundukları bitki bazlı bileşenleri seçerek tasarlandı, günlük rutinlere kolayca sığan bir karışım haline getirildi."
+              "KidGrow içinde yeşil üzüm, portakal, armut ve muz bulunur — bu seçim rastgele değildir.",
+              "Gıda mühendisleri ve diyetisyenlerden oluşan ekibimiz, bu formülasyonu 4-7 yaş grubunun günlük ihtiyaçlarını gözeterek tasarladı.",
+              "Liyofilizasyon (dondurarak kurutma) ile işlenen meyveler, doğal besin değerini geleneksel yöntemlere göre çok daha yüksek oranda korur."
             ]
           },
           "kidrise": {
@@ -1569,7 +1569,7 @@
       },
       "resetSpotlight": {
         "heading": "Denge anları.",
-        "subheading": "Reset, vücudun normalden daha ağır hissedildiği anlar için tasarlandı. Bitki bazlı, lif destekli formülasyonu sindirim hafifliğini ve denge hissini desteklemek için tasarlandı.",
+        "subheading": "Reset, vücudunuzun iç ritmini tazelemesine ve daha hafif bir denge hissine dönmesine yardımcı olduğu anlar için yaratılmıştır. Bitki bazlı, lif destekli formülasyonuyla berraklık ve yenilenme hissini destekler.",
         "whyBlendLabel": "Neden bu karışım",
         "learnMore": "Daha fazla →",
         "products": {
@@ -2368,7 +2368,7 @@
         "benefit2": "Omega-3 ile bilişsel destek",
         "benefit3": "Uzun süreli enerji",
         "benefit4": "Bağımsız beslenme alışkanlıkları için dengeli karışım",
-        "ingredients": "Çilek • Üzüm • Kivi • Limon • Muz • Keten Tohumu",
+        "ingredients": "Kivi • Yeşil Üzüm • Muz • Limon • Keten Tohumu",
         "usage": "Saşeyi su veya spor içecekleri ile karıştırın"
       },
       "additionalTitle": "Ek Ürün Serileri",
@@ -2617,10 +2617,10 @@
       "activeSchoolingDesc": "Okul, oyun ve enerjinin aynı güne sığdığı dönem.",
       "mentalFocus": "Odak Dönemi",
       "mentalFocusDesc": "Ders yükünün ve sorumluluğun arttığı, kendi rutinini kurma dönemi.",
-      "stagesPhilosophyTitle": "Yaşamın geçişleri için tasarlanmış beslenme.",
-      "stagesPhilosophyDesc": "Vücudun ihtiyaçları değiştikçe, karışımlarımız büyümeyi, odaklanmayı ve günlük tutarlılığı desteklemek için uyum sağlar.",
+      "stagesPhilosophyTitle": "Yaşamın geçişlerine eşlik eden ürünler.",
+      "stagesPhilosophyDesc": "Vücudun ihtiyaçları yaşam evresine göre değişir. Karışımlarımız da bu değişime, günlük tutarlılığı koruyarak eşlik eder.",
       "resetPhilosophyTitle": "Denge anları için tasarlandı.",
-      "resetPhilosophyDesc": "Reset, vücudun normalden daha ağır hissedildiği anlar için tasarlandı. Bitki bazlı, lif destekli formülasyonu sindirim hafifliğini ve denge hissini desteklemek için tasarlandı."
+      "resetPhilosophyDesc": "Reset, vücudunuzun iç ritmini tazelemesine ve daha hafif bir denge hissine dönmesine yardımcı olduğu anlar için yaratılmıştır. Bitki bazlı, lif destekli formülasyonuyla berraklık ve yenilenme hissini destekler."
     }
   }
 }
