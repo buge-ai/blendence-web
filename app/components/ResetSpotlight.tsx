@@ -45,7 +45,7 @@ const PRODUCT_DATA: ResetEntry[] = [
         id: 'balance',
         href: '/reset/balance',
         render: '/images/boxes/reset-balance-box.png',
-        glass: '/images/glasses/reset-balance-glass-v2.jpg',
+        glass: '/images/glasses/reset-balance-glass-cut.png',
         accent: 'var(--balance)',
         tint: 'var(--balance-tint)',
     },
@@ -53,7 +53,7 @@ const PRODUCT_DATA: ResetEntry[] = [
         id: 'intense',
         href: '/reset/intense',
         render: '/images/boxes/reset-intense-box.png',
-        glass: '/images/glasses/reset-intense-glass-v2.jpg',
+        glass: '/images/glasses/reset-intense-glass-cut.png',
         accent: 'var(--intense)',
         tint: 'var(--intense-tint)',
     },
@@ -94,8 +94,7 @@ export default function ResetSpotlight() {
                ("Everyday: …") that the bento used as a caption. */
             tagline: tr.desc,
             whyBlend: tr.whyBlend,
-            glassFit: 'cover',
-            glassFramed: true,
+            glassFit: 'contain',
         };
     });
 
