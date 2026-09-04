@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
+
+const GA_ID = "G-RX67E6T3YB";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -47,6 +50,19 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${montserrat.variable} ${montserrat.className} antialiased`}>
         {children}
+        {/* Google tag (gtag.js) */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
       </body>
     </html>
   );
