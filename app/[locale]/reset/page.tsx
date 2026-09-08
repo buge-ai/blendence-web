@@ -32,6 +32,13 @@ const products: Product[] = [
     },
 ];
 
+// Philosophy section media — cross-fades through the set automatically
+const philosophyImages = [
+    '/images/main/reset-philosophy.jpg',
+    '/images/main/reset-philosophy-2.jpg',
+    '/images/main/reset-philosophy-3.jpg',
+];
+
 export default function ResetCategoryPage() {
     const { t, language } = useLanguage();
     const reduce = useReducedMotion();
@@ -40,6 +47,15 @@ export default function ResetCategoryPage() {
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
     const [isHovered, setIsHovered] = useState(false);
     const carouselRef = useRef<HTMLDivElement>(null);
+    const [philosophyIndex, setPhilosophyIndex] = useState(0);
+
+    useEffect(() => {
+        if (reduce) return;
+        const interval = setInterval(() => {
+            setPhilosophyIndex((prev) => (prev + 1) % philosophyImages.length);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [reduce]);
 
     // Auto-play carousel — paused on hover
     useEffect(() => {
@@ -272,7 +288,16 @@ export default function ResetCategoryPage() {
                             </div>
                             <Parallax distance={20} className="philosophy-media">
                                 <ImageReveal className="philosophy-frame">
-                                    <div className="philosophy-img philosophy-img-reset" />
+                                    {philosophyImages.map((src, i) => (
+                                        <motion.div
+                                            key={src}
+                                            className="philosophy-img"
+                                            style={{ backgroundImage: `url(${src})` }}
+                                            initial={false}
+                                            animate={{ opacity: i === philosophyIndex ? 1 : 0 }}
+                                            transition={{ duration: 0.9, ease: EASE }}
+                                        />
+                                    ))}
                                 </ImageReveal>
                             </Parallax>
                         </div>
@@ -575,21 +600,20 @@ export default function ResetCategoryPage() {
                 }
 
                 .philosophy-grid :global(.philosophy-frame) {
+                    position: relative;
                     aspect-ratio: 4 / 5;
                     border-radius: var(--radius-lg);
                     box-shadow: var(--shadow-soft);
                     background: var(--reset-tint);
                 }
 
-                .philosophy-img {
+                .philosophy-grid :global(.philosophy-img) {
+                    position: absolute;
+                    inset: 0;
                     width: 100%;
                     height: 100%;
                     background-size: cover;
                     background-position: center;
-                }
-
-                .philosophy-img-reset {
-                    background-image: url('/images/main/reset-philosophy.jpg');
                 }
 
                 .philosophy-content {
