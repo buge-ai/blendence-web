@@ -15,6 +15,7 @@ export default function ResetIntensePage() {
             description={p.description}
             tag={p.tag}
             heroImage="/images/products/reset-intense-sachet.png"
+            shopUrl="https://shop.blendence.com/intense"
             themeColor="#6E5678" /* canonical: var(--intense) */
             themeTint="#F1EDF3"  /* canonical: var(--intense-tint) */
             features={[

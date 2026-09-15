@@ -16,6 +16,7 @@
       "stages": "Stages",
       "reset": "Reset",
       "ourApproach": "Our Approach",
+      "store": "Store",
       "kidGrow": "KidGrow",
       "kidRise": "KidRise",
       "teenFocus": "TeenFocus",
@@ -1280,7 +1281,8 @@
       "cleanFormulation": "Clean Formulation",
       "noArtificialColors": "No artificial colors",
       "noArtificialFlavors": "No artificial flavors",
-      "noUnnecessaryAdditives": "No unnecessary additives"
+      "noUnnecessaryAdditives": "No unnecessary additives",
+      "buyNow": "Buy Now"
     },
     "contentGrid": {
       "explore": "Explore",
@@ -1328,6 +1330,7 @@
       "stages": "Stages",
       "reset": "Reset",
       "ourApproach": "Yaklaşımımız",
+      "store": "Mağaza",
       "kidGrow": "KidGrow",
       "kidRise": "KidRise",
       "teenFocus": "TeenFocus",
@@ -2592,7 +2595,8 @@
       "cleanFormulation": "Temiz Formülasyon",
       "noArtificialColors": "Yapay renklendirici içermez",
       "noArtificialFlavors": "Yapay aroma içermez",
-      "noUnnecessaryAdditives": "Gereksiz katkı maddesi içermez"
+      "noUnnecessaryAdditives": "Gereksiz katkı maddesi içermez",
+      "buyNow": "Satın Al"
     },
     "contentGrid": {
       "explore": "Keşfet",

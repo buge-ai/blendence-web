@@ -16,6 +16,7 @@ export default function KidRisePage() {
             description={p.description}
             tag={p.tag}
             heroImage={blob('products/kid-rise.png')}
+            shopUrl="https://shop.blendence.com/kidrise"
             themeColor="#D9964E" /* canonical: var(--kidrise) */
             themeTint="#FAF1E6"  /* canonical: var(--kidrise-tint) */
             features={[

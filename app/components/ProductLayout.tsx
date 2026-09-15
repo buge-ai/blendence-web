@@ -13,6 +13,8 @@ interface ProductLayoutProps {
     description: string;
     tag: string;
     heroImage: string;
+    /** Deep link to this product on shop.blendence.com (Ticimax storefront). */
+    shopUrl: string;
     themeColor: string; // Canonical product hex — string-interpolated (e.g. `${themeColor}18`), keep as hex literal
     themeTint?: string;  // Canonical product tint hex — soft hero wash, keep as hex literal
     features: {
@@ -35,6 +37,7 @@ export default function ProductLayout({
     description,
     tag,
     heroImage,
+    shopUrl,
     themeColor,
     themeTint,
     features,
@@ -76,6 +79,19 @@ export default function ProductLayout({
                                     <p className="hero-desc">{description}</p>
                                 </Reveal>
                             )}
+                            <Reveal delay={0.32}>
+                                <a
+                                    href={shopUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn-primary hero-buy"
+                                >
+                                    {t.productLayout.buyNow}
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                    </svg>
+                                </a>
+                            </Reveal>
                         </div>
                         <div className="hero-visual">
                             <div className="visual-backdrop" />
@@ -208,6 +224,10 @@ export default function ProductLayout({
             line-height: 1.6;
             color: var(--text-body);
             max-width: 90%;
+        }
+
+        .hero-content .hero-buy {
+            margin-top: 1.75rem;
         }
 
         .visual-backdrop {

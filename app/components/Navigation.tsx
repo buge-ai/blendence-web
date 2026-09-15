@@ -63,6 +63,14 @@ export default function Navigation() {
               {otherLangLabel}
             </NavbarButton>
           </Link>
+          <NavbarButton
+            href="https://shop.blendence.com"
+            variant="primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t.nav.store}
+          </NavbarButton>
         </div>
       </NavBody>
 
@@ -91,6 +99,16 @@ export default function Navigation() {
             </Link>
           ))}
           <div className="flex w-full flex-col gap-3 pt-4 mt-2 border-t border-[rgba(16,51,61,0.09)]">
+            <NavbarButton
+              href="https://shop.blendence.com"
+              variant="primary"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {t.nav.store}
+            </NavbarButton>
             <Link href={getLocalizedPath(otherLang)} onClick={() => setIsMobileMenuOpen(false)}>
               <NavbarButton variant="secondary" as="span" className="w-full">
                 {language === 'en' ? t.common.turkish : t.common.english}

@@ -16,6 +16,7 @@ export default function ResetBalancePage() {
             description={p.description}
             tag={p.tag}
             heroImage={blob('products/balance_front.png')}
+            shopUrl="https://shop.blendence.com/balance"
             themeColor="#9C8F72" /* canonical: var(--balance) */
             themeTint="#F4F1EA"  /* canonical: var(--balance-tint) */
             features={[
