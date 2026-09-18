@@ -369,6 +369,37 @@ export const MobileNavToggle = ({
     );
 };
 
+/** Icon-only link for the mobile header bar (e.g. shop icon beside the
+    hamburger) — same pill hit-target and overHero color switch as
+    MobileNavToggle, just an <a> instead of a <button>. */
+export const MobileNavIconLink = ({
+    href,
+    children,
+    ariaLabel,
+    ...props
+}: {
+    href: string;
+    children: React.ReactNode;
+    ariaLabel: string;
+} & React.ComponentPropsWithoutRef<"a">) => {
+    const { overHero } = useNavbar();
+    return (
+        <a
+            href={href}
+            aria-label={ariaLabel}
+            className={cn(
+                "relative z-[70] rounded-full p-2 transition-colors duration-300",
+                overHero
+                    ? "text-white hover:bg-white/15"
+                    : "text-[#1A4D5C] hover:bg-[#F4F8F8]",
+            )}
+            {...props}
+        >
+            {children}
+        </a>
+    );
+};
+
 export const NavbarLogo = ({
     src = "/logo.png",
     alt = "logo",

@@ -9,8 +9,10 @@ import {
   NavbarButton,
   MobileNavHeader,
   MobileNavToggle,
+  MobileNavIconLink,
   MobileNavMenu,
 } from "./ui/resizable-navbar";
+import { IconShoppingBag } from "@tabler/icons-react";
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -78,10 +80,20 @@ export default function Navigation() {
       <MobileNav>
         <MobileNavHeader>
           <NavbarLogo src={blob('logos/logo.png')} href={`/${language}`} />
-          <MobileNavToggle
-            isOpen={isMobileMenuOpen}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          />
+          <div className="flex items-center gap-1">
+            <MobileNavIconLink
+              href="https://shop.blendence.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              ariaLabel={t.nav.store}
+            >
+              <IconShoppingBag className="h-6 w-6" />
+            </MobileNavIconLink>
+            <MobileNavToggle
+              isOpen={isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            />
+          </div>
         </MobileNavHeader>
 
         <MobileNavMenu
