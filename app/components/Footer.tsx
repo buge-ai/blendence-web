@@ -38,7 +38,7 @@ export default function Footer() {
                 <img src={blob('logos/logo.png')} alt="Blendence" />
               </Link>
               <div className="footer-v2-socials">
-                <a href="https://www.instagram.com/blendence_official/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><IconBrandInstagram size={20} /></a>
+                <a href="https://www.instagram.com/blendence_tr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><IconBrandInstagram size={20} /></a>
                 <a href="https://www.linkedin.com/company/buge-foods" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><IconBrandLinkedin size={20} /></a>
                 <a href="https://www.facebook.com/1243408978865321" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><IconBrandFacebook size={20} /></a>
               </div>
