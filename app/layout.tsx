@@ -50,7 +50,29 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${montserrat.variable} ${montserrat.className} antialiased`}>
         {children}
-        {/* Deployment test: verifying Vercel git deploy pipeline */}
+        {/* Google Consent Mode v2 default state — must run before gtag.js
+            itself so the very first hit already carries a consent signal.
+            Denied by default; CookieConsent.tsx flips this to granted (or
+            re-confirms denied) once the visitor picks, and re-applies a
+            stored choice on repeat visits so returning "accepted" users
+            aren't reset to denied on every page load. */}
+        <Script id="consent-default" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            var storedConsent;
+            try { storedConsent = localStorage.getItem('blendence_cookie_consent'); } catch (e) {}
+            var state = storedConsent === 'granted' ? 'granted' : 'denied';
+            gtag('consent', 'default', {
+              ad_storage: state,
+              ad_user_data: state,
+              ad_personalization: state,
+              analytics_storage: state,
+              wait_for_update: 500
+            });
+          `}
+        </Script>
         {/* Google tag (gtag.js) */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}

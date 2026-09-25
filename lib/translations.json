@@ -6,6 +6,13 @@
       "turkish": "Türkçe",
       "learnMore": "Learn more"
     },
+    "cookieBanner": {
+      "title": "Cookie Notice",
+      "message": "We use cookies to run essential site features and, with your permission, to understand how the site is used. See our",
+      "policyLinkLabel": "Cookie Policy",
+      "acceptLabel": "Accept",
+      "rejectLabel": "Reject"
+    },
     "nav": {
       "home": "Home",
       "about": "About",
@@ -1319,6 +1326,13 @@
       "english": "English",
       "turkish": "Türkçe",
       "learnMore": "Daha fazla"
+    },
+    "cookieBanner": {
+      "title": "Çerez Bildirimi",
+      "message": "Sitenin temel işlevleri için ve izninizle kullanım verilerini anlamak amacıyla çerezler kullanıyoruz. Ayrıntılar için",
+      "policyLinkLabel": "Çerez Politikası",
+      "acceptLabel": "Kabul Et",
+      "rejectLabel": "Reddet"
     },
     "nav": {
       "home": "Ana Sayfa",

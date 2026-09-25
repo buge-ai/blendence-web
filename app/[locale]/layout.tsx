@@ -3,6 +3,7 @@ import { Locale, locales } from '@/lib/i18n-config';
 import { LanguageProvider } from '@/lib/LanguageContext';
 import { pageMetadata } from '@/lib/seo';
 import { notFound } from 'next/navigation';
+import CookieConsent from '@/app/components/CookieConsent';
 
 export async function generateStaticParams() {
     return locales.map((locale) => ({ locale }));
@@ -39,6 +40,7 @@ export default async function LocaleLayout({
     return (
         <LanguageProvider initialLocale={locale as Locale}>
             {children}
+            <CookieConsent />
         </LanguageProvider>
     );
 }
