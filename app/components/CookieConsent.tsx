@@ -136,6 +136,14 @@ export default function CookieConsent() {
             align-items: stretch;
           }
 
+          /* In row layout, "flex: 1 1 320px" sets a min-width. Once the
+             container switches to column above, that same basis applies to
+             height instead and stretches the paragraph into a tall empty
+             box — reset it back to auto here. */
+          .cookie-banner p {
+            flex: 1 1 auto;
+          }
+
           .cookie-actions {
             justify-content: stretch;
           }
