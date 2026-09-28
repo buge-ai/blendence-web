@@ -653,7 +653,7 @@
             "Comply with legal obligations"
           ],
           "contentAfter": [
-            "Personal data is not used for automated decision-making or profiling."
+            "Your personal data (e.g., email address) may be shared with advertising platforms such as Google Ads, in hashed form, to measure ad performance and optimize advertising for our existing customers. This sharing is subject to the relevant platform's privacy and data processing standards."
           ]
         },
         {
@@ -1974,7 +1974,7 @@
             "yasal yükümlülüklere uymak."
           ],
           "contentAfter": [
-            "Kişisel veriler otomatik karar alma veya profilleme amacıyla kullanılmamaktadır."
+            "Kişisel verileriniz (ör. e-posta adresi), reklam performansını ölçmek ve mevcut müşterilerimize yönelik reklamları optimize etmek amacıyla, şifrelenmiş (hash'lenmiş) biçimde Google Ads gibi reklam platformlarıyla paylaşılabilir. Bu paylaşım, ilgili platformun gizlilik ve veri işleme standartlarına tabidir."
           ]
         },
         {
