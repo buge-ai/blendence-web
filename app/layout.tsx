@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import StyledJsxRegistry from "./components/StyledJsxRegistry";
 
 const GA_ID = "G-RX67E6T3YB";
 
@@ -49,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${montserrat.variable} ${montserrat.className} antialiased`}>
-        {children}
+        <StyledJsxRegistry>{children}</StyledJsxRegistry>
         {/* Google Consent Mode v2 default state — must run before gtag.js
             itself so the very first hit already carries a consent signal.
             Denied by default; CookieConsent.tsx flips this to granted (or
