@@ -4,6 +4,7 @@ import { LanguageProvider } from '@/lib/LanguageContext';
 import { pageMetadata } from '@/lib/seo';
 import { notFound } from 'next/navigation';
 import CookieConsent from '@/app/components/CookieConsent';
+import MetaPixel from '@/app/components/MetaPixel';
 
 export async function generateStaticParams() {
     return locales.map((locale) => ({ locale }));
@@ -41,6 +42,7 @@ export default async function LocaleLayout({
         <LanguageProvider initialLocale={locale as Locale}>
             {children}
             <CookieConsent />
+            <MetaPixel />
         </LanguageProvider>
     );
 }

@@ -8,7 +8,7 @@
     },
     "cookieBanner": {
       "title": "Cookie Notice",
-      "message": "We use cookies to run essential site features and, with your permission, to understand how the site is used. See our",
+      "message": "We use cookies for essential site features. With your permission, we also use analytics and advertising cookies (Google, Meta) to understand how the site is used and to measure ad performance. See our",
       "policyLinkLabel": "Cookie Policy",
       "acceptLabel": "Accept",
       "rejectLabel": "Reject"
@@ -42,6 +42,7 @@
       "newsletterText": "Subscribe to receive updates on new blends and nutritional insights.",
       "emailPlaceholder": "Email address",
       "privacyPolicy": "Privacy Policy",
+      "cookieSettings": "Cookie Settings",
       "termsOfUse": "Terms of Use",
       "foodSafety": "Food Safety",
       "genderEquality": "Gender Equality",
@@ -619,7 +620,7 @@
     },
     "privacyPage": {
       "title": "Privacy Policy",
-      "lastUpdated": "Last updated: 13.01.2026",
+      "lastUpdated": "Last updated: 21.10.2026",
       "sections": [
         {
           "title": "1. Introduction",
@@ -653,7 +654,7 @@
             "Comply with legal obligations"
           ],
           "contentAfter": [
-            "Your personal data (e.g., email address) may be shared with advertising platforms such as Google Ads, in hashed form, to measure ad performance and optimize advertising for our existing customers. This sharing is subject to the relevant platform's privacy and data processing standards."
+            "Your personal data (e.g., email address) may be shared with advertising platforms such as Google Ads and Meta (Facebook and Instagram), in hashed form, to measure ad performance and optimize advertising for our existing customers. This sharing is subject to the relevant platform's privacy and data processing standards."
           ]
         },
         {
@@ -700,17 +701,21 @@
           ],
           "bullets": [
             "Remember user preferences",
-            "Analyze website usage in an aggregated and anonymous manner",
-            "Ensure website security"
+            "Ensure website security",
+            "Analyze how the website is used (Google Analytics)",
+            "Measure advertising performance and show relevant ads to people who have visited our website (Google Ads, Meta Pixel)"
           ],
           "contentAfter": [
-            "We do not use cookies for intrusive advertising or tracking across external websites."
+            "Analytics and advertising cookies, placed by Google and Meta, are loaded only if you choose 'Accept' in the cookie notice shown on your first visit.",
+            "If you choose 'Reject', the Meta Pixel is not loaded at all and no analytics or advertising cookies are set. Google's tag may still send limited, aggregated measurement signals that do not use cookies.",
+            "These providers may process this data under their own privacy policies, including on servers located outside Türkiye."
           ]
         },
         {
           "title": "8. Managing Cookies",
           "content": [
-            "You can control or disable cookies through your browser settings.",
+            "You can change or withdraw your cookie choice at any time using the 'Cookie Settings' link at the bottom of every page.",
+            "You can also control or disable cookies through your browser settings.",
             "Please note that disabling certain cookies may affect website functionality."
           ]
         },
@@ -1329,7 +1334,7 @@
     },
     "cookieBanner": {
       "title": "Çerez Bildirimi",
-      "message": "Sitenin temel işlevleri için ve izninizle kullanım verilerini anlamak amacıyla çerezler kullanıyoruz. Ayrıntılar için",
+      "message": "Sitenin temel işlevleri için çerezler kullanıyoruz. İzninizle, siteyi nasıl kullandığınızı anlamak ve reklam performansını ölçmek için analiz ve reklam çerezlerini (Google, Meta) de kullanırız. Ayrıntılar için",
       "policyLinkLabel": "Çerez Politikası",
       "acceptLabel": "Kabul Et",
       "rejectLabel": "Reddet"
@@ -1363,6 +1368,7 @@
       "newsletterText": "Yeni karışımlar ve beslenme bilgileri hakkında güncellemeler almak için abone olun.",
       "emailPlaceholder": "E-posta adresi",
       "privacyPolicy": "Gizlilik Politikası",
+      "cookieSettings": "Çerez Tercihleri",
       "termsOfUse": "Kullanım Şartları",
       "foodSafety": "Gıda Güvenliği",
       "genderEquality": "Toplumsal Cinsiyet Eşitliği",
@@ -1940,7 +1946,7 @@
     },
     "privacyPage": {
       "title": "Gizlilik Politikası",
-      "lastUpdated": "Son güncelleme: 13.01.2026",
+      "lastUpdated": "Son güncelleme: 21.10.2026",
       "sections": [
         {
           "title": "1. Giriş",
@@ -1974,7 +1980,7 @@
             "yasal yükümlülüklere uymak."
           ],
           "contentAfter": [
-            "Kişisel verileriniz (ör. e-posta adresi), reklam performansını ölçmek ve mevcut müşterilerimize yönelik reklamları optimize etmek amacıyla, şifrelenmiş (hash'lenmiş) biçimde Google Ads gibi reklam platformlarıyla paylaşılabilir. Bu paylaşım, ilgili platformun gizlilik ve veri işleme standartlarına tabidir."
+            "Kişisel verileriniz (ör. e-posta adresi), reklam performansını ölçmek ve mevcut müşterilerimize yönelik reklamları optimize etmek amacıyla, şifrelenmiş (hash'lenmiş) biçimde Google Ads ve Meta (Facebook ve Instagram) gibi reklam platformlarıyla paylaşılabilir. Bu paylaşım, ilgili platformun gizlilik ve veri işleme standartlarına tabidir."
           ]
         },
         {
@@ -2021,17 +2027,21 @@
           ],
           "bullets": [
             "kullanıcı tercihlerini hatırlamak,",
-            "web sitesi kullanımını toplu ve anonim şekilde analiz etmek,",
-            "web sitesi güvenliğini sağlamak."
+            "web sitesi güvenliğini sağlamak,",
+            "web sitesinin nasıl kullanıldığını analiz etmek (Google Analytics),",
+            "reklam performansını ölçmek ve sitemizi ziyaret etmiş kişilere ilgili reklamlar göstermek (Google Ads, Meta Pixel)."
           ],
           "contentAfter": [
-            "Çerezleri rahatsız edici reklamcılık veya harici web sitelerinde takip amacıyla kullanmıyoruz."
+            "Google ve Meta tarafından yerleştirilen analiz ve reklam çerezleri, yalnızca ilk ziyaretinizde gösterilen çerez bildiriminde \"Kabul Et\" seçeneğini seçmeniz hâlinde yüklenir.",
+            "\"Reddet\" seçeneğini seçerseniz Meta Pixel hiç yüklenmez, analiz ve reklam çerezleri yerleştirilmez. Google etiketi, çerez kullanmadan yalnızca sınırlı ve toplu ölçüm sinyalleri gönderebilir.",
+            "Bu hizmet sağlayıcılar, verileri kendi gizlilik politikaları uyarınca, yurt dışındaki sunucular dâhil olmak üzere işleyebilir."
           ]
         },
         {
           "title": "8. Çerezlerin Yönetimi",
           "content": [
-            "Çerezleri tarayıcı ayarlarınız üzerinden kontrol edebilir veya devre dışı bırakabilirsiniz.",
+            "Çerez tercihinizi, her sayfanın altındaki \"Çerez Tercihleri\" bağlantısından dilediğiniz zaman değiştirebilir veya geri çekebilirsiniz.",
+            "Çerezleri ayrıca tarayıcı ayarlarınız üzerinden kontrol edebilir veya devre dışı bırakabilirsiniz.",
             "Belirli çerezleri devre dışı bırakmanın web sitesi işlevselliğini etkileyebileceğini unutmayın."
           ]
         },

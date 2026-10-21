@@ -9,6 +9,7 @@ import {
 } from '@tabler/icons-react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { blob } from '@/lib/blob';
+import { OPEN_COOKIE_SETTINGS_EVENT } from '@/lib/consent';
 import WaveDivider from './WaveDivider';
 import { Stagger, StaggerItem, WordReveal } from '@/lib/motion';
 
@@ -89,6 +90,12 @@ export default function Footer() {
               <Link href={`/${language}/terms`}>{t.footer.termsOfUse}</Link>
               <Link href={`/${language}/food-safety`}>{t.footer.foodSafety}</Link>
               <Link href={`/${language}/gender-equality`}>{t.footer.genderEquality}</Link>
+              <button
+                type="button"
+                onClick={() => window.dispatchEvent(new Event(OPEN_COOKIE_SETTINGS_EVENT))}
+              >
+                {t.footer.cookieSettings}
+              </button>
             </div>
             <p className="footer-v2-copyright" dangerouslySetInnerHTML={{ __html: `&copy; ${new Date().getFullYear()} ${t.footer.copyright}` }} />
           </div>
@@ -319,6 +326,24 @@ export default function Footer() {
                 }
 
                 .footer-v2-legal :global(a:hover) {
+                    color: #fff;
+                }
+
+                /* "Çerez Tercihleri" re-opens the cookie banner; styled to
+                   read exactly like the neighbouring legal links. */
+                .footer-v2-legal button {
+                    background: none;
+                    border: 0;
+                    padding: 0;
+                    font: inherit;
+                    font-size: 0.85rem;
+                    color: rgba(234, 242, 243, 0.6);
+                    cursor: pointer;
+                    text-align: left;
+                    transition: color var(--dur-fast) var(--ease);
+                }
+
+                .footer-v2-legal button:hover {
                     color: #fff;
                 }
 

@@ -3,8 +3,12 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/lib/LanguageContext';
-
-const STORAGE_KEY = 'blendence_cookie_consent';
+import {
+  CONSENT_CHANGED_EVENT,
+  CONSENT_STORAGE_KEY,
+  OPEN_COOKIE_SETTINGS_EVENT,
+  readStoredConsent,
+} from '@/lib/consent';
 
 declare global {
   interface Window {
@@ -23,19 +27,20 @@ export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    let stored: string | null = null;
-    try {
-      stored = localStorage.getItem(STORAGE_KEY);
-    } catch {
-      // localStorage unavailable (private mode, blocked storage) — show the
-      // banner every visit rather than silently skipping consent.
-    }
-    if (!stored) setVisible(true);
+    // No stored choice (or storage unavailable) → show the banner rather than
+    // silently skipping consent.
+    if (!readStoredConsent()) setVisible(true);
+
+    // The footer's "Çerez Tercihleri" link re-opens the banner so a choice can
+    // be changed or withdrawn at any time.
+    const reopen = () => setVisible(true);
+    window.addEventListener(OPEN_COOKIE_SETTINGS_EVENT, reopen);
+    return () => window.removeEventListener(OPEN_COOKIE_SETTINGS_EVENT, reopen);
   }, []);
 
   const choose = (granted: boolean) => {
     try {
-      localStorage.setItem(STORAGE_KEY, granted ? 'granted' : 'denied');
+      localStorage.setItem(CONSENT_STORAGE_KEY, granted ? 'granted' : 'denied');
     } catch {
       // best-effort; the consent update below still applies for this visit
     }
@@ -45,6 +50,8 @@ export default function CookieConsent() {
       ad_personalization: granted ? 'granted' : 'denied',
       analytics_storage: granted ? 'granted' : 'denied',
     });
+    // Tell the other consent-gated tools (Meta Pixel) about the choice.
+    window.dispatchEvent(new CustomEvent(CONSENT_CHANGED_EVENT, { detail: { granted } }));
     setVisible(false);
   };
 
