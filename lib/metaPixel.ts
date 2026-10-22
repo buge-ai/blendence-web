@@ -4,7 +4,7 @@
 // visitor accepts the cookie banner (see components/MetaPixel.tsx), so nothing
 // reaches Meta — not even an IP address — before consent. Purchase-funnel
 // events happen on shop.blendence.com and are handled there by Ticimax
-// (Pixel + Conversions API); this site only reports page views.
+// (Pixel + Conversions API); this site sends PageView on every route.
 //
 // The Pixel ID is public (it is visible in any page source). The Conversions
 // API access token is a secret and must never be placed in this repo.
@@ -51,9 +51,10 @@ function bootstrap() {
   script.src = FBEVENTS_SRC;
   document.head.appendChild(script);
 
-  // No automatic button-click / page-metadata event collection: this site only
-  // needs page views, and the contact form must not feed Meta anything extra.
-  fbq('set', 'autoConfig', false, PIXEL_ID);
+  // Meta's default automatic configuration (button-click events, page
+  // metadata, and whatever Automatic Advanced Matching is set to in Events
+  // Manager) is intentionally left ON — owner's decision, 2026-10-22. We
+  // briefly shipped `fbq('set', 'autoConfig', false, ...)` here; it is removed.
   fbq('init', PIXEL_ID);
 }
 
