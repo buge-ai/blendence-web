@@ -13,6 +13,12 @@
       "acceptLabel": "Accept",
       "rejectLabel": "Reject"
     },
+    "notFoundPage": {
+      "code": "404",
+      "title": "Page not found",
+      "text": "The page you are looking for may have moved or never existed.",
+      "button": "Back to home"
+    },
     "nav": {
       "home": "Home",
       "about": "About",
@@ -1338,6 +1344,12 @@
       "policyLinkLabel": "Çerez Politikası",
       "acceptLabel": "Kabul Et",
       "rejectLabel": "Reddet"
+    },
+    "notFoundPage": {
+      "code": "404",
+      "title": "Sayfa bulunamadı",
+      "text": "Aradığınız sayfa taşınmış ya da hiç var olmamış olabilir.",
+      "button": "Ana sayfaya dön"
     },
     "nav": {
       "home": "Ana Sayfa",
