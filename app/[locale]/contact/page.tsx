@@ -40,7 +40,7 @@ function SuccessCheck() {
 }
 
 export default function ContactPage() {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
     const p = t.contactPage;
 
     const [formState, setFormState] = useState({
@@ -214,14 +214,16 @@ export default function ContactPage() {
                             <Reveal delay={0.05} y={18}>
                                 <div className="map-container">
                                     <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1500!2d26.57508!3d41.66797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDQwJzA0LjciTiAyNsKwMzQnMzAuMyJF!5e0!3m2!1sen!2str!4v1705693647000!5m2!1sen!2str"
+                                        // Havsa production facility & laboratory (the Google Maps
+                                        // business listing). `!1s{language}` = map UI language.
+                                        src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d26.8287019!3d41.5472871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b347d2d3f704bb%3A0x1f27c62c34eb0146!2sBuge%20G%C4%B1da%20Arge%20Dan%C4%B1%C5%9Fmanl%C4%B1k%20San.%20Tic.%20A.%C5%9E.!5e0!3m2!1s${language}!2str!4v1794250000000!5m2!1s${language}!2str`}
                                         width="100%"
                                         height="400"
                                         style={{ border: 0 }}
                                         allowFullScreen
                                         loading="lazy"
                                         referrerPolicy="no-referrer-when-downgrade"
-                                        title="Buge Foods Location"
+                                        title="Buge Foods – Production Facility & Laboratory, Havsa/Edirne"
                                     />
                                 </div>
                             </Reveal>
