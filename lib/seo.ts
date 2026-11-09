@@ -44,12 +44,12 @@ const PAGES: Record<PageKey, PageDef> = {
     en: {
       title: 'BLENDENCE: Naturally Powerful, Perfectly Balanced',
       description:
-        'BLENDENCE crafts 100% freeze-dried nutrition mixes from natural fruits and vegetables, designed to fit real life across every stage and reset moment.',
+        'BLENDENCE crafts 100% freeze-dried mixes from natural fruits and vegetables. Stages and Reset: made for different stages of life and moments of renewal.',
     },
     tr: {
       title: 'BLENDENCE: Doğal Güç, Mükemmel Denge',
       description:
-        'BLENDENCE, doğal meyve ve sebzelerden %100 liyofilize beslenme karışımları üretir, her yaşam evresine ve yenilenme anına uyum sağlayacak şekilde tasarlandı.',
+        'BLENDENCE, doğal meyve ve sebzelerden %100 liyofilize karışımlar üretir. Yaşamın farklı evreleri ve yenilenme anları için Stages ve Reset serileri.',
     },
   },
   about: {
