@@ -526,7 +526,7 @@
       },
       "quality": {
         "title": "Quality & Responsibility",
-        "content": "Our production operates under structured food safety and quality systems aligned with international standards, including FSSC 22000.",
+        "content": "Our production operates under structured food safety and quality systems aligned with international standards, including FSSC 22000. BUGE Foods, the manufacturer behind Blendence, also exports to European Union countries.",
         "learnMore": "Learn more about our commitments:",
         "foodSafetyLink": "Food Safety Policy",
         "genderEqualityLink": "Gender Equality Plan"
@@ -1300,7 +1300,9 @@
       "noArtificialColors": "No artificial colors",
       "noArtificialFlavors": "No artificial flavors",
       "noUnnecessaryAdditives": "No unnecessary additives",
-      "buyNow": "Buy Now"
+      "buyNow": "Buy Now",
+      "trustFssc": "FSSC 22000 certified production facility",
+      "trustExport": "Manufacturer exporting to European Union countries"
     },
     "contentGrid": {
       "explore": "Explore",
@@ -1858,7 +1860,7 @@
       },
       "quality": {
         "title": "Kalite ve Sorumluluk",
-        "content": "Üretimimiz, FSSC 22000 dahil uluslararası standartlarla uyumlu yapılandırılmış gıda güvenliği ve kalite sistemleri altında çalışmaktadır.",
+        "content": "Üretimimiz, FSSC 22000 dahil uluslararası standartlarla uyumlu yapılandırılmış gıda güvenliği ve kalite sistemleri altında çalışmaktadır. Blendence'ı üreten BUGE Gıda, Avrupa Birliği ülkelerine de ihracat yapmaktadır.",
         "learnMore": "Taahhütlerimiz hakkında daha fazla bilgi edinin:",
         "foodSafetyLink": "Gıda Güvenliği Politikası",
         "genderEqualityLink": "Toplumsal Cinsiyet Eşitliği Planı"
@@ -2632,7 +2634,9 @@
       "noArtificialColors": "Yapay renklendirici içermez",
       "noArtificialFlavors": "Yapay aroma içermez",
       "noUnnecessaryAdditives": "Gereksiz katkı maddesi içermez",
-      "buyNow": "Satın Al"
+      "buyNow": "Satın Al",
+      "trustFssc": "FSSC 22000 sertifikalı üretim tesisi",
+      "trustExport": "Avrupa Birliği ülkelerine ihracat yapan üretici"
     },
     "contentGrid": {
       "explore": "Keşfet",

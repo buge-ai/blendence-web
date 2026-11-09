@@ -92,6 +92,18 @@ export default function ProductLayout({
                                     </svg>
                                 </a>
                             </Reveal>
+                            <Reveal delay={0.4}>
+                                <ul className="hero-trust">
+                                    {[t.productLayout.trustFssc, t.productLayout.trustExport].map((item) => (
+                                        <li key={item}>
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                                                <path d="M20 6L9 17l-5-5" />
+                                            </svg>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </Reveal>
                         </div>
                         <div className="hero-visual">
                             <div className="visual-backdrop" />
@@ -228,6 +240,29 @@ export default function ProductLayout({
 
         .hero-content .hero-buy {
             margin-top: 1.75rem;
+        }
+
+        .hero-trust {
+            list-style: none;
+            margin: 1.5rem 0 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .hero-trust li {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            font-size: 0.875rem;
+            color: var(--text-body);
+            opacity: 0.8;
+        }
+
+        .hero-trust li svg {
+            flex-shrink: 0;
+            color: var(--theme);
         }
 
         .visual-backdrop {
@@ -440,6 +475,9 @@ export default function ProductLayout({
             }
             .hero-desc {
                 max-width: 100%;
+            }
+            .hero-trust {
+                align-items: center;
             }
             .features-section :global(.features-grid) {
                 grid-template-columns: 1fr;
