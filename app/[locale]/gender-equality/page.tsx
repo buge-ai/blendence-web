@@ -109,11 +109,11 @@ export default function GenderEqualityPage() {
                   <span className="info-value">{p.sections.orgProfile.items.founded}</span>
                 </div>
                 <div className="info-item">
-                  <span className="info-label">Headquarters:</span>
+                  <span className="info-label">Central Office:</span>
                   <span className="info-value">{p.sections.orgProfile.items.headquarters}</span>
                 </div>
                 <div className="info-item">
-                  <span className="info-label">Production Facility:</span>
+                  <span className="info-label">Production Facility &amp; Laboratory:</span>
                   <span className="info-value">{p.sections.orgProfile.items.productionFacility}</span>
                 </div>
                 <div className="info-item">

@@ -10,8 +10,8 @@ Organisation Profile
 Name: BUGE GIDA ARGE DANIŞMANLIK SANAYİ TİCARET A.Ş.
 Brand: Blendence
 Founded: 2024
-Headquarters: Trakya Teknopark, Trakya University Technology Development Zone, 22000 Edirne, Türkiye
-Production Facility: Hasan Pehlivan Cd. 1/D, 22500 Havsa, Edirne, Türkiye
+Central Office: Trakya Teknopark, Trakya University Technology Development Zone, 22000 Edirne, Türkiye
+Production Facility & Laboratory: Hasan Pehlivan Cd. 5/3, 22500 Havsa, Edirne, Türkiye
 Legal Status: Privately held SME (Small and Medium-sized Enterprise)
 Chair of the Board: Assoc. Prof. Dr. Buket Aşkın
 Commitment to Gender Equality

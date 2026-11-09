@@ -759,7 +759,7 @@
             "brand": "Blendence",
             "founded": "2024",
             "headquarters": "Trakya Teknopark, Trakya University Technology Development Zone, 22000 Edirne, Türkiye",
-            "productionFacility": "Hasan Pehlivan Cd. 1/D, 22500 Havsa, Edirne, Türkiye",
+            "productionFacility": "Hasan Pehlivan Cd. 5/3, 22500 Havsa, Edirne, Türkiye",
             "legalStatus": "Privately held SME (Small and Medium-sized Enterprise)",
             "chairOfBoard": "Assoc. Prof. Dr. Buket Aşkın"
           }
@@ -1154,8 +1154,8 @@
         "mersis": "MERSIS No: 0188128667200001",
         "registry": "Trade Registry No: 10851",
         "business": "Business Registration No: TR-22-K-014193",
-        "headquarters": "Headquarters Address: Trakya Teknopark, Trakya University Technology Development Zone, 22000 Edirne / Turkey",
-        "facility": "Production Facility: Hasan Pehlivan Cd. 1/D, 22500 Havsa / Edirne / Turkey",
+        "headquarters": "Central Office: Trakya Teknopark, Trakya University Technology Development Zone, 22000 Edirne / Turkey",
+        "facility": "Production Facility & Laboratory: Hasan Pehlivan Cd. 5/3, 22500 Havsa / Edirne / Turkey",
         "email": "Email: contact@blendence.com",
         "web": "Web: www.bugefoods.com"
       },
@@ -1262,11 +1262,11 @@
       "title": "Contact",
       "subtitle": "We'd love to hear from you. Get in touch with us.",
       "headquarters": {
-        "label": "Headquarters",
+        "label": "Central Office",
         "address": "Trakya Teknopark, Trakya University Ayşekadın Campus, 22100, Edirne"
       },
       "production": {
-        "label": "Production Facility",
+        "label": "Production Facility & Laboratory",
         "address": "Hasan Pehlivan Cd. No:5/3, Havsa/Edirne, 22500"
       },
       "phone": {
@@ -2091,7 +2091,7 @@
             "brand": "Blendence",
             "founded": "2024",
             "headquarters": "Trakya Teknopark, Trakya Üniversitesi Teknoloji Geliştirme Bölgesi, 22000 Edirne, Türkiye",
-            "productionFacility": "Hasan Pehlivan Cd. 1/D, 22500 Havsa, Edirne, Türkiye",
+            "productionFacility": "Hasan Pehlivan Cd. 5/3, 22500 Havsa, Edirne, Türkiye",
             "legalStatus": "Özel mülkiyete ait KOBİ (Küçük ve Orta Ölçekli İşletme)",
             "chairOfBoard": "Doç. Dr. Buket Aşkın"
           }
@@ -2486,8 +2486,8 @@
         "mersis": "MERSİS No: 0188128667200001",
         "registry": "Ticaret Sicil No: 10851",
         "business": "İşletme Kayıt No: TR-22-K-014193",
-        "headquarters": "Merkez Adres: Trakya Teknopark, Trakya Üniversitesi Teknoloji Geliştirme Bölgesi, 22000 Edirne / Türkiye",
-        "facility": "Üretim Tesisi: Hasan Pehlivan Cd. 1/D, 22500 Havsa / Edirne / Türkiye",
+        "headquarters": "Merkez Ofis: Trakya Teknopark, Trakya Üniversitesi Teknoloji Geliştirme Bölgesi, 22000 Edirne / Türkiye",
+        "facility": "Üretim Tesisi & Laboratuvar: Hasan Pehlivan Cd. 5/3, 22500 Havsa / Edirne / Türkiye",
         "email": "E-posta: contact@blendence.com",
         "web": "Web: www.bugefoods.com"
       },
@@ -2594,11 +2594,11 @@
       "title": "İletişim",
       "subtitle": "Sizden haber almak isteriz. Bizimle iletişime geçin.",
       "headquarters": {
-        "label": "Genel Merkez",
+        "label": "Merkez Ofis",
         "address": "Trakya Teknopark, Trakya Üniversitesi Ayşekadın Yerleşkesi, 22100, Edirne"
       },
       "production": {
-        "label": "Üretim Tesisi",
+        "label": "Üretim Tesisi & Laboratuvar",
         "address": "Hasan Pehlivan Cd. No:5/3, Havsa/Edirne, 22500"
       },
       "phone": {

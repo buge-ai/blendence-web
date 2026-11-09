@@ -1,8 +1,8 @@
 BUGE GIDA A.Ş. - ŞİRKET VE ÜRÜN DETAYLARI
 ŞİRKET BİLGİLERİ
 Kuruluş: 2024
-Merkez: Trakya Teknopark, Trakya Üniversitesi Teknoloji Geliştirme Bölgesi, Edirne
-Üretim Tesisi: Hasan Pehlivan Cd. No:1/D, Havsa / Edirne
+Merkez Ofis: Trakya Teknopark, Trakya Üniversitesi Teknoloji Geliştirme Bölgesi, Edirne
+Üretim Tesisi & Laboratuvar: Hasan Pehlivan Cd. No:5/3, Havsa / Edirne
 Web: www.bugefoods.com
 E-posta: contact@bugefoods.com
 
