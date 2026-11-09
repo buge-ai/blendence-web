@@ -26,7 +26,7 @@ const siteUrl =
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "BLENDENCE - Naturally Powerful, Perfectly Balanced | BUGE GIDA A.Ş.",
-  description: "100% freeze-dried nutrition mixes made from natural fruits and vegetables, designed to fit real life. Stages nutrition for every age and Reset blends for balance.",
+  description: "100% freeze-dried nutrition mixes made from natural fruits and vegetables, designed to fit real life. Stages for different phases of life and Reset blends for balance.",
   keywords: "freeze dried, liyofilize, natural nutrition, freeze-dried mixes, BLENDENCE, BUGE Foods, Stages, Reset, KidGrow, KidRise, TeenFocus",
   authors: [{ name: "BUGE GIDA A.Ş." }],
   openGraph: {
