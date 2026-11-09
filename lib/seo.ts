@@ -187,12 +187,12 @@ const PAGES: Record<PageKey, PageDef> = {
     en: {
       title: 'Stages | BLENDENCE',
       description:
-        'Blendence Stages offers freeze-dried nutrition optimized for every life phase, from early growth to focus-intensive teens: KidGrow, KidRise and TeenFocus.',
+        'Blendence Stages offers freeze-dried nutrition optimized for different stages of life, from early growth to focus-intensive teens: KidGrow, KidRise and TeenFocus.',
     },
     tr: {
       title: 'Stages | BLENDENCE',
       description:
-        'Blendence Stages, erken büyümeden odak yoğun ergenliğe her yaşam evresi için optimize edilmiş liyofilize beslenme sunar: KidGrow, KidRise ve TeenFocus.',
+        'Blendence Stages, erken büyümeden odak yoğun ergenliğe yaşamın farklı evreleri için optimize edilmiş liyofilize beslenme sunar: KidGrow, KidRise ve TeenFocus.',
     },
   },
   kidgrow: {
